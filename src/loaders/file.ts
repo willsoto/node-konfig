@@ -26,8 +26,6 @@ export class FileLoader implements Loader {
       const contents = await fs.promises.readFile(file.path, "utf-8");
       const result = file.parser.parse(contents);
 
-      console.log("Parse result", result);
-
       store.append(result);
     }
   }

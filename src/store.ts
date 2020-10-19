@@ -12,7 +12,7 @@ export class Store {
   readonly options: StoreOptions;
 
   private config: Config = {};
-  private loaders = new Set<Loader>();
+  private loaders: Loader[] = [];
 
   constructor(options: StoreOptions = {}) {
     this.options = {
@@ -30,9 +30,7 @@ export class Store {
   }
 
   registerLoader(loader: Loader): void {
-    if (!this.loaders.has(loader)) {
-      this.loaders.add(loader);
-    }
+    this.loaders.push(loader);
   }
 
   append(config: Config): void {
