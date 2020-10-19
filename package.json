@@ -1,9 +1,11 @@
 {
-  "name": "@willsoto/node-typescript-pkg",
+  "name": "@willsoto/node-konfig",
   "version": "0.1.0",
   "private": true,
-  "description": "",
-  "keywords": [],
+  "description": "Node configuration package",
+  "keywords": [
+    "configuration"
+  ],
   "license": "Apache-2.0",
   "author": "Will Soto <willsoto@users.noreply.github.com> (https://github.com/willsoto)",
   "main": "./dist/index.js",
@@ -140,6 +142,6 @@
   },
   "volta": {
     "node": "14.2.0",
-    "npm": "6.14.5"
+    "npm": "7.0.2"
   }
 }
