@@ -33,7 +33,7 @@ export class Store {
     this.loaders.push(loader);
   }
 
-  append(config: Config): void {
+  assign(config: Config): void {
     this.config = {
       ...this.config,
       ...config,

@@ -8,7 +8,7 @@ interface File {
   parser: Parser;
 }
 
-interface FileLoaderOptions {
+export interface FileLoaderOptions {
   files: File[];
 }
 
@@ -26,7 +26,7 @@ export class FileLoader implements Loader {
       const contents = await fs.promises.readFile(file.path, "utf-8");
       const result = file.parser.parse(contents);
 
-      store.append(result);
+      store.assign(result);
     }
   }
 }

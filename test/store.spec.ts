@@ -21,6 +21,14 @@ describe("Store", function () {
     expect(store.get("name")).to.eql("bar");
     expect(store.get("database.host")).to.eql("localhost");
   });
+
+  it("can set values to the store", async function () {
+    const store = await makeStore();
+
+    store.set("name", "baz");
+
+    expect(store.get("name")).to.eql("baz");
+  });
 });
 
 async function makeStore(): Promise<Konfig.Store> {

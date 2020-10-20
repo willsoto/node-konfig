@@ -2,5 +2,5 @@ import { Store } from "../store";
 
 export interface Loader {
   name: string;
-  load(store: Store): Promise<void>;
+  load(store: Store): void | Promise<void>;
 }
