@@ -4,6 +4,31 @@
 
 ```ts
 
+// @public
+export class EnvLoader implements Loader {
+    constructor(options?: EnvLoaderOptions);
+    // (undocumented)
+    load(store: Store): void;
+    // (undocumented)
+    name: string;
+    // (undocumented)
+    readonly options: EnvLoaderOptions;
+    }
+
+// @public (undocumented)
+export interface EnvLoaderOptions {
+    // (undocumented)
+    arraySeparator?: string;
+    // (undocumented)
+    prefix?: string;
+    // (undocumented)
+    regExp?: string | RegExp;
+    // (undocumented)
+    replacer?: (key: string) => string;
+    // (undocumented)
+    vars?: string[];
+}
+
 // @public (undocumented)
 export class FileLoader implements Loader {
     constructor(options: FileLoaderOptions);
@@ -11,10 +36,16 @@ export class FileLoader implements Loader {
     load(store: Store): Promise<void>;
     // (undocumented)
     name: string;
-    // Warning: (ae-forgotten-export) The symbol "FileLoaderOptions" needs to be exported by the entry point index.d.ts
-    //
     // (undocumented)
     readonly options: FileLoaderOptions;
+}
+
+// @public (undocumented)
+export interface FileLoaderOptions {
+    // Warning: (ae-forgotten-export) The symbol "File" needs to be exported by the entry point index.d.ts
+    //
+    // (undocumented)
+    files: File[];
 }
 
 // @public (undocumented)
@@ -28,7 +59,7 @@ export class JSONParser implements Parser {
 // @public (undocumented)
 export interface Loader {
     // (undocumented)
-    load(store: Store): Promise<void>;
+    load(store: Store): void | Promise<void>;
     // (undocumented)
     name: string;
 }
@@ -47,7 +78,7 @@ export class Store {
     // Warning: (ae-forgotten-export) The symbol "Config" needs to be exported by the entry point index.d.ts
     //
     // (undocumented)
-    append(config: Config): void;
+    assign(config: Config): void;
     // (undocumented)
     get<T>(key: string): T;
     // (undocumented)

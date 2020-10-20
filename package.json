@@ -17,7 +17,7 @@
   "scripts": {
     "prebuild": "npm run clean",
     "build": "tsc --project tsconfig.build.json",
-    "clean": "rimraf dist coverage .nyc_output docs",
+    "clean": "rimraf dist coverage .nyc_output docs temp",
     "predocs": "npm run build",
     "docs": "api-extractor run --local --verbose",
     "postdocs": "api-documenter markdown --input-folder temp --output-folder docs",
