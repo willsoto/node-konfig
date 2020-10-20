@@ -17,10 +17,15 @@ describe("Env loader", function () {
     delete process.env.HOSTS;
   });
 
-  it("when initialized with no options", async function () {
+  it("loads all the environment variables when initialized with no options", async function () {
     const store = await makeStore();
 
-    expect(store.value()).to.eql({});
+    expect(store.value()).to.include({
+      PORT: "5000",
+      NAME: "my-app",
+      MY_APP_NAME: "my-app",
+      HOSTS: "localhost:1234,localhost:5678",
+    });
   });
 
   it("loads the specified vars if provided", async function () {
