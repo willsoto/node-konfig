@@ -38,6 +38,65 @@ describe("VaultLoader", function () {
     });
   });
 
+  it("applies a prefix if provided", async function () {
+    const store = await makeStore({
+      secrets: [
+        {
+          key: "secret/data/database",
+          prefix: "app_",
+        },
+      ],
+      client,
+    });
+
+    expect(store.value()).to.eql({
+      app_database: {
+        host: "rds.foo.bar",
+      },
+    });
+  });
+
+  it("applies a replacer if provided", async function () {
+    const store = await makeStore({
+      secrets: [
+        {
+          key: "secret/data/database",
+          replacer(key: string) {
+            return key.toUpperCase();
+          },
+        },
+      ],
+      client,
+    });
+
+    expect(store.value()).to.eql({
+      DATABASE: {
+        host: "rds.foo.bar",
+      },
+    });
+  });
+
+  it("applies a prefix and replacer (in the correct order)", async function () {
+    const store = await makeStore({
+      secrets: [
+        {
+          key: "secret/data/database",
+          prefix: "app_",
+          replacer(key: string) {
+            return key.toUpperCase();
+          },
+        },
+      ],
+      client,
+    });
+
+    expect(store.value()).to.eql({
+      APP_DATABASE: {
+        host: "rds.foo.bar",
+      },
+    });
+  });
+
   it("merges secrets from vault with secret loaded from other locations", async function () {
     const fileLoader = new Konfig.FileLoader({
       files: [
