@@ -10,6 +10,8 @@ import { Store } from "../store";
 
 interface Secret {
   key: string;
+  prefix?: string;
+  replacer?: (key: string) => string;
 }
 
 export interface VaultLoaderOptions {
@@ -33,7 +35,17 @@ export class VaultLoader implements Loader {
       const response = await this.client.read(secret.key);
       const { data } = response.data;
 
-      store.assign(data);
+      Object.entries(data).forEach(([key, value]) => {
+        if (secret.prefix) {
+          key = `${secret.prefix}${key}`;
+        }
+
+        if (secret.replacer) {
+          key = secret.replacer(key);
+        }
+
+        store.set(key, value);
+      });
     }
   }
 }
