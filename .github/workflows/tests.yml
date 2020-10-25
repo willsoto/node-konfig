@@ -25,12 +25,14 @@ jobs:
       - uses: volta-cli/action@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - run: npm install --global yarn
       - run: docker-compose up -d --build
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run test:cov
+      - run: yarn install
+      # Make sure to build all dependant packages so typings are in place
+      - run: yarn run build
+      - run: yarn run lint
+      - run: yarn run test:cov
         env:
           # node-vault will read from this environment variable if set
           # https://github.com/kr1sp1n/node-vault/blob/0fa666afb9da14f25cf054e195c18b5a560fcaed/src/index.js#L68
           VAULT_ADDR: "http://localhost:8200"
-      - run: npm run build

@@ -4,9 +4,8 @@
  */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { Loader, Store } from "@willsoto/node-konfig-core";
 import * as NodeVault from "node-vault";
-import { Loader } from "../loaders";
-import { Store } from "../store";
 
 interface Secret {
   key: string;

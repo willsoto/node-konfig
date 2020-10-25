@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import _ from "lodash";
-import * as Konfig from "../../src";
+import * as Konfig from "../src";
 
 describe("Env loader", function () {
   before(function () {

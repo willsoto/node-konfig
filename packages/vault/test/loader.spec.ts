@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import * as Konfig from "@willsoto/node-konfig-core";
 import { expect } from "chai";
 import vault from "node-vault";
 import path from "path";
-import * as Konfig from "../../src";
-import { VaultLoader, VaultLoaderOptions } from "../../src/vault";
+import { VaultLoader, VaultLoaderOptions } from "../src";
 
 describe("VaultLoader", function () {
   let client: vault.client;
@@ -101,7 +101,7 @@ describe("VaultLoader", function () {
     const fileLoader = new Konfig.FileLoader({
       files: [
         {
-          path: path.resolve(__dirname, "..", "configs", "config.json"),
+          path: path.resolve(__dirname, "configs", "config.json"),
           parser: new Konfig.JSONParser(),
         },
       ],
