@@ -1,0 +1,20 @@
+{
+  "name": "@node-konfig-tools/nyc",
+  "main": "./nyc.config.js",
+  "scripts": {
+    "build": "exit 0"
+  },
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "~1.0.1",
+    "nyc": "~15.1.0",
+    "prettier": "~2.1.2",
+    "prettier-plugin-organize-imports": "~1.1.1",
+    "prettier-plugin-packagejson": "~2.2.7",
+    "source-map-support": "~0.5.19",
+    "ts-node": "~9.0.0",
+    "typescript": "~4.0.3"
+  },
+  "peerDependencies": {
+    "nyc": "~15.1.0"
+  }
+}

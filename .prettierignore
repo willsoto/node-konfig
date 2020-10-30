@@ -1,1 +1,11 @@
+/common/config/rush/*.json
+/common/config/rush/*.yaml
+/common/scripts/*.js
+/tools/types/src/graphql.schema.ts
+**/dist/**
+**/coverage/**
+**/.nyc_output/**
+/apps/api/migrations/*.js
+/apps/api/knexfile.js
 CHANGELOG.md
+CHANGELOG.json
