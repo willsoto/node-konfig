@@ -1,8 +1,8 @@
 import { expect } from "chai";
 import _ from "lodash";
-import * as Konfig from "../src";
+import * as Konfig from "../../src";
 
-describe("Env loader", function () {
+describe("EnvLoader", function () {
   before(function () {
     process.env.PORT = "5000";
     process.env.NAME = "my-app";
