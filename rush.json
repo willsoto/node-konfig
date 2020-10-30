@@ -1,0 +1,46 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+  "rushVersion": "5.35.1",
+  "pnpmVersion": "5.10.2",
+  "pnpmOptions": {
+    "strictPeerDependencies": true,
+    "preventManualShrinkwrapChanges": true,
+    "useWorkspaces": true
+  },
+  "nodeSupportedVersionRange": ">=12",
+  "ensureConsistentVersions": true,
+
+  "gitPolicy": {
+    "versionBumpCommitMessage": "Applying package updates. [skip-ci]"
+  },
+
+  "repository": {
+    "url": "https://github.com/willsoto/node-konfig",
+    "defaultBranch": "main",
+    "defaultRemote": "origin"
+  },
+
+  "telemetryEnabled": false,
+  "projects": [
+    {
+      "packageName": "@willsoto/node-konfig-core",
+      "projectFolder": "packages/core"
+    },
+    {
+      "packageName": "@willsoto/node-konfig-vault",
+      "projectFolder": "packages/vault"
+    },
+    {
+      "packageName": "@node-konfig-tools/mocha",
+      "projectFolder": "tools/mocha",
+      "reviewCategory": "tools",
+      "shouldPublish": false
+    },
+    {
+      "packageName": "@node-konfig-tools/nyc",
+      "projectFolder": "tools/nyc",
+      "reviewCategory": "tools",
+      "shouldPublish": false
+    }
+  ]
+}
