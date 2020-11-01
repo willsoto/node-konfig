@@ -41,6 +41,12 @@
       "projectFolder": "tools/nyc",
       "reviewCategory": "tools",
       "shouldPublish": false
+    },
+    {
+      "packageName": "@node-konfig-tools/eslint",
+      "projectFolder": "tools/eslint",
+      "reviewCategory": "tools",
+      "shouldPublish": false
     }
   ]
 }
