@@ -1,9 +1,5 @@
 module.exports = {
   parser: "@typescript-eslint/parser",
-  parserOptions: {
-    tsconfigRootDir: __dirname,
-    project: "./tsconfig.lint.json",
-  },
   plugins: ["@typescript-eslint"],
   extends: [
     "eslint:recommended",
@@ -18,7 +14,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["packages/**/test/**/*.ts"],
+      files: ["*.spec.ts"],
       env: {
         mocha: true,
       },
