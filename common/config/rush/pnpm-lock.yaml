@@ -27,9 +27,6 @@ importers:
       lodash: 4.17.20
       mocha: 8.2.0
       nyc: 15.1.0
-      prettier: 2.1.2
-      prettier-plugin-organize-imports: 1.1.1_prettier@2.1.2+typescript@4.0.5
-      prettier-plugin-packagejson: 2.2.7_prettier@2.1.2
       rimraf: 3.0.2
       typescript: 4.0.5
     specifiers:
@@ -55,9 +52,6 @@ importers:
       lodash.set: ^4.3.2
       mocha: ~8.2.0
       nyc: ~15.1.0
-      prettier: ~2.1.2
-      prettier-plugin-organize-imports: ~1.1.1
-      prettier-plugin-packagejson: ~2.2.7
       rimraf: ~3.0.2
       typescript: ~4.0.3
       yargs: ^16.1.0
@@ -86,9 +80,6 @@ importers:
       lodash: 4.17.20
       mocha: 8.2.0
       nyc: 15.1.0
-      prettier: 2.1.2
-      prettier-plugin-organize-imports: 1.1.1_prettier@2.1.2+typescript@4.0.5
-      prettier-plugin-packagejson: 2.2.7_prettier@2.1.2
       rimraf: 3.0.2
       typescript: 4.0.5
     specifiers:
@@ -114,9 +105,6 @@ importers:
       mocha: ~8.2.0
       node-vault: ~0.9.20
       nyc: ~15.1.0
-      prettier: ~2.1.2
-      prettier-plugin-organize-imports: ~1.1.1
-      prettier-plugin-packagejson: ~2.2.7
       rimraf: ~3.0.2
       typescript: ~4.0.3
   ../../tools/eslint:
@@ -363,7 +351,7 @@ packages:
       espree: 7.3.0
       globals: 12.4.0
       ignore: 4.0.6
-      import-fresh: 3.2.1
+      import-fresh: 3.2.2
       js-yaml: 3.14.0
       lodash: 4.17.20
       minimatch: 3.0.4
@@ -1593,7 +1581,7 @@ packages:
       glob-parent: 5.1.1
       globals: 12.4.0
       ignore: 4.0.6
-      import-fresh: 3.2.1
+      import-fresh: 3.2.2
       imurmurhash: 0.1.4
       is-glob: 4.0.1
       js-yaml: 3.14.0
@@ -2011,14 +1999,14 @@ packages:
       node: '>= 4'
     resolution:
       integrity: sha512-BMpfD7PpiETpBl/A6S498BaIJ6Y/ABT93ETbby2fP00v4EbvPBXWEoaR1UBPKs3iR53pJY7EtZk5KACI57i1Uw==
-  /import-fresh/3.2.1:
+  /import-fresh/3.2.2:
     dependencies:
       parent-module: 1.0.1
       resolve-from: 4.0.0
     engines:
       node: '>=6'
     resolution:
-      integrity: sha512-6e1q1cnWP2RXD9/keSkxHScg508CdXqXWgWBaETNhyuBFz+kUZlKboh+ISK+bU++DmbHimVBrOz/zzPe0sZ3sQ==
+      integrity: sha512-cTPNrlvJT6twpYy+YmKUKrTSjWFs3bjYjAhCwm+z4EOCubZxAuO+hHpRN64TqjEaYSHs7tJAE0w1CKMGmsG/lw==
   /import-lazy/4.0.0:
     dev: true
     engines:

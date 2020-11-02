@@ -9,3 +9,4 @@
 /apps/api/knexfile.js
 CHANGELOG.md
 CHANGELOG.json
+pnpm-lock.yaml
