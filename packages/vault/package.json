@@ -28,10 +28,6 @@
       "src/**/*.ts"
     ]
   },
-  "dependencies": {
-    "@willsoto/node-konfig-core": "workspace:*",
-    "node-vault": "~0.9.20"
-  },
   "devDependencies": {
     "@microsoft/api-documenter": "~7.9.15",
     "@microsoft/api-extractor": "~7.10.4",
@@ -49,12 +45,18 @@
     "@types/sinon": "~9.0.8",
     "@types/sinon-chai": "~3.2.5",
     "@types/yargs": "~15.0.9",
+    "@willsoto/node-konfig-core": "workspace:*",
     "eslint": "~7.12.1",
     "lodash": "~4.17.20",
     "mocha": "~8.2.0",
+    "node-vault": "~0.9.20",
     "nyc": "~15.1.0",
     "rimraf": "~3.0.2",
     "typescript": "~4.0.3"
+  },
+  "peerDependencies": {
+    "@willsoto/node-konfig-core": "^0.1.0",
+    "node-vault": "~0.9.20"
   },
   "volta": {
     "extends": "../../package.json"
