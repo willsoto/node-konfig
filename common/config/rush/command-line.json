@@ -179,6 +179,13 @@
       "description": "Run all tests with coverage",
       "enableParallelism": true,
       "ignoreMissingScript": true
+    },
+    {
+      "name": "commitlint",
+      "commandKind": "global",
+      "summary": "Used by the commit-msg Git hook. This command invokes Commitlint to check commit messages.",
+      "autoinstallerName": "commitlint",
+      "shellCommand": "commitlint --edit $1"
     }
   ],
 
