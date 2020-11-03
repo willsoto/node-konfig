@@ -1,7 +1,7 @@
 import { Store } from "../store";
-import { Loader } from "./interface";
+import { Loader, LoaderOptions } from "./base";
 
-export interface EnvLoaderOptions {
+export interface EnvLoaderOptions extends LoaderOptions {
   vars?: string[];
   regExp?: string | RegExp;
   prefix?: string;
@@ -14,12 +14,14 @@ export interface EnvLoaderOptions {
  *
  *{@link https://github.com/lalamove/konfig/tree/master/loader/klenv|Prior art}
  */
-export class EnvLoader implements Loader {
+export class EnvLoader extends Loader {
   readonly options: EnvLoaderOptions;
 
   name = "env";
 
   constructor(options: EnvLoaderOptions = {}) {
+    super(options);
+
     this.options = options;
   }
 

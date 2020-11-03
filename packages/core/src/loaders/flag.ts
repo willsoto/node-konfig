@@ -1,17 +1,19 @@
 import { Argv } from "yargs";
 import { Store } from "../store";
-import { Loader } from "./interface";
+import { Loader, LoaderOptions } from "./base";
 
-export interface FlagLoaderOptions {
+export interface FlagLoaderOptions extends LoaderOptions {
   flags: Argv["argv"];
 }
 
-export class FlagLoader implements Loader {
+export class FlagLoader extends Loader {
   readonly options: FlagLoaderOptions;
 
   name = "flag";
 
   constructor(options: FlagLoaderOptions) {
+    super(options);
+
     this.options = options;
   }
 
