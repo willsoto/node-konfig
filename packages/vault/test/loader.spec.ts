@@ -3,6 +3,7 @@ import * as Konfig from "@willsoto/node-konfig-core";
 import { expect } from "chai";
 import vault from "node-vault";
 import path from "path";
+import sinon from "sinon";
 import { VaultLoader, VaultLoaderOptions } from "../src";
 
 describe("VaultLoader", function () {
@@ -121,6 +122,48 @@ describe("VaultLoader", function () {
 
     expect(store.value()).to.eql({
       name: "foo",
+      database: {
+        host: "rds.foo.bar",
+      },
+    });
+  });
+
+  it("respects the maxRetries option", async function () {
+    const store = new Konfig.Store();
+    const loader = new VaultLoader({
+      maxRetries: 3,
+      retryDelay: 50,
+      secrets: [
+        {
+          key: "secret/data/non-existent",
+        },
+      ],
+      client,
+    });
+    sinon.spy(loader, "processSecrets");
+
+    store.registerLoader(loader);
+
+    await expect(store.init()).to.eventually.be.rejectedWith("Status 404");
+    // Initial call + the 3 retries
+    expect(loader.processSecrets).to.have.callCount(4);
+  });
+
+  it("respects the stopOnFailure option", async function () {
+    const store = await makeStore({
+      stopOnFailure: false,
+      secrets: [
+        {
+          key: "secret/data/non-existent",
+        },
+        {
+          key: "secret/data/database",
+        },
+      ],
+      client,
+    });
+
+    expect(store.value()).to.eql({
       database: {
         host: "rds.foo.bar",
       },

@@ -30,21 +30,44 @@ export class VaultLoader extends Loader {
   }
 
   async load(store: Store): Promise<void> {
-    for (const secret of this.options.secrets) {
-      const response = await this.client.read(secret.key);
-      const { data } = response.data;
-
-      Object.entries(data).forEach(([key, value]) => {
-        if (secret.prefix) {
-          key = `${secret.prefix}${key}`;
-        }
-
-        if (secret.replacer) {
-          key = secret.replacer(key);
-        }
-
-        store.set(key, value);
-      });
+    if (this.maxRetries > 0) {
+      return this.retryPolicy.execute(() => this.processSecrets(store));
     }
+
+    return this.processSecrets(store);
+  }
+
+  async processSecrets(store: Store): Promise<void> {
+    for (const secret of this.options.secrets) {
+      try {
+        const response = await this.client.read(secret.key);
+        const { data } = response.data;
+
+        Object.entries(data).forEach(([key, value]) => {
+          this.processSecret(store, secret, key, value);
+        });
+      } catch (error) {
+        if (this.stopOnFailure) {
+          throw error;
+        }
+      }
+    }
+  }
+
+  private processSecret(
+    store: Store,
+    secret: Secret,
+    key: string,
+    value: unknown,
+  ) {
+    if (secret.prefix) {
+      key = `${secret.prefix}${key}`;
+    }
+
+    if (secret.replacer) {
+      key = secret.replacer(key);
+    }
+
+    store.set(key, value);
   }
 }
