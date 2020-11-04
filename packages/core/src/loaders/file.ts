@@ -23,7 +23,15 @@ export class FileLoader extends Loader {
     this.options = options;
   }
 
-  async load(store: Store): Promise<void> {
+  load(store: Store): Promise<void> {
+    if (this.maxRetries > 0) {
+      return this.retryPolicy.execute(() => this.processFiles(store));
+    }
+
+    return this.processFiles(store);
+  }
+
+  async processFiles(store: Store): Promise<void> {
     for (const file of this.options.files) {
       try {
         const contents = await fs.promises.readFile(file.path, "utf-8");
