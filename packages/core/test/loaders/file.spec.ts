@@ -1,5 +1,6 @@
 import { expect } from "chai";
 import path from "path";
+import sinon from "sinon";
 import * as Konfig from "../../src";
 
 describe("FileLoader", function () {
@@ -33,7 +34,7 @@ describe("FileLoader", function () {
     });
   });
 
-  it("respects the stop on failure policy (defaults to true)", function () {
+  it("respects the stopOnFailure option (true)", function () {
     const parser = new Konfig.JSONParser();
     const options: Konfig.FileLoaderOptions = {
       files: [
@@ -47,7 +48,7 @@ describe("FileLoader", function () {
     return expect(makeStore(options)).to.eventually.be.rejectedWith("ENOENT");
   });
 
-  it("respects the stop on failure policy", async function () {
+  it("respects the stopOnFailure option (false)", async function () {
     const parser = new Konfig.JSONParser();
     const options: Konfig.FileLoaderOptions = {
       stopOnFailure: false,
@@ -68,6 +69,30 @@ describe("FileLoader", function () {
       // bar is the only value that was loaded successfully
       name: "bar",
     });
+  });
+
+  it("respects the maxRetries option", async function () {
+    const parser = new Konfig.JSONParser();
+    const options: Konfig.FileLoaderOptions = {
+      maxRetries: 3,
+      retryDelay: 100,
+      files: [
+        {
+          path: path.join(fixtureDir, "non-existent.json"),
+          parser,
+        },
+      ],
+    };
+    const store = new Konfig.Store();
+
+    const loader = new Konfig.FileLoader(options);
+    sinon.spy(loader, "processFiles");
+
+    store.registerLoader(loader);
+
+    await expect(store.init()).to.eventually.be.rejectedWith("ENOENT");
+    // Initial call + the 3 retries
+    expect(loader.processFiles).to.have.callCount(4);
   });
 });
 

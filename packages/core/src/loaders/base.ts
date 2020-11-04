@@ -1,3 +1,4 @@
+import { Policy, RetryPolicy } from "cockatiel";
 import { Store } from "../store";
 
 export interface LoaderOptions {
@@ -19,4 +20,11 @@ export abstract class Loader {
   }
 
   abstract load(store: Store): void | Promise<void>;
+
+  protected get retryPolicy(): RetryPolicy {
+    return Policy.handleAll()
+      .retry()
+      .attempts(this.maxRetries)
+      .delay(this.retryDelay);
+  }
 }
