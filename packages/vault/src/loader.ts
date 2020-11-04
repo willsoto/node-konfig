@@ -1,10 +1,8 @@
-/**
- * The node-vault client has _really_ bad typings so we need to disable
- * these rules to reduce noise in this file
- */
+// The node-vault client has _really_ bad typings so we need to disable
+// these rules to reduce noise in this file
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { Loader, Store } from "@willsoto/node-konfig-core";
+import { Loader, LoaderOptions, Store } from "@willsoto/node-konfig-core";
 import * as NodeVault from "node-vault";
 
 interface Secret {
@@ -13,18 +11,20 @@ interface Secret {
   replacer?: (key: string) => string;
 }
 
-export interface VaultLoaderOptions {
+export interface VaultLoaderOptions extends LoaderOptions {
   secrets: Secret[];
   client: NodeVault.client;
 }
 
-export class VaultLoader implements Loader {
+export class VaultLoader extends Loader {
   readonly options: VaultLoaderOptions;
   readonly client: NodeVault.client;
 
   name = "vault";
 
   constructor(options: VaultLoaderOptions) {
+    super(options);
+
     this.options = options;
     this.client = options.client;
   }
