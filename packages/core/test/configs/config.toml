@@ -1,0 +1,4 @@
+name = "foo"
+
+[database]
+host = "localhost"
