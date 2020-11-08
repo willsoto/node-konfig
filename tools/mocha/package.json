@@ -24,7 +24,8 @@
     "mocha": "~8.2.0",
     "prettier": "~2.1.2",
     "prettier-plugin-organize-imports": "~1.1.1",
-    "prettier-plugin-packagejson": "~2.2.7"
+    "prettier-plugin-packagejson": "~2.2.7",
+    "rimraf": "~3.0.2"
   },
   "peerDependencies": {
     "mocha": "~8.2.0"
