@@ -12,7 +12,7 @@ describe("FlagLoader", function () {
 
     const store = await makeStore(flags);
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       environment: "production",
     });
   });
@@ -25,7 +25,7 @@ describe("FlagLoader", function () {
 
     const store = await makeStore(flags);
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       env: "production",
       environment: "production",
     });

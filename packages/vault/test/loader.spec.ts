@@ -32,7 +32,7 @@ describe("VaultLoader", function () {
       client,
     });
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       database: {
         host: "rds.foo.bar",
       },
@@ -50,7 +50,7 @@ describe("VaultLoader", function () {
       client,
     });
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       app_database: {
         host: "rds.foo.bar",
       },
@@ -70,7 +70,7 @@ describe("VaultLoader", function () {
       client,
     });
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       DATABASE: {
         host: "rds.foo.bar",
       },
@@ -91,7 +91,7 @@ describe("VaultLoader", function () {
       client,
     });
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       APP_DATABASE: {
         host: "rds.foo.bar",
       },
@@ -120,7 +120,7 @@ describe("VaultLoader", function () {
       [fileLoader],
     );
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       name: "foo",
       database: {
         host: "rds.foo.bar",
@@ -163,7 +163,7 @@ describe("VaultLoader", function () {
       client,
     });
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       database: {
         host: "rds.foo.bar",
       },

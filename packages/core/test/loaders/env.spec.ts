@@ -20,7 +20,7 @@ describe("EnvLoader", function () {
   it("loads all the environment variables when initialized with no options", async function () {
     const store = await makeStore();
 
-    expect(store.value()).to.include({
+    expect(store.toJSON()).to.include({
       PORT: "5000",
       NAME: "my-app",
       MY_APP_NAME: "my-app",
@@ -33,7 +33,7 @@ describe("EnvLoader", function () {
       vars: ["PORT", "NAME"],
     });
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       PORT: "5000",
       NAME: "my-app",
     });
@@ -53,7 +53,7 @@ describe("EnvLoader", function () {
       vars: ["NOT_A_THING"],
     });
 
-    expect(store.value()).to.eql({});
+    expect(store.toJSON()).to.eql({});
   });
 
   it("matches environment variables matching the given regexp (string)", async function () {
@@ -61,7 +61,7 @@ describe("EnvLoader", function () {
       regExp: "^MY_APP",
     });
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       MY_APP_NAME: "my-app",
     });
   });
@@ -71,7 +71,7 @@ describe("EnvLoader", function () {
       regExp: new RegExp(/^MY_APP/),
     });
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       MY_APP_NAME: "my-app",
     });
   });
@@ -85,7 +85,7 @@ describe("EnvLoader", function () {
       },
     });
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       my_app_name: "my-app",
     });
   });
@@ -99,7 +99,7 @@ describe("EnvLoader", function () {
       vars: ["PORT", "NAME"],
     });
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       myAppPort: "5000",
       myAppName: "my-app",
     });

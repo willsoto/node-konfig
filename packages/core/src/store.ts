@@ -1,4 +1,3 @@
-import get from "lodash.get";
 import set from "lodash.set";
 import { Loader } from "./loaders";
 
@@ -8,10 +7,16 @@ interface StoreOptions {
 
 type Config = Record<string, unknown>;
 
-export class Store {
-  readonly options: StoreOptions;
+export class Store<TConfig extends Config = Record<string, unknown>> {
+  readonly options: Required<StoreOptions>;
 
-  private config: Config = {};
+  // Without the type assertion, I get TS error 2322:
+  //// Type '{}' is not assignable to type 'TConfig'.
+  //// '{}' is assignable to the constraint of type 'TConfig',
+  //// but 'TConfig' could be instantiated with a different subtype
+  //// of constraint 'Record<string, unknown>'.
+  // I don't know how to fix it though...
+  private config: TConfig = {} as TConfig;
   private loaders: Loader[] = [];
 
   constructor(options: StoreOptions = {}) {
@@ -21,8 +26,22 @@ export class Store {
     };
   }
 
-  get<T>(key: string): T {
-    return get(this.config, key) as T;
+  get<T>(accessor: string): T {
+    const path = accessor.split(".");
+    let current: Config | unknown = this.config;
+    let index = 0;
+
+    while (index < path.length && current !== undefined) {
+      const key = path[index++];
+
+      if (current instanceof Store) {
+        current = current.get(key);
+      } else if (typeof current === "object" && current !== null) {
+        current = (current as Record<string, unknown>)[key];
+      }
+    }
+
+    return current as T;
   }
 
   set(key: string, value: unknown): void {
@@ -33,11 +52,13 @@ export class Store {
     this.loaders.push(loader);
   }
 
-  assign(config: Config): void {
+  assign(config: Config): this {
     this.config = {
       ...this.config,
       ...config,
     };
+
+    return this;
   }
 
   async init(): Promise<void> {
@@ -46,7 +67,41 @@ export class Store {
     }
   }
 
-  value(): Record<string, unknown> {
-    return this.config;
+  toJSON(): Record<string, unknown> {
+    return Object.entries(this.config).reduce((accumlator, current) => {
+      const [key, value] = current;
+
+      if (value instanceof Store) {
+        return {
+          ...accumlator,
+          [key]: value.toJSON(),
+        };
+      }
+
+      return {
+        ...accumlator,
+        [key]: value,
+      };
+    }, {});
+  }
+
+  group(name: string): Store {
+    const group = this.get<Store | undefined>(name);
+
+    if (group instanceof Store && group.name === name) {
+      return group;
+    }
+
+    const store = new Store({
+      name,
+    });
+
+    this.set(name, store);
+
+    return store;
+  }
+
+  get name(): string {
+    return this.options.name;
   }
 }

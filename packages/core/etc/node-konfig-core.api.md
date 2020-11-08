@@ -92,7 +92,7 @@ export class Store {
     // (undocumented)
     set(key: string, value: unknown): void;
     // (undocumented)
-    value(): Record<string, unknown>;
+    toJSON(): Record<string, unknown>;
 }
 
 

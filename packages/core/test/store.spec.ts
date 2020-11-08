@@ -6,7 +6,7 @@ describe("Store", function () {
   it("can load multiple configs and merge their results", async function () {
     const store = await makeStore();
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       // "bar" should win out here since it was loaded last
       name: "bar",
       database: {
@@ -28,6 +28,121 @@ describe("Store", function () {
     store.set("name", "baz");
 
     expect(store.get("name")).to.eql("baz");
+  });
+
+  describe("Groups", function () {
+    it("can define new groups and access their values", async function () {
+      const store = await makeStore();
+      store.group("redis").assign({
+        host: "localhost",
+        port: 6379,
+      });
+
+      expect(store.group("redis").get("host")).to.eql("localhost");
+    });
+
+    it("can define new groups with their own loaders", async function () {
+      const store = await makeStore();
+      const group = store.group("redis");
+
+      group.registerLoader(
+        new Konfig.FileLoader({
+          files: [
+            {
+              path: path.join(__dirname, "configs", "config3.json"),
+              parser: new Konfig.JSONParser(),
+            },
+          ],
+        }),
+      );
+
+      await group.init();
+
+      expect(store.group("redis").toJSON()).to.eql({
+        host: "localhost",
+        port: 6379,
+      });
+    });
+
+    it("correctly serializes groups within a store", async function () {
+      const store = await makeStore();
+      const parser = new Konfig.JSONParser();
+
+      store.registerLoader(
+        new Konfig.FileLoader({
+          files: [
+            {
+              path: path.join(__dirname, "configs", "config.json"),
+              parser,
+            },
+          ],
+        }),
+      );
+
+      await store.init();
+
+      const group = store.group("redis");
+
+      group.registerLoader(
+        new Konfig.FileLoader({
+          files: [
+            {
+              path: path.join(__dirname, "configs", "config3.json"),
+              parser,
+            },
+          ],
+        }),
+      );
+
+      await group.init();
+
+      expect(store.toJSON()).to.eql({
+        name: "foo",
+        database: {
+          host: "localhost",
+        },
+        redis: {
+          host: "localhost",
+          port: 6379,
+        },
+      });
+    });
+
+    it("can access values via #get even through groups", async function () {
+      const store = await makeStore();
+      const parser = new Konfig.JSONParser();
+
+      store.registerLoader(
+        new Konfig.FileLoader({
+          files: [
+            {
+              path: path.join(__dirname, "configs", "config.json"),
+              parser,
+            },
+          ],
+        }),
+      );
+
+      await store.init();
+
+      const group = store.group("redis");
+
+      group.registerLoader(
+        new Konfig.FileLoader({
+          files: [
+            {
+              path: path.join(__dirname, "configs", "config3.json"),
+              parser,
+            },
+          ],
+        }),
+      );
+
+      await group.init();
+
+      expect(store.get("redis.host")).to.eql("localhost");
+      expect(store.get("redis.port")).to.eql(6379);
+    });
   });
 });
 

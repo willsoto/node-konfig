@@ -25,7 +25,7 @@ describe("FileLoader", function () {
       ],
     });
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       // "bar" should win out here since it was loaded last
       name: "bar",
       database: {
@@ -65,7 +65,7 @@ describe("FileLoader", function () {
     };
     const store = await makeStore(options);
 
-    expect(store.value()).to.eql({
+    expect(store.toJSON()).to.eql({
       // bar is the only value that was loaded successfully
       name: "bar",
     });
