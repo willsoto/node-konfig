@@ -65,3 +65,4 @@ common/autoinstallers/*/.npmrc
 **/.rush/temp/
 
 dist
+temp

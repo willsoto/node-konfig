@@ -4,8 +4,12 @@
 
 ```ts
 
+import { Argv } from 'yargs';
+import { RetryPolicy } from 'cockatiel';
+import yaml from 'js-yaml';
+
 // @public
-export class EnvLoader implements Loader {
+export class EnvLoader extends Loader {
     constructor(options?: EnvLoaderOptions);
     // (undocumented)
     load(store: Store): void;
@@ -16,7 +20,7 @@ export class EnvLoader implements Loader {
     }
 
 // @public (undocumented)
-export interface EnvLoaderOptions {
+export interface EnvLoaderOptions extends LoaderOptions {
     // (undocumented)
     arraySeparator?: string;
     // (undocumented)
@@ -30,7 +34,7 @@ export interface EnvLoaderOptions {
 }
 
 // @public (undocumented)
-export class FileLoader implements Loader {
+export class FileLoader extends Loader {
     constructor(options: FileLoaderOptions);
     // (undocumented)
     load(store: Store): Promise<void>;
@@ -38,14 +42,33 @@ export class FileLoader implements Loader {
     name: string;
     // (undocumented)
     readonly options: FileLoaderOptions;
+    // (undocumented)
+    processFiles(store: Store): Promise<void>;
 }
 
 // @public (undocumented)
-export interface FileLoaderOptions {
+export interface FileLoaderOptions extends LoaderOptions {
     // Warning: (ae-forgotten-export) The symbol "File" needs to be exported by the entry point index.d.ts
     //
     // (undocumented)
     files: File[];
+}
+
+// @public (undocumented)
+export class FlagLoader extends Loader {
+    constructor(options: FlagLoaderOptions);
+    // (undocumented)
+    load(store: Store): void | Promise<void>;
+    // (undocumented)
+    name: string;
+    // (undocumented)
+    readonly options: FlagLoaderOptions;
+}
+
+// @public (undocumented)
+export interface FlagLoaderOptions extends LoaderOptions {
+    // (undocumented)
+    flags: Argv["argv"];
 }
 
 // @public (undocumented)
@@ -57,11 +80,30 @@ export class JSONParser implements Parser {
 }
 
 // @public (undocumented)
-export interface Loader {
+export abstract class Loader {
+    constructor(options: LoaderOptions);
     // (undocumented)
-    load(store: Store): void | Promise<void>;
+    abstract load(store: Store): void | Promise<void>;
+    // (undocumented)
+    maxRetries: number;
     // (undocumented)
     name: string;
+    // (undocumented)
+    retryDelay: number;
+    // (undocumented)
+    protected get retryPolicy(): RetryPolicy;
+    // (undocumented)
+    stopOnFailure: boolean;
+}
+
+// @public (undocumented)
+export interface LoaderOptions {
+    // (undocumented)
+    maxRetries?: number;
+    // (undocumented)
+    retryDelay?: number;
+    // (undocumented)
+    stopOnFailure?: boolean;
 }
 
 // @public (undocumented)
@@ -72,21 +114,25 @@ export interface Parser {
     parse(contents: string): Record<string, unknown>;
 }
 
+// Warning: (ae-forgotten-export) The symbol "Config" needs to be exported by the entry point index.d.ts
+//
 // @public (undocumented)
-export class Store {
+export class Store<TConfig extends Config = Record<string, unknown>> {
     constructor(options?: StoreOptions);
-    // Warning: (ae-forgotten-export) The symbol "Config" needs to be exported by the entry point index.d.ts
-    //
     // (undocumented)
-    assign(config: Config): void;
+    assign(config: Config): this;
     // (undocumented)
-    get<T>(key: string): T;
+    get<T>(accessor: string): T;
+    // (undocumented)
+    group(name: string): Store;
     // (undocumented)
     init(): Promise<void>;
+    // (undocumented)
+    get name(): string;
     // Warning: (ae-forgotten-export) The symbol "StoreOptions" needs to be exported by the entry point index.d.ts
     //
     // (undocumented)
-    readonly options: StoreOptions;
+    readonly options: Required<StoreOptions>;
     // (undocumented)
     registerLoader(loader: Loader): void;
     // (undocumented)
@@ -94,6 +140,23 @@ export class Store {
     // (undocumented)
     toJSON(): Record<string, unknown>;
 }
+
+// @public (undocumented)
+export class TOMLParser implements Parser {
+    // (undocumented)
+    name: string;
+    // (undocumented)
+    parse(contents: string): Record<string, unknown>;
+}
+
+// @public (undocumented)
+export class YAMLParser implements Parser {
+    constructor(yamlLoadOptions?: yaml.LoadOptions);
+    // (undocumented)
+    name: string;
+    // (undocumented)
+    parse(contents: string): Record<string, unknown>;
+    }
 
 
 // (No @packageDocumentation comment for this package)

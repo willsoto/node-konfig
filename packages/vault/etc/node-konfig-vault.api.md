@@ -5,11 +5,12 @@
 ```ts
 
 import { Loader } from '@willsoto/node-konfig-core';
+import { LoaderOptions } from '@willsoto/node-konfig-core';
 import * as NodeVault from 'node-vault';
 import { Store } from '@willsoto/node-konfig-core';
 
 // @public (undocumented)
-export class VaultLoader implements Loader {
+export class VaultLoader extends Loader {
     constructor(options: VaultLoaderOptions);
     // (undocumented)
     readonly client: NodeVault.client;
@@ -19,10 +20,12 @@ export class VaultLoader implements Loader {
     name: string;
     // (undocumented)
     readonly options: VaultLoaderOptions;
+    // (undocumented)
+    processSecrets(store: Store): Promise<void>;
 }
 
 // @public (undocumented)
-export interface VaultLoaderOptions {
+export interface VaultLoaderOptions extends LoaderOptions {
     // (undocumented)
     client: NodeVault.client;
     // Warning: (ae-forgotten-export) The symbol "Secret" needs to be exported by the entry point index.d.ts
