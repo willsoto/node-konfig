@@ -44,7 +44,7 @@ export class VaultLoader extends Loader {
         const { data } = response.data;
 
         Object.entries(data).forEach(([key, value]) => {
-          this.processSecret(store, secret, key, value);
+          this.postLoad(store, secret, key, value);
         });
       } catch (error) {
         if (this.stopOnFailure) {
@@ -54,12 +54,7 @@ export class VaultLoader extends Loader {
     }
   }
 
-  private processSecret(
-    store: Store,
-    secret: Secret,
-    key: string,
-    value: unknown,
-  ) {
+  private postLoad(store: Store, secret: Secret, key: string, value: unknown) {
     if (secret.prefix) {
       key = `${secret.prefix}${key}`;
     }

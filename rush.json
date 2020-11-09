@@ -31,6 +31,10 @@
       "projectFolder": "packages/vault"
     },
     {
+      "packageName": "@willsoto/node-konfig-consul",
+      "projectFolder": "packages/consul"
+    },
+    {
       "packageName": "@node-konfig-tools/mocha",
       "projectFolder": "tools/mocha",
       "reviewCategory": "tools",
