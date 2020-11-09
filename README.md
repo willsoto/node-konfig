@@ -44,7 +44,7 @@ const loader = new Konfig.FileLoader({
       parser,
     },
   ],
-}),
+});
 
 // Make sure the loader is registered on the store in order for it to be processed.
 store.registerLoader(loader);
