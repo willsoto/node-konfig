@@ -13,10 +13,8 @@
     "prebuild": "npm run clean",
     "build": "tsc --project tsconfig.build.json",
     "clean": "rimraf dist coverage .nyc_output docs temp",
-    "predocs": "npm run build",
-    "docs": "api-extractor run --local --verbose",
-    "postdocs": "api-documenter markdown --input-folder temp --output-folder docs",
     "lint": "eslint . --ext ts,js --fix",
+    "predocs": "npm run build",
     "test": "mocha",
     "pretest:cov": "rimraf coverage .nyc_output",
     "test:cov": "nyc mocha",
@@ -29,8 +27,6 @@
     ]
   },
   "devDependencies": {
-    "@microsoft/api-documenter": "~7.9.15",
-    "@microsoft/api-extractor": "~7.10.4",
     "@node-konfig-tools/eslint": "workspace:*",
     "@node-konfig-tools/mocha": "workspace:*",
     "@node-konfig-tools/nyc": "workspace:*",

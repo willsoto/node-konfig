@@ -150,14 +150,6 @@
     },
     {
       "commandKind": "bulk",
-      "name": "docs",
-      "summary": "Generate all documentation",
-      "description": "Generate all documentation",
-      "enableParallelism": true,
-      "ignoreMissingScript": true
-    },
-    {
-      "commandKind": "bulk",
       "name": "lint",
       "summary": "Lint everything",
       "description": "Lint everything",

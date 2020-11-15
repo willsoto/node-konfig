@@ -3,18 +3,16 @@ importers:
     specifiers: {}
   ../../packages/consul:
     devDependencies:
-      '@microsoft/api-documenter': 7.9.26
-      '@microsoft/api-extractor': 7.10.6
       '@node-konfig-tools/eslint': 'link:../../tools/eslint'
       '@node-konfig-tools/mocha': 'link:../../tools/mocha'
       '@node-konfig-tools/nyc': 'link:../../tools/nyc'
-      '@rushstack/eslint-config': 2.3.0_eslint@7.12.1+typescript@4.0.5
+      '@rushstack/eslint-config': 2.3.1_eslint@7.12.1+typescript@4.0.5
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
       '@types/consul': 0.23.34
       '@types/lodash': 4.14.165
-      '@types/mocha': 8.0.3
-      '@types/node': 14.14.6
+      '@types/mocha': 8.0.4
+      '@types/node': 14.14.7
       '@types/sinon': 9.0.8
       '@types/sinon-chai': 3.2.5
       '@types/yargs': 15.0.9
@@ -27,8 +25,6 @@ importers:
       rimraf: 3.0.2
       typescript: 4.0.5
     specifiers:
-      '@microsoft/api-documenter': ~7.9.15
-      '@microsoft/api-extractor': ~7.10.4
       '@node-konfig-tools/eslint': 'workspace:*'
       '@node-konfig-tools/mocha': 'workspace:*'
       '@node-konfig-tools/nyc': 'workspace:*'
@@ -58,19 +54,17 @@ importers:
       toml: 3.0.0
       yargs: 16.1.0
     devDependencies:
-      '@microsoft/api-documenter': 7.9.26
-      '@microsoft/api-extractor': 7.10.6
       '@node-konfig-tools/eslint': 'link:../../tools/eslint'
       '@node-konfig-tools/mocha': 'link:../../tools/mocha'
       '@node-konfig-tools/nyc': 'link:../../tools/nyc'
-      '@rushstack/eslint-config': 2.3.0_eslint@7.12.1+typescript@4.0.5
+      '@rushstack/eslint-config': 2.3.1_eslint@7.12.1+typescript@4.0.5
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
       '@types/js-yaml': 3.12.5
       '@types/lodash': 4.14.165
       '@types/lodash.set': 4.3.6
-      '@types/mocha': 8.0.3
-      '@types/node': 14.14.6
+      '@types/mocha': 8.0.4
+      '@types/node': 14.14.7
       '@types/sinon': 9.0.8
       '@types/sinon-chai': 3.2.5
       '@types/yargs': 15.0.9
@@ -81,8 +75,6 @@ importers:
       rimraf: 3.0.2
       typescript: 4.0.5
     specifiers:
-      '@microsoft/api-documenter': ~7.9.15
-      '@microsoft/api-extractor': ~7.10.4
       '@node-konfig-tools/eslint': 'workspace:*'
       '@node-konfig-tools/mocha': 'workspace:*'
       '@node-konfig-tools/nyc': 'workspace:*'
@@ -110,18 +102,16 @@ importers:
       yargs: ~16.1.0
   ../../packages/http:
     devDependencies:
-      '@microsoft/api-documenter': 7.9.26
-      '@microsoft/api-extractor': 7.10.6
       '@node-konfig-tools/eslint': 'link:../../tools/eslint'
       '@node-konfig-tools/mocha': 'link:../../tools/mocha'
       '@node-konfig-tools/nyc': 'link:../../tools/nyc'
-      '@rushstack/eslint-config': 2.3.0_eslint@7.12.1+typescript@4.0.5
+      '@rushstack/eslint-config': 2.3.1_eslint@7.12.1+typescript@4.0.5
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
       '@types/consul': 0.23.34
       '@types/lodash': 4.14.165
-      '@types/mocha': 8.0.3
-      '@types/node': 14.14.6
+      '@types/mocha': 8.0.4
+      '@types/node': 14.14.7
       '@types/sinon': 9.0.8
       '@types/sinon-chai': 3.2.5
       '@types/yargs': 15.0.9
@@ -135,8 +125,6 @@ importers:
       rimraf: 3.0.2
       typescript: 4.0.5
     specifiers:
-      '@microsoft/api-documenter': ~7.9.15
-      '@microsoft/api-extractor': ~7.10.4
       '@node-konfig-tools/eslint': 'workspace:*'
       '@node-konfig-tools/mocha': 'workspace:*'
       '@node-konfig-tools/nyc': 'workspace:*'
@@ -161,17 +149,15 @@ importers:
       typescript: ~4.0.3
   ../../packages/vault:
     devDependencies:
-      '@microsoft/api-documenter': 7.9.26
-      '@microsoft/api-extractor': 7.10.6
       '@node-konfig-tools/eslint': 'link:../../tools/eslint'
       '@node-konfig-tools/mocha': 'link:../../tools/mocha'
       '@node-konfig-tools/nyc': 'link:../../tools/nyc'
-      '@rushstack/eslint-config': 2.3.0_eslint@7.12.1+typescript@4.0.5
+      '@rushstack/eslint-config': 2.3.1_eslint@7.12.1+typescript@4.0.5
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
       '@types/lodash': 4.14.165
-      '@types/mocha': 8.0.3
-      '@types/node': 14.14.6
+      '@types/mocha': 8.0.4
+      '@types/node': 14.14.7
       '@types/sinon': 9.0.8
       '@types/sinon-chai': 3.2.5
       '@types/yargs': 15.0.9
@@ -184,8 +170,6 @@ importers:
       rimraf: 3.0.2
       typescript: 4.0.5
     specifiers:
-      '@microsoft/api-documenter': ~7.9.15
-      '@microsoft/api-extractor': ~7.10.4
       '@node-konfig-tools/eslint': 'workspace:*'
       '@node-konfig-tools/mocha': 'workspace:*'
       '@node-konfig-tools/nyc': 'workspace:*'
@@ -239,8 +223,8 @@ importers:
     devDependencies:
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
-      '@types/mocha': 8.0.3
-      '@types/node': 14.14.6
+      '@types/mocha': 8.0.4
+      '@types/node': 14.14.7
       '@types/sinon': 9.0.8
       '@types/sinon-chai': 3.2.5
       mocha: 8.2.1
@@ -307,7 +291,7 @@ packages:
       gensync: 1.0.0-beta.2
       json5: 2.1.3
       lodash: 4.17.20
-      resolve: 1.18.1
+      resolve: 1.19.0
       semver: 5.7.1
       source-map: 0.5.7
     dev: true
@@ -494,50 +478,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
-  /@microsoft/api-documenter/7.9.26:
-    dependencies:
-      '@microsoft/api-extractor-model': 7.10.8
-      '@microsoft/tsdoc': 0.12.19
-      '@rushstack/node-core-library': 3.34.7
-      '@rushstack/ts-command-line': 4.7.6
-      colors: 1.2.5
-      js-yaml: 3.13.1
-      resolve: 1.17.0
-    dev: true
-    hasBin: true
-    resolution:
-      integrity: sha512-aJs/1qQQRpPq57KDJQ27CqLfDyt91blvaldovcIivnCP/VdXPDSZgZczuuYPONao85hjhDPXQOSRPTShGk4QYw==
-  /@microsoft/api-extractor-model/7.10.5:
-    dependencies:
-      '@microsoft/tsdoc': 0.12.19
-      '@rushstack/node-core-library': 3.34.5
-    dev: true
-    resolution:
-      integrity: sha512-ZDZ0wuD0d6mIddBuriLTyeCm5cjCR+VL6hla9D0uICdXimY3OoL838MYDZ+UkOLLR9z2GwNxciczRTIrjdQ0oA==
-  /@microsoft/api-extractor-model/7.10.8:
-    dependencies:
-      '@microsoft/tsdoc': 0.12.19
-      '@rushstack/node-core-library': 3.34.7
-    dev: true
-    resolution:
-      integrity: sha512-9TfiCTPnkUeLaYywZeg9rYbVPX9Tj6AAkO6ThnjSE0tTPLjMcL3RiHkqn0BJ4+aGcl56APwo32zj5+kG+NqxYA==
-  /@microsoft/api-extractor/7.10.6:
-    dependencies:
-      '@microsoft/api-extractor-model': 7.10.5
-      '@microsoft/tsdoc': 0.12.19
-      '@rushstack/node-core-library': 3.34.5
-      '@rushstack/rig-package': 0.2.5
-      '@rushstack/ts-command-line': 4.7.4
-      colors: 1.2.5
-      lodash: 4.17.20
-      resolve: 1.17.0
-      semver: 7.3.2
-      source-map: 0.6.1
-      typescript: 3.9.7
-    dev: true
-    hasBin: true
-    resolution:
-      integrity: sha512-3/c5znYqn8ewJPgf4t5MsIKYq40ORMsToaoAamuqYCCt3mWfDjvArRuosnLl7mLYAs6SbkxPCwh6vEczlZx8Tw==
   /@microsoft/tsdoc-config/0.13.6:
     dependencies:
       '@microsoft/tsdoc': 0.12.21
@@ -547,10 +487,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-VJjV35PnrNISoX2WMemZjnCIdOUPTRpCz6pu8inISotLd3SgoDSJygGaE7+lOYdCtDl+4c8PWJdZivxxXgOnLw==
-  /@microsoft/tsdoc/0.12.19:
-    dev: true
-    resolution:
-      integrity: sha512-IpgPxHrNxZiMNUSXqR1l/gePKPkfAmIKoDRP9hp7OwjU29ZR8WCJsOJ8iBKgw0Qk+pFwR+8Y1cy8ImLY6e9m4A==
   /@microsoft/tsdoc/0.12.21:
     dev: true
     resolution:
@@ -576,11 +512,11 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-1V9XOY4rDW0rehzbrcqAmHnz8e7SKvX27gh8Gt2WgB0+pdzdiLV83p72kZPU+jvMbS1qU5mauP2iOvO8rhmurQ==
-  /@rushstack/eslint-config/2.3.0_eslint@7.12.1+typescript@4.0.5:
+  /@rushstack/eslint-config/2.3.1_eslint@7.12.1+typescript@4.0.5:
     dependencies:
       '@rushstack/eslint-patch': 1.0.6
       '@rushstack/eslint-plugin': 0.7.2_eslint@7.12.1
-      '@rushstack/eslint-plugin-packlets': 0.1.2_eslint@7.12.1
+      '@rushstack/eslint-plugin-packlets': 0.2.0_eslint@7.12.1
       '@rushstack/eslint-plugin-security': 0.1.3_eslint@7.12.1
       '@typescript-eslint/eslint-plugin': 3.4.0_36af16c13f0ff9326de24fccdd5e2d00
       '@typescript-eslint/experimental-utils': 3.4.0_eslint@7.12.1+typescript@4.0.5
@@ -596,12 +532,12 @@ packages:
       eslint: ^6.0.0 || ^7.0.0
       typescript: '>=3.0.0'
     resolution:
-      integrity: sha512-50C/jo9ndYceUMUnWWrPoATAqA2kkoyJCp/2faOBoiYxYJUvfKt2YbIPsMxZfjW4+37XxcB/LmiiE5UFdlTp3Q==
+      integrity: sha512-kWFYse8uZ2unO+fvItHJh06H1Tn1Y8SZr4wZ4uhqui5ewHJfm9RWiDZixIbIfqgBiYrz4iGauaJoTPaaGUBIJQ==
   /@rushstack/eslint-patch/1.0.6:
     dev: true
     resolution:
       integrity: sha512-Myxw//kzromB9yWgS8qYGuGVf91oBUUJpNvy5eM50sqvmKLbKjwLxohJnkWGTeeI9v9IBMtPLxz5Gc60FIfvCA==
-  /@rushstack/eslint-plugin-packlets/0.1.2_eslint@7.12.1:
+  /@rushstack/eslint-plugin-packlets/0.2.0_eslint@7.12.1:
     dependencies:
       '@rushstack/tree-pattern': 0.2.1
       eslint: 7.12.1
@@ -609,7 +545,7 @@ packages:
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0
     resolution:
-      integrity: sha512-lwbw7dw/iGujOweJf0kicDcfmBASJt0A/QGDvb0X3fdMQUHnXDxmoy3UD0V//m4TGigcg1kLTsSX5F0uozApvA==
+      integrity: sha512-Xu86pNDrItfoF1W0bxTb7QakZzDuzinKDWL2Tzh836M8R9JZUfqTXR3Wav9Dzo1ZA8GNz9qPirfDo7EhlKVVhQ==
   /@rushstack/eslint-plugin-security/0.1.3_eslint@7.12.1:
     dependencies:
       '@rushstack/tree-pattern': 0.2.1
@@ -628,64 +564,10 @@ packages:
       eslint: ^6.0.0 || ^7.0.0
     resolution:
       integrity: sha512-gLvv4Yysv/VSqoa97x8b1dJvQS8v3qUYRU2NgKOPQjesE6La/AF/FCUenq5VcXiCbvkiW3hQQKHCnO0BXEyolw==
-  /@rushstack/node-core-library/3.34.5:
-    dependencies:
-      '@types/node': 10.17.13
-      colors: 1.2.5
-      fs-extra: 7.0.1
-      import-lazy: 4.0.0
-      jju: 1.4.0
-      resolve: 1.17.0
-      semver: 7.3.2
-      timsort: 0.3.0
-      z-schema: 3.18.4
-    dev: true
-    resolution:
-      integrity: sha512-mbJxkrmtcIYH0DPVwPdt6RY27GUbIWG+5/6LPj3SJCF/TA45L0n7AL6cN90PrzdOUWOQV+41vxluLVcY9Ak3aw==
-  /@rushstack/node-core-library/3.34.7:
-    dependencies:
-      '@types/node': 10.17.13
-      colors: 1.2.5
-      fs-extra: 7.0.1
-      import-lazy: 4.0.0
-      jju: 1.4.0
-      resolve: 1.17.0
-      semver: 7.3.2
-      timsort: 0.3.0
-      z-schema: 3.18.4
-    dev: true
-    resolution:
-      integrity: sha512-7FwJ0jmZsh7bDIZ1IqDNphY9Kc6aAi1D2K8jiq+da4flMyL84HNeq2KxvwFLzjLwu3eMr88X+oBpgxCTD5Y57Q==
-  /@rushstack/rig-package/0.2.5:
-    dependencies:
-      '@types/node': 10.17.13
-      resolve: 1.17.0
-      strip-json-comments: 3.1.1
-    dev: true
-    resolution:
-      integrity: sha512-8f/NVb1BO5ZJPKTFVqsEikbznnY5qxOLoqayux5OaqxTyGY8YG3d7xqHJSKMUJhIUhSzgwVjT2WNNipD2/S7sw==
   /@rushstack/tree-pattern/0.2.1:
     dev: true
     resolution:
       integrity: sha512-ZRPQdV0LxUY/HRIvVKNz3Sb/qbklSthL2pY0qkNoycXKcXbCgXEP3TxL+i1/tW9g1jqft4o+pl9wx12Q6Uc0Xw==
-  /@rushstack/ts-command-line/4.7.4:
-    dependencies:
-      '@types/argparse': 1.0.38
-      argparse: 1.0.10
-      colors: 1.2.5
-      string-argv: 0.3.1
-    dev: true
-    resolution:
-      integrity: sha512-x2ZQjE5ss5nnGRceAIRe16VNZNFoS4v/RJH9+Em/yYOIwPJr0TZ93xTXQQE2uQVTgBBw06I/BUOdfMpJK/vDUQ==
-  /@rushstack/ts-command-line/4.7.6:
-    dependencies:
-      '@types/argparse': 1.0.38
-      argparse: 1.0.10
-      colors: 1.2.5
-      string-argv: 0.3.1
-    dev: true
-    resolution:
-      integrity: sha512-falJVNfpJtsL3gJaY77JXXycfzhzB9VkKhqEfjRWD69/f6ezMUorPR6Nc90MnIaWgePTcdTJPZibxOQrNpu1Uw==
   /@sindresorhus/is/4.0.0:
     dev: true
     engines:
@@ -731,15 +613,11 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-PyRA9sm1Yayuj5OIoJ1hGt2YISX45w9WcFbh6ddT0Z/0yaFxOtGLInr4jUfU1EAFVs0Yfyfev4RNwBlUaHdlDQ==
-  /@types/argparse/1.0.38:
-    dev: true
-    resolution:
-      integrity: sha512-ebDJ9b0e702Yr7pWgB0jzm+CX4Srzz8RcXtLJDJB+BSccqMa36uyH/zUsSYao5+BD1ytv3k3rPYCq4mAE1hsXA==
   /@types/cacheable-request/6.0.1:
     dependencies:
       '@types/http-cache-semantics': 4.0.0
       '@types/keyv': 3.1.1
-      '@types/node': 14.14.6
+      '@types/node': 14.14.7
       '@types/responselike': 1.0.0
     dev: true
     resolution:
@@ -756,7 +634,7 @@ packages:
       integrity: sha512-G+ITQPXkwTrslfG5L/BksmbLUA0M1iybEsmCWPqzSxsRRhJZimBKJkoMi8fr/CPygPTj4zO5pJH7I2/cm9M7SQ==
   /@types/consul/0.23.34:
     dependencies:
-      '@types/node': 14.14.6
+      '@types/node': 14.14.7
     dev: true
     resolution:
       integrity: sha512-8h+W+TPuqhXQD/dYj3hThy2qQAFRGSe5NKTJ3c9Xd8/OceNEyYG1ys+BAT2OlEWRpsvqbL6H9LRhoHij3vECIg==
@@ -767,7 +645,7 @@ packages:
   /@types/glob/7.1.3:
     dependencies:
       '@types/minimatch': 3.0.3
-      '@types/node': 14.14.6
+      '@types/node': 14.14.7
     dev: true
     resolution:
       integrity: sha512-SEYeGAIQIQX8NN6LDKprLjbrd5dARM5EXsd8GI/A5l0apYI1fGMWgPHSe4ZKL4eozlAyI+doUE9XbYS4xCkQ1w==
@@ -784,7 +662,7 @@ packages:
       integrity: sha512-3c+yGKvVP5Y9TYBEibGNR+kLtijnj7mYrXRg+WpFb2X9xm04g/DXYkfg4hmzJQosc9snFNUPkbYIhu+KAm6jJw==
   /@types/keyv/3.1.1:
     dependencies:
-      '@types/node': 14.14.6
+      '@types/node': 14.14.7
     dev: true
     resolution:
       integrity: sha512-MPtoySlAZQ37VoLaPcTHCu1RWJ4llDkULYZIzOYxlhxBqYPB0RsRlmMU0R6tahtFe27mIdkHV+551ZWV4PLmVw==
@@ -802,21 +680,17 @@ packages:
     dev: true
     resolution:
       integrity: sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
-  /@types/mocha/8.0.3:
+  /@types/mocha/8.0.4:
     dev: true
     resolution:
-      integrity: sha512-vyxR57nv8NfcU0GZu8EUXZLTbCMupIUwy95LJ6lllN+JRPG25CwMHoB1q5xKh8YKhQnHYRAn4yW2yuHbf/5xgg==
-  /@types/node/10.17.13:
+      integrity: sha512-M4BwiTJjHmLq6kjON7ZoI2JMlBvpY3BYSdiP6s/qCT3jb1s9/DeJF0JELpAxiVSIxXDzfNKe+r7yedMIoLbknQ==
+  /@types/node/14.14.7:
     dev: true
     resolution:
-      integrity: sha512-pMCcqU2zT4TjqYFrWtYHKal7Sl30Ims6ulZ4UFXxI4xbtQqK/qqKwkDoBFCfooRqqmRu9vY3xaJRwxSh673aYg==
-  /@types/node/14.14.6:
-    dev: true
-    resolution:
-      integrity: sha512-6QlRuqsQ/Ox/aJEQWBEJG7A9+u7oSYl3mem/K8IzxXG/kAGbV1YPD9Bg9Zw3vyxC/YP+zONKwy8hGkSt1jxFMw==
+      integrity: sha512-Zw1vhUSQZYw+7u5dAwNbIA9TuTotpzY/OF7sJM9FqPOF3SPjKnxrjoTktXDZgUjybf4cWVBP7O8wvKdSaGHweg==
   /@types/responselike/1.0.0:
     dependencies:
-      '@types/node': 14.14.6
+      '@types/node': 14.14.7
     dev: true
     resolution:
       integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==
@@ -1360,14 +1234,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-t6wbgtoCXvAzst7QgXxJYqPt0usEfbgQdftEPbLL/cvv6HPE5VgvqCuAIDR0NgU52ds6rFwqrgakNLrHEjCbrQ==
-  /cliui/7.0.3:
+  /cliui/7.0.4:
     dependencies:
       string-width: 4.2.0
       strip-ansi: 6.0.0
       wrap-ansi: 7.0.0
     dev: false
     resolution:
-      integrity: sha512-Gj3QHTkVMPKqwP3f7B4KPkBZRMR9r4rfi5bXFpg1a+Svvj8l7q5CnkBkVQzfxT5DFSsGk2+PascOgL0JYkL2kw==
+      integrity: sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==
   /clone-response/1.0.2:
     dependencies:
       mimic-response: 1.0.1
@@ -1398,12 +1272,6 @@ packages:
   /color-name/1.1.4:
     resolution:
       integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
-  /colors/1.2.5:
-    dev: true
-    engines:
-      node: '>=0.1.90'
-    resolution:
-      integrity: sha512-erNRLao/Y3Fv54qUa0LBB+//Uf3YwMUmdJinN20yMXm9zdKKqH9wt7R9IIVZ+K7ShzfpLV/Zg8+VyrBJYB4lpg==
   /combined-stream/1.0.8:
     dependencies:
       delayed-stream: 1.0.0
@@ -1412,11 +1280,6 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==
-  /commander/2.20.3:
-    dev: true
-    optional: true
-    resolution:
-      integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
   /commondir/1.0.1:
     dev: true
     resolution:
@@ -1721,7 +1584,7 @@ packages:
       object.fromentries: 2.0.2
       object.values: 1.1.1
       prop-types: 15.7.2
-      resolve: 1.18.1
+      resolve: 1.19.0
       string.prototype.matchall: 4.0.2
     dev: true
     engines:
@@ -1980,16 +1843,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-cHEpEQHUg0f8XdtZCc2ZAhrHzKzT0MrFUTcvx+hfxYu7rGMDc5SKoXFh+n4YigxsHXRzc6OrCshdR1bWH6HHyg==
-  /fs-extra/7.0.1:
-    dependencies:
-      graceful-fs: 4.2.4
-      jsonfile: 4.0.0
-      universalify: 0.1.2
-    dev: true
-    engines:
-      node: '>=6 <7 || >=8'
-    resolution:
-      integrity: sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
   /fs.realpath/1.0.0:
     resolution:
       integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
@@ -2248,12 +2101,6 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-cTPNrlvJT6twpYy+YmKUKrTSjWFs3bjYjAhCwm+z4EOCubZxAuO+hHpRN64TqjEaYSHs7tJAE0w1CKMGmsG/lw==
-  /import-lazy/4.0.0:
-    dev: true
-    engines:
-      node: '>=8'
-    resolution:
-      integrity: sha512-rKtvo6a868b5Hu3heneU+L4yEQ4jYKLtjpnPeUdK7h0yzXGmyBTypknlkCvHFBqfX9YlorEiMM6Dnq/5atfHkw==
   /imurmurhash/0.1.4:
     engines:
       node: '>=0.8.19'
@@ -2473,14 +2320,6 @@ packages:
   /js-tokens/4.0.0:
     resolution:
       integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
-  /js-yaml/3.13.1:
-    dependencies:
-      argparse: 1.0.10
-      esprima: 4.0.1
-    dev: true
-    hasBin: true
-    resolution:
-      integrity: sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
   /js-yaml/3.14.0:
     dependencies:
       argparse: 1.0.10
@@ -2526,12 +2365,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-KXPvOm8K9IJKFM0bmdn8QXh7udDh1g/giieX0NLCaMnb4hEiVFqnop2ImTXCc5e0/oHz3LTqmHGtExn5hfMkOA==
-  /jsonfile/4.0.0:
-    dev: true
-    optionalDependencies:
-      graceful-fs: 4.2.4
-    resolution:
-      integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
   /jsprim/1.4.1:
     dependencies:
       assert-plus: 1.0.0
@@ -2600,12 +2433,9 @@ packages:
     resolution:
       integrity: sha1-+wMJF/hqMTTlvJvsDWngAT3f7bI=
   /lodash.get/4.4.2:
+    dev: false
     resolution:
       integrity: sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
-  /lodash.isequal/4.5.0:
-    dev: true
-    resolution:
-      integrity: sha1-QVxEePK8wwEgwizhDtMib30+GOA=
   /lodash.set/4.3.2:
     resolution:
       integrity: sha1-2HV7HagH3eJIFrDWqEvqGnYjCyM=
@@ -3277,19 +3107,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-hF6+hAPlxjqHWrw4p1rF3Wztbgxd4AjA5VlUzY5zcTb4J8D3JK4/1RjU48pHz2PJWzGVsLB1VWZkvJzhK2CCOA==
-  /resolve/1.17.0:
-    dependencies:
-      path-parse: 1.0.6
-    dev: true
-    resolution:
-      integrity: sha512-ic+7JYiV8Vi2yzQGFWOkiZD5Z9z7O2Zhm9XMaTxdJExKasieFCr+yXZ/WmXsckHiKl12ar0y6XiXDx3m4RHn1w==
-  /resolve/1.18.1:
+  /resolve/1.19.0:
     dependencies:
       is-core-module: 2.1.0
       path-parse: 1.0.6
     dev: true
     resolution:
-      integrity: sha512-lDfCPaMKfOJXjy0dPayzPdF1phampNWr3qFCjAu+rw/qbQmr5jWH5xN2hwh9QKfw9E5v4hwV7A+jrCmL8yjjqA==
+      integrity: sha512-rArEXAgsBG4UgRGcynxWIWKFvh/XZCcS8UJdHhwy91zwAvCZIbcs+vAbflgBnNjYMs/i/i+/Ux6IZhML1yPvxg==
   /responselike/2.0.0:
     dependencies:
       lowercase-keys: 2.0.0
@@ -3487,12 +3311,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
-  /string-argv/0.3.1:
-    dev: true
-    engines:
-      node: '>=0.6.19'
-    resolution:
-      integrity: sha512-a1uQGz7IyVy9YwhqjZIZu1c8JO8dNIe20xBmSS6qu9kv++k3JGzCVmprbNN5Kn+BgzD5E7YYwg1CcjuJMRNsvg==
   /string-width/2.1.1:
     dependencies:
       is-fullwidth-code-point: 2.0.0
@@ -3615,10 +3433,6 @@ packages:
   /text-table/0.2.0:
     resolution:
       integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
-  /timsort/0.3.0:
-    dev: true
-    resolution:
-      integrity: sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
   /to-fast-properties/2.0.0:
     dev: true
     engines:
@@ -3722,25 +3536,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==
-  /typescript/3.9.7:
-    dev: true
-    engines:
-      node: '>=4.2.0'
-    hasBin: true
-    resolution:
-      integrity: sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
   /typescript/4.0.5:
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
       integrity: sha512-ywmr/VrTVCmNTJ6iV2LwIrfG1P+lv6luD8sUJs+2eI9NLGigaN+nUQc13iHqisq7bra9lnmUSYqbJvegraBOPQ==
-  /universalify/0.1.2:
-    dev: true
-    engines:
-      node: '>= 4.0.0'
-    resolution:
-      integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
   /uri-js/4.4.0:
     dependencies:
       punycode: 2.1.1
@@ -3754,12 +3555,6 @@ packages:
   /v8-compile-cache/2.2.0:
     resolution:
       integrity: sha512-gTpR5XQNKFwOd4clxfnhaqvfqMpqEwr4tOtCyz4MtYZX2JYhfr1JvBFKdS+7K/9rfpZR3VLX+YWBbKoxCgS43Q==
-  /validator/8.2.0:
-    dev: true
-    engines:
-      node: '>= 0.10'
-    resolution:
-      integrity: sha512-Yw5wW34fSv5spzTXNkokD6S6/Oq92d8q/t14TqsS3fAiA1RYnxSFSIZ+CY3n6PGGRCq5HhJTSepQvFUS2QUDxA==
   /verror/1.10.0:
     dependencies:
       assert-plus: 1.0.0
@@ -3872,12 +3667,12 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-o50j0JeToy/4K6OZcaQmW6lyXXKhq7csREXcDwk2omFPJEwUNOVtJKvmDr9EI1fAJZUyZcRF7kxGBWmRXudrCQ==
-  /yargs-parser/20.2.3:
+  /yargs-parser/20.2.4:
     dev: false
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-emOFRT9WVHw03QSvN5qor9QQT9+sw5vwxfYweivSMHTcAXPefwVae2FjO7JJjj8hCE4CzPOPeFM83VwT29HCww==
+      integrity: sha512-WOkpgNhPTlE73h4VFAFsOnomJVaovO8VqLDzy5saChRBFQFBoMYirowyW+Q9HB4HFF4Z7VZTiG3iSzJJA29yRA==
   /yargs-unparser/2.0.0:
     dependencies:
       camelcase: 6.2.0
@@ -3924,13 +3719,13 @@ packages:
       integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
   /yargs/16.1.0:
     dependencies:
-      cliui: 7.0.3
+      cliui: 7.0.4
       escalade: 3.1.1
       get-caller-file: 2.0.5
       require-directory: 2.1.1
       string-width: 4.2.0
       y18n: 5.0.5
-      yargs-parser: 20.2.3
+      yargs-parser: 20.2.4
     dev: false
     engines:
       node: '>=10'
@@ -3941,15 +3736,3 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
-  /z-schema/3.18.4:
-    dependencies:
-      lodash.get: 4.4.2
-      lodash.isequal: 4.5.0
-      validator: 8.2.0
-    dev: true
-    hasBin: true
-    optionalDependencies:
-      commander: 2.20.3
-    resolution:
-      integrity: sha512-DUOKC/IhbkdLKKiV89gw9DUauTV8U/8yJl1sjf6MtDmzevLKOF2duNJ495S3MFVjqZarr+qNGCPbkg4mu4PpLw==
-registry: ''
