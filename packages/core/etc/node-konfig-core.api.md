@@ -80,6 +80,11 @@ export class JSONParser implements Parser {
 }
 
 // @public (undocumented)
+export class KeyNotFoundError extends Error {
+    constructor(message?: string);
+}
+
+// @public (undocumented)
 export abstract class Loader {
     constructor(options: LoaderOptions);
     // (undocumented)

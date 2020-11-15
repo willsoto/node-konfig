@@ -35,6 +35,10 @@
       "projectFolder": "packages/consul"
     },
     {
+      "packageName": "@willsoto/node-konfig-http",
+      "projectFolder": "packages/http"
+    },
+    {
       "packageName": "@node-konfig-tools/mocha",
       "projectFolder": "tools/mocha",
       "reviewCategory": "tools",
