@@ -67,11 +67,8 @@ describe("HttpLoader", function () {
       }),
     );
 
-    // TODO: replace with something real
-    const fileLoader = new Konfig.FlagLoader({
-      flags: {
-        _: [],
-        $0: "",
+    const fileLoader = new Konfig.ValueLoader({
+      values: {
         name: "foo",
       },
     });
