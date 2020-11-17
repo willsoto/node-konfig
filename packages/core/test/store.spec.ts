@@ -143,6 +143,40 @@ describe("Store", function () {
       expect(store.get("redis.host")).to.eql("localhost");
       expect(store.get("redis.port")).to.eql(6379);
     });
+
+    it("can #set values through groups", async function () {
+      const store = new Konfig.Store();
+
+      store.registerLoader(
+        new Konfig.ValueLoader({
+          values: {
+            name: "foo",
+          },
+        }),
+      );
+
+      store.group("database").registerLoader(
+        new Konfig.ValueLoader({
+          values: {
+            host: "localhost",
+            port: 5432,
+            user: "development",
+            password: "development",
+            queryParams: {
+              ssl: false,
+            },
+          },
+        }),
+      );
+
+      await store.init();
+
+      store.set("database.user", "postgres");
+      store.set("database.queryParams.ssl", true);
+
+      expect(store.get("database.user")).to.eql("postgres");
+      expect(store.get("database.queryParams.ssl")).to.eql(true);
+    });
   });
 });
 

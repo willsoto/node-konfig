@@ -1,4 +1,4 @@
-import set from "lodash.set";
+import setWith from "lodash.setwith";
 import { Loader } from "./loaders";
 
 interface StoreOptions {
@@ -44,8 +44,12 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
     return current as T;
   }
 
-  set(key: string, value: unknown): void {
-    set(this.config, key, value);
+  set(accessor: string, value: unknown): TConfig {
+    return setWith(this.config, accessor, value, function (nsValue, key) {
+      if (nsValue instanceof Store) {
+        return nsValue.set(key, value) as TConfig;
+      }
+    });
   }
 
   registerLoader(loader: Loader): void {
