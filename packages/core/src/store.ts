@@ -8,6 +8,8 @@ interface StoreOptions {
 type Config = Record<string, unknown>;
 
 export class Store<TConfig extends Config = Record<string, unknown>> {
+  #groups: Store[] = [];
+
   readonly options: Required<StoreOptions>;
 
   // Without the type assertion, I get TS error 2322:
@@ -28,6 +30,7 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
 
   get<T>(accessor: string): T {
     const path = accessor.split(".");
+
     let current: Config | unknown = this.config;
     let index = 0;
 
@@ -41,6 +44,10 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
       }
     }
 
+    if (current instanceof Store) {
+      return current.toJSON() as T;
+    }
+
     return current as T;
   }
 
@@ -52,8 +59,10 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
     });
   }
 
-  registerLoader(loader: Loader): void {
+  registerLoader(loader: Loader): this {
     this.loaders.push(loader);
+
+    return this;
   }
 
   assign(config: Config): this {
@@ -68,6 +77,11 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
   async init(): Promise<void> {
     for (const loader of this.loaders) {
       await loader.load(this);
+    }
+
+    // Process all groups after the parent store is initialized
+    for (const group of this.#groups) {
+      await group.init();
     }
   }
 
@@ -90,19 +104,20 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
   }
 
   group(name: string): Store {
-    const group = this.get<Store | undefined>(name);
+    let group = this.#groups.find((group) => group.name === name);
 
-    if (group instanceof Store && group.name === name) {
+    if (group) {
       return group;
     }
 
-    const store = new Store({
+    group = new Store({
       name,
     });
 
-    this.set(name, store);
+    this.set(name, group);
+    this.#groups.push(group);
 
-    return store;
+    return group;
   }
 
   get name(): string {

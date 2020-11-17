@@ -32,11 +32,18 @@ describe("Store", function () {
 
   describe("Groups", function () {
     it("can define new groups and access their values", async function () {
-      const store = await makeStore();
-      store.group("redis").assign({
-        host: "localhost",
-        port: 6379,
-      });
+      const store = new Konfig.Store();
+
+      store.group("redis").registerLoader(
+        new Konfig.ValueLoader({
+          values: {
+            host: "localhost",
+            port: 6379,
+          },
+        }),
+      );
+
+      await store.init();
 
       expect(store.group("redis").get("host")).to.eql("localhost");
     });
@@ -123,11 +130,7 @@ describe("Store", function () {
         }),
       );
 
-      await store.init();
-
-      const group = store.group("redis");
-
-      group.registerLoader(
+      store.group("redis").registerLoader(
         new Konfig.FileLoader({
           files: [
             {
@@ -138,7 +141,7 @@ describe("Store", function () {
         }),
       );
 
-      await group.init();
+      await store.init();
 
       expect(store.get("redis.host")).to.eql("localhost");
       expect(store.get("redis.port")).to.eql(6379);
@@ -176,6 +179,52 @@ describe("Store", function () {
 
       expect(store.get("database.user")).to.eql("postgres");
       expect(store.get("database.queryParams.ssl")).to.eql(true);
+    });
+
+    it("initializes all groups within a store at any depth", async function () {
+      const store = new Konfig.Store();
+
+      store.registerLoader(
+        new Konfig.ValueLoader({
+          values: {
+            name: "foo",
+          },
+        }),
+      );
+
+      const databaseGroup = store.group("database").registerLoader(
+        new Konfig.ValueLoader({
+          values: {
+            host: "localhost",
+            port: 5432,
+            user: "development",
+            password: "development",
+          },
+        }),
+      );
+
+      databaseGroup.group("queryParams").registerLoader(
+        new Konfig.ValueLoader({
+          values: {
+            ssl: false,
+          },
+        }),
+      );
+
+      await store.init();
+
+      expect(store.get("database")).to.eql({
+        host: "localhost",
+        port: 5432,
+        user: "development",
+        password: "development",
+        queryParams: {
+          ssl: false,
+        },
+      });
+      expect(store.get("database.queryParams")).to.eql({
+        ssl: false,
+      });
     });
   });
 });
