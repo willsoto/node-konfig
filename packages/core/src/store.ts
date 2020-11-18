@@ -59,17 +59,26 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
     });
   }
 
+  has(accessor: string): boolean {
+    return accessor in this.config;
+  }
+
   registerLoader(loader: Loader): this {
     this.loaders.push(loader);
 
     return this;
   }
 
-  assign(config: Config): this {
-    this.config = {
-      ...this.config,
-      ...config,
-    };
+  assign(config: TConfig): this {
+    Object.keys(config).forEach((key) => {
+      const existingValue = this.config[key];
+
+      if (existingValue instanceof Store) {
+        existingValue.assign(config[key]);
+      } else {
+        this.set(key, config[key]);
+      }
+    });
 
     return this;
   }

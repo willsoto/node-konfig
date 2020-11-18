@@ -30,6 +30,64 @@ describe("Store", function () {
     expect(store.get("name")).to.eql("baz");
   });
 
+  it("can assign values in bulk while retaining any existing groups", async function () {
+    const store = new Konfig.Store();
+
+    store.registerLoader(
+      new Konfig.ValueLoader({
+        values: {
+          name: "my-app",
+        },
+      }),
+    );
+
+    store.group("database").registerLoader(
+      new Konfig.ValueLoader({
+        values: {
+          host: "localhost",
+          port: 5432,
+        },
+      }),
+    );
+
+    store.group("redis").registerLoader(
+      new Konfig.ValueLoader({
+        values: {
+          host: "localhost",
+          port: 6379,
+        },
+      }),
+    );
+
+    await store.init();
+
+    store.assign({
+      database: {
+        host: "rds",
+        port: 5432,
+      },
+    });
+
+    expect(store["config"]["database"]).to.be.instanceOf(Konfig.Store);
+    expect(store["config"]["redis"]).to.be.instanceOf(Konfig.Store);
+
+    expect(store.get("database")).to.eql({
+      host: "rds",
+      port: 5432,
+    });
+    expect(store.toJSON()).to.eql({
+      name: "my-app",
+      database: {
+        host: "rds",
+        port: 5432,
+      },
+      redis: {
+        host: "localhost",
+        port: 6379,
+      },
+    });
+  });
+
   describe("Groups", function () {
     it("can define new groups and access their values", async function () {
       const store = new Konfig.Store();
