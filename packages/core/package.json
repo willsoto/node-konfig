@@ -28,7 +28,7 @@
   "dependencies": {
     "cockatiel": "~2.0.0",
     "js-yaml": "~3.14.0",
-    "lodash.setwith": "4.3.2",
+    "lodash.setwith": "~4.3.2",
     "toml": "~3.0.0",
     "yargs": "~16.1.0"
   },

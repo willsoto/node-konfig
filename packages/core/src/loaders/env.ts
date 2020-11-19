@@ -1,78 +1,43 @@
 import { Store } from "../store";
 import { Loader, LoaderOptions } from "./base";
 
-export interface EnvLoaderOptions extends LoaderOptions {
-  vars?: string[];
-  regExp?: string | RegExp;
-  prefix?: string;
-  replacer?: (key: string) => string;
+interface EnvVar {
+  accessor: string;
+  envVarName: string;
   arraySeparator?: string;
 }
 
-/**
- * Based on Konfig Env Loader.
- *
- *{@link https://github.com/lalamove/konfig/tree/master/loader/klenv|Prior art}
- */
+export interface EnvLoaderOptions extends LoaderOptions {
+  envVars: EnvVar[];
+}
+
 export class EnvLoader extends Loader {
   readonly options: EnvLoaderOptions;
 
   name = "env";
 
-  constructor(options: EnvLoaderOptions = {}) {
+  constructor(options: EnvLoaderOptions) {
     super(options);
 
     this.options = options;
   }
 
   load(store: Store): void {
-    const config: Record<string, unknown> = {};
-    const { vars = [], regExp } = this.options;
+    this.options.envVars.forEach((envVar) => {
+      const { accessor, envVarName, arraySeparator } = envVar;
+      const value = process.env[envVarName];
 
-    if (vars.length > 0) {
-      Object.entries(process.env).forEach(([key, value]) => {
-        if (vars.includes(key)) {
-          this.set(config, key, value);
-        }
-      });
-    } else if (regExp) {
-      const regex = regExp instanceof RegExp ? regExp : new RegExp(regExp);
-
-      Object.entries(process.env).forEach(([key, value]) => {
-        if (regex.test(key)) {
-          this.set(config, key, value);
-        }
-      });
-    } else {
-      Object.entries(process.env).forEach(([key, value]) => {
-        this.set(config, key, value);
-      });
-    }
-
-    store.assign(config);
+      // TODO: throw if value not found
+      if (value) {
+        store.set(accessor, this.processValue(value, arraySeparator));
+      }
+    });
   }
 
-  private set(config: Record<string, unknown>, key: string, value?: string) {
-    config[this.processKey(key)] = value ? this.processValue(value) : null;
-  }
-
-  private processKey(key: string): string {
-    const { prefix, replacer } = this.options;
-
-    if (prefix) {
-      key = `${prefix}${key}`;
-    }
-
-    if (replacer) {
-      key = replacer(key);
-    }
-
-    return key;
-  }
-
-  private processValue(value: string): string | string[] {
-    const { arraySeparator } = this.options;
-
+  private processValue(
+    value: string,
+    arraySeparator?: string,
+  ): string | string[] {
     if (arraySeparator && value.includes(arraySeparator)) {
       return value.split(arraySeparator);
     }
