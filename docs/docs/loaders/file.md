@@ -12,8 +12,6 @@ Loads configuration from files. Files can be of any type as long as there is a [
 ```javascript
 import * as Konfig from "@willsoto/node-konfig-core";
 
-const store = new Konfig.Store();
-
 const parser = new Konfig.JSONParser();
 
 const loader = new Konfig.FileLoader({
@@ -28,10 +26,6 @@ const loader = new Konfig.FileLoader({
     },
   ],
 });
-
-store.registerLoader(loader);
-
-await store.init();
 ```
 
 ## Options
