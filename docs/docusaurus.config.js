@@ -16,8 +16,8 @@ module.exports = {
       title: "Node Konfig",
       items: [
         {
-          to: "docs/",
-          activeBasePath: "docs",
+          to: "/",
+          activeBasePath: "/",
           label: "Docs",
           position: "left",
         },
@@ -34,6 +34,7 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         docs: {
+          routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/willsoto/node-konfig/edit/main/docs/",
         },
