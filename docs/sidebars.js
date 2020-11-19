@@ -9,6 +9,7 @@ module.exports = {
       "loaders/file",
       "loaders/env",
       "loaders/flag",
+      "loaders/value",
       "loaders/vault",
     ],
     Parsers: ["parsers/overview"],
