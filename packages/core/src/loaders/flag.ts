@@ -1,12 +1,14 @@
-import { Argv } from "yargs";
+import meow from "meow";
 import { Store } from "../store";
 import { Loader, LoaderOptions } from "./base";
 
 export interface FlagLoaderOptions extends LoaderOptions {
-  flags: Argv["argv"];
+  cliOptions: meow.Options<meow.AnyFlags>;
 }
 
 export class FlagLoader extends Loader {
+  #cli: meow.Result<meow.AnyFlags>;
+
   readonly options: FlagLoaderOptions;
 
   name = "flag";
@@ -15,13 +17,14 @@ export class FlagLoader extends Loader {
     super(options);
 
     this.options = options;
+    this.#cli = meow(options.cliOptions);
   }
 
   load(store: Store): void | Promise<void> {
-    // Don't assign the `bin` or any unmapped args
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { _, $0, ...rest } = this.options.flags;
+    Object.entries(this.#cli.flags).forEach((flag) => {
+      const [option, value] = flag;
 
-    store.assign(rest);
+      store.set(option, value);
+    });
   }
 }

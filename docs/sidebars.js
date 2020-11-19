@@ -8,6 +8,7 @@ module.exports = {
       "loaders/overview",
       "loaders/file",
       "loaders/env",
+      "loaders/flag",
       "loaders/vault",
     ],
     Parsers: ["parsers/overview"],
