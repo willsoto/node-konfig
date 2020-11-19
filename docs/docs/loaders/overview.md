@@ -20,6 +20,6 @@ All loader implementation share these options although some loaders may not impl
 The following loaders are included by default in `node-konfig-core`:
 
 - [`FileLoader`](file.md)
-- `EnvLoader`
-- `FlagLoader`
-- `ValueLoader`
+- [`EnvLoader`](env.md)
+- [`FlagLoader`](flag.md)
+- [`ValueLoader`](value.md)
