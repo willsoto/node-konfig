@@ -10,6 +10,7 @@ module.exports = {
       "loaders/env",
       "loaders/flag",
       "loaders/value",
+      "loaders/http",
       "loaders/vault",
     ],
     Parsers: ["parsers/overview"],

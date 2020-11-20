@@ -53,8 +53,6 @@ Check the documentation for [node-vault](https://github.com/kr1sp1n/node-vault) 
 
 ### Secret
 
-| Name       | Required | Description                                     | Signature               |
-| ---------- | -------- | ----------------------------------------------- | ----------------------- |
-| `key`      | yes      | The path to the secret in vault.                |                         |
-| `prefix`   | no       | A prefix to give all the keys from the response |                         |
-| `replacer` | no       | A function to transform keys.                   | (key: string) => string |
+| Name  | Required | Description                      |
+| ----- | -------- | -------------------------------- |
+| `key` | yes      | The path to the secret in vault. |
