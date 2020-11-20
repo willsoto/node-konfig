@@ -1,8 +1,8 @@
 module.exports = {
   title: "Node Konfig",
   tagline: "Configuration library for Node.js",
-  url: "https://willsoto.github.io/node-konfig/",
-  baseUrl: "/",
+  url: "https://willsoto.github.io",
+  baseUrl: "/node-konfig/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
