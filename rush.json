@@ -24,19 +24,23 @@
   "projects": [
     {
       "packageName": "@willsoto/node-konfig-core",
-      "projectFolder": "packages/core"
+      "projectFolder": "packages/core",
+      "shouldPublish": true
     },
     {
       "packageName": "@willsoto/node-konfig-vault",
-      "projectFolder": "packages/vault"
+      "projectFolder": "packages/vault",
+      "shouldPublish": true
     },
     {
       "packageName": "@willsoto/node-konfig-consul",
-      "projectFolder": "packages/consul"
+      "projectFolder": "packages/consul",
+      "shouldPublish": true
     },
     {
       "packageName": "@willsoto/node-konfig-http",
-      "projectFolder": "packages/http"
+      "projectFolder": "packages/http",
+      "shouldPublish": true
     },
     {
       "packageName": "@node-konfig-tools/mocha",
