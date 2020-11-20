@@ -6,6 +6,7 @@ on:
       - main
 
 jobs:
+  # https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
   docs:
     runs-on: ubuntu-latest
     defaults:
@@ -22,5 +23,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
-          publish_dir: ./docs/build # The folder the action should deploy.
+          publish_dir: ./docs/build
           enable_jekyll: false
