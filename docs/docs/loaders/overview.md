@@ -15,7 +15,7 @@ All loader implementation share these options although some loaders may not impl
 | `maxRetries`    | The number of times a loader should attempt to load values before giving up.                                                       | `0`     |
 | `retryDelay`    | The amount of time to wait between retry attempts.                                                                                 | `0`     |
 
-## Core Loaders
+## Core loaders
 
 The following loaders are included by default in `node-konfig-core`:
 
