@@ -38,7 +38,6 @@
     "@types/node": "~14.14.2",
     "@types/sinon": "~9.0.8",
     "@types/sinon-chai": "~3.2.5",
-    "@types/yargs": "~15.0.9",
     "@willsoto/node-konfig-core": "workspace:*",
     "eslint": "~7.12.1",
     "lodash": "~4.17.20",

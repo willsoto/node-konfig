@@ -1,29 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import * as Konfig from "@willsoto/node-konfig-core";
 import { expect } from "chai";
-import got, { Got } from "got";
 import nock from "nock";
 import sinon from "sinon";
 import { HttpLoader, HttpLoaderOptions } from "../src";
 
 describe("HttpLoader", function () {
-  let client: Got;
   let scope: nock.Scope;
+  let prefixUrl: string;
 
   before(function () {
-    const prefixUrl = "https://internal.config.com";
-
-    client = got.extend({
-      prefixUrl,
-      // https://github.com/nock/nock#common-issues
-      retry: 0,
-    });
+    prefixUrl = "https://internal.config.com";
     scope = nock(prefixUrl);
   });
-
-  // beforeEach(function() {
-
-  // })
 
   afterEach(function () {
     expect(scope.isDone()).to.eql(true);
@@ -43,8 +32,7 @@ describe("HttpLoader", function () {
     const store = await makeStore({
       sources: [
         {
-          url: "config.json",
-          client,
+          url: `${prefixUrl}/config.json`,
           parser: new Konfig.JSONParser(),
         },
       ],
@@ -77,9 +65,10 @@ describe("HttpLoader", function () {
       {
         sources: [
           {
-            url: "config.json",
-            method: "post",
-            client,
+            url: `${prefixUrl}/config.json`,
+            fetchOptions: {
+              method: "POST",
+            },
             parser: new Konfig.JSONParser(),
           },
         ],
@@ -103,8 +92,7 @@ describe("HttpLoader", function () {
       maxRetries: 3,
       sources: [
         {
-          url: "config.json",
-          client,
+          url: `${prefixUrl}/config.json`,
           parser: new Konfig.JSONParser(),
         },
       ],
@@ -113,9 +101,7 @@ describe("HttpLoader", function () {
 
     store.registerLoader(loader);
 
-    await expect(store.init()).to.eventually.be.rejectedWith(
-      "Response code 403 (Forbidden)",
-    );
+    await expect(store.init()).to.eventually.be.rejectedWith("Forbidden");
     // Initial call + the 3 retries
     expect(loader.process).to.have.callCount(4);
   });
@@ -136,13 +122,11 @@ describe("HttpLoader", function () {
       stopOnFailure: false,
       sources: [
         {
-          url: "config-not-found.json",
-          client,
+          url: `${prefixUrl}/config-not-found.json`,
           parser: new Konfig.JSONParser(),
         },
         {
-          url: "config.json",
-          client,
+          url: `${prefixUrl}/config.json`,
           parser: new Konfig.JSONParser(),
         },
       ],

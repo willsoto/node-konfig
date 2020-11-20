@@ -4,16 +4,12 @@ import {
   Parser,
   Store,
 } from "@willsoto/node-konfig-core";
-import { Got, HTTPAlias } from "got";
+import fetch, { RequestInit } from "node-fetch";
 
 interface Source {
   url: string;
-  /**
-   * @default GET
-   */
-  method?: HTTPAlias;
+  fetchOptions?: RequestInit;
   parser: Parser;
-  client: Got;
 }
 
 export interface HttpLoaderOptions extends LoaderOptions {
@@ -41,20 +37,17 @@ export class HttpLoader extends Loader {
 
   async process(store: Store): Promise<void> {
     for (const source of this.options.sources) {
-      try {
-        const response = await source.client(source.url, {
-          method: source.method ?? "GET",
-        });
-        const { body } = response;
+      const response = await fetch(source.url, source.fetchOptions);
+
+      if (response.ok) {
+        const body = await response.text();
         const parsedBody = source.parser.parse(body);
 
         for (const key in parsedBody) {
           store.set(key, parsedBody[key]);
         }
-      } catch (error) {
-        if (this.stopOnFailure) {
-          throw error;
-        }
+      } else if (this.stopOnFailure) {
+        throw new Error(response.statusText);
       }
     }
   }
