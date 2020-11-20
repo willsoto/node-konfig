@@ -1,0 +1,17 @@
+{
+  "name": "@willsoto/node-konfig-core",
+  "entries": [
+    {
+      "version": "0.1.1",
+      "tag": "@willsoto/node-konfig-core_v0.1.1",
+      "date": "Fri, 20 Nov 2020 17:55:38 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Initial release"
+          }
+        ]
+      }
+    }
+  ]
+}

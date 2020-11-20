@@ -1,0 +1,25 @@
+{
+  "name": "@willsoto/node-konfig-vault",
+  "entries": [
+    {
+      "version": "0.1.1",
+      "tag": "@willsoto/node-konfig-vault_v0.1.1",
+      "date": "Fri, 20 Nov 2020 17:55:38 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Initial release"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" to `0.1.1`"
+          },
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" from `^0.1.0` to `^0.1.1`"
+          }
+        ]
+      }
+    }
+  ]
+}
