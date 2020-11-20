@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-consul",
+      "comment": "Initial release",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-consul",
+  "email": "willsoto@users.noreply.github.com"
+}
