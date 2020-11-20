@@ -1,5 +1,6 @@
 {
   "name": "@node-konfig-tools/nyc",
+  "version": "1.0.0",
   "main": "./nyc.config.js",
   "scripts": {
     "build": "exit 0"

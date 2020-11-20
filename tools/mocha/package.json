@@ -1,5 +1,6 @@
 {
   "name": "@node-konfig-tools/mocha",
+  "version": "1.0.0",
   "main": "./.mocharc.js",
   "scripts": {
     "prebuild": "npm run clean",
