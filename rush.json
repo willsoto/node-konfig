@@ -43,6 +43,11 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@willsoto/node-konfig-etcd",
+      "projectFolder": "packages/etcd",
+      "shouldPublish": true
+    },
+    {
       "packageName": "@node-konfig-tools/mocha",
       "projectFolder": "tools/mocha",
       "reviewCategory": "tools",

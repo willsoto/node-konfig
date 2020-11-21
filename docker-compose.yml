@@ -35,3 +35,17 @@ services:
       - "8600:8600"
       - "8600:8600/udp"
     command: "agent -server -bootstrap-expect 3 -ui -client 0.0.0.0"
+
+  etcd:
+    image: docker.io/bitnami/etcd:3-debian-10
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+    ports:
+      - "2379:2379"
+      - "2380:2380"
+    volumes:
+      - etcd_data:/bitnami/etcd
+
+volumes:
+  etcd_data:
+    driver: local

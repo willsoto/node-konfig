@@ -13,6 +13,7 @@ module.exports = {
       "loaders/http",
       "loaders/vault",
       "loaders/consul",
+      "loaders/etcd",
     ],
     Parsers: ["parsers/overview"],
   },
