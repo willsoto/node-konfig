@@ -40,8 +40,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: volta-cli/action@v1
-      - run: git config --local user.email "actions@github.com"
-      - run: git config --local user.name "github-actions"
+      - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - run: git config --local user.name "GitHub Actions"
       - run: node common/scripts/install-run-rush.js install
       - run: node common/scripts/install-run-rush.js build --verbose
       - run: node common/scripts/install-run-rush.js publish --apply --target-branch main --publish --set-access-level public
