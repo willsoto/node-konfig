@@ -21,7 +21,7 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: volta-cli/action@v1
         with:
           node-version: ${{ matrix.node-version }}
@@ -35,3 +35,16 @@ jobs:
           # node-vault will read from this environment variable if set
           # https://github.com/kr1sp1n/node-vault/blob/0fa666afb9da14f25cf054e195c18b5a560fcaed/src/index.js#L68
           VAULT_ADDR: "http://localhost:8200"
+
+  publish:
+    if: github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: volta-cli/action@v1
+      - run: node common/scripts/install-run-rush.js install
+      - run: node common/scripts/install-run-rush.js build --verbose
+      - run: node common/scripts/install-run-rush.js publish --apply --target-branch main --publish --set-access-level public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
