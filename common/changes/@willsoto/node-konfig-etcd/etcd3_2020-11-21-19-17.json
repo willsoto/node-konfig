@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-etcd",
+      "comment": "Initial release",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-etcd",
+  "email": "willsoto@users.noreply.github.com"
+}
