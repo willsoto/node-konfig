@@ -8,9 +8,6 @@ on:
     branches:
       - main
 
-env:
-  NODE_ENV: "ci"
-
 jobs:
   test:
     name: Test on node ${{ matrix.node-version }} and ${{ matrix.os }}
@@ -43,8 +40,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: volta-cli/action@v1
+      - run: git config --local user.email "actions@github.com"
+      - run: git config --local user.name "github-actions"
       - run: node common/scripts/install-run-rush.js install
       - run: node common/scripts/install-run-rush.js build --verbose
       - run: node common/scripts/install-run-rush.js publish --apply --target-branch main --publish --set-access-level public
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
