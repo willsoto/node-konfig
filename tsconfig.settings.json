@@ -3,7 +3,6 @@
     "esModuleInterop": true,
     "declaration": true,
     "declarationMap": true,
-    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["es2018"],
     "module": "commonjs",
