@@ -1,6 +1,16 @@
 {
   "name": "@willsoto/node-konfig-http",
   "version": "0.1.1",
+  "keywords": [
+    "config",
+    "configuration",
+    "yaml",
+    "toml",
+    "json",
+    "configuration-management",
+    "http",
+    "fetch"
+  ],
   "license": "Apache-2.0",
   "author": "Will Soto <willsoto@users.noreply.github.com> (https://github.com/willsoto)",
   "main": "./dist/index.js",
