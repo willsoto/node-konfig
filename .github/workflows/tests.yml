@@ -24,6 +24,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: docker-compose up -d --build
       - run: node common/scripts/install-run-rush.js install
+      # Ensure there is a changelog if required
+      - run: node common/scripts/install-run-rush.js change --verify
       # Make sure to build all dependant packages so typings are in place
       - run: node common/scripts/install-run-rush.js build --verbose
       - run: node common/scripts/install-run-rush.js lint --verbose
