@@ -10,8 +10,7 @@ describe("VaultLoader", function () {
   let client: vault.client;
 
   before(async function () {
-    client = vault();
-    client.token = "development";
+    client = vault({ token: "development" });
 
     await client.write("secret/data/database", {
       data: {
@@ -29,7 +28,6 @@ describe("VaultLoader", function () {
           key: "secret/data/database",
         },
       ],
-      client,
     });
 
     expect(store.toJSON()).to.eql({
@@ -47,7 +45,6 @@ describe("VaultLoader", function () {
           prefix: "app_",
         },
       ],
-      client,
     });
 
     expect(store.toJSON()).to.eql({
@@ -67,7 +64,6 @@ describe("VaultLoader", function () {
           },
         },
       ],
-      client,
     });
 
     expect(store.toJSON()).to.eql({
@@ -88,7 +84,6 @@ describe("VaultLoader", function () {
           },
         },
       ],
-      client,
     });
 
     expect(store.toJSON()).to.eql({
@@ -115,7 +110,6 @@ describe("VaultLoader", function () {
             key: "secret/data/database",
           },
         ],
-        client,
       },
       [fileLoader],
     );
@@ -138,7 +132,9 @@ describe("VaultLoader", function () {
           key: "secret/data/non-existent",
         },
       ],
-      client,
+      vaultOptions: {
+        token: "development",
+      },
     });
     sinon.spy(loader, "processSecrets");
 
@@ -160,7 +156,6 @@ describe("VaultLoader", function () {
           key: "secret/data/database",
         },
       ],
-      client,
     });
 
     expect(store.toJSON()).to.eql({
@@ -180,7 +175,15 @@ async function makeStore(
   loaders.forEach((loader) => store.registerLoader(loader));
 
   // Make sure vault gets loaded last so it "wins" any conflicts
-  store.registerLoader(new VaultLoader(options));
+  store.registerLoader(
+    new VaultLoader({
+      ...options,
+      vaultOptions: {
+        ...options.vaultOptions,
+        token: "development",
+      },
+    }),
+  );
 
   await store.init();
 

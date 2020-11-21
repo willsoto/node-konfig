@@ -36,6 +36,9 @@
       "src/**/*.ts"
     ]
   },
+  "dependencies": {
+    "node-vault": "~0.9.20"
+  },
   "devDependencies": {
     "@node-konfig-tools/eslint": "workspace:*",
     "@node-konfig-tools/mocha": "workspace:*",
@@ -52,14 +55,12 @@
     "eslint": "~7.14.0",
     "lodash": "~4.17.20",
     "mocha": "~8.2.1",
-    "node-vault": "~0.9.20",
     "nyc": "~15.1.0",
     "rimraf": "~3.0.2",
     "typescript": "~4.1.2"
   },
   "peerDependencies": {
-    "@willsoto/node-konfig-core": "^0.1.2",
-    "node-vault": "~0.9.20"
+    "@willsoto/node-konfig-core": "^0.1.2"
   },
   "volta": {
     "extends": "../../package.json"

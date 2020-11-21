@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Loader, LoaderOptions, Store } from "@willsoto/node-konfig-core";
-import * as NodeVault from "node-vault";
+import vault, { client, VaultOptions } from "node-vault";
 
 interface Secret {
   key: string;
@@ -13,12 +13,12 @@ interface Secret {
 
 export interface VaultLoaderOptions extends LoaderOptions {
   secrets: Secret[];
-  client: NodeVault.client;
+  vaultOptions?: VaultOptions;
 }
 
 export class VaultLoader extends Loader {
   readonly options: VaultLoaderOptions;
-  readonly client: NodeVault.client;
+  readonly client: client;
 
   name = "vault";
 
@@ -26,7 +26,7 @@ export class VaultLoader extends Loader {
     super(options);
 
     this.options = options;
-    this.client = options.client;
+    this.client = vault(options.vaultOptions);
   }
 
   async load(store: Store): Promise<void> {

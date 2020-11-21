@@ -30,7 +30,6 @@ describe("ConsulLoader", function () {
           parser: new Konfig.JSONParser(),
         },
       ],
-      client,
     });
 
     expect(store.toJSON()).to.eql({
@@ -49,7 +48,6 @@ describe("ConsulLoader", function () {
           parser: new Konfig.JSONParser(),
         },
       ],
-      client,
     });
 
     expect(store.toJSON()).to.eql({
@@ -70,7 +68,6 @@ describe("ConsulLoader", function () {
           },
         },
       ],
-      client,
     });
 
     expect(store.toJSON()).to.eql({
@@ -92,7 +89,6 @@ describe("ConsulLoader", function () {
           },
         },
       ],
-      client,
     });
 
     expect(store.toJSON()).to.eql({
@@ -120,7 +116,6 @@ describe("ConsulLoader", function () {
             parser: new Konfig.JSONParser(),
           },
         ],
-        client,
       },
       [fileLoader],
     );
@@ -143,7 +138,6 @@ describe("ConsulLoader", function () {
           key: "non-existent/value",
         },
       ],
-      client,
     });
     sinon.spy(loader, "process");
 
@@ -168,7 +162,6 @@ describe("ConsulLoader", function () {
           parser: new Konfig.JSONParser(),
         },
       ],
-      client,
     });
 
     expect(store.toJSON()).to.eql({

@@ -26,7 +26,7 @@ type GetResponse = {
 
 export interface ConsulLoaderOptions extends LoaderOptions {
   keys: Key[];
-  client: consul.Consul;
+  consulOptions?: consul.ConsulOptions;
 }
 
 export class ConsulLoader extends Loader {
@@ -39,7 +39,11 @@ export class ConsulLoader extends Loader {
     super(options);
 
     this.options = options;
-    this.client = options.client;
+    this.client = consul({
+      ...options.consulOptions,
+      // we always want a promise based client
+      promisify: true,
+    });
   }
 
   async load(store: Store): Promise<void> {

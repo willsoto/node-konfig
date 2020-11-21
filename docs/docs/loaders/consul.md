@@ -6,15 +6,15 @@ title: Consul
 ## Installation
 
 ```bash
-npm install @willsoto/node-konfig-consul consul
+npm install @willsoto/node-konfig-consul
 ```
 
 ```bash
-yarn add @willsoto/node-konfig-consul consul
+yarn add @willsoto/node-konfig-consul
 ```
 
 ```bash
-pnpm add @willsoto/node-konfig-consul consul
+pnpm add @willsoto/node-konfig-consul
 ```
 
 ## Usage
@@ -22,11 +22,6 @@ pnpm add @willsoto/node-konfig-consul consul
 ```javascript
 import * as Konfig from "@willsoto/node-konfig-core";
 import { ConsulLoader } from "@willsoto/node-konfig-consul";
-import consul from "consul";
-
-const client = consul({
-  promisify: true,
-});
 
 const loader = new ConsulLoader({
   keys: [
@@ -38,7 +33,6 @@ const loader = new ConsulLoader({
       key: "appName",
     },
   ],
-  client,
 });
 ```
 
@@ -46,10 +40,10 @@ Check the documentation for [consul](https://github.com/silas/node-consul) for c
 
 ## Options
 
-| Name     | Required | Description                                               |
-| -------- | -------- | --------------------------------------------------------- |
-| `keys`   | yes      | An array of keys to load. See `Key` for more information. |
-| `client` | yes      | The Consul client                                         |
+| Name            | Required | Description                                                           |
+| --------------- | -------- | --------------------------------------------------------------------- |
+| `keys`          | yes      | An array of keys to load. See `Key` for more information.             |
+| `consulOptions` | no       | [`ConsulOptions`](https://github.com/silas/node-consul#consuloptions) |
 
 ### Key
 
