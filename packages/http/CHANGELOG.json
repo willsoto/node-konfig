@@ -2,6 +2,26 @@
   "name": "@willsoto/node-konfig-http",
   "entries": [
     {
+      "version": "0.1.2",
+      "tag": "@willsoto/node-konfig-http_v0.1.2",
+      "date": "Sat, 21 Nov 2020 01:51:38 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Version bump only"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" to `0.1.2`"
+          },
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" from `^0.1.1` to `^0.1.2`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.1.1",
       "tag": "@willsoto/node-konfig-http_v0.1.1",
       "date": "Fri, 20 Nov 2020 17:55:38 GMT",
