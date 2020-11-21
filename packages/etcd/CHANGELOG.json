@@ -1,0 +1,17 @@
+{
+  "name": "@willsoto/node-konfig-etcd",
+  "entries": [
+    {
+      "version": "0.2.0",
+      "tag": "@willsoto/node-konfig-etcd_v0.2.0",
+      "date": "Sat, 21 Nov 2020 19:34:31 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Initial release"
+          }
+        ]
+      }
+    }
+  ]
+}
