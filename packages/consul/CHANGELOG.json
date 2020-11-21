@@ -2,6 +2,18 @@
   "name": "@willsoto/node-konfig-consul",
   "entries": [
     {
+      "version": "0.2.0",
+      "tag": "@willsoto/node-konfig-consul_v0.2.0",
+      "date": "Sat, 21 Nov 2020 14:13:23 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Don't make user provide an instantiated Consul client, we accept configuration for it instead."
+          }
+        ]
+      }
+    },
+    {
       "version": "0.1.2",
       "tag": "@willsoto/node-konfig-consul_v0.1.2",
       "date": "Sat, 21 Nov 2020 01:51:38 GMT",
