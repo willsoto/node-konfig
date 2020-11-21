@@ -15,7 +15,7 @@
   },
 
   "repository": {
-    "url": "https://github.com/willsoto/node-konfig",
+    "url": "git@github.com:willsoto/node-konfig.git",
     "defaultBranch": "main",
     "defaultRemote": "origin"
   },
