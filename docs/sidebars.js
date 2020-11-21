@@ -12,6 +12,7 @@ module.exports = {
       "loaders/value",
       "loaders/http",
       "loaders/vault",
+      "loaders/consul",
     ],
     Parsers: ["parsers/overview"],
   },

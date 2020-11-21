@@ -55,4 +55,4 @@ Check the documentation for [node-vault](https://github.com/kr1sp1n/node-vault) 
 
 | Name  | Required | Description                      |
 | ----- | -------- | -------------------------------- |
-| `key` | yes      | The path to the secret in vault. |
+| `key` | yes      | The path to the secret in Vault. |
