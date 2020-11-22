@@ -1,6 +1,11 @@
 # Change Log - @willsoto/node-konfig-vault
 
-This log was last generated on Sat, 21 Nov 2020 14:13:23 GMT and should not be manually modified.
+This log was last generated on Sun, 22 Nov 2020 13:54:37 GMT and should not be manually modified.
+
+## 0.2.1
+Sun, 22 Nov 2020 13:54:37 GMT
+
+_Version update only_
 
 ## 0.2.0
 Sat, 21 Nov 2020 14:13:23 GMT
