@@ -3,7 +3,7 @@
     {
       "packageName": "@willsoto/node-konfig-etcd",
       "comment": "",
-      "type": "none"
+      "type": "patch"
     }
   ],
   "packageName": "@willsoto/node-konfig-etcd",

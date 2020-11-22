@@ -3,7 +3,7 @@
     {
       "packageName": "@willsoto/node-konfig-core",
       "comment": "",
-      "type": "none"
+      "type": "patch"
     }
   ],
   "packageName": "@willsoto/node-konfig-core",

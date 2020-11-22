@@ -3,7 +3,7 @@
     {
       "packageName": "@willsoto/node-konfig-consul",
       "comment": "",
-      "type": "none"
+      "type": "patch"
     }
   ],
   "packageName": "@willsoto/node-konfig-consul",
