@@ -9,6 +9,9 @@ module.exports = {
     "prettier",
     "prettier/@typescript-eslint",
   ],
+  rules: {
+    "@typescript-eslint/member-ordering": "error",
+  },
   env: {
     node: true,
   },

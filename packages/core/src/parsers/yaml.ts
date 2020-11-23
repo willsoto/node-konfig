@@ -2,7 +2,7 @@ import yaml from "js-yaml";
 import { Parser } from "./interface";
 
 export class YAMLParser implements Parser {
-  private yamlLoadOptions: yaml.LoadOptions;
+  readonly yamlLoadOptions: yaml.LoadOptions;
 
   name = "yaml";
 
