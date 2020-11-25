@@ -144,7 +144,7 @@ describe("ConsulLoader", function () {
     store.registerLoader(loader);
 
     await expect(store.init()).to.eventually.be.rejectedWith(
-      "Key not found: non-existent/value",
+      /non-existent\/value/,
     );
     // Initial call + the 3 retries
     expect(loader.process).to.have.callCount(4);

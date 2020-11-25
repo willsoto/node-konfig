@@ -1,4 +1,5 @@
 import setWith from "lodash.setwith";
+import { NoValueForKeyError } from "./errors";
 import { Loader } from "./loaders";
 
 interface StoreOptions {
@@ -49,6 +50,19 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
     }
 
     return current as T;
+  }
+
+  /**
+   * If the given accessor is not present on the store or the returned value is `null`,
+   * an error will be thrown.
+   */
+  getOrThrow<T>(accessor: string): T {
+    const value = this.get(accessor);
+
+    if (value === null || value === undefined) {
+      throw new NoValueForKeyError(accessor);
+    }
+    return value as T;
   }
 
   set(accessor: string, value: unknown): TConfig {

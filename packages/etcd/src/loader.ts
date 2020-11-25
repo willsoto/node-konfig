@@ -44,7 +44,7 @@ export class EtcdLoader extends Loader {
 
       if (!response) {
         if (this.stopOnFailure) {
-          throw new KeyNotFoundError(`No value for accessor: ${key.accessor}`);
+          throw new KeyNotFoundError(key.accessor);
         } else {
           continue;
         }

@@ -60,7 +60,7 @@ export class ConsulLoader extends Loader {
         const response = await this.client.kv.get<GetResponse>(key.key);
 
         if (!response) {
-          throw new KeyNotFoundError(`Key not found: ${key.key}`);
+          throw new KeyNotFoundError(key.key);
         }
 
         const [accessor, value] = this.postLoad(

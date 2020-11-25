@@ -79,9 +79,7 @@ describe("EtcdLoader", function () {
 
     store.registerLoader(loader);
 
-    await expect(store.init()).to.eventually.be.rejectedWith(
-      "No value for accessor: non-existent",
-    );
+    await expect(store.init()).to.eventually.be.rejectedWith(/non-existent/);
     // Initial call + the 3 retries
     expect(loader.execute).to.have.callCount(4);
   });
