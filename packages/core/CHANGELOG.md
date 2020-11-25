@@ -1,6 +1,13 @@
 # Change Log - @willsoto/node-konfig-core
 
-This log was last generated on Sun, 22 Nov 2020 14:11:40 GMT and should not be manually modified.
+This log was last generated on Wed, 25 Nov 2020 00:33:22 GMT and should not be manually modified.
+
+## 0.2.0
+Wed, 25 Nov 2020 00:33:22 GMT
+
+### Minor changes
+
+- Add getOrThrow method to Store
 
 ## 0.1.3
 Sun, 22 Nov 2020 14:11:40 GMT

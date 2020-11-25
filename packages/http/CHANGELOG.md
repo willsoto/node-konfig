@@ -1,6 +1,11 @@
 # Change Log - @willsoto/node-konfig-http
 
-This log was last generated on Sun, 22 Nov 2020 14:11:40 GMT and should not be manually modified.
+This log was last generated on Wed, 25 Nov 2020 00:33:22 GMT and should not be manually modified.
+
+## 0.1.4
+Wed, 25 Nov 2020 00:33:22 GMT
+
+_Version update only_
 
 ## 0.1.3
 Sun, 22 Nov 2020 14:11:40 GMT

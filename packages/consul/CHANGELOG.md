@@ -1,6 +1,11 @@
 # Change Log - @willsoto/node-konfig-consul
 
-This log was last generated on Sun, 22 Nov 2020 14:11:40 GMT and should not be manually modified.
+This log was last generated on Wed, 25 Nov 2020 00:33:22 GMT and should not be manually modified.
+
+## 0.2.2
+Wed, 25 Nov 2020 00:33:22 GMT
+
+_Version update only_
 
 ## 0.2.1
 Sun, 22 Nov 2020 14:11:40 GMT

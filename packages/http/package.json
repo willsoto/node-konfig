@@ -1,6 +1,6 @@
 {
   "name": "@willsoto/node-konfig-http",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "keywords": [
     "config",
     "configuration",
@@ -64,7 +64,7 @@
     "typescript": "~4.1.2"
   },
   "peerDependencies": {
-    "@willsoto/node-konfig-core": "^0.1.3"
+    "@willsoto/node-konfig-core": "^0.2.0"
   },
   "volta": {
     "extends": "../../package.json"
