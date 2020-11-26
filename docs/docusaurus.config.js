@@ -9,6 +9,7 @@ module.exports = {
   organizationName: "willsoto", // Usually your GitHub org/user name.
   projectName: "node-konfig", // Usually your repo name.
   themeConfig: {
+    hideableSidebar: true,
     prism: {
       theme: require("prism-react-renderer/themes/dracula"),
     },
