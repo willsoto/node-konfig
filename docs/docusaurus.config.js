@@ -1,3 +1,8 @@
+const path = require("path");
+
+const packagesRoot = path.resolve(__dirname, "..", "packages");
+const packages = ["consul", "core", "etcd", "http", "vault"];
+
 module.exports = {
   title: "Node Konfig",
   tagline: "Configuration library for Node.js",
@@ -42,6 +47,27 @@ module.exports = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
+      },
+    ],
+  ],
+  plugins: [
+    [
+      "docusaurus-plugin-typedoc",
+      {
+        inputFiles: packages.map((package) => {
+          return path.join(packagesRoot, package, "src");
+        }),
+
+        // TypeDoc options (see typedoc --help)
+        mode: "file",
+        readme: "none",
+
+        // tsconfig options
+        esModuleInterop: true,
+        module: "commonjs",
+        skipLibCheck: true,
+        strict: true,
+        target: "es2018",
       },
     ],
   ],

@@ -8,6 +8,9 @@ interface StoreOptions {
 
 type Config = Record<string, unknown>;
 
+/**
+ * Holds the configuration object.
+ */
 export class Store<TConfig extends Config = Record<string, unknown>> {
   #groups: Store[] = [];
 

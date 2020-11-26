@@ -1,5 +1,5 @@
 module.exports = {
-  someSidebar: {
+  docs: {
     "Getting started": [
       "getting-started/installation",
       "getting-started/usage",
@@ -16,5 +16,6 @@ module.exports = {
       "loaders/etcd",
     ],
     Parsers: ["parsers/overview"],
+    API: require("./typedoc-sidebar"),
   },
 };
