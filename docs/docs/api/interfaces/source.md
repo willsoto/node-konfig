@@ -14,7 +14,7 @@ sidebar_label: "Source"
 
 • `Optional` **fetchOptions**: RequestInit
 
-_Defined in [packages/http/src/loader.ts:11](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/http/src/loader.ts#L11)_
+_Defined in [packages/http/src/loader.ts:11](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/http/src/loader.ts#L11)_
 
 ---
 
@@ -22,7 +22,7 @@ _Defined in [packages/http/src/loader.ts:11](https://github.com/willsoto/node-ko
 
 • **parser**: Parser
 
-_Defined in [packages/http/src/loader.ts:12](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/http/src/loader.ts#L12)_
+_Defined in [packages/http/src/loader.ts:12](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/http/src/loader.ts#L12)_
 
 ---
 
@@ -30,4 +30,4 @@ _Defined in [packages/http/src/loader.ts:12](https://github.com/willsoto/node-ko
 
 • **url**: string
 
-_Defined in [packages/http/src/loader.ts:10](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/http/src/loader.ts#L10)_
+_Defined in [packages/http/src/loader.ts:10](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/http/src/loader.ts#L10)_

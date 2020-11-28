@@ -1,6 +1,6 @@
 module.exports = {
   parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint"],
+  plugins: ["@typescript-eslint", "eslint-plugin-tsdoc"],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -10,6 +10,7 @@ module.exports = {
     "prettier/@typescript-eslint",
   ],
   rules: {
+    "tsdoc/syntax": "warn",
     "@typescript-eslint/member-ordering": "error",
   },
   env: {

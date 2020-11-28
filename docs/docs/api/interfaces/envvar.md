@@ -14,7 +14,7 @@ sidebar_label: "EnvVar"
 
 • **accessor**: string
 
-_Defined in [packages/core/src/loaders/env.ts:5](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/env.ts#L5)_
+_Defined in [packages/core/src/loaders/env.ts:5](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/env.ts#L5)_
 
 ---
 
@@ -22,7 +22,7 @@ _Defined in [packages/core/src/loaders/env.ts:5](https://github.com/willsoto/nod
 
 • `Optional` **arraySeparator**: undefined \| string
 
-_Defined in [packages/core/src/loaders/env.ts:7](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/env.ts#L7)_
+_Defined in [packages/core/src/loaders/env.ts:7](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/env.ts#L7)_
 
 ---
 
@@ -30,4 +30,4 @@ _Defined in [packages/core/src/loaders/env.ts:7](https://github.com/willsoto/nod
 
 • **envVarName**: string
 
-_Defined in [packages/core/src/loaders/env.ts:6](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/env.ts#L6)_
+_Defined in [packages/core/src/loaders/env.ts:6](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/env.ts#L6)_

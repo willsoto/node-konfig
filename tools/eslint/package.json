@@ -10,7 +10,8 @@
     "@typescript-eslint/parser": "~4.8.1",
     "eslint": "~7.14.0",
     "eslint-config-prettier": "~6.15.0",
-    "eslint-plugin-mocha": "~8.0.0"
+    "eslint-plugin-mocha": "~8.0.0",
+    "eslint-plugin-tsdoc": "~0.2.7"
   },
   "devDependencies": {
     "prettier": "~2.2.0",

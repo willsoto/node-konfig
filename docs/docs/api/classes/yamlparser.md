@@ -18,7 +18,7 @@ sidebar_label: "YAMLParser"
 
 \+ **new YAMLParser**(`yamlLoadOptions?`: LoadOptions): [YAMLParser](yamlparser.md)
 
-_Defined in [packages/core/src/parsers/yaml.ts:7](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/parsers/yaml.ts#L7)_
+_Defined in [packages/core/src/parsers/yaml.ts:7](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/parsers/yaml.ts#L7)_
 
 #### Parameters:
 
@@ -36,7 +36,7 @@ _Defined in [packages/core/src/parsers/yaml.ts:7](https://github.com/willsoto/no
 
 _Implementation of [Parser](../interfaces/parser.md).[name](../interfaces/parser.md#name)_
 
-_Defined in [packages/core/src/parsers/yaml.ts:7](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/parsers/yaml.ts#L7)_
+_Defined in [packages/core/src/parsers/yaml.ts:7](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/parsers/yaml.ts#L7)_
 
 ---
 
@@ -44,7 +44,7 @@ _Defined in [packages/core/src/parsers/yaml.ts:7](https://github.com/willsoto/no
 
 • `Readonly` **yamlLoadOptions**: LoadOptions
 
-_Defined in [packages/core/src/parsers/yaml.ts:5](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/parsers/yaml.ts#L5)_
+_Defined in [packages/core/src/parsers/yaml.ts:5](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/parsers/yaml.ts#L5)_
 
 ## Methods
 
@@ -54,7 +54,7 @@ _Defined in [packages/core/src/parsers/yaml.ts:5](https://github.com/willsoto/no
 
 _Implementation of [Parser](../interfaces/parser.md)_
 
-_Defined in [packages/core/src/parsers/yaml.ts:13](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/parsers/yaml.ts#L13)_
+_Defined in [packages/core/src/parsers/yaml.ts:13](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/parsers/yaml.ts#L13)_
 
 #### Parameters:
 

@@ -14,4 +14,4 @@ sidebar_label: "StoreOptions"
 
 • `Optional` **name**: undefined \| string
 
-_Defined in [packages/core/src/store.ts:6](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/store.ts#L6)_
+_Defined in [packages/core/src/store.ts:6](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L6)_

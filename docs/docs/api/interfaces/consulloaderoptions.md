@@ -16,7 +16,7 @@ sidebar_label: "ConsulLoaderOptions"
 
 • `Optional` **consulOptions**: consul.ConsulOptions
 
-_Defined in [packages/consul/src/loader.ts:29](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/consul/src/loader.ts#L29)_
+_Defined in [packages/consul/src/loader.ts:29](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/consul/src/loader.ts#L29)_
 
 ---
 
@@ -24,7 +24,7 @@ _Defined in [packages/consul/src/loader.ts:29](https://github.com/willsoto/node-
 
 • **keys**: [Key](key.md)[]
 
-_Defined in [packages/consul/src/loader.ts:28](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/consul/src/loader.ts#L28)_
+_Defined in [packages/consul/src/loader.ts:28](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/consul/src/loader.ts#L28)_
 
 ---
 

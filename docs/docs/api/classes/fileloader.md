@@ -18,7 +18,7 @@ sidebar_label: "FileLoader"
 
 _Overrides [Loader](loader.md).[constructor](loader.md#constructor)_
 
-_Defined in [packages/core/src/loaders/file.ts:18](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/file.ts#L18)_
+_Defined in [packages/core/src/loaders/file.ts:18](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/file.ts#L18)_
 
 #### Parameters:
 
@@ -36,7 +36,7 @@ _Defined in [packages/core/src/loaders/file.ts:18](https://github.com/willsoto/n
 
 _Inherited from [Loader](loader.md).[maxRetries](loader.md#maxretries)_
 
-_Defined in [packages/core/src/loaders/base.ts:13](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/base.ts#L13)_
+_Defined in [packages/core/src/loaders/base.ts:13](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L13)_
 
 ---
 
@@ -46,7 +46,7 @@ _Defined in [packages/core/src/loaders/base.ts:13](https://github.com/willsoto/n
 
 _Overrides [Loader](loader.md).[name](loader.md#name)_
 
-_Defined in [packages/core/src/loaders/file.ts:18](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/file.ts#L18)_
+_Defined in [packages/core/src/loaders/file.ts:18](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/file.ts#L18)_
 
 ---
 
@@ -54,7 +54,7 @@ _Defined in [packages/core/src/loaders/file.ts:18](https://github.com/willsoto/n
 
 • `Readonly` **options**: [FileLoaderOptions](../interfaces/fileloaderoptions.md)
 
-_Defined in [packages/core/src/loaders/file.ts:16](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/file.ts#L16)_
+_Defined in [packages/core/src/loaders/file.ts:16](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/file.ts#L16)_
 
 ---
 
@@ -64,7 +64,7 @@ _Defined in [packages/core/src/loaders/file.ts:16](https://github.com/willsoto/n
 
 _Inherited from [Loader](loader.md).[retryDelay](loader.md#retrydelay)_
 
-_Defined in [packages/core/src/loaders/base.ts:14](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/base.ts#L14)_
+_Defined in [packages/core/src/loaders/base.ts:14](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L14)_
 
 ---
 
@@ -74,7 +74,7 @@ _Defined in [packages/core/src/loaders/base.ts:14](https://github.com/willsoto/n
 
 _Inherited from [Loader](loader.md).[stopOnFailure](loader.md#stoponfailure)_
 
-_Defined in [packages/core/src/loaders/base.ts:12](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/base.ts#L12)_
+_Defined in [packages/core/src/loaders/base.ts:12](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L12)_
 
 ## Accessors
 
@@ -84,7 +84,7 @@ _Defined in [packages/core/src/loaders/base.ts:12](https://github.com/willsoto/n
 
 _Inherited from [Loader](loader.md).[retryPolicy](loader.md#retrypolicy)_
 
-_Defined in [packages/core/src/loaders/base.ts:24](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/base.ts#L24)_
+_Defined in [packages/core/src/loaders/base.ts:24](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L24)_
 
 **Returns:** RetryPolicy
 
@@ -96,7 +96,7 @@ _Defined in [packages/core/src/loaders/base.ts:24](https://github.com/willsoto/n
 
 _Overrides [Loader](loader.md).[load](loader.md#load)_
 
-_Defined in [packages/core/src/loaders/file.ts:26](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/file.ts#L26)_
+_Defined in [packages/core/src/loaders/file.ts:26](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/file.ts#L26)_
 
 #### Parameters:
 
@@ -112,7 +112,7 @@ _Defined in [packages/core/src/loaders/file.ts:26](https://github.com/willsoto/n
 
 ▸ **processFiles**(`store`: [Store](store.md)): Promise&#60;void>
 
-_Defined in [packages/core/src/loaders/file.ts:34](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/file.ts#L34)_
+_Defined in [packages/core/src/loaders/file.ts:34](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/file.ts#L34)_
 
 #### Parameters:
 

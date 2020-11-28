@@ -16,7 +16,7 @@ sidebar_label: "KeyNotFoundError"
 
 \+ **new KeyNotFoundError**(`key`: string): [KeyNotFoundError](keynotfounderror.md)
 
-_Defined in [packages/core/src/errors.ts:1](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/errors.ts#L1)_
+_Defined in [packages/core/src/errors.ts:1](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/errors.ts#L1)_
 
 #### Parameters:
 

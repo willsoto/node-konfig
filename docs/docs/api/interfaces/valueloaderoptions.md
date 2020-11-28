@@ -18,7 +18,7 @@ sidebar_label: "ValueLoaderOptions"
 
 _Inherited from [LoaderOptions](loaderoptions.md).[maxRetries](loaderoptions.md#maxretries)_
 
-_Defined in [packages/core/src/loaders/base.ts:6](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/base.ts#L6)_
+_Defined in [packages/core/src/loaders/base.ts:6](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L6)_
 
 ---
 
@@ -28,7 +28,7 @@ _Defined in [packages/core/src/loaders/base.ts:6](https://github.com/willsoto/no
 
 _Inherited from [LoaderOptions](loaderoptions.md).[retryDelay](loaderoptions.md#retrydelay)_
 
-_Defined in [packages/core/src/loaders/base.ts:7](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/base.ts#L7)_
+_Defined in [packages/core/src/loaders/base.ts:7](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L7)_
 
 ---
 
@@ -38,7 +38,7 @@ _Defined in [packages/core/src/loaders/base.ts:7](https://github.com/willsoto/no
 
 _Inherited from [LoaderOptions](loaderoptions.md).[stopOnFailure](loaderoptions.md#stoponfailure)_
 
-_Defined in [packages/core/src/loaders/base.ts:5](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/base.ts#L5)_
+_Defined in [packages/core/src/loaders/base.ts:5](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L5)_
 
 ---
 
@@ -46,4 +46,4 @@ _Defined in [packages/core/src/loaders/base.ts:5](https://github.com/willsoto/no
 
 • **values**: Record&#60;string, unknown>
 
-_Defined in [packages/core/src/loaders/value.ts:5](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/core/src/loaders/value.ts#L5)_
+_Defined in [packages/core/src/loaders/value.ts:5](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/value.ts#L5)_

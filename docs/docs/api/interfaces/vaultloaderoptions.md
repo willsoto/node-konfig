@@ -36,7 +36,7 @@ _Defined in packages/core/dist/loaders/base.d.ts:6_
 
 • **secrets**: [Secret](secret.md)[]
 
-_Defined in [packages/vault/src/loader.ts:15](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/vault/src/loader.ts#L15)_
+_Defined in [packages/vault/src/loader.ts:15](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/vault/src/loader.ts#L15)_
 
 ---
 
@@ -54,4 +54,4 @@ _Defined in packages/core/dist/loaders/base.d.ts:4_
 
 • `Optional` **vaultOptions**: VaultOptions
 
-_Defined in [packages/vault/src/loader.ts:16](https://github.com/willsoto/node-konfig/blob/e86bb60/packages/vault/src/loader.ts#L16)_
+_Defined in [packages/vault/src/loader.ts:16](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/vault/src/loader.ts#L16)_
