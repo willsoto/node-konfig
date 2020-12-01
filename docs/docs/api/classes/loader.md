@@ -22,7 +22,7 @@ sidebar_label: "Loader"
 
 \+ **new Loader**(`options`: [LoaderOptions](../interfaces/loaderoptions.md)): [Loader](loader.md)
 
-_Defined in [packages/core/src/loaders/base.ts:14](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L14)_
+_Defined in [packages/core/src/loaders/base.ts:14](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L14)_
 
 #### Parameters:
 
@@ -38,7 +38,7 @@ _Defined in [packages/core/src/loaders/base.ts:14](https://github.com/willsoto/n
 
 • **maxRetries**: number
 
-_Defined in [packages/core/src/loaders/base.ts:13](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L13)_
+_Defined in [packages/core/src/loaders/base.ts:13](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L13)_
 
 ---
 
@@ -46,7 +46,7 @@ _Defined in [packages/core/src/loaders/base.ts:13](https://github.com/willsoto/n
 
 • **name**: string = "base"
 
-_Defined in [packages/core/src/loaders/base.ts:11](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L11)_
+_Defined in [packages/core/src/loaders/base.ts:11](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L11)_
 
 ---
 
@@ -54,7 +54,7 @@ _Defined in [packages/core/src/loaders/base.ts:11](https://github.com/willsoto/n
 
 • **retryDelay**: number
 
-_Defined in [packages/core/src/loaders/base.ts:14](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L14)_
+_Defined in [packages/core/src/loaders/base.ts:14](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L14)_
 
 ---
 
@@ -62,7 +62,7 @@ _Defined in [packages/core/src/loaders/base.ts:14](https://github.com/willsoto/n
 
 • **stopOnFailure**: boolean
 
-_Defined in [packages/core/src/loaders/base.ts:12](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L12)_
+_Defined in [packages/core/src/loaders/base.ts:12](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L12)_
 
 ## Accessors
 
@@ -70,7 +70,7 @@ _Defined in [packages/core/src/loaders/base.ts:12](https://github.com/willsoto/n
 
 • `Protected`get **retryPolicy**(): RetryPolicy
 
-_Defined in [packages/core/src/loaders/base.ts:24](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L24)_
+_Defined in [packages/core/src/loaders/base.ts:24](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L24)_
 
 **Returns:** RetryPolicy
 
@@ -80,7 +80,7 @@ _Defined in [packages/core/src/loaders/base.ts:24](https://github.com/willsoto/n
 
 ▸ `Abstract`**load**(`store`: [Store](store.md)): void \| Promise&#60;void>
 
-_Defined in [packages/core/src/loaders/base.ts:22](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L22)_
+_Defined in [packages/core/src/loaders/base.ts:22](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L22)_
 
 #### Parameters:
 

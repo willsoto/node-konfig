@@ -16,7 +16,8 @@ module.exports = {
   themeConfig: {
     hideableSidebar: true,
     prism: {
-      theme: require("prism-react-renderer/themes/dracula"),
+      theme: require("prism-react-renderer/themes/github"),
+      darkTheme: require("prism-react-renderer/themes/dracula"),
     },
     navbar: {
       title: "Node Konfig",
@@ -26,6 +27,12 @@ module.exports = {
           activeBasePath: "/",
           label: "Docs",
           position: "left",
+        },
+        {
+          type: "doc",
+          position: "left",
+          label: "API",
+          docId: "api/index",
         },
         {
           href: "https://github.com/willsoto/node-konfig",

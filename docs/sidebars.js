@@ -16,6 +16,6 @@ module.exports = {
       "loaders/etcd",
     ],
     Parsers: ["parsers/overview"],
-    API: require("./typedoc-sidebar"),
   },
+  api: require("./typedoc-sidebar"),
 };

@@ -55,7 +55,7 @@ sidebar_label: "Globals"
 
 Ƭ **Config**: Record&#60;string, unknown>
 
-_Defined in [packages/core/src/store.ts:9](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L9)_
+_Defined in [packages/core/src/store.ts:9](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L9)_
 
 ---
 
@@ -63,7 +63,7 @@ _Defined in [packages/core/src/store.ts:9](https://github.com/willsoto/node-konf
 
 Ƭ **GetResponse**: { CreateIndex: number ; Flags: number ; Key: string ; LockIndex: number ; ModifyIndex: number ; Value: string }
 
-_Defined in [packages/consul/src/loader.ts:18](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/consul/src/loader.ts#L18)_
+_Defined in [packages/consul/src/loader.ts:18](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/consul/src/loader.ts#L18)_
 
 #### Type declaration:
 

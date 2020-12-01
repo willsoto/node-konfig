@@ -20,7 +20,7 @@ sidebar_label: "Parser"
 
 • **name**: string
 
-_Defined in [packages/core/src/parsers/interface.ts:2](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/parsers/interface.ts#L2)_
+_Defined in [packages/core/src/parsers/interface.ts:2](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/parsers/interface.ts#L2)_
 
 ## Methods
 
@@ -28,7 +28,7 @@ _Defined in [packages/core/src/parsers/interface.ts:2](https://github.com/willso
 
 ▸ **parse**(`contents`: string): Record&#60;string, unknown>
 
-_Defined in [packages/core/src/parsers/interface.ts:3](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/parsers/interface.ts#L3)_
+_Defined in [packages/core/src/parsers/interface.ts:3](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/parsers/interface.ts#L3)_
 
 #### Parameters:
 

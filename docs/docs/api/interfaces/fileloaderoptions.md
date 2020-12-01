@@ -16,7 +16,7 @@ sidebar_label: "FileLoaderOptions"
 
 • **files**: [File](file.md)[]
 
-_Defined in [packages/core/src/loaders/file.ts:12](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/file.ts#L12)_
+_Defined in [packages/core/src/loaders/file.ts:12](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/file.ts#L12)_
 
 ---
 
@@ -26,7 +26,7 @@ _Defined in [packages/core/src/loaders/file.ts:12](https://github.com/willsoto/n
 
 _Inherited from [LoaderOptions](loaderoptions.md).[maxRetries](loaderoptions.md#maxretries)_
 
-_Defined in [packages/core/src/loaders/base.ts:6](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L6)_
+_Defined in [packages/core/src/loaders/base.ts:6](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L6)_
 
 ---
 
@@ -36,7 +36,7 @@ _Defined in [packages/core/src/loaders/base.ts:6](https://github.com/willsoto/no
 
 _Inherited from [LoaderOptions](loaderoptions.md).[retryDelay](loaderoptions.md#retrydelay)_
 
-_Defined in [packages/core/src/loaders/base.ts:7](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L7)_
+_Defined in [packages/core/src/loaders/base.ts:7](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L7)_
 
 ---
 
@@ -46,4 +46,4 @@ _Defined in [packages/core/src/loaders/base.ts:7](https://github.com/willsoto/no
 
 _Inherited from [LoaderOptions](loaderoptions.md).[stopOnFailure](loaderoptions.md#stoponfailure)_
 
-_Defined in [packages/core/src/loaders/base.ts:5](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L5)_
+_Defined in [packages/core/src/loaders/base.ts:5](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L5)_

@@ -18,7 +18,7 @@ sidebar_label: "VaultLoader"
 
 _Overrides void_
 
-_Defined in [packages/vault/src/loader.ts:23](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/vault/src/loader.ts#L23)_
+_Defined in [packages/vault/src/loader.ts:23](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/vault/src/loader.ts#L23)_
 
 #### Parameters:
 
@@ -34,7 +34,7 @@ _Defined in [packages/vault/src/loader.ts:23](https://github.com/willsoto/node-k
 
 • `Readonly` **client**: client
 
-_Defined in [packages/vault/src/loader.ts:21](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/vault/src/loader.ts#L21)_
+_Defined in [packages/vault/src/loader.ts:21](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/vault/src/loader.ts#L21)_
 
 ---
 
@@ -54,7 +54,7 @@ _Defined in packages/core/dist/loaders/base.d.ts:11_
 
 _Overrides void_
 
-_Defined in [packages/vault/src/loader.ts:23](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/vault/src/loader.ts#L23)_
+_Defined in [packages/vault/src/loader.ts:23](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/vault/src/loader.ts#L23)_
 
 ---
 
@@ -62,7 +62,7 @@ _Defined in [packages/vault/src/loader.ts:23](https://github.com/willsoto/node-k
 
 • `Readonly` **options**: [VaultLoaderOptions](../interfaces/vaultloaderoptions.md)
 
-_Defined in [packages/vault/src/loader.ts:20](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/vault/src/loader.ts#L20)_
+_Defined in [packages/vault/src/loader.ts:20](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/vault/src/loader.ts#L20)_
 
 ---
 
@@ -104,7 +104,7 @@ _Defined in packages/core/dist/loaders/base.d.ts:15_
 
 _Overrides void_
 
-_Defined in [packages/vault/src/loader.ts:32](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/vault/src/loader.ts#L32)_
+_Defined in [packages/vault/src/loader.ts:32](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/vault/src/loader.ts#L32)_
 
 #### Parameters:
 
@@ -120,7 +120,7 @@ _Defined in [packages/vault/src/loader.ts:32](https://github.com/willsoto/node-k
 
 ▸ `Private`**postLoad**(`store`: Store, `secret`: [Secret](../interfaces/secret.md), `key`: string, `value`: unknown): void
 
-_Defined in [packages/vault/src/loader.ts:57](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/vault/src/loader.ts#L57)_
+_Defined in [packages/vault/src/loader.ts:57](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/vault/src/loader.ts#L57)_
 
 #### Parameters:
 
@@ -139,7 +139,7 @@ _Defined in [packages/vault/src/loader.ts:57](https://github.com/willsoto/node-k
 
 ▸ **processSecrets**(`store`: Store): Promise&#60;void>
 
-_Defined in [packages/vault/src/loader.ts:40](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/vault/src/loader.ts#L40)_
+_Defined in [packages/vault/src/loader.ts:40](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/vault/src/loader.ts#L40)_
 
 #### Parameters:
 

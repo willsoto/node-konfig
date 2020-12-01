@@ -18,7 +18,7 @@ sidebar_label: "EnvLoader"
 
 _Overrides [Loader](loader.md).[constructor](loader.md#constructor)_
 
-_Defined in [packages/core/src/loaders/env.ts:17](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/env.ts#L17)_
+_Defined in [packages/core/src/loaders/env.ts:17](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/env.ts#L17)_
 
 #### Parameters:
 
@@ -36,7 +36,7 @@ _Defined in [packages/core/src/loaders/env.ts:17](https://github.com/willsoto/no
 
 _Inherited from [Loader](loader.md).[maxRetries](loader.md#maxretries)_
 
-_Defined in [packages/core/src/loaders/base.ts:13](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L13)_
+_Defined in [packages/core/src/loaders/base.ts:13](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L13)_
 
 ---
 
@@ -46,7 +46,7 @@ _Defined in [packages/core/src/loaders/base.ts:13](https://github.com/willsoto/n
 
 _Overrides [Loader](loader.md).[name](loader.md#name)_
 
-_Defined in [packages/core/src/loaders/env.ts:17](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/env.ts#L17)_
+_Defined in [packages/core/src/loaders/env.ts:17](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/env.ts#L17)_
 
 ---
 
@@ -54,7 +54,7 @@ _Defined in [packages/core/src/loaders/env.ts:17](https://github.com/willsoto/no
 
 • `Readonly` **options**: [EnvLoaderOptions](../interfaces/envloaderoptions.md)
 
-_Defined in [packages/core/src/loaders/env.ts:15](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/env.ts#L15)_
+_Defined in [packages/core/src/loaders/env.ts:15](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/env.ts#L15)_
 
 ---
 
@@ -64,7 +64,7 @@ _Defined in [packages/core/src/loaders/env.ts:15](https://github.com/willsoto/no
 
 _Inherited from [Loader](loader.md).[retryDelay](loader.md#retrydelay)_
 
-_Defined in [packages/core/src/loaders/base.ts:14](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L14)_
+_Defined in [packages/core/src/loaders/base.ts:14](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L14)_
 
 ---
 
@@ -74,7 +74,7 @@ _Defined in [packages/core/src/loaders/base.ts:14](https://github.com/willsoto/n
 
 _Inherited from [Loader](loader.md).[stopOnFailure](loader.md#stoponfailure)_
 
-_Defined in [packages/core/src/loaders/base.ts:12](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L12)_
+_Defined in [packages/core/src/loaders/base.ts:12](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L12)_
 
 ## Accessors
 
@@ -84,7 +84,7 @@ _Defined in [packages/core/src/loaders/base.ts:12](https://github.com/willsoto/n
 
 _Inherited from [Loader](loader.md).[retryPolicy](loader.md#retrypolicy)_
 
-_Defined in [packages/core/src/loaders/base.ts:24](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/base.ts#L24)_
+_Defined in [packages/core/src/loaders/base.ts:24](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L24)_
 
 **Returns:** RetryPolicy
 
@@ -96,7 +96,7 @@ _Defined in [packages/core/src/loaders/base.ts:24](https://github.com/willsoto/n
 
 _Overrides [Loader](loader.md).[load](loader.md#load)_
 
-_Defined in [packages/core/src/loaders/env.ts:25](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/env.ts#L25)_
+_Defined in [packages/core/src/loaders/env.ts:25](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/env.ts#L25)_
 
 #### Parameters:
 
@@ -112,7 +112,7 @@ _Defined in [packages/core/src/loaders/env.ts:25](https://github.com/willsoto/no
 
 ▸ `Private`**processValue**(`value`: string, `arraySeparator?`: undefined \| string): string \| string[]
 
-_Defined in [packages/core/src/loaders/env.ts:37](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/loaders/env.ts#L37)_
+_Defined in [packages/core/src/loaders/env.ts:37](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/env.ts#L37)_
 
 #### Parameters:
 

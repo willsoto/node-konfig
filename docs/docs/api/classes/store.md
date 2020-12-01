@@ -28,7 +28,7 @@ const store = new Store();
 
 \+ **new Store**(`options?`: [StoreOptions](../interfaces/storeoptions.md)): [Store](store.md)
 
-_Defined in [packages/core/src/store.ts:43](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L43)_
+_Defined in [packages/core/src/store.ts:43](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L43)_
 
 #### Parameters:
 
@@ -44,7 +44,7 @@ _Defined in [packages/core/src/store.ts:43](https://github.com/willsoto/node-kon
 
 • `Private` **#groups**: [Store](store.md)[] = []
 
-_Defined in [packages/core/src/store.ts:27](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L27)_
+_Defined in [packages/core/src/store.ts:27](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L27)_
 
 Keeps track of all the groups associated with this Store instance.
 
@@ -56,7 +56,7 @@ Keeps track of all the groups associated with this Store instance.
 
 • `Private` **#loaders**: [Loader](loader.md)[] = []
 
-_Defined in [packages/core/src/store.ts:33](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L33)_
+_Defined in [packages/core/src/store.ts:33](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L33)_
 
 Keeps track of all the loaders associated with this Store instance.
 
@@ -68,7 +68,7 @@ Keeps track of all the loaders associated with this Store instance.
 
 • `Private` **config**: TConfig = {} as TConfig
 
-_Defined in [packages/core/src/store.ts:43](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L43)_
+_Defined in [packages/core/src/store.ts:43](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L43)_
 
 ---
 
@@ -76,7 +76,7 @@ _Defined in [packages/core/src/store.ts:43](https://github.com/willsoto/node-kon
 
 • `Readonly` **options**: Required&#60;[StoreOptions](../interfaces/storeoptions.md)>
 
-_Defined in [packages/core/src/store.ts:35](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L35)_
+_Defined in [packages/core/src/store.ts:35](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L35)_
 
 ## Accessors
 
@@ -84,7 +84,7 @@ _Defined in [packages/core/src/store.ts:35](https://github.com/willsoto/node-kon
 
 • get **name**(): string
 
-_Defined in [packages/core/src/store.ts:250](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L250)_
+_Defined in [packages/core/src/store.ts:250](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L250)_
 
 **`internal`**
 
@@ -96,7 +96,7 @@ _Defined in [packages/core/src/store.ts:250](https://github.com/willsoto/node-ko
 
 ▸ **assign**(`config`: TConfig): this
 
-_Defined in [packages/core/src/store.ts:155](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L155)_
+_Defined in [packages/core/src/store.ts:155](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L155)_
 
 Given a config, will recursively merge all of its properties onto this instance's config.
 If a Group (ie `Store`) is encountered, it will correctly merge those properties onto that Group.
@@ -115,7 +115,7 @@ If a Group (ie `Store`) is encountered, it will correctly merge those properties
 
 ▸ **get**&#60;T>(`accessor`: string): T
 
-_Defined in [packages/core/src/store.ts:67](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L67)_
+_Defined in [packages/core/src/store.ts:67](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L67)_
 
 The primary way to retrieve values from the [Store](store.md).
 Can traverse through `Group` as well.
@@ -148,7 +148,7 @@ const value = store.get("path.to.my.thing");
 
 ▸ **getOrThrow**&#60;T>(`accessor`: string): T
 
-_Defined in [packages/core/src/store.ts:96](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L96)_
+_Defined in [packages/core/src/store.ts:96](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L96)_
 
 If the given accessor is not present on the store or the returned value is `null`,
 an error will be thrown.
@@ -175,7 +175,7 @@ an error will be thrown.
 
 ▸ **group**(`name`: string): [Store](store.md)
 
-_Defined in [packages/core/src/store.ts:230](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L230)_
+_Defined in [packages/core/src/store.ts:230](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L230)_
 
 Get or set a sub-`Store` (group). Once a group has been created, you can register loaders
 specfic to that group. Calling `Store#init` on the parent `Store` will also initialize all the groups
@@ -209,7 +209,7 @@ await store.init();
 
 ▸ **has**(`accessor`: string): boolean
 
-_Defined in [packages/core/src/store.ts:129](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L129)_
+_Defined in [packages/core/src/store.ts:129](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L129)_
 
 Check if a particular accessor exists in the config.
 
@@ -227,7 +227,7 @@ Check if a particular accessor exists in the config.
 
 ▸ **init**(): Promise&#60;void>
 
-_Defined in [packages/core/src/store.ts:174](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L174)_
+_Defined in [packages/core/src/store.ts:174](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L174)_
 
 Used to initialize the `Store` and process all registered `Loaders` and groups within.
 
@@ -239,7 +239,7 @@ Used to initialize the `Store` and process all registered `Loaders` and groups w
 
 ▸ **registerLoader**(`loader`: [Loader](loader.md)): this
 
-_Defined in [packages/core/src/store.ts:141](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L141)_
+_Defined in [packages/core/src/store.ts:141](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L141)_
 
 Register a `Loader` to this `Store`. Use [Store.init](store.md#init) to initialize all of the Store's
 registered loaders.
@@ -258,7 +258,7 @@ registered loaders.
 
 ▸ **set**(`accessor`: string, `value`: unknown): TConfig
 
-_Defined in [packages/core/src/store.ts:114](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L114)_
+_Defined in [packages/core/src/store.ts:114](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L114)_
 
 Manually set a value to the `Store`.
 In most circumstances, you should not need to use this directly.
@@ -278,7 +278,7 @@ In most circumstances, you should not need to use this directly.
 
 ▸ **toJSON**(): Record&#60;string, unknown>
 
-_Defined in [packages/core/src/store.ts:190](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/core/src/store.ts#L190)_
+_Defined in [packages/core/src/store.ts:190](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/store.ts#L190)_
 
 Serialize the Store's configuration object. This will traverse all groups as well.
 

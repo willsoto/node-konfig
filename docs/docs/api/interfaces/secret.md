@@ -14,7 +14,7 @@ sidebar_label: "Secret"
 
 • **key**: string
 
-_Defined in [packages/vault/src/loader.ts:9](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/vault/src/loader.ts#L9)_
+_Defined in [packages/vault/src/loader.ts:9](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/vault/src/loader.ts#L9)_
 
 ---
 
@@ -22,7 +22,7 @@ _Defined in [packages/vault/src/loader.ts:9](https://github.com/willsoto/node-ko
 
 • `Optional` **prefix**: undefined \| string
 
-_Defined in [packages/vault/src/loader.ts:10](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/vault/src/loader.ts#L10)_
+_Defined in [packages/vault/src/loader.ts:10](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/vault/src/loader.ts#L10)_
 
 ---
 
@@ -30,4 +30,4 @@ _Defined in [packages/vault/src/loader.ts:10](https://github.com/willsoto/node-k
 
 • `Optional` **replacer**: undefined \| (key: string) => string
 
-_Defined in [packages/vault/src/loader.ts:11](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/vault/src/loader.ts#L11)_
+_Defined in [packages/vault/src/loader.ts:11](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/vault/src/loader.ts#L11)_

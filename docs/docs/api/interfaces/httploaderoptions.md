@@ -36,7 +36,7 @@ _Defined in packages/core/dist/loaders/base.d.ts:6_
 
 • **sources**: [Source](source.md)[]
 
-_Defined in [packages/http/src/loader.ts:16](https://github.com/willsoto/node-konfig/blob/60bd8de/packages/http/src/loader.ts#L16)_
+_Defined in [packages/http/src/loader.ts:16](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/http/src/loader.ts#L16)_
 
 ---
 
