@@ -16,6 +16,36 @@ describe("Store", function () {
     });
   });
 
+  it("can register several loaders at once", async function () {
+    const store = new Konfig.Store();
+
+    store.registerLoaders(
+      new Konfig.ValueLoader({
+        values: {
+          name: "app",
+        },
+      }),
+      new Konfig.ValueLoader({
+        values: {
+          database: {
+            host: "localhost",
+            port: 5432,
+          },
+        },
+      }),
+    );
+
+    await store.init();
+
+    expect(store.toJSON()).to.eql({
+      name: "app",
+      database: {
+        host: "localhost",
+        port: 5432,
+      },
+    });
+  });
+
   it("can fetch individual values from the store", async function () {
     const store = await makeStore();
 

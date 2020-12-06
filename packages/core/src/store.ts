@@ -145,6 +145,15 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
   }
 
   /**
+   * Registers multiple loaders at once.
+   */
+  registerLoaders(...loaders: Loader[]): this {
+    loaders.forEach((loader) => this.registerLoader(loader));
+
+    return this;
+  }
+
+  /**
    * Given a config, will recursively merge all of its properties onto this instance's config.
    * If a Group (ie `Store`) is encountered, it will correctly merge those properties onto that Group.
    *
