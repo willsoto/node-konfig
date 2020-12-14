@@ -18,7 +18,7 @@ sidebar_label: "FlagLoader"
 
 _Overrides [Loader](loader.md).[constructor](loader.md#constructor)_
 
-_Defined in [packages/core/src/loaders/flag.ts:14](https://github.com/willsoto/node-konfig/blob/b999a55/packages/core/src/loaders/flag.ts#L14)_
+_Defined in [packages/core/src/loaders/flag.ts:14](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/flag.ts#L14)_
 
 #### Parameters:
 
@@ -34,7 +34,7 @@ _Defined in [packages/core/src/loaders/flag.ts:14](https://github.com/willsoto/n
 
 • `Private` **#cli**: Result&#60;meow.AnyFlags>
 
-_Defined in [packages/core/src/loaders/flag.ts:10](https://github.com/willsoto/node-konfig/blob/b999a55/packages/core/src/loaders/flag.ts#L10)_
+_Defined in [packages/core/src/loaders/flag.ts:10](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/flag.ts#L10)_
 
 ---
 
@@ -44,7 +44,7 @@ _Defined in [packages/core/src/loaders/flag.ts:10](https://github.com/willsoto/n
 
 _Inherited from [Loader](loader.md).[maxRetries](loader.md#maxretries)_
 
-_Defined in [packages/core/src/loaders/base.ts:13](https://github.com/willsoto/node-konfig/blob/b999a55/packages/core/src/loaders/base.ts#L13)_
+_Defined in [packages/core/src/loaders/base.ts:13](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L13)_
 
 ---
 
@@ -54,7 +54,7 @@ _Defined in [packages/core/src/loaders/base.ts:13](https://github.com/willsoto/n
 
 _Overrides [Loader](loader.md).[name](loader.md#name)_
 
-_Defined in [packages/core/src/loaders/flag.ts:14](https://github.com/willsoto/node-konfig/blob/b999a55/packages/core/src/loaders/flag.ts#L14)_
+_Defined in [packages/core/src/loaders/flag.ts:14](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/flag.ts#L14)_
 
 ---
 
@@ -62,7 +62,7 @@ _Defined in [packages/core/src/loaders/flag.ts:14](https://github.com/willsoto/n
 
 • `Readonly` **options**: [FlagLoaderOptions](../interfaces/flagloaderoptions.md)
 
-_Defined in [packages/core/src/loaders/flag.ts:12](https://github.com/willsoto/node-konfig/blob/b999a55/packages/core/src/loaders/flag.ts#L12)_
+_Defined in [packages/core/src/loaders/flag.ts:12](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/flag.ts#L12)_
 
 ---
 
@@ -72,7 +72,7 @@ _Defined in [packages/core/src/loaders/flag.ts:12](https://github.com/willsoto/n
 
 _Inherited from [Loader](loader.md).[retryDelay](loader.md#retrydelay)_
 
-_Defined in [packages/core/src/loaders/base.ts:14](https://github.com/willsoto/node-konfig/blob/b999a55/packages/core/src/loaders/base.ts#L14)_
+_Defined in [packages/core/src/loaders/base.ts:14](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L14)_
 
 ---
 
@@ -82,7 +82,7 @@ _Defined in [packages/core/src/loaders/base.ts:14](https://github.com/willsoto/n
 
 _Inherited from [Loader](loader.md).[stopOnFailure](loader.md#stoponfailure)_
 
-_Defined in [packages/core/src/loaders/base.ts:12](https://github.com/willsoto/node-konfig/blob/b999a55/packages/core/src/loaders/base.ts#L12)_
+_Defined in [packages/core/src/loaders/base.ts:12](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L12)_
 
 ## Accessors
 
@@ -92,7 +92,7 @@ _Defined in [packages/core/src/loaders/base.ts:12](https://github.com/willsoto/n
 
 _Inherited from [Loader](loader.md).[retryPolicy](loader.md#retrypolicy)_
 
-_Defined in [packages/core/src/loaders/base.ts:24](https://github.com/willsoto/node-konfig/blob/b999a55/packages/core/src/loaders/base.ts#L24)_
+_Defined in [packages/core/src/loaders/base.ts:24](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/base.ts#L24)_
 
 **Returns:** RetryPolicy
 
@@ -104,7 +104,7 @@ _Defined in [packages/core/src/loaders/base.ts:24](https://github.com/willsoto/n
 
 _Overrides [Loader](loader.md).[load](loader.md#load)_
 
-_Defined in [packages/core/src/loaders/flag.ts:23](https://github.com/willsoto/node-konfig/blob/b999a55/packages/core/src/loaders/flag.ts#L23)_
+_Defined in [packages/core/src/loaders/flag.ts:23](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/loaders/flag.ts#L23)_
 
 #### Parameters:
 

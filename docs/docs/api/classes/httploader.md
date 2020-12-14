@@ -18,7 +18,7 @@ sidebar_label: "HttpLoader"
 
 _Overrides void_
 
-_Defined in [packages/http/src/loader.ts:22](https://github.com/willsoto/node-konfig/blob/b999a55/packages/http/src/loader.ts#L22)_
+_Defined in [packages/http/src/loader.ts:22](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/http/src/loader.ts#L22)_
 
 #### Parameters:
 
@@ -46,7 +46,7 @@ _Defined in packages/core/dist/loaders/base.d.ts:11_
 
 _Overrides void_
 
-_Defined in [packages/http/src/loader.ts:22](https://github.com/willsoto/node-konfig/blob/b999a55/packages/http/src/loader.ts#L22)_
+_Defined in [packages/http/src/loader.ts:22](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/http/src/loader.ts#L22)_
 
 ---
 
@@ -54,7 +54,7 @@ _Defined in [packages/http/src/loader.ts:22](https://github.com/willsoto/node-ko
 
 • `Readonly` **options**: [HttpLoaderOptions](../interfaces/httploaderoptions.md)
 
-_Defined in [packages/http/src/loader.ts:20](https://github.com/willsoto/node-konfig/blob/b999a55/packages/http/src/loader.ts#L20)_
+_Defined in [packages/http/src/loader.ts:20](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/http/src/loader.ts#L20)_
 
 ---
 
@@ -96,7 +96,7 @@ _Defined in packages/core/dist/loaders/base.d.ts:15_
 
 _Overrides void_
 
-_Defined in [packages/http/src/loader.ts:30](https://github.com/willsoto/node-konfig/blob/b999a55/packages/http/src/loader.ts#L30)_
+_Defined in [packages/http/src/loader.ts:30](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/http/src/loader.ts#L30)_
 
 #### Parameters:
 
@@ -112,7 +112,7 @@ _Defined in [packages/http/src/loader.ts:30](https://github.com/willsoto/node-ko
 
 ▸ **process**(`store`: Store): Promise&#60;void>
 
-_Defined in [packages/http/src/loader.ts:38](https://github.com/willsoto/node-konfig/blob/b999a55/packages/http/src/loader.ts#L38)_
+_Defined in [packages/http/src/loader.ts:38](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/http/src/loader.ts#L38)_
 
 #### Parameters:
 

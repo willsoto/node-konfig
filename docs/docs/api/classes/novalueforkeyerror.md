@@ -16,7 +16,7 @@ sidebar_label: "NoValueForKeyError"
 
 \+ **new NoValueForKeyError**(`key`: string): [NoValueForKeyError](novalueforkeyerror.md)
 
-_Defined in [packages/core/src/errors.ts:7](https://github.com/willsoto/node-konfig/blob/b999a55/packages/core/src/errors.ts#L7)_
+_Defined in [packages/core/src/errors.ts:7](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/errors.ts#L7)_
 
 #### Parameters:
 

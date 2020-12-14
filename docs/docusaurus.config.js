@@ -32,7 +32,6 @@ module.exports = {
           type: "doc",
           position: "left",
           label: "API",
-          activeBasePath: "/api",
           docId: "api/index",
         },
         {

@@ -20,7 +20,7 @@ sidebar_label: "TOMLParser"
 
 _Implementation of [Parser](../interfaces/parser.md).[name](../interfaces/parser.md#name)_
 
-_Defined in [packages/core/src/parsers/toml.ts:5](https://github.com/willsoto/node-konfig/blob/b999a55/packages/core/src/parsers/toml.ts#L5)_
+_Defined in [packages/core/src/parsers/toml.ts:5](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/parsers/toml.ts#L5)_
 
 ## Methods
 
@@ -30,7 +30,7 @@ _Defined in [packages/core/src/parsers/toml.ts:5](https://github.com/willsoto/no
 
 _Implementation of [Parser](../interfaces/parser.md)_
 
-_Defined in [packages/core/src/parsers/toml.ts:7](https://github.com/willsoto/node-konfig/blob/b999a55/packages/core/src/parsers/toml.ts#L7)_
+_Defined in [packages/core/src/parsers/toml.ts:7](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/core/src/parsers/toml.ts#L7)_
 
 #### Parameters:
 
