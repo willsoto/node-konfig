@@ -16,7 +16,7 @@ sidebar_label: "EtcdLoaderOptions"
 
 • `Optional` **etcd3Options**: IOptions
 
-_Defined in [packages/etcd/src/loader.ts:17](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/etcd/src/loader.ts#L17)_
+_Defined in [packages/etcd/src/loader.ts:17](https://github.com/willsoto/node-konfig/blob/b999a55/packages/etcd/src/loader.ts#L17)_
 
 ---
 
@@ -24,7 +24,7 @@ _Defined in [packages/etcd/src/loader.ts:17](https://github.com/willsoto/node-ko
 
 • **keys**: [Key](key.md)[]
 
-_Defined in [packages/etcd/src/loader.ts:16](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/etcd/src/loader.ts#L16)_
+_Defined in [packages/etcd/src/loader.ts:16](https://github.com/willsoto/node-konfig/blob/b999a55/packages/etcd/src/loader.ts#L16)_
 
 ---
 

@@ -18,7 +18,7 @@ sidebar_label: "EtcdLoader"
 
 _Overrides void_
 
-_Defined in [packages/etcd/src/loader.ts:24](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/etcd/src/loader.ts#L24)_
+_Defined in [packages/etcd/src/loader.ts:24](https://github.com/willsoto/node-konfig/blob/b999a55/packages/etcd/src/loader.ts#L24)_
 
 #### Parameters:
 
@@ -34,7 +34,7 @@ _Defined in [packages/etcd/src/loader.ts:24](https://github.com/willsoto/node-ko
 
 • `Readonly` **client**: Etcd3
 
-_Defined in [packages/etcd/src/loader.ts:22](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/etcd/src/loader.ts#L22)_
+_Defined in [packages/etcd/src/loader.ts:22](https://github.com/willsoto/node-konfig/blob/b999a55/packages/etcd/src/loader.ts#L22)_
 
 ---
 
@@ -54,7 +54,7 @@ _Defined in packages/core/dist/loaders/base.d.ts:11_
 
 _Overrides void_
 
-_Defined in [packages/etcd/src/loader.ts:24](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/etcd/src/loader.ts#L24)_
+_Defined in [packages/etcd/src/loader.ts:24](https://github.com/willsoto/node-konfig/blob/b999a55/packages/etcd/src/loader.ts#L24)_
 
 ---
 
@@ -62,7 +62,7 @@ _Defined in [packages/etcd/src/loader.ts:24](https://github.com/willsoto/node-ko
 
 • `Readonly` **options**: [EtcdLoaderOptions](../interfaces/etcdloaderoptions.md)
 
-_Defined in [packages/etcd/src/loader.ts:21](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/etcd/src/loader.ts#L21)_
+_Defined in [packages/etcd/src/loader.ts:21](https://github.com/willsoto/node-konfig/blob/b999a55/packages/etcd/src/loader.ts#L21)_
 
 ---
 
@@ -102,7 +102,7 @@ _Defined in packages/core/dist/loaders/base.d.ts:15_
 
 ▸ **execute**(`store`: Store): Promise&#60;void>
 
-_Defined in [packages/etcd/src/loader.ts:41](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/etcd/src/loader.ts#L41)_
+_Defined in [packages/etcd/src/loader.ts:41](https://github.com/willsoto/node-konfig/blob/b999a55/packages/etcd/src/loader.ts#L41)_
 
 #### Parameters:
 
@@ -120,7 +120,7 @@ _Defined in [packages/etcd/src/loader.ts:41](https://github.com/willsoto/node-ko
 
 _Overrides void_
 
-_Defined in [packages/etcd/src/loader.ts:33](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/etcd/src/loader.ts#L33)_
+_Defined in [packages/etcd/src/loader.ts:33](https://github.com/willsoto/node-konfig/blob/b999a55/packages/etcd/src/loader.ts#L33)_
 
 #### Parameters:
 

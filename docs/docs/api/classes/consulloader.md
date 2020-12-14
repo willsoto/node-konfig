@@ -18,7 +18,7 @@ sidebar_label: "ConsulLoader"
 
 _Overrides void_
 
-_Defined in [packages/consul/src/loader.ts:36](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/consul/src/loader.ts#L36)_
+_Defined in [packages/consul/src/loader.ts:36](https://github.com/willsoto/node-konfig/blob/b999a55/packages/consul/src/loader.ts#L36)_
 
 #### Parameters:
 
@@ -34,7 +34,7 @@ _Defined in [packages/consul/src/loader.ts:36](https://github.com/willsoto/node-
 
 • `Readonly` **client**: consul.Consul
 
-_Defined in [packages/consul/src/loader.ts:34](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/consul/src/loader.ts#L34)_
+_Defined in [packages/consul/src/loader.ts:34](https://github.com/willsoto/node-konfig/blob/b999a55/packages/consul/src/loader.ts#L34)_
 
 ---
 
@@ -54,7 +54,7 @@ _Defined in packages/core/dist/loaders/base.d.ts:11_
 
 _Overrides void_
 
-_Defined in [packages/consul/src/loader.ts:36](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/consul/src/loader.ts#L36)_
+_Defined in [packages/consul/src/loader.ts:36](https://github.com/willsoto/node-konfig/blob/b999a55/packages/consul/src/loader.ts#L36)_
 
 ---
 
@@ -62,7 +62,7 @@ _Defined in [packages/consul/src/loader.ts:36](https://github.com/willsoto/node-
 
 • `Readonly` **options**: [ConsulLoaderOptions](../interfaces/consulloaderoptions.md)
 
-_Defined in [packages/consul/src/loader.ts:33](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/consul/src/loader.ts#L33)_
+_Defined in [packages/consul/src/loader.ts:33](https://github.com/willsoto/node-konfig/blob/b999a55/packages/consul/src/loader.ts#L33)_
 
 ---
 
@@ -104,7 +104,7 @@ _Defined in packages/core/dist/loaders/base.d.ts:15_
 
 _Overrides void_
 
-_Defined in [packages/consul/src/loader.ts:49](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/consul/src/loader.ts#L49)_
+_Defined in [packages/consul/src/loader.ts:49](https://github.com/willsoto/node-konfig/blob/b999a55/packages/consul/src/loader.ts#L49)_
 
 #### Parameters:
 
@@ -120,7 +120,7 @@ _Defined in [packages/consul/src/loader.ts:49](https://github.com/willsoto/node-
 
 ▸ `Private`**postLoad**(`key`: [Key](../interfaces/key.md), `accessor`: string, `value`: unknown): [accessor: string, value: unknown]
 
-_Defined in [packages/consul/src/loader.ts:81](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/consul/src/loader.ts#L81)_
+_Defined in [packages/consul/src/loader.ts:81](https://github.com/willsoto/node-konfig/blob/b999a55/packages/consul/src/loader.ts#L81)_
 
 #### Parameters:
 
@@ -138,7 +138,7 @@ _Defined in [packages/consul/src/loader.ts:81](https://github.com/willsoto/node-
 
 ▸ **process**(`store`: Store): Promise&#60;void>
 
-_Defined in [packages/consul/src/loader.ts:57](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/consul/src/loader.ts#L57)_
+_Defined in [packages/consul/src/loader.ts:57](https://github.com/willsoto/node-konfig/blob/b999a55/packages/consul/src/loader.ts#L57)_
 
 #### Parameters:
 

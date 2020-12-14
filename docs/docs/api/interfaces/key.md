@@ -14,7 +14,7 @@ sidebar_label: "Key"
 
 • **accessor**: string
 
-_Defined in [packages/etcd/src/loader.ts:11](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/etcd/src/loader.ts#L11)_
+_Defined in [packages/etcd/src/loader.ts:11](https://github.com/willsoto/node-konfig/blob/b999a55/packages/etcd/src/loader.ts#L11)_
 
 ---
 
@@ -22,7 +22,7 @@ _Defined in [packages/etcd/src/loader.ts:11](https://github.com/willsoto/node-ko
 
 • `Optional` **getOptions**: consul.Kv.GetOptions
 
-_Defined in [packages/consul/src/loader.ts:15](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/consul/src/loader.ts#L15)_
+_Defined in [packages/consul/src/loader.ts:15](https://github.com/willsoto/node-konfig/blob/b999a55/packages/consul/src/loader.ts#L15)_
 
 ---
 
@@ -30,7 +30,7 @@ _Defined in [packages/consul/src/loader.ts:15](https://github.com/willsoto/node-
 
 • **key**: string
 
-_Defined in [packages/consul/src/loader.ts:11](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/consul/src/loader.ts#L11)_
+_Defined in [packages/consul/src/loader.ts:11](https://github.com/willsoto/node-konfig/blob/b999a55/packages/consul/src/loader.ts#L11)_
 
 ---
 
@@ -38,9 +38,9 @@ _Defined in [packages/consul/src/loader.ts:11](https://github.com/willsoto/node-
 
 • `Optional` **parser**: Parser
 
-_Defined in [packages/consul/src/loader.ts:14](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/consul/src/loader.ts#L14)_
+_Defined in [packages/consul/src/loader.ts:14](https://github.com/willsoto/node-konfig/blob/b999a55/packages/consul/src/loader.ts#L14)_
 
-_Defined in [packages/etcd/src/loader.ts:12](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/etcd/src/loader.ts#L12)_
+_Defined in [packages/etcd/src/loader.ts:12](https://github.com/willsoto/node-konfig/blob/b999a55/packages/etcd/src/loader.ts#L12)_
 
 ---
 
@@ -48,7 +48,7 @@ _Defined in [packages/etcd/src/loader.ts:12](https://github.com/willsoto/node-ko
 
 • `Optional` **prefix**: undefined \| string
 
-_Defined in [packages/consul/src/loader.ts:12](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/consul/src/loader.ts#L12)_
+_Defined in [packages/consul/src/loader.ts:12](https://github.com/willsoto/node-konfig/blob/b999a55/packages/consul/src/loader.ts#L12)_
 
 ---
 
@@ -56,4 +56,4 @@ _Defined in [packages/consul/src/loader.ts:12](https://github.com/willsoto/node-
 
 • `Optional` **replacer**: undefined \| (key: string) => string
 
-_Defined in [packages/consul/src/loader.ts:13](https://github.com/willsoto/node-konfig/blob/9b8a7e5/packages/consul/src/loader.ts#L13)_
+_Defined in [packages/consul/src/loader.ts:13](https://github.com/willsoto/node-konfig/blob/b999a55/packages/consul/src/loader.ts#L13)_
