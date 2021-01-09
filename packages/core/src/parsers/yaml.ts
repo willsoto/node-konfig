@@ -11,9 +11,6 @@ export class YAMLParser implements Parser {
   }
 
   parse(contents: string): Record<string, unknown> {
-    return yaml.safeLoad(contents, this.yamlLoadOptions) as Record<
-      string,
-      unknown
-    >;
+    return yaml.load(contents, this.yamlLoadOptions) as Record<string, unknown>;
   }
 }
