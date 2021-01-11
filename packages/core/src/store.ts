@@ -4,6 +4,7 @@ import { Loader } from "./loaders";
 
 interface StoreOptions {
   name?: string;
+  loaders?: Loader[];
 }
 
 type Config = Record<string, unknown>;
@@ -32,7 +33,7 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
    */
   #loaders: Loader[] = [];
 
-  readonly options: Required<StoreOptions>;
+  readonly options: Required<Pick<StoreOptions, "name">>;
 
   // Without the type assertion, I get TS error 2322:
   //// Type '{}' is not assignable to type 'TConfig'.
@@ -43,10 +44,14 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
   private config: TConfig = {} as TConfig;
 
   constructor(options: StoreOptions = {}) {
+    const { loaders = [], ...rest } = options;
+
     this.options = {
       name: "default",
-      ...options,
+      ...rest,
     };
+
+    this.registerLoaders(...loaders);
   }
 
   /**

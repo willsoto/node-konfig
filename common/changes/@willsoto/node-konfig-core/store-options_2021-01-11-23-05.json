@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-core",
+      "comment": "Allow loaders to be registered via the constructor",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-core",
+  "email": "willsoto@users.noreply.github.com"
+}
