@@ -46,6 +46,36 @@ describe("Store", function () {
     });
   });
 
+  it("allows loaders to be registered via the contrustor", async function () {
+    const store = new Konfig.Store({
+      loaders: [
+        new Konfig.ValueLoader({
+          values: {
+            name: "app",
+          },
+        }),
+        new Konfig.ValueLoader({
+          values: {
+            database: {
+              host: "localhost",
+              port: 5432,
+            },
+          },
+        }),
+      ],
+    });
+
+    await store.init();
+
+    expect(store.toJSON()).to.eql({
+      name: "app",
+      database: {
+        host: "localhost",
+        port: 5432,
+      },
+    });
+  });
+
   it("can fetch individual values from the store", async function () {
     const store = await makeStore();
 
