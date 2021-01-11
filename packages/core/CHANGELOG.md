@@ -1,6 +1,13 @@
 # Change Log - @willsoto/node-konfig-core
 
-This log was last generated on Wed, 25 Nov 2020 00:33:22 GMT and should not be manually modified.
+This log was last generated on Mon, 11 Jan 2021 23:18:55 GMT and should not be manually modified.
+
+## 0.3.0
+Mon, 11 Jan 2021 23:18:55 GMT
+
+### Minor changes
+
+- Allow loaders to be registered via the constructor
 
 ## 0.2.0
 Wed, 25 Nov 2020 00:33:22 GMT

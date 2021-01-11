@@ -2,6 +2,21 @@
   "name": "@willsoto/node-konfig-etcd",
   "entries": [
     {
+      "version": "0.2.3",
+      "tag": "@willsoto/node-konfig-etcd_v0.2.3",
+      "date": "Mon, 11 Jan 2021 23:18:55 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" to `0.3.0`"
+          },
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" from `^0.2.0` to `^0.3.0`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.2.2",
       "tag": "@willsoto/node-konfig-etcd_v0.2.2",
       "date": "Wed, 25 Nov 2020 00:33:22 GMT",

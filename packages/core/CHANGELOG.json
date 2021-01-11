@@ -2,6 +2,18 @@
   "name": "@willsoto/node-konfig-core",
   "entries": [
     {
+      "version": "0.3.0",
+      "tag": "@willsoto/node-konfig-core_v0.3.0",
+      "date": "Mon, 11 Jan 2021 23:18:55 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Allow loaders to be registered via the constructor"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.2.0",
       "tag": "@willsoto/node-konfig-core_v0.2.0",
       "date": "Wed, 25 Nov 2020 00:33:22 GMT",
