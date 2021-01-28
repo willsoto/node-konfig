@@ -3,14 +3,14 @@ importers:
     specifiers: {}
   ../../integrations/nestjs:
     dependencies:
-      '@willsoto/node-konfig-core': 'link:../../packages/core'
+      '@willsoto/node-konfig-core': link:../../packages/core
     devDependencies:
       '@nestjs/common': 7.0.13_0c773f197e7bb0df0bedc332ad8bc35d
-      '@nestjs/core': 7.6.5_0b52b7b6f96fa7861c0d52c484415083
-      '@nestjs/testing': 7.6.5_aa02e0a273f550052f9e664aa8ce334c
-      '@node-konfig-tools/eslint': 'link:../../tools/eslint'
-      '@node-konfig-tools/mocha': 'link:../../tools/mocha'
-      '@node-konfig-tools/nyc': 'link:../../tools/nyc'
+      '@nestjs/core': 7.6.7_0b52b7b6f96fa7861c0d52c484415083
+      '@nestjs/testing': 7.6.7_0ea608171d1a3a785df501eab098f1f8
+      '@node-konfig-tools/eslint': link:../../tools/eslint
+      '@node-konfig-tools/mocha': link:../../tools/mocha
+      '@node-konfig-tools/nyc': link:../../tools/nyc
       '@rushstack/eslint-config': 2.3.2_eslint@7.17.0+typescript@4.1.3
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
@@ -31,9 +31,9 @@ importers:
       '@nestjs/common': ~7.0.0
       '@nestjs/core': ~7.6.5
       '@nestjs/testing': ~7.6.5
-      '@node-konfig-tools/eslint': 'workspace:*'
-      '@node-konfig-tools/mocha': 'workspace:*'
-      '@node-konfig-tools/nyc': 'workspace:*'
+      '@node-konfig-tools/eslint': workspace:*
+      '@node-konfig-tools/mocha': workspace:*
+      '@node-konfig-tools/nyc': workspace:*
       '@rushstack/eslint-config': ~2.3.2
       '@types/chai': ~4.2.14
       '@types/chai-as-promised': ~7.1.3
@@ -42,7 +42,7 @@ importers:
       '@types/node': ~14.14.20
       '@types/sinon': ~9.0.10
       '@types/sinon-chai': ~3.2.5
-      '@willsoto/node-konfig-core': 'workspace:*'
+      '@willsoto/node-konfig-core': workspace:*
       eslint: ~7.17.0
       lodash: ~4.17.20
       mocha: ~8.2.1
@@ -55,9 +55,9 @@ importers:
     dependencies:
       consul: 0.39.0
     devDependencies:
-      '@node-konfig-tools/eslint': 'link:../../tools/eslint'
-      '@node-konfig-tools/mocha': 'link:../../tools/mocha'
-      '@node-konfig-tools/nyc': 'link:../../tools/nyc'
+      '@node-konfig-tools/eslint': link:../../tools/eslint
+      '@node-konfig-tools/mocha': link:../../tools/mocha
+      '@node-konfig-tools/nyc': link:../../tools/nyc
       '@rushstack/eslint-config': 2.3.2_eslint@7.17.0+typescript@4.1.3
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
@@ -67,7 +67,7 @@ importers:
       '@types/node': 14.14.22
       '@types/sinon': 9.0.10
       '@types/sinon-chai': 3.2.5
-      '@willsoto/node-konfig-core': 'link:../core'
+      '@willsoto/node-konfig-core': link:../core
       eslint: 7.17.0
       lodash: 4.17.20
       mocha: 8.2.1
@@ -75,9 +75,9 @@ importers:
       rimraf: 3.0.2
       typescript: 4.1.3
     specifiers:
-      '@node-konfig-tools/eslint': 'workspace:*'
-      '@node-konfig-tools/mocha': 'workspace:*'
-      '@node-konfig-tools/nyc': 'workspace:*'
+      '@node-konfig-tools/eslint': workspace:*
+      '@node-konfig-tools/mocha': workspace:*
+      '@node-konfig-tools/nyc': workspace:*
       '@rushstack/eslint-config': ~2.3.2
       '@types/chai': ~4.2.14
       '@types/chai-as-promised': ~7.1.3
@@ -87,7 +87,7 @@ importers:
       '@types/node': ~14.14.20
       '@types/sinon': ~9.0.10
       '@types/sinon-chai': ~3.2.5
-      '@willsoto/node-konfig-core': 'workspace:*'
+      '@willsoto/node-konfig-core': workspace:*
       consul: ~0.39.0
       eslint: ~7.17.0
       lodash: ~4.17.20
@@ -103,9 +103,9 @@ importers:
       meow: 9.0.0
       toml: 3.0.0
     devDependencies:
-      '@node-konfig-tools/eslint': 'link:../../tools/eslint'
-      '@node-konfig-tools/mocha': 'link:../../tools/mocha'
-      '@node-konfig-tools/nyc': 'link:../../tools/nyc'
+      '@node-konfig-tools/eslint': link:../../tools/eslint
+      '@node-konfig-tools/mocha': link:../../tools/mocha
+      '@node-konfig-tools/nyc': link:../../tools/nyc
       '@rushstack/eslint-config': 2.3.2_eslint@7.17.0+typescript@4.1.3
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
@@ -123,9 +123,9 @@ importers:
       rimraf: 3.0.2
       typescript: 4.1.3
     specifiers:
-      '@node-konfig-tools/eslint': 'workspace:*'
-      '@node-konfig-tools/mocha': 'workspace:*'
-      '@node-konfig-tools/nyc': 'workspace:*'
+      '@node-konfig-tools/eslint': workspace:*
+      '@node-konfig-tools/mocha': workspace:*
+      '@node-konfig-tools/nyc': workspace:*
       '@rushstack/eslint-config': ~2.3.2
       '@types/chai': ~4.2.14
       '@types/chai-as-promised': ~7.1.3
@@ -151,9 +151,9 @@ importers:
     dependencies:
       etcd3: 1.1.0
     devDependencies:
-      '@node-konfig-tools/eslint': 'link:../../tools/eslint'
-      '@node-konfig-tools/mocha': 'link:../../tools/mocha'
-      '@node-konfig-tools/nyc': 'link:../../tools/nyc'
+      '@node-konfig-tools/eslint': link:../../tools/eslint
+      '@node-konfig-tools/mocha': link:../../tools/mocha
+      '@node-konfig-tools/nyc': link:../../tools/nyc
       '@rushstack/eslint-config': 2.3.2_eslint@7.17.0+typescript@4.1.3
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
@@ -162,7 +162,7 @@ importers:
       '@types/node': 14.14.22
       '@types/sinon': 9.0.10
       '@types/sinon-chai': 3.2.5
-      '@willsoto/node-konfig-core': 'link:../core'
+      '@willsoto/node-konfig-core': link:../core
       eslint: 7.17.0
       lodash: 4.17.20
       mocha: 8.2.1
@@ -170,9 +170,9 @@ importers:
       rimraf: 3.0.2
       typescript: 4.1.3
     specifiers:
-      '@node-konfig-tools/eslint': 'workspace:*'
-      '@node-konfig-tools/mocha': 'workspace:*'
-      '@node-konfig-tools/nyc': 'workspace:*'
+      '@node-konfig-tools/eslint': workspace:*
+      '@node-konfig-tools/mocha': workspace:*
+      '@node-konfig-tools/nyc': workspace:*
       '@rushstack/eslint-config': ~2.3.2
       '@types/chai': ~4.2.14
       '@types/chai-as-promised': ~7.1.3
@@ -181,7 +181,7 @@ importers:
       '@types/node': ~14.14.20
       '@types/sinon': ~9.0.10
       '@types/sinon-chai': ~3.2.5
-      '@willsoto/node-konfig-core': 'workspace:*'
+      '@willsoto/node-konfig-core': workspace:*
       eslint: ~7.17.0
       etcd3: ~1.1.0
       lodash: ~4.17.20
@@ -193,9 +193,9 @@ importers:
     dependencies:
       node-fetch: 2.6.1
     devDependencies:
-      '@node-konfig-tools/eslint': 'link:../../tools/eslint'
-      '@node-konfig-tools/mocha': 'link:../../tools/mocha'
-      '@node-konfig-tools/nyc': 'link:../../tools/nyc'
+      '@node-konfig-tools/eslint': link:../../tools/eslint
+      '@node-konfig-tools/mocha': link:../../tools/mocha
+      '@node-konfig-tools/nyc': link:../../tools/nyc
       '@rushstack/eslint-config': 2.3.2_eslint@7.17.0+typescript@4.1.3
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
@@ -205,7 +205,7 @@ importers:
       '@types/node-fetch': 2.5.8
       '@types/sinon': 9.0.10
       '@types/sinon-chai': 3.2.5
-      '@willsoto/node-konfig-core': 'link:../core'
+      '@willsoto/node-konfig-core': link:../core
       eslint: 7.17.0
       lodash: 4.17.20
       mocha: 8.2.1
@@ -214,9 +214,9 @@ importers:
       rimraf: 3.0.2
       typescript: 4.1.3
     specifiers:
-      '@node-konfig-tools/eslint': 'workspace:*'
-      '@node-konfig-tools/mocha': 'workspace:*'
-      '@node-konfig-tools/nyc': 'workspace:*'
+      '@node-konfig-tools/eslint': workspace:*
+      '@node-konfig-tools/mocha': workspace:*
+      '@node-konfig-tools/nyc': workspace:*
       '@rushstack/eslint-config': ~2.3.2
       '@types/chai': ~4.2.14
       '@types/chai-as-promised': ~7.1.3
@@ -226,7 +226,7 @@ importers:
       '@types/node-fetch': ~2.5.7
       '@types/sinon': ~9.0.10
       '@types/sinon-chai': ~3.2.5
-      '@willsoto/node-konfig-core': 'workspace:*'
+      '@willsoto/node-konfig-core': workspace:*
       eslint: ~7.17.0
       lodash: ~4.17.20
       mocha: ~8.2.1
@@ -239,9 +239,9 @@ importers:
     dependencies:
       node-vault: 0.9.21
     devDependencies:
-      '@node-konfig-tools/eslint': 'link:../../tools/eslint'
-      '@node-konfig-tools/mocha': 'link:../../tools/mocha'
-      '@node-konfig-tools/nyc': 'link:../../tools/nyc'
+      '@node-konfig-tools/eslint': link:../../tools/eslint
+      '@node-konfig-tools/mocha': link:../../tools/mocha
+      '@node-konfig-tools/nyc': link:../../tools/nyc
       '@rushstack/eslint-config': 2.3.2_eslint@7.17.0+typescript@4.1.3
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
@@ -250,7 +250,7 @@ importers:
       '@types/node': 14.14.22
       '@types/sinon': 9.0.10
       '@types/sinon-chai': 3.2.5
-      '@willsoto/node-konfig-core': 'link:../core'
+      '@willsoto/node-konfig-core': link:../core
       eslint: 7.17.0
       lodash: 4.17.20
       mocha: 8.2.1
@@ -258,9 +258,9 @@ importers:
       rimraf: 3.0.2
       typescript: 4.1.3
     specifiers:
-      '@node-konfig-tools/eslint': 'workspace:*'
-      '@node-konfig-tools/mocha': 'workspace:*'
-      '@node-konfig-tools/nyc': 'workspace:*'
+      '@node-konfig-tools/eslint': workspace:*
+      '@node-konfig-tools/mocha': workspace:*
+      '@node-konfig-tools/nyc': workspace:*
       '@rushstack/eslint-config': ~2.3.2
       '@types/chai': ~4.2.14
       '@types/chai-as-promised': ~7.1.3
@@ -269,7 +269,7 @@ importers:
       '@types/node': ~14.14.20
       '@types/sinon': ~9.0.10
       '@types/sinon-chai': ~3.2.5
-      '@willsoto/node-konfig-core': 'workspace:*'
+      '@willsoto/node-konfig-core': workspace:*
       eslint: ~7.17.0
       lodash: ~4.17.20
       mocha: ~8.2.1
@@ -533,16 +533,16 @@ packages:
       node: ^10.12.0 || >=12.0.0
     resolution:
       integrity: sha512-EfB5OHNYp1F4px/LI/FEnGylop7nOqkQ1LRzCM0KccA2U8tvV8w01KBv37LbO7nW4H+YhKyo2LcJhRwjjV17QQ==
-  /@grpc/grpc-js/1.2.4:
+  /@grpc/grpc-js/1.2.5:
     dependencies:
       '@types/node': 12.19.15
-      google-auth-library: 6.1.4
+      google-auth-library: 6.1.6
       semver: 6.3.0
     dev: false
     engines:
       node: ^8.13.0 || >=10.10.0
     resolution:
-      integrity: sha512-z+EI20HYHLd3/uERtwOqP8Q4EPhGbz5RKUpiyo6xPWfR3pcjpf8sfNvY9XytDQ4xo1wNz7NqH1kh2UBonwzbfg==
+      integrity: sha512-CBCNwedw8McnEBq9jvoiJikws16WN0OiHFejQPovY71XkFWSiIqgvydYiDwpvIYDJmhPQ7qZNzW9BPndhXbx1Q==
   /@grpc/proto-loader/0.5.6:
     dependencies:
       lodash.camelcase: 4.3.0
@@ -611,7 +611,7 @@ packages:
       rxjs: ^6.0.0
     resolution:
       integrity: sha512-jSEBnmeuxzorYzG+RAjcQxhs9Sga2/LYelt+ZOwWqxeRVxlB1d4bMWzhCDrVQ3uep9xJD67TbKztchkDBomokA==
-  /@nestjs/core/7.6.5_0b52b7b6f96fa7861c0d52c484415083:
+  /@nestjs/core/7.6.7_0b52b7b6f96fa7861c0d52c484415083:
     dependencies:
       '@nestjs/common': 7.0.13_0c773f197e7bb0df0bedc332ad8bc35d
       '@nuxtjs/opencollective': 0.3.2
@@ -621,7 +621,7 @@ packages:
       path-to-regexp: 3.2.0
       reflect-metadata: 0.1.13
       rxjs: 6.6.3
-      tslib: 2.0.3
+      tslib: 2.1.0
       uuid: 8.3.2
     dev: true
     peerDependencies:
@@ -640,13 +640,13 @@ packages:
         optional: true
     requiresBuild: true
     resolution:
-      integrity: sha512-syRpXT09RDMySs1BLQSXJfq1NXGfG4VmF9hZYGef+/QWqTRfSMEDEH5MsCCLt2lK3AZnOXE9BQwWKeNBhKLplA==
-  /@nestjs/testing/7.6.5_aa02e0a273f550052f9e664aa8ce334c:
+      integrity: sha512-1n4r0AqoD3Eg+nnqZyNSFEz1MQRf2GabQbxnJj3T6SLj2VwxKNEO1qIZyDABNXLFcj79AfjPq5gqEhCutCuE2Q==
+  /@nestjs/testing/7.6.7_0ea608171d1a3a785df501eab098f1f8:
     dependencies:
       '@nestjs/common': 7.0.13_0c773f197e7bb0df0bedc332ad8bc35d
-      '@nestjs/core': 7.6.5_0b52b7b6f96fa7861c0d52c484415083
+      '@nestjs/core': 7.6.7_0b52b7b6f96fa7861c0d52c484415083
       optional: 0.1.4
-      tslib: 2.0.3
+      tslib: 2.1.0
     dev: true
     peerDependencies:
       '@nestjs/common': ^7.0.0
@@ -659,7 +659,7 @@ packages:
       '@nestjs/platform-express':
         optional: true
     resolution:
-      integrity: sha512-CVjECV3pqy5+HlBSLBRitHgJ8WRW2jns3mKJpSBzUgbJbrGWCB7Y7JGYkP7CQ+29EDKfetnz3+z0q6GPdubfUQ==
+      integrity: sha512-DegNWF8P7m4aPvIDdPmR6dqT6DcEnbjig8c7BTcaNjV2Fc+YUlvss9PABBlOEUvNTU7BzUD7sqXB/HGfEp+KSw==
   /@nodelib/fs.scandir/2.1.4:
     dependencies:
       '@nodelib/fs.stat': 2.0.4
@@ -676,7 +676,7 @@ packages:
   /@nodelib/fs.walk/1.2.6:
     dependencies:
       '@nodelib/fs.scandir': 2.1.4
-      fastq: 1.10.0
+      fastq: 1.10.1
     engines:
       node: '>= 8'
     resolution:
@@ -925,7 +925,7 @@ packages:
       functional-red-black-tree: 1.0.1
       regexpp: 3.1.0
       semver: 7.3.4
-      tsutils: 3.19.1_typescript@4.1.3
+      tsutils: 3.20.0_typescript@4.1.3
       typescript: 4.1.3
     dev: true
     engines:
@@ -949,7 +949,7 @@ packages:
       functional-red-black-tree: 1.0.1
       regexpp: 3.1.0
       semver: 7.3.4
-      tsutils: 3.19.1_typescript@4.1.3
+      tsutils: 3.20.0_typescript@4.1.3
       typescript: 4.1.3
     dev: false
     engines:
@@ -1056,7 +1056,7 @@ packages:
       is-glob: 4.0.1
       lodash: 4.17.20
       semver: 7.3.4
-      tsutils: 3.19.1_typescript@4.1.3
+      tsutils: 3.20.0_typescript@4.1.3
       typescript: 4.1.3
     dev: true
     engines:
@@ -1077,7 +1077,7 @@ packages:
       is-glob: 4.0.1
       lodash: 4.17.20
       semver: 7.3.4
-      tsutils: 3.19.1_typescript@4.1.3
+      tsutils: 3.20.0_typescript@4.1.3
       typescript: 4.1.3
     dev: false
     engines:
@@ -1236,7 +1236,7 @@ packages:
       call-bind: 1.0.2
       define-properties: 1.1.3
       es-abstract: 1.18.0-next.2
-      get-intrinsic: 1.0.2
+      get-intrinsic: 1.1.0
       is-string: 1.0.5
     dev: true
     engines:
@@ -1306,7 +1306,7 @@ packages:
   /axios/0.19.2:
     dependencies:
       follow-redirects: 1.5.10
-    deprecated: 'Critical security vulnerability fixed in v0.21.1. For more information, see https://github.com/axios/axios/pull/3410'
+    deprecated: Critical security vulnerability fixed in v0.21.1. For more information, see https://github.com/axios/axios/pull/3410
     dev: true
     resolution:
       integrity: sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
@@ -1371,7 +1371,7 @@ packages:
   /call-bind/1.0.2:
     dependencies:
       function-bind: 1.1.1
-      get-intrinsic: 1.0.2
+      get-intrinsic: 1.1.0
     dev: true
     resolution:
       integrity: sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==
@@ -1420,7 +1420,7 @@ packages:
       check-error: 1.0.2
       deep-eql: 3.0.1
       get-func-name: 2.0.0
-      pathval: 1.1.0
+      pathval: 1.1.1
       type-detect: 4.0.8
     dev: false
     engines:
@@ -1597,7 +1597,7 @@ packages:
     dependencies:
       ms: 2.1.2
       supports-color: 7.2.0
-    deprecated: 'Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)'
+    deprecated: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
     dev: true
     engines:
       node: '>=6.0'
@@ -1744,30 +1744,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-7dFHNmqeFSEt2ZBsCriorKnn3Z2pj+fd9kmI6QoWw4//DL+icEBfc0U7qJCisqrTsKTjw4fNFy2pW9OqStD84g==
-  /es-abstract/1.17.7:
-    dependencies:
-      es-to-primitive: 1.2.1
-      function-bind: 1.1.1
-      has: 1.0.3
-      has-symbols: 1.0.1
-      is-callable: 1.2.2
-      is-regex: 1.1.1
-      object-inspect: 1.9.0
-      object-keys: 1.1.1
-      object.assign: 4.1.2
-      string.prototype.trimend: 1.0.3
-      string.prototype.trimstart: 1.0.3
-    dev: true
-    engines:
-      node: '>= 0.4'
-    resolution:
-      integrity: sha512-VBl/gnfcJ7OercKA9MVaegWsBHFjV492syMudcnQZvt/Dw8ezpcOHYZXa/J96O8vx+g4x65YKhxOwDUh63aS5g==
   /es-abstract/1.18.0-next.2:
     dependencies:
       call-bind: 1.0.2
       es-to-primitive: 1.2.1
       function-bind: 1.1.1
-      get-intrinsic: 1.0.2
+      get-intrinsic: 1.1.0
       has: 1.0.3
       has-symbols: 1.0.1
       is-callable: 1.2.2
@@ -2009,7 +1991,7 @@ packages:
       integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
   /etcd3/1.1.0:
     dependencies:
-      '@grpc/grpc-js': 1.2.4
+      '@grpc/grpc-js': 1.2.5
       '@grpc/proto-loader': 0.5.6
       bignumber.js: 9.0.1
       cockatiel: 1.1.1
@@ -2074,11 +2056,11 @@ packages:
     dev: false
     resolution:
       integrity: sha512-dtm4QZH9nZtcDt8qJiOH9fcQd1NAgi+K1O2DbE6GG1PPCK/BWfOH3idCTRQ4ImXRUOyopDEgDEnVEE7Y/2Wrig==
-  /fastq/1.10.0:
+  /fastq/1.10.1:
     dependencies:
       reusify: 1.0.4
     resolution:
-      integrity: sha512-NL2Qc5L3iQEsyYzweq7qfgy5OtXCmGzGvhElGEd/SoFWEMOEczNh5s5ocaF01HDetxz+p8ecjNPA6cZxxIHmzA==
+      integrity: sha512-AWuv6Ery3pM+dY7LYS8YIaCiQvUaos9OB1RyNgaOWnaX+Tik7Onvcsf8x8c+YtDeT0maYLniBip2hox5KtEXXA==
   /file-entry-cache/6.0.0:
     dependencies:
       flat-cache: 3.0.4
@@ -2245,14 +2227,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-6td0q+5y4gQJQzoGY2YCPdaIekE=
-  /get-intrinsic/1.0.2:
+  /get-intrinsic/1.1.0:
     dependencies:
       function-bind: 1.1.1
       has: 1.0.3
       has-symbols: 1.0.1
     dev: true
     resolution:
-      integrity: sha512-aeX0vrFm21ILl3+JpFFRNe9aUvp6VFZb2/CTbgLb8j75kOhvoNYjt9d8KA/tJG4gSo8nzEDedRl0h7vDmBYRVg==
+      integrity: sha512-M11rgtQp5GZMZzDL7jLTNxbDfurpzuau5uqRWDPvlHjfvg3TdScAZo96GLvhMjImrmR8uAt0FS2RLoMrfWGKlg==
   /get-package-type/0.1.0:
     dev: true
     engines:
@@ -2327,7 +2309,7 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-2ZThXDvvV8fYFRVIxnrMQBipZQDr7MxKAmQK1vujaj9/7eF0efG7BPUKJ7jP7G5SLF37xKDXvO4S/KKLj/Z0og==
-  /google-auth-library/6.1.4:
+  /google-auth-library/6.1.6:
     dependencies:
       arrify: 2.0.1
       base64-js: 1.5.1
@@ -2335,14 +2317,14 @@ packages:
       fast-text-encoding: 1.0.3
       gaxios: 4.1.0
       gcp-metadata: 4.2.1
-      gtoken: 5.2.0
+      gtoken: 5.2.1
       jws: 4.0.0
       lru-cache: 6.0.0
     dev: false
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-q0kYtGWnDd9XquwiQGAZeI2Jnglk7NDi0cChE4tWp6Kpo/kbqnt9scJb0HP+/xqt03Beqw/xQah1OPrci+pOxw==
+      integrity: sha512-Q+ZjUEvLQj/lrVHF/IQwRo6p3s8Nc44Zk/DALsN+ac3T4HY/g/3rrufkgtl+nZ1TW7DNAw5cTChdVp4apUXVgQ==
   /google-p12-pem/3.0.3:
     dependencies:
       node-forge: 0.10.0
@@ -2362,17 +2344,16 @@ packages:
       node: '>=4.x'
     resolution:
       integrity: sha512-qBr4OuELkhPenW6goKVXiv47US3clb3/IbuWF9KNKEijAy9oeHxU9IgzjvJhHkUzhaj7rOUD7+YGWqUjLp5oSA==
-  /gtoken/5.2.0:
+  /gtoken/5.2.1:
     dependencies:
       gaxios: 4.1.0
       google-p12-pem: 3.0.3
       jws: 4.0.0
-      mime: 2.5.0
     dev: false
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-qbf6JWEYFMj3WMAluvYXl8GAiji6w8d9OmAGCbBg0xF4xD/yu6ZaO6BhoXNddRjKcOUpZD81iea1H5B45gAo1g==
+      integrity: sha512-OY0BfPKe3QnMsY9MzTHTSKn+Vl2l1CcLe6BwDEQj00mbbkl5nyQ/7EUREstg4fQNZ8iYE7br4JJ7TdKeDOPWmw==
   /har-schema/2.0.0:
     dev: false
     engines:
@@ -2436,14 +2417,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-f/wzC2QaWBs7t9IYqB4T3sR1xviIViXJRJTWBlx2Gf3g0Xi5vI7Yy4koXQ1c9OYDGHN9sBy1DQ2AB8fqZBWhUg==
-  /hosted-git-info/3.0.7:
+  /hosted-git-info/3.0.8:
     dependencies:
       lru-cache: 6.0.0
     dev: false
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-fWqc0IcuXs+BmE9orLDyVykAG9GJtGLGuZAAqgcckPgv5xad4AcXGIv8galtQvlwutxSlaMcdw7BUtq2EIvqCQ==
+      integrity: sha512-aXpmwoOhRBrw6X3j0h5RloK4x1OzsxMPyxqIHyNfSe2pypkVTZFpEiRoSipPEPlMrh0HW/XsjkJ5WgnCirpNUw==
   /html-escaper/2.0.2:
     dev: true
     resolution:
@@ -2505,16 +2486,16 @@ packages:
   /inherits/2.0.4:
     resolution:
       integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
-  /internal-slot/1.0.2:
+  /internal-slot/1.0.3:
     dependencies:
-      es-abstract: 1.17.7
+      get-intrinsic: 1.1.0
       has: 1.0.3
       side-channel: 1.0.4
     dev: true
     engines:
       node: '>= 0.4'
     resolution:
-      integrity: sha512-2cQNfwhAfJIkU4KZPkDI+Gj5yNNnbqi40W9Gge6dfnk4TocEVm00B3bdiL+JINrbGJil2TeHvM4rETGzk/f/0g==
+      integrity: sha512-O0DB1JC/sPyZl7cIo78n5dR7eUSwwpYPiXRhTzNxZVAMUuB8vlnRFyLxdrVToks6XPLVnFfbzaVd5WLjhgg+vA==
   /is-arrayish/0.2.1:
     dev: false
     resolution:
@@ -3011,13 +2992,6 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-0TO2yJ5YHYr7M2zzT7gDU1tbwHxEUWBCLt0lscSNpcdAfFyJOVEpRYNS7EXVcTLNj/25QO8gulHC5JtTzSE2UQ==
-  /mime/2.5.0:
-    dev: false
-    engines:
-      node: '>=4.0.0'
-    hasBin: true
-    resolution:
-      integrity: sha512-ft3WayFSFUVBuJj7BMLKAQcSlItKtfjsKDDsii3rqFDAZ7t11zRe8ASw/GlmivGwVUYtwkQrxiGGpL6gFvB0ag==
   /min-indent/1.0.1:
     dev: false
     engines:
@@ -3168,7 +3142,7 @@ packages:
       integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==
   /normalize-package-data/3.0.0:
     dependencies:
-      hosted-git-info: 3.0.7
+      hosted-git-info: 3.0.8
       resolve: 1.19.0
       semver: 7.3.4
       validate-npm-package-license: 3.0.4
@@ -3432,10 +3406,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
-  /pathval/1.1.0:
+  /pathval/1.1.1:
     dev: false
     resolution:
-      integrity: sha1-uULm1L3mUwBe9rcTYd74cn0GReA=
+      integrity: sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==
   /performance-now/2.1.0:
     dev: false
     resolution:
@@ -3651,7 +3625,7 @@ packages:
       request-promise-core: 1.1.2_request@2.88.0
       stealthy-require: 1.1.1
       tough-cookie: 2.5.0
-    deprecated: 'request-promise-native has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142'
+    deprecated: request-promise-native has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142
     dev: false
     engines:
       node: '>=0.12.0'
@@ -3681,7 +3655,7 @@ packages:
       tough-cookie: 2.4.3
       tunnel-agent: 0.6.0
       uuid: 3.4.0
-    deprecated: 'request has been deprecated, see https://github.com/request/request/issues/3142'
+    deprecated: request has been deprecated, see https://github.com/request/request/issues/3142
     dev: false
     engines:
       node: '>= 4'
@@ -3794,7 +3768,7 @@ packages:
   /side-channel/1.0.4:
     dependencies:
       call-bind: 1.0.2
-      get-intrinsic: 1.0.2
+      get-intrinsic: 1.1.0
       object-inspect: 1.9.0
     dev: true
     resolution:
@@ -3966,7 +3940,7 @@ packages:
       define-properties: 1.1.3
       es-abstract: 1.18.0-next.2
       has-symbols: 1.0.1
-      internal-slot: 1.0.2
+      internal-slot: 1.0.3
       regexp.prototype.flags: 1.3.1
       side-channel: 1.0.4
     dev: true
@@ -4136,11 +4110,11 @@ packages:
   /tslib/1.14.1:
     resolution:
       integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
-  /tslib/2.0.3:
+  /tslib/2.1.0:
     dev: true
     resolution:
-      integrity: sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ==
-  /tsutils/3.19.1_typescript@4.1.3:
+      integrity: sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
+  /tsutils/3.20.0_typescript@4.1.3:
     dependencies:
       tslib: 1.14.1
       typescript: 4.1.3
@@ -4149,7 +4123,7 @@ packages:
     peerDependencies:
       typescript: '>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta'
     resolution:
-      integrity: sha512-GEdoBf5XI324lu7ycad7s6laADfnAqCw6wLGI+knxvw9vsIYBaJfYdmeCEG3FMMUiSm3OGgNb+m6utsWf5h9Vw==
+      integrity: sha512-RYbuQuvkhuqVeXweWT3tJLKOEJ/UUw9GjNEZGWdrLLlM+611o1gwLHBpxoFJKKl25fLprp2eVthtKs5JOrNeXg==
   /tunnel-agent/0.6.0:
     dependencies:
       safe-buffer: 5.2.1
@@ -4398,4 +4372,3 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
-registry: ''
