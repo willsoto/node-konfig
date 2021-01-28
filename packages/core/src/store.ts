@@ -2,7 +2,7 @@ import setWith from "lodash.setwith";
 import { NoValueForKeyError } from "./errors";
 import { Loader } from "./loaders";
 
-interface StoreOptions {
+export interface StoreOptions {
   name?: string;
   loaders?: Loader[];
 }
