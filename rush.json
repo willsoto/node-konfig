@@ -48,6 +48,11 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@willsoto/nestjs-node-konfig",
+      "projectFolder": "integrations/nestjs",
+      "shouldPublish": true
+    },
+    {
       "packageName": "@node-konfig-tools/mocha",
       "projectFolder": "tools/mocha",
       "reviewCategory": "tools",
