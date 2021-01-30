@@ -2,6 +2,18 @@
   "name": "@willsoto/node-konfig-core",
   "entries": [
     {
+      "version": "0.3.1",
+      "tag": "@willsoto/node-konfig-core_v0.3.1",
+      "date": "Sat, 30 Jan 2021 23:39:45 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Update dependencies"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.3.0",
       "tag": "@willsoto/node-konfig-core_v0.3.0",
       "date": "Mon, 11 Jan 2021 23:18:55 GMT",

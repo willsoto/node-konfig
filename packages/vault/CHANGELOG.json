@@ -2,6 +2,26 @@
   "name": "@willsoto/node-konfig-vault",
   "entries": [
     {
+      "version": "0.2.4",
+      "tag": "@willsoto/node-konfig-vault_v0.2.4",
+      "date": "Sat, 30 Jan 2021 23:39:45 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Update dependencies"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" to `0.3.1`"
+          },
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" from `^0.3.0` to `^0.3.1`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.2.3",
       "tag": "@willsoto/node-konfig-vault_v0.2.3",
       "date": "Mon, 11 Jan 2021 23:18:55 GMT",

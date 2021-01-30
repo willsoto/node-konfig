@@ -1,6 +1,13 @@
 # Change Log - @willsoto/node-konfig-core
 
-This log was last generated on Mon, 11 Jan 2021 23:18:55 GMT and should not be manually modified.
+This log was last generated on Sat, 30 Jan 2021 23:39:45 GMT and should not be manually modified.
+
+## 0.3.1
+Sat, 30 Jan 2021 23:39:45 GMT
+
+### Patches
+
+- Update dependencies
 
 ## 0.3.0
 Mon, 11 Jan 2021 23:18:55 GMT
