@@ -11,7 +11,7 @@ importers:
       '@node-konfig-tools/eslint': link:../../tools/eslint
       '@node-konfig-tools/mocha': link:../../tools/mocha
       '@node-konfig-tools/nyc': link:../../tools/nyc
-      '@rushstack/eslint-config': 2.3.2_eslint@7.17.0+typescript@4.1.3
+      '@rushstack/eslint-config': 2.3.2_eslint@7.18.0+typescript@4.1.3
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
       '@types/lodash': 4.14.168
@@ -19,7 +19,7 @@ importers:
       '@types/node': 14.14.22
       '@types/sinon': 9.0.10
       '@types/sinon-chai': 3.2.5
-      eslint: 7.17.0
+      eslint: 7.18.0
       lodash: 4.17.20
       mocha: 8.2.1
       nyc: 15.1.0
@@ -29,21 +29,21 @@ importers:
       typescript: 4.1.3
     specifiers:
       '@nestjs/common': ~7.0.0
-      '@nestjs/core': ~7.6.5
-      '@nestjs/testing': ~7.6.5
+      '@nestjs/core': ~7.6.7
+      '@nestjs/testing': ~7.6.7
       '@node-konfig-tools/eslint': workspace:*
       '@node-konfig-tools/mocha': workspace:*
       '@node-konfig-tools/nyc': workspace:*
       '@rushstack/eslint-config': ~2.3.2
       '@types/chai': ~4.2.14
       '@types/chai-as-promised': ~7.1.3
-      '@types/lodash': ~4.14.167
+      '@types/lodash': ~4.14.168
       '@types/mocha': ~8.2.0
-      '@types/node': ~14.14.20
+      '@types/node': ~14.14.22
       '@types/sinon': ~9.0.10
       '@types/sinon-chai': ~3.2.5
       '@willsoto/node-konfig-core': workspace:*
-      eslint: ~7.17.0
+      eslint: ~7.18.0
       lodash: ~4.17.20
       mocha: ~8.2.1
       nyc: ~15.1.0
@@ -58,7 +58,7 @@ importers:
       '@node-konfig-tools/eslint': link:../../tools/eslint
       '@node-konfig-tools/mocha': link:../../tools/mocha
       '@node-konfig-tools/nyc': link:../../tools/nyc
-      '@rushstack/eslint-config': 2.3.2_eslint@7.17.0+typescript@4.1.3
+      '@rushstack/eslint-config': 2.3.2_eslint@7.18.0+typescript@4.1.3
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
       '@types/consul': 0.23.34
@@ -68,7 +68,7 @@ importers:
       '@types/sinon': 9.0.10
       '@types/sinon-chai': 3.2.5
       '@willsoto/node-konfig-core': link:../core
-      eslint: 7.17.0
+      eslint: 7.18.0
       lodash: 4.17.20
       mocha: 8.2.1
       nyc: 15.1.0
@@ -82,14 +82,14 @@ importers:
       '@types/chai': ~4.2.14
       '@types/chai-as-promised': ~7.1.3
       '@types/consul': ~0.23.34
-      '@types/lodash': ~4.14.167
+      '@types/lodash': ~4.14.168
       '@types/mocha': ~8.2.0
-      '@types/node': ~14.14.20
+      '@types/node': ~14.14.22
       '@types/sinon': ~9.0.10
       '@types/sinon-chai': ~3.2.5
       '@willsoto/node-konfig-core': workspace:*
       consul: ~0.39.0
-      eslint: ~7.17.0
+      eslint: ~7.18.0
       lodash: ~4.17.20
       mocha: ~8.2.1
       nyc: ~15.1.0
@@ -106,7 +106,7 @@ importers:
       '@node-konfig-tools/eslint': link:../../tools/eslint
       '@node-konfig-tools/mocha': link:../../tools/mocha
       '@node-konfig-tools/nyc': link:../../tools/nyc
-      '@rushstack/eslint-config': 2.3.2_eslint@7.17.0+typescript@4.1.3
+      '@rushstack/eslint-config': 2.3.2_eslint@7.18.0+typescript@4.1.3
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
       '@types/js-yaml': 4.0.0
@@ -116,7 +116,7 @@ importers:
       '@types/node': 14.14.22
       '@types/sinon': 9.0.10
       '@types/sinon-chai': 3.2.5
-      eslint: 7.17.0
+      eslint: 7.18.0
       lodash: 4.17.20
       mocha: 8.2.1
       nyc: 15.1.0
@@ -130,14 +130,14 @@ importers:
       '@types/chai': ~4.2.14
       '@types/chai-as-promised': ~7.1.3
       '@types/js-yaml': ~4.0.0
-      '@types/lodash': ~4.14.167
+      '@types/lodash': ~4.14.168
       '@types/lodash.setwith': ~4.3.6
       '@types/mocha': ~8.2.0
-      '@types/node': ~14.14.20
+      '@types/node': ~14.14.22
       '@types/sinon': ~9.0.10
       '@types/sinon-chai': ~3.2.5
       cockatiel: ~2.0.1
-      eslint: ~7.17.0
+      eslint: ~7.18.0
       js-yaml: ~4.0.0
       lodash: ~4.17.20
       lodash.setwith: ~4.3.2
@@ -154,7 +154,7 @@ importers:
       '@node-konfig-tools/eslint': link:../../tools/eslint
       '@node-konfig-tools/mocha': link:../../tools/mocha
       '@node-konfig-tools/nyc': link:../../tools/nyc
-      '@rushstack/eslint-config': 2.3.2_eslint@7.17.0+typescript@4.1.3
+      '@rushstack/eslint-config': 2.3.2_eslint@7.18.0+typescript@4.1.3
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
       '@types/lodash': 4.14.168
@@ -163,7 +163,7 @@ importers:
       '@types/sinon': 9.0.10
       '@types/sinon-chai': 3.2.5
       '@willsoto/node-konfig-core': link:../core
-      eslint: 7.17.0
+      eslint: 7.18.0
       lodash: 4.17.20
       mocha: 8.2.1
       nyc: 15.1.0
@@ -176,13 +176,13 @@ importers:
       '@rushstack/eslint-config': ~2.3.2
       '@types/chai': ~4.2.14
       '@types/chai-as-promised': ~7.1.3
-      '@types/lodash': ~4.14.167
+      '@types/lodash': ~4.14.168
       '@types/mocha': ~8.2.0
-      '@types/node': ~14.14.20
+      '@types/node': ~14.14.22
       '@types/sinon': ~9.0.10
       '@types/sinon-chai': ~3.2.5
       '@willsoto/node-konfig-core': workspace:*
-      eslint: ~7.17.0
+      eslint: ~7.18.0
       etcd3: ~1.1.0
       lodash: ~4.17.20
       mocha: ~8.2.1
@@ -196,7 +196,7 @@ importers:
       '@node-konfig-tools/eslint': link:../../tools/eslint
       '@node-konfig-tools/mocha': link:../../tools/mocha
       '@node-konfig-tools/nyc': link:../../tools/nyc
-      '@rushstack/eslint-config': 2.3.2_eslint@7.17.0+typescript@4.1.3
+      '@rushstack/eslint-config': 2.3.2_eslint@7.18.0+typescript@4.1.3
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
       '@types/lodash': 4.14.168
@@ -206,10 +206,10 @@ importers:
       '@types/sinon': 9.0.10
       '@types/sinon-chai': 3.2.5
       '@willsoto/node-konfig-core': link:../core
-      eslint: 7.17.0
+      eslint: 7.18.0
       lodash: 4.17.20
       mocha: 8.2.1
-      nock: 13.0.6
+      nock: 13.0.7
       nyc: 15.1.0
       rimraf: 3.0.2
       typescript: 4.1.3
@@ -220,17 +220,17 @@ importers:
       '@rushstack/eslint-config': ~2.3.2
       '@types/chai': ~4.2.14
       '@types/chai-as-promised': ~7.1.3
-      '@types/lodash': ~4.14.167
+      '@types/lodash': ~4.14.168
       '@types/mocha': ~8.2.0
-      '@types/node': ~14.14.20
-      '@types/node-fetch': ~2.5.7
+      '@types/node': ~14.14.22
+      '@types/node-fetch': ~2.5.8
       '@types/sinon': ~9.0.10
       '@types/sinon-chai': ~3.2.5
       '@willsoto/node-konfig-core': workspace:*
-      eslint: ~7.17.0
+      eslint: ~7.18.0
       lodash: ~4.17.20
       mocha: ~8.2.1
-      nock: ~13.0.5
+      nock: ~13.0.7
       node-fetch: ~2.6.1
       nyc: ~15.1.0
       rimraf: ~3.0.2
@@ -242,7 +242,7 @@ importers:
       '@node-konfig-tools/eslint': link:../../tools/eslint
       '@node-konfig-tools/mocha': link:../../tools/mocha
       '@node-konfig-tools/nyc': link:../../tools/nyc
-      '@rushstack/eslint-config': 2.3.2_eslint@7.17.0+typescript@4.1.3
+      '@rushstack/eslint-config': 2.3.2_eslint@7.18.0+typescript@4.1.3
       '@types/chai': 4.2.14
       '@types/chai-as-promised': 7.1.3
       '@types/lodash': 4.14.168
@@ -251,7 +251,7 @@ importers:
       '@types/sinon': 9.0.10
       '@types/sinon-chai': 3.2.5
       '@willsoto/node-konfig-core': link:../core
-      eslint: 7.17.0
+      eslint: 7.18.0
       lodash: 4.17.20
       mocha: 8.2.1
       nyc: 15.1.0
@@ -264,13 +264,13 @@ importers:
       '@rushstack/eslint-config': ~2.3.2
       '@types/chai': ~4.2.14
       '@types/chai-as-promised': ~7.1.3
-      '@types/lodash': ~4.14.167
+      '@types/lodash': ~4.14.168
       '@types/mocha': ~8.2.0
-      '@types/node': ~14.14.20
+      '@types/node': ~14.14.22
       '@types/sinon': ~9.0.10
       '@types/sinon-chai': ~3.2.5
       '@willsoto/node-konfig-core': workspace:*
-      eslint: ~7.17.0
+      eslint: ~7.18.0
       lodash: ~4.17.20
       mocha: ~8.2.1
       node-vault: ~0.9.21
@@ -279,11 +279,11 @@ importers:
       typescript: ~4.1.3
   ../../tools/eslint:
     dependencies:
-      '@typescript-eslint/eslint-plugin': 4.12.0_343306961d6b60bcf6bd09d193a54461
-      '@typescript-eslint/parser': 4.12.0_eslint@7.17.0+typescript@4.1.3
-      eslint: 7.17.0
-      eslint-config-prettier: 7.1.0_eslint@7.17.0
-      eslint-plugin-mocha: 8.0.0_eslint@7.17.0
+      '@typescript-eslint/eslint-plugin': 4.14.1_5aaa83948f53bc6d11a4ce27d9931983
+      '@typescript-eslint/parser': 4.14.1_eslint@7.18.0+typescript@4.1.3
+      eslint: 7.18.0
+      eslint-config-prettier: 7.2.0_eslint@7.18.0
+      eslint-plugin-mocha: 8.0.0_eslint@7.18.0
       eslint-plugin-tsdoc: 0.2.11
     devDependencies:
       prettier: 2.2.1
@@ -291,12 +291,12 @@ importers:
       prettier-plugin-packagejson: 2.2.9_prettier@2.2.1
       typescript: 4.1.3
     specifiers:
-      '@typescript-eslint/eslint-plugin': ~4.12.0
-      '@typescript-eslint/parser': ~4.12.0
-      eslint: ~7.17.0
-      eslint-config-prettier: ~7.1.0
+      '@typescript-eslint/eslint-plugin': ~4.14.1
+      '@typescript-eslint/parser': ~4.14.1
+      eslint: ~7.18.0
+      eslint-config-prettier: ~7.2.0
       eslint-plugin-mocha: ~8.0.0
-      eslint-plugin-tsdoc: ~0.2.10
+      eslint-plugin-tsdoc: ~0.2.11
       prettier: ~2.2.1
       prettier-plugin-organize-imports: ~1.1.1
       prettier-plugin-packagejson: ~2.2.9
@@ -325,7 +325,7 @@ importers:
       '@types/chai': ~4.2.14
       '@types/chai-as-promised': ~7.1.3
       '@types/mocha': ~8.2.0
-      '@types/node': ~14.14.20
+      '@types/node': ~14.14.22
       '@types/sinon': ~9.0.10
       '@types/sinon-chai': ~3.2.5
       chai: ~4.2.0
@@ -335,7 +335,7 @@ importers:
       prettier-plugin-organize-imports: ~1.1.1
       prettier-plugin-packagejson: ~2.2.9
       rimraf: ~3.0.2
-      sinon: ~9.2.3
+      sinon: ~9.2.4
       sinon-chai: ~3.5.0
       ts-node: ~9.1.1
       typescript: ~4.1.3
@@ -517,7 +517,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-lnIX7piTxOH22xE7fDXDbSHg9MM1/6ORnafpJmov5rs0kX5g4BZxeXNJLXsMRiO0U5Rb8/FvMS6xlTnTHvxonQ==
-  /@eslint/eslintrc/0.2.2:
+  /@eslint/eslintrc/0.3.0:
     dependencies:
       ajv: 6.12.6
       debug: 4.3.1
@@ -532,7 +532,7 @@ packages:
     engines:
       node: ^10.12.0 || >=12.0.0
     resolution:
-      integrity: sha512-EfB5OHNYp1F4px/LI/FEnGylop7nOqkQ1LRzCM0KccA2U8tvV8w01KBv37LbO7nW4H+YhKyo2LcJhRwjjV17QQ==
+      integrity: sha512-1JTKgrOKAHVivSvOYw+sJOunkBjUOvjqWk1DPja7ZFhIS2mX/4EgTT8M7eTK9jrKhL/FvXXEbQwIs3pg1xp3dg==
   /@grpc/grpc-js/1.2.5:
     dependencies:
       '@types/node': 12.19.15
@@ -736,19 +736,19 @@ packages:
     dev: false
     resolution:
       integrity: sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
-  /@rushstack/eslint-config/2.3.2_eslint@7.17.0+typescript@4.1.3:
+  /@rushstack/eslint-config/2.3.2_eslint@7.18.0+typescript@4.1.3:
     dependencies:
       '@rushstack/eslint-patch': 1.0.6
-      '@rushstack/eslint-plugin': 0.7.2_eslint@7.17.0
-      '@rushstack/eslint-plugin-packlets': 0.2.0_eslint@7.17.0
-      '@rushstack/eslint-plugin-security': 0.1.3_eslint@7.17.0
-      '@typescript-eslint/eslint-plugin': 3.4.0_6275cde94160c0eb4b13812ed2259131
-      '@typescript-eslint/experimental-utils': 3.4.0_eslint@7.17.0+typescript@4.1.3
-      '@typescript-eslint/parser': 3.4.0_eslint@7.17.0+typescript@4.1.3
+      '@rushstack/eslint-plugin': 0.7.2_eslint@7.18.0
+      '@rushstack/eslint-plugin-packlets': 0.2.0_eslint@7.18.0
+      '@rushstack/eslint-plugin-security': 0.1.3_eslint@7.18.0
+      '@typescript-eslint/eslint-plugin': 3.4.0_8b7a61e1d57538615fda8bbe67528208
+      '@typescript-eslint/experimental-utils': 3.4.0_eslint@7.18.0+typescript@4.1.3
+      '@typescript-eslint/parser': 3.4.0_eslint@7.18.0+typescript@4.1.3
       '@typescript-eslint/typescript-estree': 3.4.0_typescript@4.1.3
-      eslint: 7.17.0
+      eslint: 7.18.0
       eslint-plugin-promise: 4.2.1
-      eslint-plugin-react: 7.20.6_eslint@7.17.0
+      eslint-plugin-react: 7.20.6_eslint@7.18.0
       eslint-plugin-tsdoc: 0.2.11
       typescript: 4.1.3
     dev: true
@@ -761,28 +761,28 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Myxw//kzromB9yWgS8qYGuGVf91oBUUJpNvy5eM50sqvmKLbKjwLxohJnkWGTeeI9v9IBMtPLxz5Gc60FIfvCA==
-  /@rushstack/eslint-plugin-packlets/0.2.0_eslint@7.17.0:
+  /@rushstack/eslint-plugin-packlets/0.2.0_eslint@7.18.0:
     dependencies:
       '@rushstack/tree-pattern': 0.2.1
-      eslint: 7.17.0
+      eslint: 7.18.0
     dev: true
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0
     resolution:
       integrity: sha512-Xu86pNDrItfoF1W0bxTb7QakZzDuzinKDWL2Tzh836M8R9JZUfqTXR3Wav9Dzo1ZA8GNz9qPirfDo7EhlKVVhQ==
-  /@rushstack/eslint-plugin-security/0.1.3_eslint@7.17.0:
+  /@rushstack/eslint-plugin-security/0.1.3_eslint@7.18.0:
     dependencies:
       '@rushstack/tree-pattern': 0.2.1
-      eslint: 7.17.0
+      eslint: 7.18.0
     dev: true
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0
     resolution:
       integrity: sha512-hwyrR1S1d6peH8Hc/oULxHaDkh2jVDaXY65hx13ybkw396vFypx+JT+wWqzS8TzLCy0uLyS/s+pLT+m/e4kw7g==
-  /@rushstack/eslint-plugin/0.7.2_eslint@7.17.0:
+  /@rushstack/eslint-plugin/0.7.2_eslint@7.18.0:
     dependencies:
       '@rushstack/tree-pattern': 0.2.1
-      eslint: 7.17.0
+      eslint: 7.18.0
     dev: true
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0
@@ -916,12 +916,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-dIPoZ3g5gcx9zZEszaxLSVTvMReD3xxyyDnQUjA6IYDG9Ba2AV0otMPs+77sG9ojB4Qr2N2Vk5RnKeuA0X/0bg==
-  /@typescript-eslint/eslint-plugin/3.4.0_6275cde94160c0eb4b13812ed2259131:
+  /@typescript-eslint/eslint-plugin/3.4.0_8b7a61e1d57538615fda8bbe67528208:
     dependencies:
-      '@typescript-eslint/experimental-utils': 3.4.0_eslint@7.17.0+typescript@4.1.3
-      '@typescript-eslint/parser': 3.4.0_eslint@7.17.0+typescript@4.1.3
+      '@typescript-eslint/experimental-utils': 3.4.0_eslint@7.18.0+typescript@4.1.3
+      '@typescript-eslint/parser': 3.4.0_eslint@7.18.0+typescript@4.1.3
       debug: 4.3.1
-      eslint: 7.17.0
+      eslint: 7.18.0
       functional-red-black-tree: 1.0.1
       regexpp: 3.1.0
       semver: 7.3.4
@@ -939,14 +939,15 @@ packages:
         optional: true
     resolution:
       integrity: sha512-wfkpiqaEVhZIuQRmudDszc01jC/YR7gMSxa6ulhggAe/Hs0KVIuo9wzvFiDbG3JD5pRFQoqnf4m7REDsUvBnMQ==
-  /@typescript-eslint/eslint-plugin/4.12.0_343306961d6b60bcf6bd09d193a54461:
+  /@typescript-eslint/eslint-plugin/4.14.1_5aaa83948f53bc6d11a4ce27d9931983:
     dependencies:
-      '@typescript-eslint/experimental-utils': 4.12.0_eslint@7.17.0+typescript@4.1.3
-      '@typescript-eslint/parser': 4.12.0_eslint@7.17.0+typescript@4.1.3
-      '@typescript-eslint/scope-manager': 4.12.0
+      '@typescript-eslint/experimental-utils': 4.14.1_eslint@7.18.0+typescript@4.1.3
+      '@typescript-eslint/parser': 4.14.1_eslint@7.18.0+typescript@4.1.3
+      '@typescript-eslint/scope-manager': 4.14.1
       debug: 4.3.1
-      eslint: 7.17.0
+      eslint: 7.18.0
       functional-red-black-tree: 1.0.1
+      lodash: 4.17.20
       regexpp: 3.1.0
       semver: 7.3.4
       tsutils: 3.20.0_typescript@4.1.3
@@ -962,12 +963,12 @@ packages:
       typescript:
         optional: true
     resolution:
-      integrity: sha512-wHKj6q8s70sO5i39H2g1gtpCXCvjVszzj6FFygneNFyIAxRvNSVz9GML7XpqrB9t7hNutXw+MHnLN/Ih6uyB8Q==
-  /@typescript-eslint/experimental-utils/3.4.0_eslint@7.17.0+typescript@4.1.3:
+      integrity: sha512-5JriGbYhtqMS1kRcZTQxndz1lKMwwEXKbwZbkUZNnp6MJX0+OVXnG0kOlBZP4LUAxEyzu3cs+EXd/97MJXsGfw==
+  /@typescript-eslint/experimental-utils/3.4.0_eslint@7.18.0+typescript@4.1.3:
     dependencies:
       '@types/json-schema': 7.0.7
       '@typescript-eslint/typescript-estree': 3.4.0_typescript@4.1.3
-      eslint: 7.17.0
+      eslint: 7.18.0
       eslint-scope: 5.1.1
       eslint-utils: 2.1.0
     dev: true
@@ -978,13 +979,13 @@ packages:
       typescript: '*'
     resolution:
       integrity: sha512-rHPOjL43lOH1Opte4+dhC0a/+ks+8gOBwxXnyrZ/K4OTAChpSjP76fbI8Cglj7V5GouwVAGaK+xVwzqTyE/TPw==
-  /@typescript-eslint/experimental-utils/4.12.0_eslint@7.17.0+typescript@4.1.3:
+  /@typescript-eslint/experimental-utils/4.14.1_eslint@7.18.0+typescript@4.1.3:
     dependencies:
       '@types/json-schema': 7.0.7
-      '@typescript-eslint/scope-manager': 4.12.0
-      '@typescript-eslint/types': 4.12.0
-      '@typescript-eslint/typescript-estree': 4.12.0_typescript@4.1.3
-      eslint: 7.17.0
+      '@typescript-eslint/scope-manager': 4.14.1
+      '@typescript-eslint/types': 4.14.1
+      '@typescript-eslint/typescript-estree': 4.14.1_typescript@4.1.3
+      eslint: 7.18.0
       eslint-scope: 5.1.1
       eslint-utils: 2.1.0
     dev: false
@@ -994,13 +995,13 @@ packages:
       eslint: '*'
       typescript: '*'
     resolution:
-      integrity: sha512-MpXZXUAvHt99c9ScXijx7i061o5HEjXltO+sbYfZAAHxv3XankQkPaNi5myy0Yh0Tyea3Hdq1pi7Vsh0GJb0fA==
-  /@typescript-eslint/parser/3.4.0_eslint@7.17.0+typescript@4.1.3:
+      integrity: sha512-2CuHWOJwvpw0LofbyG5gvYjEyoJeSvVH2PnfUQSn0KQr4v8Dql2pr43ohmx4fdPQ/eVoTSFjTi/bsGEXl/zUUQ==
+  /@typescript-eslint/parser/3.4.0_eslint@7.18.0+typescript@4.1.3:
     dependencies:
       '@types/eslint-visitor-keys': 1.0.0
-      '@typescript-eslint/experimental-utils': 3.4.0_eslint@7.17.0+typescript@4.1.3
+      '@typescript-eslint/experimental-utils': 3.4.0_eslint@7.18.0+typescript@4.1.3
       '@typescript-eslint/typescript-estree': 3.4.0_typescript@4.1.3
-      eslint: 7.17.0
+      eslint: 7.18.0
       eslint-visitor-keys: 1.3.0
       typescript: 4.1.3
     dev: true
@@ -1014,13 +1015,13 @@ packages:
         optional: true
     resolution:
       integrity: sha512-ZUGI/de44L5x87uX5zM14UYcbn79HSXUR+kzcqU42gH0AgpdB/TjuJy3m4ezI7Q/jk3wTQd755mxSDLhQP79KA==
-  /@typescript-eslint/parser/4.12.0_eslint@7.17.0+typescript@4.1.3:
+  /@typescript-eslint/parser/4.14.1_eslint@7.18.0+typescript@4.1.3:
     dependencies:
-      '@typescript-eslint/scope-manager': 4.12.0
-      '@typescript-eslint/types': 4.12.0
-      '@typescript-eslint/typescript-estree': 4.12.0_typescript@4.1.3
+      '@typescript-eslint/scope-manager': 4.14.1
+      '@typescript-eslint/types': 4.14.1
+      '@typescript-eslint/typescript-estree': 4.14.1_typescript@4.1.3
       debug: 4.3.1
-      eslint: 7.17.0
+      eslint: 7.18.0
       typescript: 4.1.3
     dev: false
     engines:
@@ -1032,22 +1033,22 @@ packages:
       typescript:
         optional: true
     resolution:
-      integrity: sha512-9XxVADAo9vlfjfoxnjboBTxYOiNY93/QuvcPgsiKvHxW6tOZx1W4TvkIQ2jB3k5M0pbFP5FlXihLK49TjZXhuQ==
-  /@typescript-eslint/scope-manager/4.12.0:
+      integrity: sha512-mL3+gU18g9JPsHZuKMZ8Z0Ss9YP1S5xYZ7n68Z98GnPq02pYNQuRXL85b9GYhl6jpdvUc45Km7hAl71vybjUmw==
+  /@typescript-eslint/scope-manager/4.14.1:
     dependencies:
-      '@typescript-eslint/types': 4.12.0
-      '@typescript-eslint/visitor-keys': 4.12.0
+      '@typescript-eslint/types': 4.14.1
+      '@typescript-eslint/visitor-keys': 4.14.1
     dev: false
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
     resolution:
-      integrity: sha512-QVf9oCSVLte/8jvOsxmgBdOaoe2J0wtEmBr13Yz0rkBNkl5D8bfnf6G4Vhox9qqMIoG7QQoVwd2eG9DM/ge4Qg==
-  /@typescript-eslint/types/4.12.0:
+      integrity: sha512-F4bjJcSqXqHnC9JGUlnqSa3fC2YH5zTtmACS1Hk+WX/nFB0guuynVK5ev35D4XZbdKjulXBAQMyRr216kmxghw==
+  /@typescript-eslint/types/4.14.1:
     dev: false
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
     resolution:
-      integrity: sha512-N2RhGeheVLGtyy+CxRmxdsniB7sMSCfsnbh8K/+RUIXYYq3Ub5+sukRCjVE80QerrUBvuEvs4fDhz5AW/pcL6g==
+      integrity: sha512-SkhzHdI/AllAgQSxXM89XwS1Tkic7csPdndUuTKabEwRcEfR8uQ/iPA3Dgio1rqsV3jtqZhY0QQni8rLswJM2w==
   /@typescript-eslint/typescript-estree/3.4.0_typescript@4.1.3:
     dependencies:
       debug: 4.3.1
@@ -1068,10 +1069,10 @@ packages:
         optional: true
     resolution:
       integrity: sha512-zKwLiybtt4uJb4mkG5q2t6+W7BuYx2IISiDNV+IY68VfoGwErDx/RfVI7SWL4gnZ2t1A1ytQQwZ+YOJbHHJ2rw==
-  /@typescript-eslint/typescript-estree/4.12.0_typescript@4.1.3:
+  /@typescript-eslint/typescript-estree/4.14.1_typescript@4.1.3:
     dependencies:
-      '@typescript-eslint/types': 4.12.0
-      '@typescript-eslint/visitor-keys': 4.12.0
+      '@typescript-eslint/types': 4.14.1
+      '@typescript-eslint/visitor-keys': 4.14.1
       debug: 4.3.1
       globby: 11.0.2
       is-glob: 4.0.1
@@ -1088,16 +1089,16 @@ packages:
       typescript:
         optional: true
     resolution:
-      integrity: sha512-gZkFcmmp/CnzqD2RKMich2/FjBTsYopjiwJCroxqHZIY11IIoN0l5lKqcgoAPKHt33H2mAkSfvzj8i44Jm7F4w==
-  /@typescript-eslint/visitor-keys/4.12.0:
+      integrity: sha512-M8+7MbzKC1PvJIA8kR2sSBnex8bsR5auatLCnVlNTJczmJgqRn8M+sAlQfkEq7M4IY3WmaNJ+LJjPVRrREVSHQ==
+  /@typescript-eslint/visitor-keys/4.14.1:
     dependencies:
-      '@typescript-eslint/types': 4.12.0
+      '@typescript-eslint/types': 4.14.1
       eslint-visitor-keys: 2.0.0
     dev: false
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
     resolution:
-      integrity: sha512-hVpsLARbDh4B9TKYz5cLbcdMIOAoBYgFPCSP9FFS/liSF+b33gVNq8JHY3QGhHNVz85hObvL7BEYLlgx553WCw==
+      integrity: sha512-TAblbDXOI7bd0C/9PE1G+AFo7R5uc+ty1ArDoxmrC1ah61Hn6shURKy7gLdRb1qKJmjHkqu5Oq+e4Kt0jwf1IA==
   /@ungap/promise-all-settled/1.1.2:
     dev: true
     resolution:
@@ -1822,18 +1823,18 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
-  /eslint-config-prettier/7.1.0_eslint@7.17.0:
+  /eslint-config-prettier/7.2.0_eslint@7.18.0:
     dependencies:
-      eslint: 7.17.0
+      eslint: 7.18.0
     dev: false
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     resolution:
-      integrity: sha512-9sm5/PxaFG7qNJvJzTROMM1Bk1ozXVTKI0buKOyb0Bsr1hrwi0H/TzxF/COtf1uxikIK8SwhX7K6zg78jAzbeA==
-  /eslint-plugin-mocha/8.0.0_eslint@7.17.0:
+      integrity: sha512-rV4Qu0C3nfJKPOAhFujFxB7RMP+URFyQqqOZW9DMRD7ZDTFyjaIlETU3xzHELt++4ugC0+Jm084HQYkkJe+Ivg==
+  /eslint-plugin-mocha/8.0.0_eslint@7.18.0:
     dependencies:
-      eslint: 7.17.0
+      eslint: 7.18.0
       eslint-utils: 2.1.0
       ramda: 0.27.1
     dev: false
@@ -1849,12 +1850,12 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-VoM09vT7bfA7D+upt+FjeBO5eHIJQBUWki1aPvB+vbNiHS3+oGIJGIeyBtKQTME6UPXXy3vV07OL1tHd3ANuDw==
-  /eslint-plugin-react/7.20.6_eslint@7.17.0:
+  /eslint-plugin-react/7.20.6_eslint@7.18.0:
     dependencies:
       array-includes: 3.1.2
       array.prototype.flatmap: 1.2.4
       doctrine: 2.1.0
-      eslint: 7.17.0
+      eslint: 7.18.0
       has: 1.0.3
       jsx-ast-utils: 2.4.1
       object.entries: 1.1.3
@@ -1901,10 +1902,10 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-QudtT6av5WXels9WjIM7qz1XD1cWGvX4gGXvp/zBn9nXG02D0utdU3Em2m/QjTnrsk6bBjmCygl3rmj118msQQ==
-  /eslint/7.17.0:
+  /eslint/7.18.0:
     dependencies:
       '@babel/code-frame': 7.12.11
-      '@eslint/eslintrc': 0.2.2
+      '@eslint/eslintrc': 0.3.0
       ajv: 6.12.6
       chalk: 4.1.0
       cross-spawn: 7.0.3
@@ -1944,7 +1945,7 @@ packages:
       node: ^10.12.0 || >=12.0.0
     hasBin: true
     resolution:
-      integrity: sha512-zJk08MiBgwuGoxes5sSQhOtibZ75pz0J35XTRlZOk9xMffhpA9BTbQZxoXZzOl5zMbleShbGwtw+1kGferfFwQ==
+      integrity: sha512-fbgTiE8BfUJZuBeq2Yi7J3RB3WGUQ9PNuNbmgi6jt9Iv8qrkxfy19Ds3OpL1Pm7zg3BtTVhvcUZbIRQ0wmSjAQ==
   /espree/7.3.1:
     dependencies:
       acorn: 7.4.1
@@ -3091,7 +3092,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-bTTRUNlemx6deJa+ZyoCUTRvH3liK5+N6VQZ4NIw90AgDXY6iPnsqplNFf6STcj+ePk0H/xqxnP75Lr0J0Fq3A==
-  /nock/13.0.6:
+  /nock/13.0.7:
     dependencies:
       debug: 4.3.1
       json-stringify-safe: 5.0.1
@@ -3101,7 +3102,7 @@ packages:
     engines:
       node: '>= 10.13'
     resolution:
-      integrity: sha512-W81UZ1Tv21SWDZcA8Lu9LXYVl2gO9ADY5GadC6gFV9690h4TXz0oCkEoMckN/sPMHkDA79Ka9dXga9Mt1+j+Sg==
+      integrity: sha512-WBz73VYIjdbO6BwmXODRQLtn7B5tldA9pNpWJe5QTtTEscQlY5KXU4srnGzBOK2fWakkXj69gfTnXGzmrsaRWw==
   /node-fetch/2.6.1:
     engines:
       node: 4.x || >=6.0.0

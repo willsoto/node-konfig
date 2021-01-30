@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/nestjs-node-konfig",
+      "comment": "Update dependencies",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@willsoto/nestjs-node-konfig",
+  "email": "willsoto@users.noreply.github.com"
+}
