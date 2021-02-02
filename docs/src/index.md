@@ -1,8 +1,10 @@
 ---
 home: true
 tagline: Flexible configuration library for Node.js
-actionText: Quick Start →
-actionLink: /guide/
+actions:
+  - text: Get Started
+    link: /guide/
+    type: primary
 ---
 
 Configuration library for Node.js written in TypeScript. Can load and merge
