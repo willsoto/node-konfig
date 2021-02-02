@@ -37,10 +37,10 @@ module.exports = {
     docsDir: "docs",
     docsBranch: "main",
     editLinks: true,
-    // custom text for edit link. Defaults to "Edit this page"
+    contributors: false,
     editLinkText: "Help us improve this page!",
     lastUpdated: true,
-    nav: [
+    navbar: [
       {
         text: "Guide",
         link: "/guide/",
@@ -62,32 +62,37 @@ module.exports = {
       "/guide/": [
         {
           title: "Guide",
-          collapsable: false,
-          children: ["", "usage", "getting-values", "groups"],
+          isGroup: true,
+          children: [
+            "/guide/README.md",
+            "/guide/usage.md",
+            "/guide/getting-values.md",
+            "/guide/groups.md",
+          ],
         },
       ],
       "/loaders/": [
         {
           title: "Loaders",
-          collapsable: false,
+          isGroup: true,
           children: [
-            "",
-            "consul",
-            "env",
-            "etcd",
-            "file",
-            "flag",
-            "http",
-            "value",
-            "vault",
+            "/loaders/README.md",
+            "/loaders/consul.md",
+            "/loaders/env.md",
+            "/loaders/etcd.md",
+            "/loaders/file.md",
+            "/loaders/flag.md",
+            "/loaders/http.md",
+            "/loaders/value.md",
+            "/loaders/vault.md",
           ],
         },
       ],
       "/parsers/": [
         {
           title: "Parsers",
-          collapsable: false,
-          children: [""],
+          isGroup: true,
+          children: ["/parsers/README.md"],
         },
       ],
     },
