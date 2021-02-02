@@ -1,0 +1,19 @@
+{
+  "name": "docs",
+  "version": "0.0.1",
+  "description": "Docs for node-konfig",
+  "repository": "https://github.com/willsoto/node-konfig/docs",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "vuepress build src",
+    "dev": "vuepress dev src"
+  },
+  "devDependencies": {
+    "vuepress": "^1.8.0"
+  },
+  "authors": {
+    "name": "Will",
+    "email": "willsoto@users.noreply.github.com"
+  }
+}
