@@ -20,7 +20,7 @@ pnpm add @willsoto/nestjs-node-konfig
 
 ## Quick look
 
-```javascript
+```typescript
 // config.module.ts
 import { NodeKonfigModule } from "@willsoto/nestjs-node-konfig";
 import { Module } from "@nestjs/common";

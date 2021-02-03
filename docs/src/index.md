@@ -2,8 +2,11 @@
 home: true
 tagline: Flexible configuration library for Node.js
 actions:
-  - text: Get Started
+  - text: Get started
     link: /guide/
+    type: primary
+  - text: View integrations
+    link: /integrations/
     type: primary
 ---
 
