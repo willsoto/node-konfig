@@ -20,6 +20,9 @@ import path from "path";
 // Create the store, this is the object you will use to access your config
 export const store = new Konfig.Store();
 
+// Parsers can be shared across loaders
+const parser = new Konfig.JSONParser();
+
 // This will load configuration from the specified files. A parser must be provided
 // so the loader knows how to interpret the file.
 // Files are loaded in order, so any conflicts will be resolved through a "last one wins" approach.
@@ -29,7 +32,12 @@ const loader = new Konfig.FileLoader({
     {
       path: path.join(__dirname, "configs", "development.json"),
       // This will tell the loader how it should interpret the files it loads
-      parser: new Konfig.JSONParser(),
+      parser: parser,
+    },
+        {
+      path: path.join(__dirname, "configs", "local.json"),
+      // This will tell the loader how it should interpret the files it loads
+      parser: parser,
     },
   ],
 });
