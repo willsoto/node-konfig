@@ -1,0 +1,22 @@
+{
+  "references": [
+    {
+      "path": "./integrations/nestjs/tsconfig.json"
+    },
+    {
+      "path": "./packages/consul/tsconfig.json"
+    },
+    {
+      "path": "./packages/core/tsconfig.json"
+    },
+    {
+      "path": "./packages/etcd/tsconfig.json"
+    },
+    {
+      "path": "./packages/http/tsconfig.json"
+    },
+    {
+      "path": "./packages/vault/tsconfig.json"
+    }
+  ]
+}
