@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-core",
+      "comment": "Stop using esModuleInterop",
+      "type": "major"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-core",
+  "email": "willsoto@users.noreply.github.com"
+}
