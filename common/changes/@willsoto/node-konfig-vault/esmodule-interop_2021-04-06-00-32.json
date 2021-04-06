@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-vault",
+      "comment": "Stop using esModuleInterop",
+      "type": "major"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-vault",
+  "email": "willsoto@users.noreply.github.com"
+}

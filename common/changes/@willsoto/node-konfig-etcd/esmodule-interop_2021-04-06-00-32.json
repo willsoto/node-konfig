@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-etcd",
+      "comment": "Stop using esModuleInterop",
+      "type": "major"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-etcd",
+  "email": "willsoto@users.noreply.github.com"
+}
