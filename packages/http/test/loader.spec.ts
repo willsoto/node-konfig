@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import * as Konfig from "@willsoto/node-konfig-core";
 import { expect } from "chai";
-import nock from "nock";
-import sinon from "sinon";
+import * as nock from "nock";
+import * as sinon from "sinon";
 import { HttpLoader, HttpLoaderOptions } from "../src";
 
 describe("HttpLoader", function () {

@@ -33,7 +33,7 @@ pnpm add @willsoto/node-konfig-core
 
 ```javascript
 import * as Konfig from "@willsoto/node-konfig-core";
-import path from "path";
+import * as path from "path";
 
 // Create the store, this is the object you will use to access your config
 export const store = new Konfig.Store();

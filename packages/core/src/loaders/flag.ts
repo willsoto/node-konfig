@@ -1,4 +1,4 @@
-import meow from "meow";
+import * as meow from "meow";
 import { Store } from "../store";
 import { Loader, LoaderOptions } from "./base";
 

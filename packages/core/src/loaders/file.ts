@@ -1,4 +1,4 @@
-import fs from "fs";
+import * as fs from "fs";
 import { Parser } from "../parsers";
 import { Store } from "../store";
 import { Loader, LoaderOptions } from "./base";

@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import path from "path";
+import * as path from "path";
 import * as Konfig from "../src";
 import { NoValueForKeyError } from "../src";
 

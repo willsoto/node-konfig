@@ -5,7 +5,7 @@ import {
   Parser,
   Store,
 } from "@willsoto/node-konfig-core";
-import consul from "consul";
+import * as consul from "consul";
 
 interface Key {
   key: string;

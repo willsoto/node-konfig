@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import * as Konfig from "@willsoto/node-konfig-core";
 import { expect } from "chai";
-import vault from "node-vault";
-import path from "path";
-import sinon from "sinon";
+import * as vault from "node-vault";
+import * as path from "path";
+import * as sinon from "sinon";
 import { VaultLoader, VaultLoaderOptions } from "../src";
 
 describe("VaultLoader", function () {
@@ -170,9 +169,9 @@ async function makeStore(
   options: VaultLoaderOptions,
   loaders: Konfig.Loader[] = [],
 ): Promise<Konfig.Store> {
-  const store = new Konfig.Store();
-
-  loaders.forEach((loader) => store.registerLoader(loader));
+  const store = new Konfig.Store({
+    loaders,
+  });
 
   // Make sure vault gets loaded last so it "wins" any conflicts
   store.registerLoader(

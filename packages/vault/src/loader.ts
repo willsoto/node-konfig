@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Loader, LoaderOptions, Store } from "@willsoto/node-konfig-core";
-import vault, { client, VaultOptions } from "node-vault";
+import * as vault from "node-vault";
 
 interface Secret {
   key: string;
@@ -13,12 +13,12 @@ interface Secret {
 
 export interface VaultLoaderOptions extends LoaderOptions {
   secrets: Secret[];
-  vaultOptions?: VaultOptions;
+  vaultOptions?: vault.VaultOptions;
 }
 
 export class VaultLoader extends Loader {
   readonly options: VaultLoaderOptions;
-  readonly client: client;
+  readonly client: vault.client;
 
   name = "vault";
 
