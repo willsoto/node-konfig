@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import path from "path";
-import sinon from "sinon";
+import * as path from "path";
+import * as sinon from "sinon";
 import * as Konfig from "../../src";
 
 describe("FileLoader", function () {

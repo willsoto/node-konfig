@@ -1,4 +1,4 @@
-import setWith from "lodash.setwith";
+import { setWith } from "lodash";
 import { NoValueForKeyError } from "./errors";
 import { Loader } from "./loaders";
 

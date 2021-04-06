@@ -1,4 +1,4 @@
-import toml from "toml";
+import * as toml from "toml";
 import { Parser } from "./interface";
 
 export class TOMLParser implements Parser {

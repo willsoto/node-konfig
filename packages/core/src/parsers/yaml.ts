@@ -1,4 +1,4 @@
-import yaml from "js-yaml";
+import * as yaml from "js-yaml";
 import { Parser } from "./interface";
 
 export class YAMLParser implements Parser {

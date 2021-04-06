@@ -2,7 +2,7 @@
 import * as Konfig from "@willsoto/node-konfig-core";
 import { expect } from "chai";
 import { Etcd3 } from "etcd3";
-import sinon from "sinon";
+import * as sinon from "sinon";
 import { EtcdLoader, EtcdLoaderOptions } from "../src";
 
 describe("EtcdLoader", function () {

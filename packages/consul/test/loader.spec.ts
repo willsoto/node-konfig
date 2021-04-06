@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import * as Konfig from "@willsoto/node-konfig-core";
 import { expect } from "chai";
-import consul from "consul";
-import path from "path";
-import sinon from "sinon";
+import * as consul from "consul";
+import * as path from "path";
+import * as sinon from "sinon";
 import { ConsulLoader, ConsulLoaderOptions } from "../src";
 
 describe("ConsulLoader", function () {

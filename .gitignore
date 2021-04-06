@@ -66,3 +66,6 @@ common/autoinstallers/*/.npmrc
 
 dist
 temp
+
+# artifact from composite tsc builds
+*.tsbuildinfo
