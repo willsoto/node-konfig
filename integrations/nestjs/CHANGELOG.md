@@ -1,6 +1,13 @@
 # Change Log - @willsoto/nestjs-node-konfig
 
-This log was last generated on Sat, 30 Jan 2021 23:39:45 GMT and should not be manually modified.
+This log was last generated on Tue, 06 Apr 2021 00:38:51 GMT and should not be manually modified.
+
+## 1.0.0
+Tue, 06 Apr 2021 00:38:51 GMT
+
+### Breaking changes
+
+- Stop using esModuleInterop
 
 ## 0.1.1
 Sat, 30 Jan 2021 23:39:45 GMT

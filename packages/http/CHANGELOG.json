@@ -2,6 +2,26 @@
   "name": "@willsoto/node-konfig-http",
   "entries": [
     {
+      "version": "1.0.0",
+      "tag": "@willsoto/node-konfig-http_v1.0.0",
+      "date": "Tue, 06 Apr 2021 00:38:51 GMT",
+      "comments": {
+        "major": [
+          {
+            "comment": "Stop using esModuleInterop"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" to `1.0.0`"
+          },
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" from `^0.3.1` to `^1.0.0`"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.1.6",
       "tag": "@willsoto/node-konfig-http_v0.1.6",
       "date": "Sat, 30 Jan 2021 23:39:45 GMT",
