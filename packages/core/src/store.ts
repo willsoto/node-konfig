@@ -1,13 +1,18 @@
 import { setWith } from "lodash";
 import { NoValueForKeyError } from "./errors";
 import { Loader } from "./loaders";
+import { PathKeys, PropType } from "./types";
 
 export interface StoreOptions {
   name?: string;
   loaders?: Loader[];
 }
 
-type Config = Record<string, unknown>;
+// Use an object type here instead of `Record<string, unknown>` since it makes
+// property autocomplete work - eg when using `store.get("property")`.
+// Maybe this is a bug?
+// eslint-disable-next-line @typescript-eslint/ban-types
+type Config = object;
 
 /**
  * Holds the configuration object.
@@ -69,7 +74,7 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
    *
    * @public
    */
-  get<T>(accessor: string): T {
+  get<P extends PathKeys<TConfig>>(accessor: P): PropType<TConfig, P> {
     const path = accessor.split(".");
 
     let current: Config | unknown = this.config;
@@ -86,10 +91,10 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
     }
 
     if (current instanceof Store) {
-      return current.toJSON() as T;
+      return current.toJSON() as PropType<TConfig, P>;
     }
 
-    return current as T;
+    return current as PropType<TConfig, P>;
   }
 
   /**
@@ -98,13 +103,13 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
    *
    * {@link Store.get}
    */
-  getOrThrow<T>(accessor: string): T {
+  getOrThrow<P extends PathKeys<TConfig>>(accessor: P): PropType<TConfig, P> {
     const value = this.get(accessor);
 
     if (value === null || value === undefined) {
       throw new NoValueForKeyError(accessor);
     }
-    return value as T;
+    return value;
   }
 
   /**
@@ -168,12 +173,12 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
    */
   assign(config: TConfig): this {
     Object.keys(config).forEach((key) => {
-      const existingValue = this.config[key];
+      const existingValue = (this.config as Record<string, unknown>)[key];
 
       if (existingValue instanceof Store) {
-        existingValue.assign(config[key]);
+        existingValue.assign((config as Record<string, unknown>)[key]);
       } else {
-        this.set(key, config[key]);
+        this.set(key, (config as Record<string, unknown>)[key]);
       }
     });
 
@@ -187,7 +192,8 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
    */
   async init(): Promise<void> {
     for (const loader of this.#loaders) {
-      await loader.load(this);
+      // eslint-disable-next-line @typescript-eslint/ban-types
+      await loader.load((this as unknown) as Store<Record<string, unknown>>);
     }
 
     // Process all groups after the parent store is initialized
@@ -203,6 +209,7 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
    */
   toJSON(): Record<string, unknown> {
     return Object.entries(this.config).reduce((accumlator, current) => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const [key, value] = current;
 
       if (value instanceof Store) {
@@ -214,6 +221,7 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
 
       return {
         ...accumlator,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         [key]: value,
       };
     }, {});

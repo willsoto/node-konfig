@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-core",
+      "comment": "[core] Make store generic for better type inference. Requires TypeScript 4.1 to work. Closes #17",
+      "type": "major"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-core",
+  "email": "willsoto@users.noreply.github.com"
+}
