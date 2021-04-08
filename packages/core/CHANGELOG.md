@@ -1,6 +1,13 @@
 # Change Log - @willsoto/node-konfig-core
 
-This log was last generated on Tue, 06 Apr 2021 00:38:51 GMT and should not be manually modified.
+This log was last generated on Thu, 08 Apr 2021 22:11:43 GMT and should not be manually modified.
+
+## 2.0.0
+Thu, 08 Apr 2021 22:11:43 GMT
+
+### Breaking changes
+
+- [core] Make store generic for better type inference. Requires TypeScript 4.1 to work. Closes #17
 
 ## 1.0.0
 Tue, 06 Apr 2021 00:38:51 GMT
