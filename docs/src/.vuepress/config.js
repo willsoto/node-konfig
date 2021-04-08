@@ -50,6 +50,7 @@ module.exports = {
             "/guide/usage.md",
             "/guide/getting-values.md",
             "/guide/groups.md",
+            "/guide/property-autocomplete.md",
           ],
         },
       ],
