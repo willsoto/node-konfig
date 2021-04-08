@@ -2,6 +2,18 @@
   "name": "@willsoto/node-konfig-core",
   "entries": [
     {
+      "version": "2.0.0",
+      "tag": "@willsoto/node-konfig-core_v2.0.0",
+      "date": "Thu, 08 Apr 2021 22:11:43 GMT",
+      "comments": {
+        "major": [
+          {
+            "comment": "[core] Make store generic for better type inference. Requires TypeScript 4.1 to work. Closes #17"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.0",
       "tag": "@willsoto/node-konfig-core_v1.0.0",
       "date": "Tue, 06 Apr 2021 00:38:51 GMT",

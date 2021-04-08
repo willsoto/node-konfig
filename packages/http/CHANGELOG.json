@@ -2,6 +2,21 @@
   "name": "@willsoto/node-konfig-http",
   "entries": [
     {
+      "version": "1.0.1",
+      "tag": "@willsoto/node-konfig-http_v1.0.1",
+      "date": "Thu, 08 Apr 2021 22:11:43 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" to `2.0.0`"
+          },
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" from `^1.0.0` to `^2.0.0`"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.0",
       "tag": "@willsoto/node-konfig-http_v1.0.0",
       "date": "Tue, 06 Apr 2021 00:38:51 GMT",
