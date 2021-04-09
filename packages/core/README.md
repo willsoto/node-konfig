@@ -47,7 +47,12 @@ const loader = new Konfig.FileLoader({
     {
       path: path.join(__dirname, "configs", "development.json"),
       // This will tell the loader how it should interpret the files it loads
-      parser: new Konfig.JSONParser(),
+      parser: parser,
+    },
+    {
+      path: path.join(__dirname, "configs", "local.json"),
+      // This will tell the loader how it should interpret the files it loads
+      parser: parser,
     },
   ],
 });
