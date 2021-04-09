@@ -1,4 +1,4 @@
-# Property Autocomplete
+# Property autocomplete
 
 To enable TypeScript autocomplete for properties, you can provide an interface to
 the `Store` class like so:
