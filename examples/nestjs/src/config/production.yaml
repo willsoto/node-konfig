@@ -1,0 +1,8 @@
+name: nestjs-example-production
+
+# Example only: Vault will override this in production
+database:
+  host: localhost
+  port: 5432
+  database: development
+  password: development
