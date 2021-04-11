@@ -2,6 +2,18 @@
   "name": "@willsoto/nestjs-node-konfig",
   "entries": [
     {
+      "version": "1.0.2",
+      "tag": "@willsoto/nestjs-node-konfig_v1.0.2",
+      "date": "Sun, 11 Apr 2021 19:03:52 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix Nest.js integration rootDir"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.1",
       "tag": "@willsoto/nestjs-node-konfig_v1.0.1",
       "date": "Thu, 08 Apr 2021 22:11:43 GMT",
