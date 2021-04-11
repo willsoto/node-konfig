@@ -1,6 +1,7 @@
 {
   "name": "@willsoto/node-konfig-vault",
   "version": "1.0.1",
+  "description": "Node Konfig integration for Vault",
   "keywords": [
     "config",
     "configuration",

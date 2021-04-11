@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-vault",
+      "comment": "Add description to package",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-vault",
+  "email": "willsoto@users.noreply.github.com"
+}
