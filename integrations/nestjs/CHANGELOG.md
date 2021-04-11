@@ -1,6 +1,11 @@
 # Change Log - @willsoto/nestjs-node-konfig
 
-This log was last generated on Sun, 11 Apr 2021 19:03:52 GMT and should not be manually modified.
+This log was last generated on Sun, 11 Apr 2021 19:13:28 GMT and should not be manually modified.
+
+## 1.0.3
+Sun, 11 Apr 2021 19:13:28 GMT
+
+_Version update only_
 
 ## 1.0.2
 Sun, 11 Apr 2021 19:03:52 GMT
