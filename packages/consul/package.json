@@ -1,6 +1,7 @@
 {
   "name": "@willsoto/node-konfig-consul",
   "version": "1.0.1",
+  "description": "Node Konfig integration for Consul",
   "keywords": [
     "config",
     "configuration",

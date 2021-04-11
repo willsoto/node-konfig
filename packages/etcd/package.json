@@ -1,6 +1,7 @@
 {
   "name": "@willsoto/node-konfig-etcd",
   "version": "1.0.1",
+  "description": "Node Konfig integration for etcd",
   "keywords": [
     "config",
     "configuration",

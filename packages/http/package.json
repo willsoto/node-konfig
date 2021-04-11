@@ -1,6 +1,7 @@
 {
   "name": "@willsoto/node-konfig-http",
   "version": "1.0.1",
+  "description": "Node Konfig integration for HTTP",
   "keywords": [
     "config",
     "configuration",
