@@ -10,11 +10,13 @@ import {
 @Module({})
 export class NodeKonfigModule {
   public static register(options: NodeKonfigModuleOptions = {}): DynamicModule {
+    const provide = options.name ?? Store;
+
     return {
       module: NodeKonfigModule,
       providers: [
         {
-          provide: options.name ?? Store,
+          provide,
           async useFactory() {
             const store = new Store(options.storeOptions);
             await store.init();
@@ -23,6 +25,7 @@ export class NodeKonfigModule {
           },
         },
       ],
+      exports: [provide],
     };
   }
 
@@ -33,6 +36,7 @@ export class NodeKonfigModule {
       module: NodeKonfigModule,
       imports: options.imports,
       providers: [...asyncProviders],
+      exports: [...asyncProviders],
     };
   }
 

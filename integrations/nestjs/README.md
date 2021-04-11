@@ -24,6 +24,7 @@ pnpm add @willsoto/nestjs-node-konfig
 // config.module.ts
 import { NodeKonfigModule } from "@willsoto/nestjs-node-konfig";
 import { Module } from "@nestjs/common";
+import { ValueLoader } from "@willsoto/node-konfig-core";
 
 @Module({
   imports: [
