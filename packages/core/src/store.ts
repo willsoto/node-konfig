@@ -233,6 +233,8 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
    * registered to that `Store` instance.
    *
    * @param name - The name of the group. This name is also how you access the group after creation.
+   * @param options - Any options to pass to the underlying store. Note that options will be **ignored**
+   * on subsequent calls once the group has been initialized.
    *
    * @example
    * ```
@@ -244,12 +246,17 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
    *
    * group.registerLoader(new Loader());
    *
+   * // Options can be passed to the store when creating a group
+   * store.group("database", {
+   *   loaders: [new Loader()]
+   * })
+   *
    * await store.init();
    * ```
    *
    * @public
    */
-  group(name: string): Store {
+  group(name: string, options: StoreOptions = {}): Store {
     let group = this.#groups.find((group) => group.name === name);
 
     if (group) {
@@ -258,6 +265,7 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
 
     group = new Store({
       name,
+      ...options,
     });
 
     this.set(name, group);
