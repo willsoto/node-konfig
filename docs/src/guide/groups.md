@@ -23,3 +23,23 @@ await store.init();
 store.get("database.host"); // "localhost"
 group.get("host"); // "localhost"
 ```
+
+## Group options
+
+Groups can also be initialized with the same options you would provide to the `Store`.
+
+> Options will only be accepted and processed when a group is created. Subsequent calls with options
+> will be ignored.
+
+```typescript
+store.group("database", {
+  loaders: [
+    new Konfig.ValueLoader({
+      values: {
+        host: "localhost",
+        port: 5432,
+      },
+    }),
+  ],
+});
+```

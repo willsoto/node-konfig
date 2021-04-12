@@ -43,6 +43,29 @@ describe("Store groups", function () {
     });
   });
 
+  it("accepts store options when creating groups", async function () {
+    const store = await makeStore();
+    const group = store.group("redis", {
+      loaders: [
+        new Konfig.FileLoader({
+          files: [
+            {
+              path: path.join(__dirname, "configs", "config3.json"),
+              parser: new Konfig.JSONParser(),
+            },
+          ],
+        }),
+      ],
+    });
+
+    await group.init();
+
+    expect(store.group("redis").toJSON()).to.eql({
+      host: "localhost",
+      port: 6379,
+    });
+  });
+
   it("correctly serializes groups within a store", async function () {
     const store = await makeStore();
     const parser = new Konfig.JSONParser();
