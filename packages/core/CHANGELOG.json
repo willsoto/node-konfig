@@ -2,6 +2,18 @@
   "name": "@willsoto/node-konfig-core",
   "entries": [
     {
+      "version": "2.1.0",
+      "tag": "@willsoto/node-konfig-core_v2.1.0",
+      "date": "Mon, 12 Apr 2021 23:42:07 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Support passing options when creating groups"
+          }
+        ]
+      }
+    },
+    {
       "version": "2.0.1",
       "tag": "@willsoto/node-konfig-core_v2.0.1",
       "date": "Sun, 11 Apr 2021 19:13:28 GMT",

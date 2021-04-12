@@ -1,6 +1,13 @@
 # Change Log - @willsoto/node-konfig-core
 
-This log was last generated on Sun, 11 Apr 2021 19:13:28 GMT and should not be manually modified.
+This log was last generated on Mon, 12 Apr 2021 23:42:07 GMT and should not be manually modified.
+
+## 2.1.0
+Mon, 12 Apr 2021 23:42:07 GMT
+
+### Minor changes
+
+- Support passing options when creating groups
 
 ## 2.0.1
 Sun, 11 Apr 2021 19:13:28 GMT

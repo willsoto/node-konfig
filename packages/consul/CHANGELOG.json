@@ -2,6 +2,21 @@
   "name": "@willsoto/node-konfig-consul",
   "entries": [
     {
+      "version": "1.0.3",
+      "tag": "@willsoto/node-konfig-consul_v1.0.3",
+      "date": "Mon, 12 Apr 2021 23:42:07 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" to `2.1.0`"
+          },
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" from `^2.0.1` to `^2.1.0`"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.2",
       "tag": "@willsoto/node-konfig-consul_v1.0.2",
       "date": "Sun, 11 Apr 2021 19:13:28 GMT",
