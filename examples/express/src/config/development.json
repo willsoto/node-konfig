@@ -1,0 +1,9 @@
+{
+  "name": "express-development",
+  "database": {
+    "host": "localhosts",
+    "port": 5432,
+    "database": "development",
+    "password": "development"
+  }
+}
