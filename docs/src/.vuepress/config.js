@@ -39,6 +39,10 @@ module.exports = {
         text: "Integrations",
         link: "/integrations/",
       },
+      {
+        text: "Examples",
+        link: "https://github.com/willsoto/node-konfig/tree/main/examples",
+      },
     ],
     sidebar: {
       "/guide/": [
