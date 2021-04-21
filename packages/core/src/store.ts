@@ -6,6 +6,7 @@ import { PathKeys, PropType } from "./types";
 export interface StoreOptions {
   name?: string;
   loaders?: Loader[];
+  loadersByEnvironment?: Record<string, Loader[]>;
 }
 
 // Use an object type here instead of `Record<string, unknown>` since it makes
@@ -49,7 +50,7 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
   private config: TConfig = {} as TConfig;
 
   constructor(options: StoreOptions = {}) {
-    const { loaders = [], ...rest } = options;
+    const { loaders = [], loadersByEnvironment = {}, ...rest } = options;
 
     this.options = {
       name: "default",
@@ -57,6 +58,10 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
     };
 
     this.registerLoaders(...loaders);
+    // Environment loaders should always be loaded last since anything registered
+    // for a particular environment should always be processed last against any loader that has been registered
+    // without an associated environment.
+    this.registerLoadersByEnvironment(loadersByEnvironment);
   }
 
   /**
@@ -159,6 +164,34 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
    */
   registerLoaders(...loaders: Loader[]): this {
     loaders.forEach((loader) => this.registerLoader(loader));
+
+    return this;
+  }
+
+  /**
+   *
+   * @param loadersByEnvironment - An object composed of keys representing the
+   * environment mapping to any loaders that should be registered. Will determine the
+   * environment based on the value of `NODE_KONFIG_ENV` first (if set), `NODE_ENV` second (if set)
+   * and default to "development"
+   *
+   * @example
+   * ```
+   * store.registerLoadersByEnvironment({
+   *   development: [new FileLoader()],
+   *   staging: [new VaultLoader()],
+   *   production: [new VaultLoader()],
+   * });
+   *```
+
+   * @public
+   */
+  registerLoadersByEnvironment(
+    loadersByEnvironment: Record<string, Loader[]>,
+  ): this {
+    const environmentLoaders = loadersByEnvironment[this.environment] ?? [];
+
+    this.registerLoaders(...environmentLoaders);
 
     return this;
   }
@@ -279,5 +312,17 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
    */
   get name(): string {
     return this.options.name;
+  }
+
+  /**
+   * @internal
+   */
+  private get environment(): string {
+    if (typeof process.env.NODE_KONFIG_ENV === "string") {
+      return process.env.NODE_KONFIG_ENV;
+    } else if (typeof process.env.NODE_ENV === "string") {
+      return process.env.NODE_ENV;
+    }
+    return "development";
   }
 }
