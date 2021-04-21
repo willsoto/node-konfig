@@ -1,6 +1,13 @@
 # Change Log - @willsoto/node-konfig-core
 
-This log was last generated on Mon, 12 Apr 2021 23:42:07 GMT and should not be manually modified.
+This log was last generated on Wed, 21 Apr 2021 23:01:32 GMT and should not be manually modified.
+
+## 2.2.0
+Wed, 21 Apr 2021 23:01:32 GMT
+
+### Minor changes
+
+- Add the ability to specify loaders per environment
 
 ## 2.1.0
 Mon, 12 Apr 2021 23:42:07 GMT

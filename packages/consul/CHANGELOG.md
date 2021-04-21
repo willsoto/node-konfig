@@ -1,6 +1,11 @@
 # Change Log - @willsoto/node-konfig-consul
 
-This log was last generated on Mon, 12 Apr 2021 23:42:07 GMT and should not be manually modified.
+This log was last generated on Wed, 21 Apr 2021 23:01:32 GMT and should not be manually modified.
+
+## 1.0.4
+Wed, 21 Apr 2021 23:01:32 GMT
+
+_Version update only_
 
 ## 1.0.3
 Mon, 12 Apr 2021 23:42:07 GMT
