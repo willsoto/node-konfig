@@ -55,6 +55,7 @@ module.exports = {
             "/guide/getting-values.md",
             "/guide/groups.md",
             "/guide/property-autocomplete.md",
+            "/guide/environment-loaders.md",
           ],
         },
       ],

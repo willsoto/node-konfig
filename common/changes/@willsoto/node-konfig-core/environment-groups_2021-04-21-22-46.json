@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-core",
+      "comment": "Add the ability to specify loaders per environment",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-core",
+  "email": "willsoto@users.noreply.github.com"
+}
