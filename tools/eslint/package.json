@@ -6,8 +6,8 @@
     "build": "exit 0"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "~4.22.0",
-    "@typescript-eslint/parser": "~4.22.0",
+    "@typescript-eslint/eslint-plugin": "~4.22.1",
+    "@typescript-eslint/parser": "~4.22.1",
     "eslint": "~7.25.0",
     "eslint-config-prettier": "~8.3.0",
     "eslint-plugin-mocha": "~8.1.0",
@@ -16,7 +16,7 @@
   "devDependencies": {
     "prettier": "~2.2.1",
     "prettier-plugin-organize-imports": "~1.1.1",
-    "prettier-plugin-packagejson": "~2.2.10",
+    "prettier-plugin-packagejson": "~2.2.11",
     "typescript": "~4.2.4"
   },
   "peerDependencies": {
