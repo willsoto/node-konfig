@@ -3,8 +3,9 @@
 Configuration can be loaded from various sources and merged together to form the final config object
 your application will use.
 
-```jsonc
-// configs/development.json
+**configs/development.json**
+
+```json
 {
   "name": "my-app",
   "database": {
@@ -14,8 +15,9 @@ your application will use.
 }
 ```
 
-```jsonc
-// configs/local.json
+**configs/local.json**
+
+```json
 {
   "name": "my-app",
   "database": {
