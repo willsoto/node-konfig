@@ -8,8 +8,8 @@
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "~1.0.1",
     "nyc": "~15.1.0",
-    "prettier": "~2.2.1",
-    "prettier-plugin-organize-imports": "~1.1.1",
+    "prettier": "~2.3.0",
+    "prettier-plugin-organize-imports": "~2.0.0",
     "prettier-plugin-packagejson": "~2.2.11",
     "source-map-support": "~0.5.19",
     "ts-node": "~9.1.1",
