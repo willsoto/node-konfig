@@ -177,14 +177,16 @@
       "commandKind": "global",
       "summary": "Used by the commit-msg Git hook. This command invokes Commitlint to check commit messages.",
       "autoinstallerName": "commitlint",
-      "shellCommand": "commitlint --edit $1"
+      "shellCommand": "commitlint --edit $1",
+      "safeForSimultaneousRushProcesses": true
     },
     {
       "name": "prettier",
       "commandKind": "global",
       "summary": "Used by the pre-commit Git hook. This command invokes lint-staged to reformat staged changes.",
       "autoinstallerName": "rush-prettier",
-      "shellCommand": "pretty-quick --staged"
+      "shellCommand": "pretty-quick --staged",
+      "safeForSimultaneousRushProcesses": true
     }
   ],
 
