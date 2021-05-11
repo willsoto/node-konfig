@@ -1,6 +1,6 @@
 {
   "name": "@willsoto/node-konfig-consul",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Node Konfig integration for Consul",
   "keywords": [
     "config",
@@ -60,7 +60,7 @@
     "typescript": "~4.2.4"
   },
   "peerDependencies": {
-    "@willsoto/node-konfig-core": "^2.2.0"
+    "@willsoto/node-konfig-core": "^2.2.1"
   },
   "volta": {
     "extends": "../../package.json"

@@ -2,6 +2,18 @@
   "name": "@willsoto/node-konfig-core",
   "entries": [
     {
+      "version": "2.2.1",
+      "tag": "@willsoto/node-konfig-core_v2.2.1",
+      "date": "Tue, 11 May 2021 00:25:29 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Package updates"
+          }
+        ]
+      }
+    },
+    {
       "version": "2.2.0",
       "tag": "@willsoto/node-konfig-core_v2.2.0",
       "date": "Wed, 21 Apr 2021 23:01:32 GMT",

@@ -1,6 +1,6 @@
 {
   "name": "@willsoto/nestjs-node-konfig",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Node Konfig integration package for usage with Nest.js",
   "keywords": [
     "config",

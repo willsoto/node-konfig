@@ -2,6 +2,23 @@
   "name": "@willsoto/nestjs-node-konfig",
   "entries": [
     {
+      "version": "1.0.7",
+      "tag": "@willsoto/nestjs-node-konfig_v1.0.7",
+      "date": "Tue, 11 May 2021 00:25:29 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Package updates"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" to `2.2.1`"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.6",
       "tag": "@willsoto/nestjs-node-konfig_v1.0.6",
       "date": "Wed, 21 Apr 2021 23:01:32 GMT",
