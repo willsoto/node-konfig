@@ -51,7 +51,7 @@ export const store = new Konfig.Store();
 
 // Always load some defaults.
 // These values will be merged with subsequent loaders. On conflicts, last one wins.
-store.regiserLoader(
+store.registerLoader(
   new Konfig.FileLoader({
     files: [
       {
@@ -78,7 +78,7 @@ if (process.env.NODE_ENV === "development") {
   store.registerLoader(loader);
 } else {
   // Use Vault in production or any other non-development environment.
-  store.regiserLoader(
+  store.registerLoader(
     new VaultLoader({
       secrets: [
         {
