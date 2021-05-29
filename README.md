@@ -1,6 +1,8 @@
 # Node Konfig
 
-> Thanks to [Konfig](https://github.com/lalamove/konfig) for the inspiration. This library would not have been possible without it.
+Configuration library for Node.js written in TypeScript. Can load and merge
+configuration for multiple sources into one object for easy access. Inspired by Go's
+[Konfig.](https://github.com/lalamove/konfig)
 
 Documentation is available at [https://willsoto.github.io/node-konfig/](https://willsoto.github.io/node-konfig/)
 
@@ -19,12 +21,6 @@ pnpm add @willsoto/node-konfig-core
 ```
 
 ## Quick look
-
-Configuration library for Node.js written in TypeScript. Can load and merge
-configuration for multiple sources into one object for easy access. Inspired by Go's
-[Konfig.](https://github.com/lalamove/konfig)
-
-# Quick look
 
 ```yaml
 # configs/default.yaml
