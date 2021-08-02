@@ -38,26 +38,26 @@
     ]
   },
   "dependencies": {
-    "@types/request": "~2.48.5",
-    "node-vault": "~0.9.21"
+    "@types/request": "~2.48.7",
+    "node-vault": "~0.9.22"
   },
   "devDependencies": {
     "@node-konfig-tools/eslint": "workspace:*",
     "@node-konfig-tools/mocha": "workspace:*",
     "@node-konfig-tools/nyc": "workspace:*",
-    "@rushstack/eslint-config": "~2.3.4",
-    "@types/chai": "~4.2.18",
+    "@rushstack/eslint-config": "~2.4.0",
+    "@types/chai": "~4.2.21",
     "@types/chai-as-promised": "~7.1.4",
-    "@types/mocha": "~8.2.2",
-    "@types/node": "~15.12.1",
+    "@types/mocha": "~9.0.0",
+    "@types/node": "~16.4.10",
     "@types/sinon": "~10.0.2",
     "@types/sinon-chai": "~3.2.5",
     "@willsoto/node-konfig-core": "workspace:*",
-    "eslint": "~7.28.0",
-    "mocha": "~8.4.0",
+    "eslint": "~7.32.0",
+    "mocha": "~9.0.3",
     "nyc": "~15.1.0",
     "rimraf": "~3.0.2",
-    "typescript": "~4.3.2"
+    "typescript": "~4.3.5"
   },
   "peerDependencies": {
     "@willsoto/node-konfig-core": "^2.2.1"
