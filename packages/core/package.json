@@ -36,7 +36,7 @@
     ]
   },
   "dependencies": {
-    "cockatiel": "~2.0.1",
+    "cockatiel": "~2.0.2",
     "js-yaml": "~4.1.0",
     "lodash": "~4.17.21",
     "meow": "~9.0.0",
@@ -46,20 +46,20 @@
     "@node-konfig-tools/eslint": "workspace:*",
     "@node-konfig-tools/mocha": "workspace:*",
     "@node-konfig-tools/nyc": "workspace:*",
-    "@rushstack/eslint-config": "~2.3.4",
-    "@types/chai": "~4.2.18",
+    "@rushstack/eslint-config": "~2.4.0",
+    "@types/chai": "~4.2.21",
     "@types/chai-as-promised": "~7.1.4",
-    "@types/js-yaml": "~4.0.1",
-    "@types/lodash": "~4.14.170",
-    "@types/mocha": "~8.2.2",
-    "@types/node": "~15.12.1",
+    "@types/js-yaml": "~4.0.2",
+    "@types/lodash": "~4.14.171",
+    "@types/mocha": "~9.0.0",
+    "@types/node": "~16.4.10",
     "@types/sinon": "~10.0.2",
     "@types/sinon-chai": "~3.2.5",
-    "eslint": "~7.28.0",
-    "mocha": "~8.4.0",
+    "eslint": "~7.32.0",
+    "mocha": "~9.0.3",
     "nyc": "~15.1.0",
     "rimraf": "~3.0.2",
-    "typescript": "~4.3.2"
+    "typescript": "~4.3.5"
   },
   "volta": {
     "extends": "../../package.json"

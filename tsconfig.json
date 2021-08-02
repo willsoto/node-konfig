@@ -1,9 +1,6 @@
 {
   "references": [
     {
-      "path": "./integrations/nestjs/tsconfig.json"
-    },
-    {
       "path": "./packages/consul/tsconfig.json"
     },
     {
