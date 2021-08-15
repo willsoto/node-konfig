@@ -12,7 +12,6 @@
     "**/.svn": true,
     "**/CVS": true
   },
-  "prettier.packageManager": "pnpm",
   "prettier.prettierPath": "common/autoinstallers/rush-prettier/node_modules/prettier",
   "search.exclude": {
     "**/*.code-search": true,
