@@ -11,7 +11,7 @@
   "ensureConsistentVersions": true,
 
   "gitPolicy": {
-    "versionBumpCommitMessage": "Applying package updates. [skip-ci]"
+    "versionBumpCommitMessage": "chore: applying package updates. [skip-ci]"
   },
 
   "repository": {
