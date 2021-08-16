@@ -1,13 +1,11 @@
 {
-  "name": "@willsoto/node-konfig-core",
-  "version": "2.2.1",
-  "description": "Core configuration pacakge supporting file, static and environment variables",
+  "name": "@willsoto/node-konfig-toml-parser",
+  "version": "0.1.0",
+  "description": "TOML parser support for Node Konfig",
   "keywords": [
     "config",
     "configuration",
-    "yaml",
     "toml",
-    "json",
     "configuration-management"
   ],
   "license": "Apache-2.0",
@@ -36,9 +34,7 @@
     ]
   },
   "dependencies": {
-    "cockatiel": "~2.0.2",
-    "lodash": "~4.17.21",
-    "meow": "~9.0.0"
+    "toml": "~3.0.0"
   },
   "devDependencies": {
     "@node-konfig-tools/eslint": "workspace:*",
@@ -47,16 +43,19 @@
     "@rushstack/eslint-config": "~2.4.0",
     "@types/chai": "~4.2.21",
     "@types/chai-as-promised": "~7.1.4",
-    "@types/lodash": "~4.14.171",
     "@types/mocha": "~9.0.0",
     "@types/node": "~16.4.10",
     "@types/sinon": "~10.0.2",
     "@types/sinon-chai": "~3.2.5",
+    "@willsoto/node-konfig-core": "workspace:*",
     "eslint": "~7.32.0",
     "mocha": "~9.0.3",
     "nyc": "~15.1.0",
     "rimraf": "~3.0.2",
     "typescript": "~4.3.5"
+  },
+  "peerDependencies": {
+    "@willsoto/node-konfig-core": "^2.2.1"
   },
   "volta": {
     "extends": "../../package.json"
