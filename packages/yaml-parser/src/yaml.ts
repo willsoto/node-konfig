@@ -1,5 +1,5 @@
+import { Parser } from "@willsoto/node-konfig-core";
 import * as yaml from "js-yaml";
-import { Parser } from "./interface";
 
 export class YAMLParser implements Parser {
   readonly yamlLoadOptions: yaml.LoadOptions;

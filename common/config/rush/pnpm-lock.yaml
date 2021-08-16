@@ -54,7 +54,6 @@ importers:
       '@rushstack/eslint-config': ~2.4.0
       '@types/chai': ~4.2.21
       '@types/chai-as-promised': ~7.1.4
-      '@types/js-yaml': ~4.0.2
       '@types/lodash': ~4.14.171
       '@types/mocha': ~9.0.0
       '@types/node': ~16.4.10
@@ -62,7 +61,6 @@ importers:
       '@types/sinon-chai': ~3.2.5
       cockatiel: ~2.0.2
       eslint: ~7.32.0
-      js-yaml: ~4.1.0
       lodash: ~4.17.21
       meow: ~9.0.0
       mocha: ~9.0.3
@@ -72,7 +70,6 @@ importers:
       typescript: ~4.3.5
     dependencies:
       cockatiel: 2.0.2
-      js-yaml: 4.1.0
       lodash: 4.17.21
       meow: 9.0.0
       toml: 3.0.0
@@ -83,7 +80,6 @@ importers:
       '@rushstack/eslint-config': 2.4.0_eslint@7.32.0+typescript@4.3.5
       '@types/chai': 4.2.21
       '@types/chai-as-promised': 7.1.4
-      '@types/js-yaml': 4.0.2
       '@types/lodash': 4.14.171
       '@types/mocha': 9.0.0
       '@types/node': 16.4.10
@@ -207,6 +203,49 @@ importers:
       '@rushstack/eslint-config': 2.4.0_eslint@7.32.0+typescript@4.3.5
       '@types/chai': 4.2.21
       '@types/chai-as-promised': 7.1.4
+      '@types/mocha': 9.0.0
+      '@types/node': 16.4.10
+      '@types/sinon': 10.0.2
+      '@types/sinon-chai': 3.2.5
+      '@willsoto/node-konfig-core': link:../core
+      eslint: 7.32.0
+      mocha: 9.0.3
+      nyc: 15.1.0
+      rimraf: 3.0.2
+      typescript: 4.3.5
+
+  ../../packages/yaml-parser:
+    specifiers:
+      '@node-konfig-tools/eslint': workspace:*
+      '@node-konfig-tools/mocha': workspace:*
+      '@node-konfig-tools/nyc': workspace:*
+      '@rushstack/eslint-config': ~2.4.0
+      '@types/chai': ~4.2.21
+      '@types/chai-as-promised': ~7.1.4
+      '@types/js-yaml': ~4.0.2
+      '@types/lodash': ~4.14.171
+      '@types/mocha': ~9.0.0
+      '@types/node': ~16.4.10
+      '@types/sinon': ~10.0.2
+      '@types/sinon-chai': ~3.2.5
+      '@willsoto/node-konfig-core': workspace:*
+      eslint: ~7.32.0
+      js-yaml: ~4.1.0
+      mocha: ~9.0.3
+      nyc: ~15.1.0
+      rimraf: ~3.0.2
+      typescript: ~4.3.5
+    dependencies:
+      js-yaml: 4.1.0
+    devDependencies:
+      '@node-konfig-tools/eslint': link:../../tools/eslint
+      '@node-konfig-tools/mocha': link:../../tools/mocha
+      '@node-konfig-tools/nyc': link:../../tools/nyc
+      '@rushstack/eslint-config': 2.4.0_eslint@7.32.0+typescript@4.3.5
+      '@types/chai': 4.2.21
+      '@types/chai-as-promised': 7.1.4
+      '@types/js-yaml': 4.0.2
+      '@types/lodash': 4.14.171
       '@types/mocha': 9.0.0
       '@types/node': 16.4.10
       '@types/sinon': 10.0.2
@@ -513,7 +552,7 @@ packages:
     resolution: {integrity: sha512-fiL7ZaGg2HBiFtmv6m34d5jEgEtNXfctjzB3f7b3iuT7olBX4mHLMOqOBmGTTSOTfNRQJH5+vsyk6mEz3I0Q7Q==}
     engines: {node: ^8.13.0 || >=10.10.0}
     dependencies:
-      '@types/node': 15.0.2
+      '@types/node': 16.4.10
     dev: false
 
   /@grpc/proto-loader/0.5.6:
@@ -714,12 +753,6 @@ packages:
     dependencies:
       type-detect: 4.0.8
 
-  /@sinonjs/fake-timers/7.0.5:
-    resolution: {integrity: sha512-fUt6b15bjV/VW93UP5opNXJxdwZSbK1EdiwnhN7XrQrcpaOhMJpZ/CjwFpM3THpxwA+YviBUJKSuEqKlCK5alw==}
-    dependencies:
-      '@sinonjs/commons': 1.8.3
-    dev: true
-
   /@sinonjs/fake-timers/7.1.2:
     resolution: {integrity: sha512-iQADsW4LBMISqZ6Ci1dupJL9pprqwcVFTcOsEmQOEhW+KLCVn/Y4Jrvg2k19fIHCp+iFprriYPTdRcQR8NbUPg==}
     dependencies:
@@ -756,11 +789,7 @@ packages:
   /@types/chai-as-promised/7.1.4:
     resolution: {integrity: sha512-1y3L1cHePcIm5vXkh1DSGf/zQq5n5xDKG1fpCvf18+uOkpce0Z1ozNFPkyWsVswK7ntN1sZBw3oU6gmN+pDUcA==}
     dependencies:
-      '@types/chai': 4.2.18
-    dev: true
-
-  /@types/chai/4.2.18:
-    resolution: {integrity: sha512-rS27+EkB/RE1Iz3u0XtVL5q36MGDWbgYe7zWiodyKNUnthxY0rukK5V36eiUCtCisB7NN8zKYH6DO2M37qxFEQ==}
+      '@types/chai': 4.2.21
     dev: true
 
   /@types/chai/4.2.21:
@@ -777,7 +806,7 @@ packages:
     resolution: {integrity: sha512-SEYeGAIQIQX8NN6LDKprLjbrd5dARM5EXsd8GI/A5l0apYI1fGMWgPHSe4ZKL4eozlAyI+doUE9XbYS4xCkQ1w==}
     dependencies:
       '@types/minimatch': 3.0.4
-      '@types/node': 15.0.2
+      '@types/node': 16.4.10
     dev: true
 
   /@types/js-yaml/4.0.2:
@@ -814,9 +843,6 @@ packages:
       form-data: 3.0.1
     dev: true
 
-  /@types/node/15.0.2:
-    resolution: {integrity: sha512-p68+a+KoxpoB47015IeYZYRrdqMUcpbK8re/zpFB8Ld46LHC1lPEbp3EXgkEhAYEcPvjJF6ZO+869SQ0aH1dcA==}
-
   /@types/node/16.4.10:
     resolution: {integrity: sha512-TmVHsm43br64js9BqHWqiDZA+xMtbUpI1MBIA0EyiBmoV9pcEYFOSdj5fr6enZNfh4fChh+AGOLIzGwJnkshyQ==}
 
@@ -836,14 +862,8 @@ packages:
   /@types/sinon-chai/3.2.5:
     resolution: {integrity: sha512-bKQqIpew7mmIGNRlxW6Zli/QVyc3zikpGzCa797B/tRnD9OtHvZ/ts8sYXV+Ilj9u3QRaUEM8xrjgd1gwm1BpQ==}
     dependencies:
-      '@types/chai': 4.2.18
-      '@types/sinon': 10.0.0
-    dev: true
-
-  /@types/sinon/10.0.0:
-    resolution: {integrity: sha512-jDZ55oCKxqlDmoTBBbBBEx+N8ZraUVhggMZ9T5t+6/Dh8/4NiOjSUfpLrPiEwxQDlAe3wpAkoXhWvE6LibtsMQ==}
-    dependencies:
-      '@sinonjs/fake-timers': 7.0.5
+      '@types/chai': 4.2.21
+      '@types/sinon': 10.0.2
     dev: true
 
   /@types/sinon/10.0.2:
@@ -2028,6 +2048,7 @@ packages:
       minimatch: 3.0.4
       once: 1.4.0
       path-is-absolute: 1.0.1
+    dev: true
 
   /glob/7.1.7:
     resolution: {integrity: sha512-OvD9ENzPLbegENnYP5UUfJIirTg4+XwMWGaQfQTY0JenxNvvIKP3U3/tAQSPIu/lHxXYSZmpXlUHeqAIdKzBLQ==}
@@ -2038,7 +2059,6 @@ packages:
       minimatch: 3.0.4
       once: 1.4.0
       path-is-absolute: 1.0.1
-    dev: true
 
   /globals/11.12.0:
     resolution: {integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==}
@@ -3066,7 +3086,7 @@ packages:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.1
-      '@types/node': 15.0.2
+      '@types/node': 16.4.10
       long: 4.0.0
     dev: false
 
@@ -3254,7 +3274,7 @@ packages:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     hasBin: true
     dependencies:
-      glob: 7.1.6
+      glob: 7.1.7
 
   /run-parallel/1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}

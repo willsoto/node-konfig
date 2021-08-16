@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
-  "rushVersion": "5.50.0",
+  "rushVersion": "5.51.1",
   "pnpmVersion": "6.11.5",
   "pnpmOptions": {
     "strictPeerDependencies": true,
@@ -45,6 +45,11 @@
     {
       "packageName": "@willsoto/node-konfig-etcd",
       "projectFolder": "packages/etcd",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@willsoto/node-konfig-yaml-parser",
+      "projectFolder": "packages/yaml-parser",
       "shouldPublish": true
     },
     {
