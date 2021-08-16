@@ -1,17 +1,18 @@
+import * as Konfig from "@willsoto/node-konfig-core";
 import { expect } from "chai";
 import * as path from "path";
 import * as sinon from "sinon";
-import * as Konfig from "../../src";
+import { TOMLParser } from "../src";
 
 describe("FileLoader with TOMLParser", function () {
   let fixtureDir: string;
 
   before(function () {
-    fixtureDir = path.resolve(__dirname, "..", "configs");
+    fixtureDir = path.resolve(__dirname, "configs");
   });
 
   it("can load multiple configs and merge their results", async function () {
-    const parser = new Konfig.TOMLParser();
+    const parser = new TOMLParser();
     const store = await makeStore({
       files: [
         {
@@ -35,7 +36,7 @@ describe("FileLoader with TOMLParser", function () {
   });
 
   it("respects the stopOnFailure option (true)", function () {
-    const parser = new Konfig.TOMLParser();
+    const parser = new TOMLParser();
     const options: Konfig.FileLoaderOptions = {
       files: [
         {
@@ -49,7 +50,7 @@ describe("FileLoader with TOMLParser", function () {
   });
 
   it("respects the stopOnFailure option (false)", async function () {
-    const parser = new Konfig.TOMLParser();
+    const parser = new TOMLParser();
     const options: Konfig.FileLoaderOptions = {
       stopOnFailure: false,
       files: [
@@ -72,7 +73,7 @@ describe("FileLoader with TOMLParser", function () {
   });
 
   it("respects the maxRetries option", async function () {
-    const parser = new Konfig.TOMLParser();
+    const parser = new TOMLParser();
     const options: Konfig.FileLoaderOptions = {
       maxRetries: 3,
       retryDelay: 100,

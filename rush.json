@@ -53,6 +53,11 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@willsoto/node-konfig-toml-parser",
+      "projectFolder": "packages/toml-parser",
+      "shouldPublish": true
+    },
+    {
       "packageName": "@node-konfig-tools/mocha",
       "projectFolder": "tools/mocha",
       "reviewCategory": "tools",
