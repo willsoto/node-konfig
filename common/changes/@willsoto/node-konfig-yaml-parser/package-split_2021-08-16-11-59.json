@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-yaml-parser",
+      "comment": "Split out from core",
+      "type": "major"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-yaml-parser"
+}
