@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-core",
+      "comment": "Split out YAML and TOML parsers from core",
+      "type": "major"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-core"
+}
