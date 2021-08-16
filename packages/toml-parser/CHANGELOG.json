@@ -1,0 +1,25 @@
+{
+  "name": "@willsoto/node-konfig-toml-parser",
+  "entries": [
+    {
+      "version": "1.0.0",
+      "tag": "@willsoto/node-konfig-toml-parser_v1.0.0",
+      "date": "Mon, 16 Aug 2021 21:59:37 GMT",
+      "comments": {
+        "major": [
+          {
+            "comment": "Split out from core"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" to `3.0.0`"
+          },
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" from `^2.2.1` to `^3.0.0`"
+          }
+        ]
+      }
+    }
+  ]
+}

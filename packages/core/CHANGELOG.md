@@ -1,6 +1,13 @@
 # Change Log - @willsoto/node-konfig-core
 
-This log was last generated on Tue, 11 May 2021 00:25:29 GMT and should not be manually modified.
+This log was last generated on Mon, 16 Aug 2021 21:59:37 GMT and should not be manually modified.
+
+## 3.0.0
+Mon, 16 Aug 2021 21:59:37 GMT
+
+### Breaking changes
+
+- Split out YAML and TOML parsers from core
 
 ## 2.2.1
 Tue, 11 May 2021 00:25:29 GMT

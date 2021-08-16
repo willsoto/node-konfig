@@ -2,6 +2,18 @@
   "name": "@willsoto/node-konfig-core",
   "entries": [
     {
+      "version": "3.0.0",
+      "tag": "@willsoto/node-konfig-core_v3.0.0",
+      "date": "Mon, 16 Aug 2021 21:59:37 GMT",
+      "comments": {
+        "major": [
+          {
+            "comment": "Split out YAML and TOML parsers from core"
+          }
+        ]
+      }
+    },
+    {
       "version": "2.2.1",
       "tag": "@willsoto/node-konfig-core_v2.2.1",
       "date": "Tue, 11 May 2021 00:25:29 GMT",
