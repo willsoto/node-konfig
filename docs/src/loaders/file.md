@@ -4,14 +4,29 @@
 
 Loads configuration from files. Files can be of any type as long as there is a [`Parser`](../parsers/overview.md) available.
 
+## Installation
+
+```bash
+npm install @willsoto/node-konfig-file
+```
+
+```bash
+yarn add @willsoto/node-konfig-file
+```
+
+```bash
+pnpm add @willsoto/node-konfig-file
+```
+
 ## Usage
 
 ```typescript
 import * as Konfig from "@willsoto/node-konfig-core";
+import { FileLoader } from "@willsoto/node-konfig-file";
 
 const parser = new Konfig.JSONParser();
 
-const loader = new Konfig.FileLoader({
+const loader = new FileLoader({
   files: [
     {
       path: path.join(__dirname, "config.json"),

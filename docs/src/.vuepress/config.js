@@ -80,7 +80,11 @@ module.exports = {
         {
           title: "Parsers",
           isGroup: true,
-          children: ["/parsers/README.md"],
+          children: [
+            "/parsers/README.md",
+            "/parsers/toml.md",
+            "/parsers/yaml.md",
+          ],
         },
       ],
       "/integrations/": [

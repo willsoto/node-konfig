@@ -11,7 +11,7 @@ This is a [Rush](https://rushjs.io/) managed monorepo. It also uses [Docker](htt
 In order to get the project working locally, you should:
 
 1. `npm install -g @microsoft/rush` (or install `rush` using your tool of choice)
-2. `docker-compose up -d`
+2. `docker compose up -d`
 3. `rush update`
 4. `rush build` to confirm everything builds
 5. `rush test` to confirm everything works
