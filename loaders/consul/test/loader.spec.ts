@@ -1,4 +1,5 @@
 import * as Konfig from "@willsoto/node-konfig-core";
+import { FileLoader } from "@willsoto/node-konfig-file";
 import { expect } from "chai";
 import * as consul from "consul";
 import * as path from "path";
@@ -98,7 +99,7 @@ describe("ConsulLoader", function () {
   });
 
   it("merges secrets from the loader with secrets loaded from other locations", async function () {
-    const fileLoader = new Konfig.FileLoader({
+    const fileLoader = new FileLoader({
       files: [
         {
           path: path.resolve(__dirname, "configs", "config.json"),

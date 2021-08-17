@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-toml-parser",
+      "comment": "",
+      "type": "none"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-toml-parser"
+}

@@ -1,7 +1,7 @@
 {
-  "name": "@willsoto/node-konfig-consul",
-  "version": "1.0.6",
-  "description": "Node Konfig integration for Consul",
+  "name": "@willsoto/node-konfig-file",
+  "version": "0.1.0",
+  "description": "Node Konfig integration for Files",
   "keywords": [
     "config",
     "configuration",
@@ -9,7 +9,8 @@
     "toml",
     "json",
     "configuration-management",
-    "consul"
+    "http",
+    "fetch"
   ],
   "license": "Apache-2.0",
   "author": "Will Soto <willsoto@users.noreply.github.com> (https://github.com/willsoto)",
@@ -37,9 +38,6 @@
       "src/**/*.ts"
     ]
   },
-  "dependencies": {
-    "consul": "~0.40.0"
-  },
   "devDependencies": {
     "@node-konfig-tools/eslint": "workspace:*",
     "@node-konfig-tools/mocha": "workspace:*",
@@ -47,15 +45,15 @@
     "@rushstack/eslint-config": "~2.4.0",
     "@types/chai": "~4.2.21",
     "@types/chai-as-promised": "~7.1.4",
-    "@types/consul": "~0.23.35",
     "@types/mocha": "~9.0.0",
     "@types/node": "~16.4.10",
+    "@types/node-fetch": "~2.5.12",
     "@types/sinon": "~10.0.2",
     "@types/sinon-chai": "~3.2.5",
     "@willsoto/node-konfig-core": "workspace:*",
-    "@willsoto/node-konfig-file": "workspace:*",
     "eslint": "~7.32.0",
     "mocha": "~9.0.3",
+    "nock": "~13.1.1",
     "nyc": "~15.1.0",
     "rimraf": "~3.0.2",
     "typescript": "~4.3.5"

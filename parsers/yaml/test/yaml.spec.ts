@@ -1,4 +1,5 @@
 import * as Konfig from "@willsoto/node-konfig-core";
+import { FileLoader, FileLoaderOptions } from "@willsoto/node-konfig-file";
 import { expect } from "chai";
 import * as path from "path";
 import * as sinon from "sinon";
@@ -37,7 +38,7 @@ describe("FileLoader with YAMLParser", function () {
 
   it("respects the stopOnFailure option (true)", function () {
     const parser = new YAMLParser();
-    const options: Konfig.FileLoaderOptions = {
+    const options: FileLoaderOptions = {
       files: [
         {
           path: path.join(fixtureDir, "non-existent.yaml"),
@@ -51,7 +52,7 @@ describe("FileLoader with YAMLParser", function () {
 
   it("respects the stopOnFailure option (false)", async function () {
     const parser = new YAMLParser();
-    const options: Konfig.FileLoaderOptions = {
+    const options: FileLoaderOptions = {
       stopOnFailure: false,
       files: [
         {
@@ -74,7 +75,7 @@ describe("FileLoader with YAMLParser", function () {
 
   it("respects the maxRetries option", async function () {
     const parser = new YAMLParser();
-    const options: Konfig.FileLoaderOptions = {
+    const options: FileLoaderOptions = {
       maxRetries: 3,
       retryDelay: 100,
       files: [
@@ -86,7 +87,7 @@ describe("FileLoader with YAMLParser", function () {
     };
     const store = new Konfig.Store();
 
-    const loader = new Konfig.FileLoader(options);
+    const loader = new FileLoader(options);
     sinon.spy(loader, "processFiles");
 
     store.registerLoader(loader);
@@ -98,11 +99,11 @@ describe("FileLoader with YAMLParser", function () {
 });
 
 async function makeStore(
-  fileLoaderOptions: Konfig.FileLoaderOptions,
+  fileLoaderOptions: FileLoaderOptions,
 ): Promise<Konfig.Store> {
   const store = new Konfig.Store();
 
-  store.registerLoader(new Konfig.FileLoader(fileLoaderOptions));
+  store.registerLoader(new FileLoader(fileLoaderOptions));
 
   await store.init();
 

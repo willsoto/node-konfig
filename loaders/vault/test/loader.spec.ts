@@ -1,4 +1,5 @@
 import * as Konfig from "@willsoto/node-konfig-core";
+import { FileLoader } from "@willsoto/node-konfig-file";
 import { expect } from "chai";
 import * as vault from "node-vault";
 import * as path from "path";
@@ -93,7 +94,7 @@ describe("VaultLoader", function () {
   });
 
   it("merges secrets from vault with secret loaded from other locations", async function () {
-    const fileLoader = new Konfig.FileLoader({
+    const fileLoader = new FileLoader({
       files: [
         {
           path: path.resolve(__dirname, "configs", "config.json"),

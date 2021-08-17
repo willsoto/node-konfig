@@ -1,5 +1,4 @@
 import { expect } from "chai";
-import * as path from "path";
 import * as Konfig from "../src";
 import { NoValueForKeyError } from "../src";
 
@@ -197,20 +196,20 @@ describe("Store", function () {
 
 async function makeStore(): Promise<Konfig.Store> {
   const store = new Konfig.Store();
-  const parser = new Konfig.JSONParser();
 
-  store.registerLoader(
-    new Konfig.FileLoader({
-      files: [
-        {
-          path: path.join(__dirname, "configs", "config.json"),
-          parser,
+  store.registerLoaders(
+    new Konfig.ValueLoader({
+      values: {
+        name: "foo",
+        database: {
+          host: "localhost",
         },
-        {
-          path: path.join(__dirname, "configs", "config2.json"),
-          parser,
-        },
-      ],
+      },
+    }),
+    new Konfig.ValueLoader({
+      values: {
+        name: "bar",
+      },
     }),
   );
 

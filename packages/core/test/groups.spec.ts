@@ -1,5 +1,4 @@
 import { expect } from "chai";
-import * as path from "path";
 import * as Konfig from "../src";
 
 describe("Store groups", function () {
@@ -25,13 +24,11 @@ describe("Store groups", function () {
     const group = store.group("redis");
 
     group.registerLoader(
-      new Konfig.FileLoader({
-        files: [
-          {
-            path: path.join(__dirname, "configs", "config3.json"),
-            parser: new Konfig.JSONParser(),
-          },
-        ],
+      new Konfig.ValueLoader({
+        values: {
+          host: "localhost",
+          port: 6379,
+        },
       }),
     );
 
@@ -47,13 +44,11 @@ describe("Store groups", function () {
     const store = await makeStore();
     const group = store.group("redis", {
       loaders: [
-        new Konfig.FileLoader({
-          files: [
-            {
-              path: path.join(__dirname, "configs", "config3.json"),
-              parser: new Konfig.JSONParser(),
-            },
-          ],
+        new Konfig.ValueLoader({
+          values: {
+            host: "localhost",
+            port: 6379,
+          },
         }),
       ],
     });
@@ -68,16 +63,15 @@ describe("Store groups", function () {
 
   it("correctly serializes groups within a store", async function () {
     const store = await makeStore();
-    const parser = new Konfig.JSONParser();
 
     store.registerLoader(
-      new Konfig.FileLoader({
-        files: [
-          {
-            path: path.join(__dirname, "configs", "config.json"),
-            parser,
+      new Konfig.ValueLoader({
+        values: {
+          name: "foo",
+          database: {
+            host: "localhost",
           },
-        ],
+        },
       }),
     );
 
@@ -86,13 +80,11 @@ describe("Store groups", function () {
     const group = store.group("redis");
 
     group.registerLoader(
-      new Konfig.FileLoader({
-        files: [
-          {
-            path: path.join(__dirname, "configs", "config3.json"),
-            parser,
-          },
-        ],
+      new Konfig.ValueLoader({
+        values: {
+          host: "localhost",
+          port: 6379,
+        },
       }),
     );
 
@@ -112,27 +104,24 @@ describe("Store groups", function () {
 
   it("can access values via #get even through groups", async function () {
     const store = await makeStore();
-    const parser = new Konfig.JSONParser();
 
     store.registerLoader(
-      new Konfig.FileLoader({
-        files: [
-          {
-            path: path.join(__dirname, "configs", "config.json"),
-            parser,
+      new Konfig.ValueLoader({
+        values: {
+          name: "foo",
+          database: {
+            host: "localhost",
           },
-        ],
+        },
       }),
     );
 
     store.group("redis").registerLoader(
-      new Konfig.FileLoader({
-        files: [
-          {
-            path: path.join(__dirname, "configs", "config3.json"),
-            parser,
-          },
-        ],
+      new Konfig.ValueLoader({
+        values: {
+          host: "localhost",
+          port: 6379,
+        },
       }),
     );
 
@@ -225,20 +214,20 @@ describe("Store groups", function () {
 
 async function makeStore(): Promise<Konfig.Store> {
   const store = new Konfig.Store();
-  const parser = new Konfig.JSONParser();
 
-  store.registerLoader(
-    new Konfig.FileLoader({
-      files: [
-        {
-          path: path.join(__dirname, "configs", "config.json"),
-          parser,
+  store.registerLoaders(
+    new Konfig.ValueLoader({
+      values: {
+        name: "foo",
+        database: {
+          host: "localhost",
         },
-        {
-          path: path.join(__dirname, "configs", "config2.json"),
-          parser,
-        },
-      ],
+      },
+    }),
+    new Konfig.ValueLoader({
+      values: {
+        name: "bar",
+      },
     }),
   );
 

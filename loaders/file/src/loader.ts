@@ -1,7 +1,10 @@
+import {
+  Loader,
+  LoaderOptions,
+  Parser,
+  Store,
+} from "@willsoto/node-konfig-core";
 import * as fs from "fs";
-import { Parser } from "../parsers";
-import { Store } from "../store";
-import { Loader, LoaderOptions } from "./base";
 
 interface File {
   path: string;

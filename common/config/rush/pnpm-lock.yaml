@@ -19,6 +19,7 @@ importers:
       '@types/sinon': ~10.0.2
       '@types/sinon-chai': ~3.2.5
       '@willsoto/node-konfig-core': workspace:*
+      '@willsoto/node-konfig-file': workspace:*
       consul: ~0.40.0
       eslint: ~7.32.0
       mocha: ~9.0.3
@@ -40,6 +41,7 @@ importers:
       '@types/sinon': 10.0.2
       '@types/sinon-chai': 3.2.5
       '@willsoto/node-konfig-core': link:../../packages/core
+      '@willsoto/node-konfig-file': link:../file
       eslint: 7.32.0
       mocha: 9.0.3
       nyc: 15.1.0
@@ -81,6 +83,46 @@ importers:
       '@willsoto/node-konfig-core': link:../../packages/core
       eslint: 7.32.0
       mocha: 9.0.3
+      nyc: 15.1.0
+      rimraf: 3.0.2
+      typescript: 4.3.5
+
+  ../../loaders/file:
+    specifiers:
+      '@node-konfig-tools/eslint': workspace:*
+      '@node-konfig-tools/mocha': workspace:*
+      '@node-konfig-tools/nyc': workspace:*
+      '@rushstack/eslint-config': ~2.4.0
+      '@types/chai': ~4.2.21
+      '@types/chai-as-promised': ~7.1.4
+      '@types/mocha': ~9.0.0
+      '@types/node': ~16.4.10
+      '@types/node-fetch': ~2.5.12
+      '@types/sinon': ~10.0.2
+      '@types/sinon-chai': ~3.2.5
+      '@willsoto/node-konfig-core': workspace:*
+      eslint: ~7.32.0
+      mocha: ~9.0.3
+      nock: ~13.1.1
+      nyc: ~15.1.0
+      rimraf: ~3.0.2
+      typescript: ~4.3.5
+    devDependencies:
+      '@node-konfig-tools/eslint': link:../../tools/eslint
+      '@node-konfig-tools/mocha': link:../../tools/mocha
+      '@node-konfig-tools/nyc': link:../../tools/nyc
+      '@rushstack/eslint-config': 2.4.0_eslint@7.32.0+typescript@4.3.5
+      '@types/chai': 4.2.21
+      '@types/chai-as-promised': 7.1.4
+      '@types/mocha': 9.0.0
+      '@types/node': 16.4.14
+      '@types/node-fetch': 2.5.12
+      '@types/sinon': 10.0.2
+      '@types/sinon-chai': 3.2.5
+      '@willsoto/node-konfig-core': link:../../packages/core
+      eslint: 7.32.0
+      mocha: 9.0.3
+      nock: 13.1.1
       nyc: 15.1.0
       rimraf: 3.0.2
       typescript: 4.3.5
@@ -142,6 +184,7 @@ importers:
       '@types/sinon': ~10.0.2
       '@types/sinon-chai': ~3.2.5
       '@willsoto/node-konfig-core': workspace:*
+      '@willsoto/node-konfig-file': workspace:*
       eslint: ~7.32.0
       mocha: ~9.0.3
       node-vault: ~0.9.22
@@ -163,6 +206,7 @@ importers:
       '@types/sinon': 10.0.2
       '@types/sinon-chai': 3.2.5
       '@willsoto/node-konfig-core': link:../../packages/core
+      '@willsoto/node-konfig-file': link:../file
       eslint: 7.32.0
       mocha: 9.0.3
       nyc: 15.1.0
@@ -225,6 +269,7 @@ importers:
       '@types/sinon': ~10.0.2
       '@types/sinon-chai': ~3.2.5
       '@willsoto/node-konfig-core': workspace:*
+      '@willsoto/node-konfig-file': workspace:*
       eslint: ~7.32.0
       mocha: ~9.0.3
       nyc: ~15.1.0
@@ -245,6 +290,7 @@ importers:
       '@types/sinon': 10.0.2
       '@types/sinon-chai': 3.2.5
       '@willsoto/node-konfig-core': link:../../packages/core
+      '@willsoto/node-konfig-file': link:../../loaders/file
       eslint: 7.32.0
       mocha: 9.0.3
       nyc: 15.1.0
@@ -266,6 +312,7 @@ importers:
       '@types/sinon': ~10.0.2
       '@types/sinon-chai': ~3.2.5
       '@willsoto/node-konfig-core': workspace:*
+      '@willsoto/node-konfig-file': workspace:*
       eslint: ~7.32.0
       js-yaml: ~4.1.0
       mocha: ~9.0.3
@@ -288,6 +335,7 @@ importers:
       '@types/sinon': 10.0.2
       '@types/sinon-chai': 3.2.5
       '@willsoto/node-konfig-core': link:../../packages/core
+      '@willsoto/node-konfig-file': link:../../loaders/file
       eslint: 7.32.0
       mocha: 9.0.3
       nyc: 15.1.0
