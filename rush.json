@@ -29,32 +29,32 @@
     },
     {
       "packageName": "@willsoto/node-konfig-vault",
-      "projectFolder": "packages/vault",
+      "projectFolder": "loaders/vault",
       "shouldPublish": true
     },
     {
       "packageName": "@willsoto/node-konfig-consul",
-      "projectFolder": "packages/consul",
+      "projectFolder": "loaders/consul",
       "shouldPublish": true
     },
     {
       "packageName": "@willsoto/node-konfig-http",
-      "projectFolder": "packages/http",
+      "projectFolder": "loaders/http",
       "shouldPublish": true
     },
     {
       "packageName": "@willsoto/node-konfig-etcd",
-      "projectFolder": "packages/etcd",
+      "projectFolder": "loaders/etcd",
       "shouldPublish": true
     },
     {
       "packageName": "@willsoto/node-konfig-yaml-parser",
-      "projectFolder": "packages/yaml-parser",
+      "projectFolder": "parsers/yaml",
       "shouldPublish": true
     },
     {
       "packageName": "@willsoto/node-konfig-toml-parser",
-      "projectFolder": "packages/toml-parser",
+      "projectFolder": "parsers/toml",
       "shouldPublish": true
     },
     {
