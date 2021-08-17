@@ -1,4 +1,4 @@
-# Node Konfig HTTP
+# Node Konfig Flag Loader
 
 > Thanks to [Konfig](https://github.com/lalamove/konfig) for the inspiration. This library would not have been possible without it.
 
@@ -7,29 +7,13 @@ Documentation is available at [https://willsoto.github.io/node-konfig/](https://
 ## Installation
 
 ```bash
-npm install @willsoto/node-konfig-http
+npm install @willsoto/node-konfig-flag
 ```
 
 ```bash
-yarn add @willsoto/node-konfig-http
+yarn add @willsoto/node-konfig-flag
 ```
 
 ```bash
-pnpm add @willsoto/node-konfig-http
-```
-
-## Quick look
-
-```javascript
-import * as Konfig from "@willsoto/node-konfig-core";
-import { HttpLoader } from "@willsoto/node-konfig-http";
-
-const loader = new HttpLoader({
-  sources: [
-    {
-      url: "https://internal.config.com/config.json",
-      parser: new Konfig.JSONParser(),
-    },
-  ],
-});
+pnpm add @willsoto/node-konfig-flag
 ```
