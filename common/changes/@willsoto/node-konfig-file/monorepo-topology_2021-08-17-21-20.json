@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-file",
+      "comment": "FileLoader is now its own package",
+      "type": "major"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-file"
+}

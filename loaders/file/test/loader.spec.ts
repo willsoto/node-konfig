@@ -1,13 +1,14 @@
+import * as Konfig from "@willsoto/node-konfig-core";
 import { expect } from "chai";
 import * as path from "path";
 import * as sinon from "sinon";
-import * as Konfig from "../../src";
+import { FileLoader, FileLoaderOptions } from "../src";
 
 describe("FileLoader", function () {
   let fixtureDir: string;
 
   before(function () {
-    fixtureDir = path.resolve(__dirname, "..", "configs");
+    fixtureDir = path.resolve(__dirname, "configs");
   });
 
   it("can load multiple configs and merge their results", async function () {
@@ -36,7 +37,7 @@ describe("FileLoader", function () {
 
   it("respects the stopOnFailure option (true)", function () {
     const parser = new Konfig.JSONParser();
-    const options: Konfig.FileLoaderOptions = {
+    const options: FileLoaderOptions = {
       files: [
         {
           path: path.join(fixtureDir, "non-existent.json"),
@@ -50,7 +51,7 @@ describe("FileLoader", function () {
 
   it("respects the stopOnFailure option (false)", async function () {
     const parser = new Konfig.JSONParser();
-    const options: Konfig.FileLoaderOptions = {
+    const options: FileLoaderOptions = {
       stopOnFailure: false,
       files: [
         {
@@ -73,7 +74,7 @@ describe("FileLoader", function () {
 
   it("respects the maxRetries option", async function () {
     const parser = new Konfig.JSONParser();
-    const options: Konfig.FileLoaderOptions = {
+    const options: FileLoaderOptions = {
       maxRetries: 3,
       retryDelay: 100,
       files: [
@@ -85,7 +86,7 @@ describe("FileLoader", function () {
     };
     const store = new Konfig.Store();
 
-    const loader = new Konfig.FileLoader(options);
+    const loader = new FileLoader(options);
     sinon.spy(loader, "processFiles");
 
     store.registerLoader(loader);
@@ -97,11 +98,11 @@ describe("FileLoader", function () {
 });
 
 async function makeStore(
-  fileLoaderOptions: Konfig.FileLoaderOptions,
+  fileLoaderOptions: FileLoaderOptions,
 ): Promise<Konfig.Store> {
   const store = new Konfig.Store();
 
-  store.registerLoader(new Konfig.FileLoader(fileLoaderOptions));
+  store.registerLoader(new FileLoader(fileLoaderOptions));
 
   await store.init();
 

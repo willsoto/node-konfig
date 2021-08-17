@@ -33,6 +33,11 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@willsoto/node-konfig-file",
+      "projectFolder": "loaders/file",
+      "shouldPublish": true
+    },
+    {
       "packageName": "@willsoto/node-konfig-consul",
       "projectFolder": "loaders/consul",
       "shouldPublish": true
