@@ -10,5 +10,9 @@
     "sourceMap": true,
     "strict": true,
     "target": "es2018"
+  },
+  "ts-node": {
+    "transpileOnly": true,
+    "transpiler": "ts-node/transpilers/swc-experimental"
   }
 }

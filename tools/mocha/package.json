@@ -8,6 +8,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
+    "@swc/core": "~1.2.78",
     "chai": "~4.3.4",
     "chai-as-promised": "~7.1.1",
     "sinon": "~11.1.2",
