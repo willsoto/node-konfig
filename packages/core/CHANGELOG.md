@@ -1,6 +1,14 @@
 # Change Log - @willsoto/node-konfig-core
 
-This log was last generated on Mon, 16 Aug 2021 21:59:37 GMT and should not be manually modified.
+This log was last generated on Tue, 17 Aug 2021 22:57:13 GMT and should not be manually modified.
+
+## 4.0.0
+Tue, 17 Aug 2021 22:57:13 GMT
+
+### Breaking changes
+
+- Extract FileLoader out as its own package
+- Extract FlagLoader out as its own package
 
 ## 3.0.0
 Mon, 16 Aug 2021 21:59:37 GMT

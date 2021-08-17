@@ -2,6 +2,21 @@
   "name": "@willsoto/node-konfig-core",
   "entries": [
     {
+      "version": "4.0.0",
+      "tag": "@willsoto/node-konfig-core_v4.0.0",
+      "date": "Tue, 17 Aug 2021 22:57:13 GMT",
+      "comments": {
+        "major": [
+          {
+            "comment": "Extract FileLoader out as its own package"
+          },
+          {
+            "comment": "Extract FlagLoader out as its own package"
+          }
+        ]
+      }
+    },
+    {
       "version": "3.0.0",
       "tag": "@willsoto/node-konfig-core_v3.0.0",
       "date": "Mon, 16 Aug 2021 21:59:37 GMT",

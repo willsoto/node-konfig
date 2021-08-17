@@ -1,0 +1,25 @@
+{
+  "name": "@willsoto/node-konfig-file",
+  "entries": [
+    {
+      "version": "1.0.0",
+      "tag": "@willsoto/node-konfig-file_v1.0.0",
+      "date": "Tue, 17 Aug 2021 22:57:13 GMT",
+      "comments": {
+        "major": [
+          {
+            "comment": "FileLoader is now its own package"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" to `4.0.0`"
+          },
+          {
+            "comment": "Updating dependency \"@willsoto/node-konfig-core\" from `^3.0.0` to `^4.0.0`"
+          }
+        ]
+      }
+    }
+  ]
+}
