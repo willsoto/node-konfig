@@ -1,14 +1,16 @@
 {
-  "name": "@willsoto/node-konfig-core",
-  "version": "3.0.0",
-  "description": "Core configuration pacakge supporting file, static and environment variables",
+  "name": "@willsoto/node-konfig-flag",
+  "version": "0.1.0",
+  "description": "Node Konfig integration for Flags (CLI)",
   "keywords": [
     "config",
     "configuration",
     "yaml",
     "toml",
     "json",
-    "configuration-management"
+    "configuration-management",
+    "http",
+    "fetch"
   ],
   "license": "Apache-2.0",
   "author": "Will Soto <willsoto@users.noreply.github.com> (https://github.com/willsoto)",
@@ -26,6 +28,7 @@
     "lint": "eslint . --ext ts,js --fix",
     "predocs": "npm run build",
     "test": "mocha",
+    "pretest:cov": "rimraf coverage .nyc_output",
     "test:cov": "nyc mocha",
     "test:watch": "mocha --watch"
   },
@@ -36,8 +39,7 @@
     ]
   },
   "dependencies": {
-    "cockatiel": "~2.0.2",
-    "lodash": "~4.17.21"
+    "meow": "~9.0.0"
   },
   "devDependencies": {
     "@node-konfig-tools/eslint": "workspace:*",
@@ -46,16 +48,21 @@
     "@rushstack/eslint-config": "~2.4.0",
     "@types/chai": "~4.2.21",
     "@types/chai-as-promised": "~7.1.4",
-    "@types/lodash": "~4.14.171",
     "@types/mocha": "~9.0.0",
     "@types/node": "~16.4.10",
+    "@types/node-fetch": "~2.5.12",
     "@types/sinon": "~10.0.2",
     "@types/sinon-chai": "~3.2.5",
+    "@willsoto/node-konfig-core": "workspace:*",
     "eslint": "~7.32.0",
     "mocha": "~9.0.3",
+    "nock": "~13.1.1",
     "nyc": "~15.1.0",
     "rimraf": "~3.0.2",
     "typescript": "~4.3.5"
+  },
+  "peerDependencies": {
+    "@willsoto/node-konfig-core": "^3.0.0"
   },
   "volta": {
     "extends": "../../package.json"

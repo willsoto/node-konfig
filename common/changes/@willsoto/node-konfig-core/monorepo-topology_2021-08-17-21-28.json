@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-core",
+      "comment": "Extract FlagLoader out as its own package",
+      "type": "major"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-core"
+}

@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-flag",
+      "comment": "FlagLoader is now its own package",
+      "type": "major"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-flag"
+}
