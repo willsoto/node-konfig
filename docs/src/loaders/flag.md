@@ -4,12 +4,27 @@
 
 Loads configuration from CLI flags.
 
+## Installation
+
+```bash
+npm install @willsoto/node-konfig-flag
+```
+
+```bash
+yarn add @willsoto/node-konfig-flag
+```
+
+```bash
+pnpm add @willsoto/node-konfig-flag
+```
+
 ## Usage
 
 ```typescript
 import * as Konfig from "@willsoto/node-konfig-core";
+import { FlagLoader } from "@willsoto/node-konfig-flag";
 
-const loader = new Konfig.FlagLoader({
+const loader = new FlagLoader({
   cliOptions: {
     flags: {
       environment: {
