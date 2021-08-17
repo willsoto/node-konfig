@@ -1,5 +1,6 @@
+import * as Konfig from "@willsoto/node-konfig-core";
 import { expect } from "chai";
-import * as Konfig from "../../src";
+import { FlagLoader, FlagLoaderOptions } from "../src";
 
 describe("FlagLoader", function () {
   it("assigns the provided flags/options to the store", async function () {
@@ -43,12 +44,10 @@ describe("FlagLoader", function () {
   });
 });
 
-async function makeStore(
-  options: Konfig.FlagLoaderOptions,
-): Promise<Konfig.Store> {
+async function makeStore(options: FlagLoaderOptions): Promise<Konfig.Store> {
   const store = new Konfig.Store();
 
-  store.registerLoader(new Konfig.FlagLoader(options));
+  store.registerLoader(new FlagLoader(options));
 
   await store.init();
 

@@ -38,6 +38,11 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@willsoto/node-konfig-flag",
+      "projectFolder": "loaders/flag",
+      "shouldPublish": true
+    },
+    {
       "packageName": "@willsoto/node-konfig-consul",
       "projectFolder": "loaders/consul",
       "shouldPublish": true

@@ -1,6 +1,5 @@
+import { Loader, LoaderOptions, Store } from "@willsoto/node-konfig-core";
 import * as meow from "meow";
-import { Store } from "../store";
-import { Loader, LoaderOptions } from "./base";
 
 export interface FlagLoaderOptions extends LoaderOptions {
   cliOptions: meow.Options<meow.AnyFlags>;
