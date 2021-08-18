@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import * as Konfig from "@willsoto/node-konfig-core";
 import { expect } from "chai";
 import * as nock from "nock";
@@ -9,17 +8,19 @@ describe("HttpLoader", function () {
   let scope: nock.Scope;
   let prefixUrl: string;
 
+  // eslint-disable-next-line mocha/no-hooks
   before(function () {
     prefixUrl = "https://internal.config.com";
     scope = nock(prefixUrl);
   });
 
+  // eslint-disable-next-line mocha/no-hooks
   afterEach(function () {
-    expect(scope.isDone()).to.eql(true);
+    expect(scope.isDone()).to.be.true;
     nock.cleanAll();
   });
 
-  it("can load secrets from the given vault", async function () {
+  it("should load secrets from the given vault", async function () {
     scope.get("/config.json").reply(
       200,
       JSON.stringify({
@@ -45,7 +46,7 @@ describe("HttpLoader", function () {
     });
   });
 
-  it("merges secrets from the loader with secrets loaded from other locations", async function () {
+  it("should merge secrets from the loader with secrets loaded from other locations", async function () {
     scope.post("/config.json").reply(
       200,
       JSON.stringify({
@@ -84,7 +85,7 @@ describe("HttpLoader", function () {
     });
   });
 
-  it("respects the maxRetries option", async function () {
+  it("should respect the maxRetries option", async function () {
     scope.get("/config.json").reply(403, "Forbidden").persist();
 
     const store = new Konfig.Store();
@@ -103,10 +104,11 @@ describe("HttpLoader", function () {
 
     await expect(store.init()).to.eventually.be.rejectedWith("Forbidden");
     // Initial call + the 3 retries
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     expect(loader.process).to.have.callCount(4);
   });
 
-  it("respects the stopOnFailure option", async function () {
+  it("should respect the stopOnFailure option", async function () {
     scope.get("/config.json").reply(
       200,
       JSON.stringify({

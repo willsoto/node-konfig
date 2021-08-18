@@ -3,7 +3,7 @@ import * as Konfig from "../src";
 import { NoValueForKeyError } from "../src";
 
 describe("Store", function () {
-  it("can load multiple configs and merge their results", async function () {
+  it("should load multiple configs and merge their results", async function () {
     const store = await makeStore();
 
     expect(store.toJSON()).to.eql({
@@ -15,7 +15,7 @@ describe("Store", function () {
     });
   });
 
-  it("can register several loaders at once", async function () {
+  it("should register several loaders at once", async function () {
     const store = new Konfig.Store();
 
     store.registerLoaders(
@@ -45,7 +45,7 @@ describe("Store", function () {
     });
   });
 
-  it("allows loaders to be registered via the contrustor", async function () {
+  it("should allow loaders to be registered via the contrustor", async function () {
     const store = new Konfig.Store({
       loaders: [
         new Konfig.ValueLoader({
@@ -75,14 +75,14 @@ describe("Store", function () {
     });
   });
 
-  it("can fetch individual values from the store", async function () {
+  it("should fetch individual values from the store", async function () {
     const store = await makeStore();
 
     expect(store.get("name")).to.eql("bar");
     expect(store.get("database.host")).to.eql("localhost");
   });
 
-  it("can set values to the store", async function () {
+  it("should set values to the store", async function () {
     const store = await makeStore();
 
     store.set("name", "baz");
@@ -90,7 +90,7 @@ describe("Store", function () {
     expect(store.get("name")).to.eql("baz");
   });
 
-  it("can assign values in bulk while retaining any existing groups", async function () {
+  it("should assign values in bulk while retaining any existing groups", async function () {
     const store = new Konfig.Store();
 
     store.registerLoader(
@@ -149,7 +149,7 @@ describe("Store", function () {
   });
 
   describe("#getOrThrow", function () {
-    it("raises an error if the retrieved value is null", async function () {
+    it("should raise an error if the retrieved value is null", async function () {
       const store = new Konfig.Store();
 
       store.registerLoader(
@@ -164,7 +164,7 @@ describe("Store", function () {
       expect(() => store.getOrThrow("foo")).to.throw(NoValueForKeyError);
     });
 
-    it("raises an error if the retrieved value is undefined", async function () {
+    it("should raise an error if the retrieved value is undefined", async function () {
       const store = new Konfig.Store();
 
       store.registerLoader(
@@ -177,7 +177,7 @@ describe("Store", function () {
       expect(() => store.getOrThrow("foo")).to.throw(NoValueForKeyError);
     });
 
-    it("returns the value if it's not null or undefined", async function () {
+    it("should return the value if it's not null or undefined", async function () {
       const store = new Konfig.Store();
 
       store.registerLoader(

@@ -1,6 +1,6 @@
 module.exports = {
   parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint", "eslint-plugin-tsdoc"],
+  plugins: ["@typescript-eslint"],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -9,7 +9,6 @@ module.exports = {
     "prettier",
   ],
   rules: {
-    "tsdoc/syntax": "warn",
     "@typescript-eslint/member-ordering": "error",
   },
   env: {
@@ -21,12 +20,9 @@ module.exports = {
       env: {
         mocha: true,
       },
-      extends: ["plugin:mocha/recommended"],
+      extends: ["plugin:mocha/all"],
       rules: {
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "no-unused-expressions": "off",
-        "no-magic-numbers": "off",
-        "@typescript-eslint/unbound-method": "off",
+        "mocha/no-synchronous-tests": "off",
       },
     },
   ],

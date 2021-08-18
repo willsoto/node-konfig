@@ -7,10 +7,8 @@ import * as sinon from "sinon";
 import { ConsulLoader, ConsulLoaderOptions } from "../src";
 
 describe("ConsulLoader", function () {
-  let client: consul.Consul;
-
-  before(async function () {
-    client = consul({
+  async function makeConsulClient(): Promise<void> {
+    const client = consul({
       promisify: true,
     });
 
@@ -20,9 +18,10 @@ describe("ConsulLoader", function () {
         host: "rds.foo.bar",
       }),
     );
-  });
+  }
 
-  it("can load secrets from the given vault", async function () {
+  it("should load secrets from the given vault", async function () {
+    await makeConsulClient();
     const store = await makeStore({
       keys: [
         {
@@ -39,7 +38,8 @@ describe("ConsulLoader", function () {
     });
   });
 
-  it("applies a prefix if provided", async function () {
+  it("should apply a prefix if provided", async function () {
+    await makeConsulClient();
     const store = await makeStore({
       keys: [
         {
@@ -57,7 +57,8 @@ describe("ConsulLoader", function () {
     });
   });
 
-  it("applies a replacer if provided", async function () {
+  it("should apply a replacer if provided", async function () {
+    await makeConsulClient();
     const store = await makeStore({
       keys: [
         {
@@ -77,7 +78,8 @@ describe("ConsulLoader", function () {
     });
   });
 
-  it("applies a prefix and replacer (in the correct order)", async function () {
+  it("should apply a prefix and replacer (in the correct order)", async function () {
+    await makeConsulClient();
     const store = await makeStore({
       keys: [
         {
@@ -98,7 +100,8 @@ describe("ConsulLoader", function () {
     });
   });
 
-  it("merges secrets from the loader with secrets loaded from other locations", async function () {
+  it("should merge secrets from the loader with secrets loaded from other locations", async function () {
+    await makeConsulClient();
     const fileLoader = new FileLoader({
       files: [
         {
@@ -128,7 +131,8 @@ describe("ConsulLoader", function () {
     });
   });
 
-  it("respects the maxRetries option", async function () {
+  it("should respect the maxRetries option", async function () {
+    await makeConsulClient();
     const store = new Konfig.Store();
     const loader = new ConsulLoader({
       maxRetries: 3,
@@ -147,10 +151,12 @@ describe("ConsulLoader", function () {
       /non-existent\/value/,
     );
     // Initial call + the 3 retries
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     expect(loader.process).to.have.callCount(4);
   });
 
-  it("respects the stopOnFailure option", async function () {
+  it("should respect the stopOnFailure option", async function () {
+    await makeConsulClient();
     const store = await makeStore({
       stopOnFailure: false,
       keys: [

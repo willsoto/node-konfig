@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import * as Konfig from "@willsoto/node-konfig-core";
 import { expect } from "chai";
 import { Etcd3 } from "etcd3";
@@ -6,10 +5,8 @@ import * as sinon from "sinon";
 import { EtcdLoader, EtcdLoaderOptions } from "../src";
 
 describe("EtcdLoader", function () {
-  let client: Etcd3;
-
-  before(async function () {
-    client = new Etcd3();
+  async function makeEtcd3Client(): Promise<void> {
+    const client = new Etcd3();
 
     await client.put("database").value(
       JSON.stringify({
@@ -17,9 +14,10 @@ describe("EtcdLoader", function () {
       }),
     );
     await client.put("appName").value("my-app");
-  });
+  }
 
-  it("can load secrets using the given accessor", async function () {
+  it("should load secrets using the given accessor", async function () {
+    await makeEtcd3Client();
     const store = await makeStore({
       keys: [
         {
@@ -36,7 +34,8 @@ describe("EtcdLoader", function () {
     });
   });
 
-  it("merges secrets from vault with secret loaded from other locations", async function () {
+  it("should merge secrets from vault with secret loaded from other locations", async function () {
+    await makeEtcd3Client();
     const valueLoader = new Konfig.ValueLoader({
       values: {
         name: "foo",
@@ -63,7 +62,8 @@ describe("EtcdLoader", function () {
     });
   });
 
-  it("respects the maxRetries option", async function () {
+  it("should respect the maxRetries option", async function () {
+    await makeEtcd3Client();
     const store = new Konfig.Store();
     const loader = new EtcdLoader({
       maxRetries: 3,
@@ -81,10 +81,12 @@ describe("EtcdLoader", function () {
 
     await expect(store.init()).to.eventually.be.rejectedWith(/non-existent/);
     // Initial call + the 3 retries
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     expect(loader.execute).to.have.callCount(4);
   });
 
-  it("respects the stopOnFailure option", async function () {
+  it("should respect the stopOnFailure option", async function () {
+    await makeEtcd3Client();
     const store = await makeStore({
       stopOnFailure: false,
       keys: [

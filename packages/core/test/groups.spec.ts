@@ -2,7 +2,7 @@ import { expect } from "chai";
 import * as Konfig from "../src";
 
 describe("Store groups", function () {
-  it("can define new groups and access their values", async function () {
+  it("should define new groups and access their values", async function () {
     const store = new Konfig.Store();
 
     store.group("redis").registerLoader(
@@ -19,7 +19,7 @@ describe("Store groups", function () {
     expect(store.group("redis").get("host")).to.eql("localhost");
   });
 
-  it("can define new groups with their own loaders", async function () {
+  it("should define new groups with their own loaders", async function () {
     const store = await makeStore();
     const group = store.group("redis");
 
@@ -40,7 +40,7 @@ describe("Store groups", function () {
     });
   });
 
-  it("accepts store options when creating groups", async function () {
+  it("should accept store options when creating groups", async function () {
     const store = await makeStore();
     const group = store.group("redis", {
       loaders: [
@@ -61,7 +61,7 @@ describe("Store groups", function () {
     });
   });
 
-  it("correctly serializes groups within a store", async function () {
+  it("should correctly serialize groups within a store", async function () {
     const store = await makeStore();
 
     store.registerLoader(
@@ -102,7 +102,7 @@ describe("Store groups", function () {
     });
   });
 
-  it("can access values via #get even through groups", async function () {
+  it("should access values via #get even through groups", async function () {
     const store = await makeStore();
 
     store.registerLoader(
@@ -131,7 +131,7 @@ describe("Store groups", function () {
     expect(store.get("redis.port")).to.eql(6379);
   });
 
-  it("can #set values through groups", async function () {
+  it("should #set values through groups", async function () {
     const store = new Konfig.Store();
 
     store.registerLoader(
@@ -165,7 +165,7 @@ describe("Store groups", function () {
     expect(store.get("database.queryParams.ssl")).to.eql(true);
   });
 
-  it("initializes all groups within a store at any depth", async function () {
+  it("should initialize all groups within a store at any depth", async function () {
     const store = new Konfig.Store();
 
     store.registerLoader(

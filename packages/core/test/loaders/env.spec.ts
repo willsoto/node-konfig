@@ -2,19 +2,21 @@ import { expect } from "chai";
 import * as Konfig from "../../src";
 
 describe("EnvLoader", function () {
+  // eslint-disable-next-line mocha/no-hooks
   before(function () {
     process.env.PORT = "5000";
     process.env.NAME = "my-app";
     process.env.HOSTS = "localhost:1234,localhost:5678";
   });
 
+  // eslint-disable-next-line mocha/no-hooks
   after(function () {
     delete process.env.PORT;
     delete process.env.NAME;
     delete process.env.HOSTS;
   });
 
-  it("loads the specified env vars", async function () {
+  it("should load the specified env vars", async function () {
     const store = await makeStore({
       envVars: [
         {
@@ -34,7 +36,7 @@ describe("EnvLoader", function () {
     });
   });
 
-  it("can convert 'array-like' values into actual array", async function () {
+  it("should convert 'array-like' values into actual array", async function () {
     const store = await makeStore({
       envVars: [
         {
@@ -48,7 +50,7 @@ describe("EnvLoader", function () {
     expect(store.get("hosts")).to.eql(["localhost:1234", "localhost:5678"]);
   });
 
-  it("does not error if the var is not present in the environment", async function () {
+  it("should not error if the var is not present in the environment", async function () {
     const store = await makeStore({
       envVars: [
         {

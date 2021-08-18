@@ -3,7 +3,7 @@ import { expect } from "chai";
 import { FlagLoader, FlagLoaderOptions } from "../src";
 
 describe("FlagLoader", function () {
-  it("assigns the provided flags/options to the store", async function () {
+  it("should assign the provided flags/options to the store", async function () {
     const store = await makeStore({
       cliOptions: {
         argv: ["--environment", "production"],
@@ -21,7 +21,7 @@ describe("FlagLoader", function () {
     });
   });
 
-  it("converts flags to camelCase", async function () {
+  it("should convert flags to camelCase", async function () {
     const store = await makeStore({
       cliOptions: {
         argv: ["--app-name", "my-app"],

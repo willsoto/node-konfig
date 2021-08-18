@@ -2,7 +2,7 @@ import { expect } from "chai";
 import * as Konfig from "../../src";
 
 describe("ValueLoader", function () {
-  it("assigns the provides values onto the store", async function () {
+  it("should assign the provides values onto the store", async function () {
     const store = await makeStore({
       values: {
         name: "bar",

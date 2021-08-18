@@ -6,22 +6,20 @@ import * as sinon from "sinon";
 import { YAMLParser } from "../src";
 
 describe("FileLoader with YAMLParser", function () {
-  let fixtureDir: string;
+  function getPathToFixture(fixture: string): string {
+    return path.resolve(__dirname, "configs", fixture);
+  }
 
-  before(function () {
-    fixtureDir = path.resolve(__dirname, "configs");
-  });
-
-  it("can load multiple configs and merge their results", async function () {
+  it("should load multiple configs and merge their results", async function () {
     const parser = new YAMLParser();
     const store = await makeStore({
       files: [
         {
-          path: path.join(fixtureDir, "config.yaml"),
+          path: getPathToFixture("config.yaml"),
           parser,
         },
         {
-          path: path.join(fixtureDir, "config2.yaml"),
+          path: getPathToFixture("config2.yaml"),
           parser,
         },
       ],
@@ -36,12 +34,12 @@ describe("FileLoader with YAMLParser", function () {
     });
   });
 
-  it("respects the stopOnFailure option (true)", function () {
+  it("should respect the stopOnFailure option (true)", function () {
     const parser = new YAMLParser();
     const options: FileLoaderOptions = {
       files: [
         {
-          path: path.join(fixtureDir, "non-existent.yaml"),
+          path: getPathToFixture("non-existent.yaml"),
           parser,
         },
       ],
@@ -50,17 +48,17 @@ describe("FileLoader with YAMLParser", function () {
     return expect(makeStore(options)).to.eventually.be.rejectedWith("ENOENT");
   });
 
-  it("respects the stopOnFailure option (false)", async function () {
+  it("should respect the stopOnFailure option (false)", async function () {
     const parser = new YAMLParser();
     const options: FileLoaderOptions = {
       stopOnFailure: false,
       files: [
         {
-          path: path.join(fixtureDir, "non-existent.yaml"),
+          path: getPathToFixture("non-existent.yaml"),
           parser,
         },
         {
-          path: path.join(fixtureDir, "config2.yaml"),
+          path: getPathToFixture("config2.yaml"),
           parser,
         },
       ],
@@ -73,14 +71,14 @@ describe("FileLoader with YAMLParser", function () {
     });
   });
 
-  it("respects the maxRetries option", async function () {
+  it("should respect the maxRetries option", async function () {
     const parser = new YAMLParser();
     const options: FileLoaderOptions = {
       maxRetries: 3,
       retryDelay: 100,
       files: [
         {
-          path: path.join(fixtureDir, "non-existent.yaml"),
+          path: getPathToFixture("non-existent.yaml"),
           parser,
         },
       ],
@@ -94,6 +92,7 @@ describe("FileLoader with YAMLParser", function () {
 
     await expect(store.init()).to.eventually.be.rejectedWith("ENOENT");
     // Initial call + the 3 retries
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     expect(loader.processFiles).to.have.callCount(4);
   });
 });

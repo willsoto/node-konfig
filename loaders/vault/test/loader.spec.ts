@@ -7,21 +7,23 @@ import * as sinon from "sinon";
 import { VaultLoader, VaultLoaderOptions } from "../src";
 
 describe("VaultLoader", function () {
-  let client: vault.client;
-
-  before(async function () {
-    client = vault({ token: "development" });
-
-    await client.write("secret/data/database", {
-      data: {
+  async function makeVaultClient(data?: unknown): Promise<void> {
+    if (!data) {
+      data = {
         database: {
           host: "rds.foo.bar",
         },
-      },
-    });
-  });
+      };
+    }
+    const client = vault({ token: "development" });
 
-  it("can load secrets from the given vault", async function () {
+    await client.write("secret/data/database", {
+      data,
+    });
+  }
+
+  it("should load secrets from the given vault", async function () {
+    await makeVaultClient();
     const store = await makeStore({
       secrets: [
         {
@@ -37,7 +39,8 @@ describe("VaultLoader", function () {
     });
   });
 
-  it("applies a prefix if provided", async function () {
+  it("should apply a prefix if provided", async function () {
+    await makeVaultClient();
     const store = await makeStore({
       secrets: [
         {
@@ -54,7 +57,8 @@ describe("VaultLoader", function () {
     });
   });
 
-  it("applies a replacer if provided", async function () {
+  it("should apply a replacer if provided", async function () {
+    await makeVaultClient();
     const store = await makeStore({
       secrets: [
         {
@@ -73,7 +77,8 @@ describe("VaultLoader", function () {
     });
   });
 
-  it("applies a prefix and replacer (in the correct order)", async function () {
+  it("should apply a prefix and replacer (in the correct order)", async function () {
+    await makeVaultClient();
     const store = await makeStore({
       secrets: [
         {
@@ -93,7 +98,8 @@ describe("VaultLoader", function () {
     });
   });
 
-  it("merges secrets from vault with secret loaded from other locations", async function () {
+  it("should merge secrets from vault with secret loaded from other locations", async function () {
+    await makeVaultClient();
     const fileLoader = new FileLoader({
       files: [
         {
@@ -122,7 +128,8 @@ describe("VaultLoader", function () {
     });
   });
 
-  it("respects the maxRetries option", async function () {
+  it("should respect the maxRetries option", async function () {
+    await makeVaultClient();
     const store = new Konfig.Store();
     const loader = new VaultLoader({
       maxRetries: 3,
@@ -142,10 +149,12 @@ describe("VaultLoader", function () {
 
     await expect(store.init()).to.eventually.be.rejectedWith("Status 404");
     // Initial call + the 3 retries
+    // eslint-disable-next-line @typescript-eslint/unbound-method
     expect(loader.processSecrets).to.have.callCount(4);
   });
 
-  it("respects the stopOnFailure option", async function () {
+  it("should respect the stopOnFailure option", async function () {
+    await makeVaultClient();
     const store = await makeStore({
       stopOnFailure: false,
       secrets: [
