@@ -1,6 +1,6 @@
 {
   "name": "@willsoto/node-konfig-yaml-parser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Yaml parser support for Node Konfig",
   "keywords": [
     "config",
@@ -58,7 +58,7 @@
     "typescript": "~4.4.4"
   },
   "peerDependencies": {
-    "@willsoto/node-konfig-core": "^4.0.0"
+    "@willsoto/node-konfig-core": "^4.0.1"
   },
   "volta": {
     "extends": "../../package.json"

@@ -1,6 +1,6 @@
 {
   "name": "@willsoto/node-konfig-file",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node Konfig integration for Files",
   "keywords": [
     "config",
@@ -58,7 +58,7 @@
     "typescript": "~4.4.4"
   },
   "peerDependencies": {
-    "@willsoto/node-konfig-core": "^4.0.0"
+    "@willsoto/node-konfig-core": "^4.0.1"
   },
   "volta": {
     "extends": "../../package.json"
