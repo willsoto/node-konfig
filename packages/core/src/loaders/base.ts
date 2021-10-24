@@ -19,12 +19,12 @@ export abstract class Loader {
     this.retryDelay = options.retryDelay ?? 0;
   }
 
-  abstract load(store: Store): void | Promise<void>;
-
   protected get retryPolicy(): RetryPolicy {
     return Policy.handleAll()
       .retry()
       .attempts(this.maxRetries)
       .delay(this.retryDelay);
   }
+
+  abstract load(store: Store): void | Promise<void>;
 }

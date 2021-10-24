@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-yaml-parser",
+      "comment": "Package updates",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-yaml-parser"
+}

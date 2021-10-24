@@ -41,7 +41,7 @@ export class VaultLoader extends Loader {
     for (const secret of this.options.secrets) {
       try {
         const response = await this.client.read(secret.key);
-        const { data } = response.data;
+        const data = response.data.data as Record<string, unknown>;
 
         Object.entries(data).forEach(([key, value]) => {
           this.postLoad(store, secret, key, value);

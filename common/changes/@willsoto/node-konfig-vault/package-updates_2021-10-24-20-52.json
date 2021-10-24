@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@willsoto/node-konfig-vault",
+      "comment": "Package updates",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@willsoto/node-konfig-vault"
+}
