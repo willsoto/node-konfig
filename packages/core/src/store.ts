@@ -65,6 +65,25 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
   }
 
   /**
+   * @internal
+   */
+  get name(): string {
+    return this.options.name;
+  }
+
+  /**
+   * @internal
+   */
+  private get environment(): string {
+    if (typeof process.env.NODE_KONFIG_ENV === "string") {
+      return process.env.NODE_KONFIG_ENV;
+    } else if (typeof process.env.NODE_ENV === "string") {
+      return process.env.NODE_ENV;
+    }
+    return "development";
+  }
+
+  /**
    * The primary way to retrieve values from the {@link Store | Store}.
    * Can traverse through `Group` as well.
    *
@@ -226,7 +245,7 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
   async init(): Promise<void> {
     for (const loader of this.#loaders) {
       // eslint-disable-next-line @typescript-eslint/ban-types
-      await loader.load((this as unknown) as Store<Record<string, unknown>>);
+      await loader.load(this as unknown as Store<Record<string, unknown>>);
     }
 
     // Process all groups after the parent store is initialized
@@ -305,24 +324,5 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
     this.#groups.push(group);
 
     return group;
-  }
-
-  /**
-   * @internal
-   */
-  get name(): string {
-    return this.options.name;
-  }
-
-  /**
-   * @internal
-   */
-  private get environment(): string {
-    if (typeof process.env.NODE_KONFIG_ENV === "string") {
-      return process.env.NODE_KONFIG_ENV;
-    } else if (typeof process.env.NODE_ENV === "string") {
-      return process.env.NODE_ENV;
-    }
-    return "development";
   }
 }
