@@ -10,21 +10,13 @@ on:
 
 jobs:
   test:
-    name: Test on node ${{ matrix.node-version }} and ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node-version: [14, 16]
-        os: [ubuntu-latest]
-
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         # https://github.com/microsoft/rushstack/issues/2082#issuecomment-673697075
         with:
           fetch-depth: 0
       - uses: volta-cli/action@v1
-        with:
-          node-version: ${{ matrix.node-version }}
       - run: docker-compose up -d --build
       - run: node common/scripts/install-run-rush.js install
       # Ensure there is a changelog if required
