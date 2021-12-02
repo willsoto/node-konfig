@@ -24,7 +24,6 @@
     "build": "tsc --project tsconfig.build.json",
     "clean": "rimraf dist coverage .nyc_output docs temp *.tsbuildinfo",
     "lint": "eslint . --ext ts,js --fix",
-    "predocs": "npm run build",
     "test": "mocha",
     "test:cov": "nyc mocha",
     "test:watch": "mocha --watch"
