@@ -1,5 +1,6 @@
 import { expect } from "chai";
 import * as Konfig from "../../src";
+import { ValueNotFoundError } from "../../src";
 
 describe("EnvLoader", function () {
   // eslint-disable-next-line mocha/no-hooks
@@ -50,8 +51,9 @@ describe("EnvLoader", function () {
     expect(store.get("hosts")).to.eql(["localhost:1234", "localhost:5678"]);
   });
 
-  it("should not error if the var is not present in the environment", async function () {
+  it("should not error if the var is not present in the environment and stopOnFailure is disabled", async function () {
     const store = await makeStore({
+      stopOnFailure: false,
       envVars: [
         {
           accessor: "notAThing",
@@ -61,6 +63,21 @@ describe("EnvLoader", function () {
     });
 
     expect(store.toJSON()).to.eql({});
+  });
+
+  it("should respect the maxRetries setting", function () {
+    return expect(
+      makeStore({
+        stopOnFailure: true,
+        maxRetries: 3,
+        envVars: [
+          {
+            accessor: "notAThing",
+            envVarName: "NOT_A_THING",
+          },
+        ],
+      }),
+    ).to.eventually.be.rejectedWith(ValueNotFoundError);
   });
 });
 
