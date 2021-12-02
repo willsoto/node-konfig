@@ -7,7 +7,7 @@
     "preventManualShrinkwrapChanges": true,
     "useWorkspaces": true
   },
-  "nodeSupportedVersionRange": ">=14",
+  "nodeSupportedVersionRange": ">=16",
   "ensureConsistentVersions": true,
 
   "gitPolicy": {
@@ -70,12 +70,6 @@
     {
       "packageName": "@node-konfig-tools/mocha",
       "projectFolder": "tools/mocha",
-      "reviewCategory": "tools",
-      "shouldPublish": false
-    },
-    {
-      "packageName": "@node-konfig-tools/nyc",
-      "projectFolder": "tools/nyc",
       "reviewCategory": "tools",
       "shouldPublish": false
     },

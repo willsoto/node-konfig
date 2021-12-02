@@ -23,18 +23,27 @@
   "scripts": {
     "prebuild": "npm run clean",
     "build": "tsc --project tsconfig.build.json",
-    "clean": "rimraf dist coverage .nyc_output docs temp *.tsbuildinfo",
+    "clean": "rimraf dist temp *.tsbuildinfo",
     "lint": "eslint . --ext ts,js --fix",
     "test": "mocha",
     "pretest:cov": "rimraf coverage .nyc_output",
-    "test:cov": "nyc mocha",
+    "test:cov": "c8 mocha",
     "test:watch": "mocha --watch"
   },
-  "nyc": {
-    "extends": "@node-konfig-tools/nyc",
+  "c8": {
+    "all": true,
+    "branches": 90,
+    "check-coverage": true,
+    "functions": 90,
     "include": [
-      "src/**/*.ts"
-    ]
+      "src"
+    ],
+    "lines": 90,
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "statements": 90
   },
   "dependencies": {
     "etcd3": "~1.1.0"
@@ -42,7 +51,6 @@
   "devDependencies": {
     "@node-konfig-tools/eslint": "workspace:*",
     "@node-konfig-tools/mocha": "workspace:*",
-    "@node-konfig-tools/nyc": "workspace:*",
     "@rushstack/eslint-patch": "~1.1.0",
     "@types/chai": "~4.2.22",
     "@types/chai-as-promised": "~7.1.4",
@@ -51,9 +59,9 @@
     "@types/sinon": "~10.0.6",
     "@types/sinon-chai": "~3.2.6",
     "@willsoto/node-konfig-core": "workspace:*",
+    "c8": "~7.10.0",
     "eslint": "~8.3.0",
     "mocha": "~9.1.3",
-    "nyc": "~15.1.0",
     "rimraf": "~3.0.2",
     "typescript": "~4.5.2"
   },
