@@ -6,7 +6,7 @@
  *
  * https://github.com/ahejlsberg/tsconf2020-demos/blob/b83b9698a8ffd40c63afa63905142ec5c30eb604/template/main.ts#L108-L136
  */
-
+/* c8 ignore start */
 export type PathKeys<T> = object extends T
   ? string
   : T extends readonly any[]
@@ -26,3 +26,4 @@ export type PropType<T, Path extends string> = Path extends keyof T
     ? PropType<T[K], R>
     : unknown
   : unknown;
+/* c8 ignore stop */

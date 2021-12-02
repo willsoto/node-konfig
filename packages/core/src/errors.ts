@@ -9,3 +9,9 @@ export class NoValueForKeyError extends Error {
     super(`No value found for key: ${key}`);
   }
 }
+
+export class ValueNotFoundError extends Error {
+  constructor() {
+    super("Value not found");
+  }
+}
