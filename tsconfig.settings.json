@@ -4,15 +4,15 @@
     "declaration": true,
     "declarationMap": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["es2018"],
+    "lib": ["ESNext"],
     "module": "commonjs",
     "removeComments": false,
     "sourceMap": true,
     "strict": true,
-    "target": "es2018"
+    "target": "ESNext"
   },
   "ts-node": {
-    "transpileOnly": true,
-    "transpiler": "ts-node/transpilers/swc-experimental"
+    "swc": true,
+    "transpileOnly": true
   }
 }

@@ -1,43 +1,46 @@
-import { expect } from "chai";
+import test from "ava";
 import * as Konfig from "../../src";
 import { ValueNotFoundError } from "../../src";
 
-describe("EnvLoader", function () {
-  // eslint-disable-next-line mocha/no-hooks
-  before(function () {
-    process.env.PORT = "5000";
-    process.env.NAME = "my-app";
-    process.env.HOSTS = "localhost:1234,localhost:5678";
+test.before(function () {
+  process.env.PORT = "5000";
+  process.env.NAME = "my-app";
+  process.env.HOSTS = "localhost:1234,localhost:5678";
+});
+
+test.after(function () {
+  delete process.env.PORT;
+  delete process.env.NAME;
+  delete process.env.HOSTS;
+});
+
+test.serial("EnvLoader should load the specified env vars", async function (t) {
+  t.plan(1);
+
+  const store = await makeStore({
+    envVars: [
+      {
+        accessor: "port",
+        envVarName: "PORT",
+      },
+      {
+        accessor: "name",
+        envVarName: "NAME",
+      },
+    ],
   });
 
-  // eslint-disable-next-line mocha/no-hooks
-  after(function () {
-    delete process.env.PORT;
-    delete process.env.NAME;
-    delete process.env.HOSTS;
+  t.deepEqual(store.toJSON(), {
+    port: "5000",
+    name: "my-app",
   });
+});
 
-  it("should load the specified env vars", async function () {
-    const store = await makeStore({
-      envVars: [
-        {
-          accessor: "port",
-          envVarName: "PORT",
-        },
-        {
-          accessor: "name",
-          envVarName: "NAME",
-        },
-      ],
-    });
+test.serial(
+  "EnvLoader should convert 'array-like' values into actual array",
+  async function (t) {
+    t.plan(1);
 
-    expect(store.toJSON()).to.eql({
-      port: "5000",
-      name: "my-app",
-    });
-  });
-
-  it("should convert 'array-like' values into actual array", async function () {
     const store = await makeStore({
       envVars: [
         {
@@ -48,10 +51,15 @@ describe("EnvLoader", function () {
       ],
     });
 
-    expect(store.get("hosts")).to.eql(["localhost:1234", "localhost:5678"]);
-  });
+    t.deepEqual(store.get("hosts"), ["localhost:1234", "localhost:5678"]);
+  },
+);
 
-  it("should not error if the var is not present in the environment and stopOnFailure is disabled", async function () {
+test.serial(
+  "EnvLoader should not error if the var is not present in the environment and stopOnFailure is disabled",
+  async function (t) {
+    t.plan(1);
+
     const store = await makeStore({
       stopOnFailure: false,
       envVars: [
@@ -62,11 +70,16 @@ describe("EnvLoader", function () {
       ],
     });
 
-    expect(store.toJSON()).to.eql({});
-  });
+    t.deepEqual(store.toJSON(), {});
+  },
+);
 
-  it("should respect the maxRetries setting", function () {
-    return expect(
+test.serial(
+  "EnvLoader should respect the maxRetries setting",
+  async function (t) {
+    t.plan(1);
+
+    await t.throwsAsync(
       makeStore({
         stopOnFailure: true,
         maxRetries: 3,
@@ -77,9 +90,12 @@ describe("EnvLoader", function () {
           },
         ],
       }),
-    ).to.eventually.be.rejectedWith(ValueNotFoundError);
-  });
-});
+      {
+        instanceOf: ValueNotFoundError,
+      },
+    );
+  },
+);
 
 async function makeStore(
   options: Konfig.EnvLoaderOptions,

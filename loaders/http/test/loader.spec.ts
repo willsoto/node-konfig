@@ -1,53 +1,62 @@
 import * as Konfig from "@willsoto/node-konfig-core";
-import { expect } from "chai";
+import anyTest, { TestFn } from "ava";
 import * as nock from "nock";
 import * as sinon from "sinon";
 import { HttpLoader, HttpLoaderOptions } from "../src";
 
-describe("HttpLoader", function () {
-  let scope: nock.Scope;
-  let prefixUrl: string;
+// These tests have to be run serially otherwise they consume each other's mocks.
+// If we want to make them concurrent, each test should have its own file that it's
+// fetching for config.
 
-  // eslint-disable-next-line mocha/no-hooks
-  before(function () {
-    prefixUrl = "https://internal.config.com";
-    scope = nock(prefixUrl);
-  });
+const test = anyTest as TestFn<{
+  scope: nock.Scope;
+}>;
 
-  // eslint-disable-next-line mocha/no-hooks
-  afterEach(function () {
-    expect(scope.isDone()).to.be.true;
-    nock.cleanAll();
-  });
+const prefixUrl = "https://internal.config.com";
 
-  it("should load secrets from the given vault", async function () {
-    scope.get("/config.json").reply(
-      200,
-      JSON.stringify({
-        database: {
-          host: "rds.foo.bar",
-        },
-      }),
-    );
+test.before((t) => {
+  t.context.scope = nock(prefixUrl);
+});
 
-    const store = await makeStore({
-      sources: [
-        {
-          url: `${prefixUrl}/config.json`,
-          parser: new Konfig.JSONParser(),
-        },
-      ],
-    });
+test.afterEach.always((t) => {
+  t.true(nock.isDone());
+  nock.cleanAll();
+});
 
-    expect(store.toJSON()).to.eql({
+test.serial("should load secrets from the given vault", async function (t) {
+  t.plan(1);
+
+  t.context.scope.get("/config.json").reply(
+    200,
+    JSON.stringify({
       database: {
         host: "rds.foo.bar",
       },
-    });
+    }),
+  );
+
+  const store = await makeStore({
+    sources: [
+      {
+        url: `${prefixUrl}/config.json`,
+        parser: new Konfig.JSONParser(),
+      },
+    ],
   });
 
-  it("should merge secrets from the loader with secrets loaded from other locations", async function () {
-    scope.post("/config.json").reply(
+  t.deepEqual(store.toJSON(), {
+    database: {
+      host: "rds.foo.bar",
+    },
+  });
+});
+
+test.serial(
+  "should merge secrets from the loader with secrets loaded from other locations",
+  async function (t) {
+    t.plan(1);
+
+    t.context.scope.post("/config.json").reply(
       200,
       JSON.stringify({
         database: {
@@ -77,68 +86,77 @@ describe("HttpLoader", function () {
       [fileLoader],
     );
 
-    expect(store.toJSON()).to.eql({
+    t.deepEqual(store.toJSON(), {
       name: "foo",
       database: {
         host: "rds.foo.bar",
       },
     });
+  },
+);
+
+test.serial("should respect the maxRetries option", async function (t) {
+  t.plan(2);
+
+  t.context.scope.get("/config.json").reply(403, "Forbidden").persist();
+
+  const store = new Konfig.Store();
+  const loader = new HttpLoader({
+    maxRetries: 3,
+    sources: [
+      {
+        url: `${prefixUrl}/config.json`,
+        parser: new Konfig.JSONParser(),
+      },
+    ],
   });
+  sinon.spy(loader, "process");
 
-  it("should respect the maxRetries option", async function () {
-    scope.get("/config.json").reply(403, "Forbidden").persist();
+  store.registerLoader(loader);
 
-    const store = new Konfig.Store();
-    const loader = new HttpLoader({
-      maxRetries: 3,
-      sources: [
-        {
-          url: `${prefixUrl}/config.json`,
-          parser: new Konfig.JSONParser(),
-        },
-      ],
-    });
-    sinon.spy(loader, "process");
-
-    store.registerLoader(loader);
-
-    await expect(store.init()).to.eventually.be.rejectedWith("Forbidden");
-    // Initial call + the 3 retries
-    // eslint-disable-next-line @typescript-eslint/unbound-method
-    expect(loader.process).to.have.callCount(4);
+  await t.throwsAsync(store.init(), {
+    message: /Forbidden/,
   });
+  // Initial call + the 3 retries
+  t.is((loader.process as sinon.SinonSpy).callCount, 4);
+});
 
-  it("should respect the stopOnFailure option", async function () {
-    scope.get("/config.json").reply(
+test.serial("should respect the stopOnFailure option", async function (t) {
+  t.plan(1);
+
+  t.context.scope
+    .get("/config.json")
+    .reply(
       200,
       JSON.stringify({
         database: {
           host: "rds.foo.bar",
         },
       }),
-    );
+    )
+    .get("/config-not-found.json")
+    .reply(404, "Not found");
 
-    scope.get("/config-not-found.json").reply(404, "Not found");
-
-    const store = await makeStore({
-      stopOnFailure: false,
-      sources: [
-        {
-          url: `${prefixUrl}/config-not-found.json`,
-          parser: new Konfig.JSONParser(),
-        },
-        {
-          url: `${prefixUrl}/config.json`,
-          parser: new Konfig.JSONParser(),
-        },
-      ],
-    });
-
-    expect(store.toJSON()).to.eql({
-      database: {
-        host: "rds.foo.bar",
+  const parser = new Konfig.JSONParser();
+  const store = await makeStore({
+    stopOnFailure: false,
+    maxRetries: 0,
+    sources: [
+      {
+        url: `${prefixUrl}/config-not-found.json`,
+        parser,
       },
-    });
+      {
+        url: `${prefixUrl}/config.json`,
+        parser,
+      },
+    ],
+  });
+
+  t.deepEqual(store.toJSON(), {
+    database: {
+      host: "rds.foo.bar",
+    },
   });
 });
 

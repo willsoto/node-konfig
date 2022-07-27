@@ -1,23 +1,23 @@
-import { expect } from "chai";
+import test from "ava";
 import * as Konfig from "../../src";
 
-describe("ValueLoader", function () {
-  it("should assign the provides values onto the store", async function () {
-    const store = await makeStore({
-      values: {
-        name: "bar",
-        database: {
-          host: "localhost",
-        },
-      },
-    });
+test("ValueLoader should assign the provides values onto the store", async function (t) {
+  t.plan(1);
 
-    expect(store.toJSON()).to.eql({
+  const store = await makeStore({
+    values: {
       name: "bar",
       database: {
         host: "localhost",
       },
-    });
+    },
+  });
+
+  t.deepEqual(store.toJSON(), {
+    name: "bar",
+    database: {
+      host: "localhost",
+    },
   });
 });
 

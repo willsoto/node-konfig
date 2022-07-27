@@ -23,12 +23,10 @@
   "scripts": {
     "prebuild": "npm run clean",
     "build": "tsc --project tsconfig.build.json",
-    "clean": "rimraf dist temp *.tsbuildinfo",
-    "lint": "eslint . --ext ts,js --fix",
-    "test": "mocha",
-    "pretest:cov": "rimraf coverage .nyc_output",
-    "test:cov": "c8 mocha",
-    "test:watch": "mocha --watch"
+    "clean": "rimraf dist",
+    "test": "ava",
+    "test:coverage": "c8 ava",
+    "test:watch": "ava --watch"
   },
   "c8": {
     "all": true,
@@ -50,21 +48,14 @@
     "node-vault": "~0.9.22"
   },
   "devDependencies": {
-    "@node-konfig-tools/eslint": "workspace:*",
-    "@node-konfig-tools/mocha": "workspace:*",
-    "@rushstack/eslint-patch": "~1.1.0",
-    "@types/chai": "~4.2.22",
-    "@types/chai-as-promised": "~7.1.4",
-    "@types/mocha": "~9.0.0",
     "@types/node": "~16.11.11",
     "@types/sinon": "~10.0.6",
-    "@types/sinon-chai": "~3.2.6",
     "@willsoto/node-konfig-core": "workspace:*",
     "@willsoto/node-konfig-file": "workspace:*",
+    "ava": "4.3.1",
     "c8": "~7.10.0",
-    "eslint": "~8.3.0",
-    "mocha": "~9.1.3",
     "rimraf": "~3.0.2",
+    "sinon": "14.0.0",
     "typescript": "~4.5.2"
   },
   "peerDependencies": {

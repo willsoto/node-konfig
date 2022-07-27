@@ -1,11 +1,14 @@
-import { expect } from "chai";
+import test from "ava";
 import * as Konfig from "../src";
 
-describe("Loaders by environment", function () {
-  it("should allow environment loaders to be registered via constructor", async function () {
+test.serial(
+  "Loaders by environment should allow environment loaders to be registered via constructor",
+  async function (t) {
+    t.plan(1);
+
     const store = new Konfig.Store({
       loadersByEnvironment: {
-        development: [
+        test: [
           new Konfig.ValueLoader({
             values: {
               name: "app",
@@ -16,14 +19,19 @@ describe("Loaders by environment", function () {
     });
     await store.init();
 
-    expect(store.get("name")).to.eql("app");
-  });
+    t.is(store.get("name"), "app");
+  },
+);
 
-  it("should allow environment loaders to be registered after construction", async function () {
+test.serial(
+  "Loaders by environment should allow environment loaders to be registered after construction",
+  async function (t) {
+    t.plan(1);
+
     const store = new Konfig.Store();
 
     store.registerLoadersByEnvironment({
-      development: [
+      test: [
         new Konfig.ValueLoader({
           values: {
             name: "app",
@@ -33,10 +41,15 @@ describe("Loaders by environment", function () {
     });
     await store.init();
 
-    expect(store.get("name")).to.eql("app");
-  });
+    t.is(store.get("name"), "app");
+  },
+);
 
-  it("should merge default loaders with environment loaders with environment loaders being last", async function () {
+test.serial(
+  "Loaders by environment should merge default loaders with environment loaders with environment loaders being last",
+  async function (t) {
+    t.plan(1);
+
     const store = new Konfig.Store({
       loaders: [
         new Konfig.ValueLoader({
@@ -46,7 +59,7 @@ describe("Loaders by environment", function () {
         }),
       ],
       loadersByEnvironment: {
-        development: [
+        test: [
           new Konfig.ValueLoader({
             values: {
               name: "app-development",
@@ -57,10 +70,15 @@ describe("Loaders by environment", function () {
     });
     await store.init();
 
-    expect(store.get("name")).to.eql("app-development");
-  });
+    t.is(store.get("name"), "app-development");
+  },
+);
 
-  it("should respect the NODE_KONFIG_ENV environment variable first, if set", async function () {
+test.serial(
+  "Loaders by environment should respect the NODE_KONFIG_ENV environment variable first, if set",
+  async function (t) {
+    t.plan(1);
+
     process.env.NODE_KONFIG_ENV = "staging";
 
     const store = new Konfig.Store({
@@ -83,12 +101,17 @@ describe("Loaders by environment", function () {
     });
     await store.init();
 
-    expect(store.get("name")).to.eql("app-staging");
+    t.is(store.get("name"), "app-staging");
 
     delete process.env.NODE_KONFIG_ENV;
-  });
+  },
+);
 
-  it("should use NODE_ENV if NODE_KONFIG_ENV is not set", async function () {
+test.serial(
+  "Loaders by environment should use NODE_ENV if NODE_KONFIG_ENV is not set",
+  async function (t) {
+    t.plan(1);
+
     const initial = process.env.NODE_ENV;
     process.env.NODE_ENV = "production";
 
@@ -119,12 +142,17 @@ describe("Loaders by environment", function () {
     });
     await store.init();
 
-    expect(store.get("name")).to.eql("app-production");
+    t.is(store.get("name"), "app-production");
 
     process.env.NODE_ENV = initial;
-  });
+  },
+);
 
-  it("should default to development if NODE_ENV and NODE_KONFIG_ENV are not set", async function () {
+test.serial(
+  "Loaders by environment should default to development if NODE_ENV and NODE_KONFIG_ENV are not set",
+  async function (t) {
+    t.plan(1);
+
     const initial = process.env.NODE_ENV;
     delete process.env.NODE_ENV;
 
@@ -155,8 +183,8 @@ describe("Loaders by environment", function () {
     });
     await store.init();
 
-    expect(store.get("name")).to.eql("app-development");
+    t.is(store.get("name"), "app-development");
 
     process.env.NODE_ENV = initial;
-  });
-});
+  },
+);

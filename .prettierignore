@@ -1,9 +1,5 @@
-/common/config/rush/*.json
-/common/config/rush/*.yaml
-/common/scripts/*.js
 **/dist/**
 **/coverage/**
-**/.nyc_output/**
 CHANGELOG.md
 CHANGELOG.json
 pnpm-lock.yaml

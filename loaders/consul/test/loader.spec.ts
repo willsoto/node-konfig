@@ -1,180 +1,178 @@
 import * as Konfig from "@willsoto/node-konfig-core";
 import { FileLoader } from "@willsoto/node-konfig-file";
-import { expect } from "chai";
+import test from "ava";
 import * as consul from "consul";
 import * as path from "path";
 import * as sinon from "sinon";
 import { ConsulLoader, ConsulLoaderOptions } from "../src";
 
-describe("ConsulLoader", function () {
-  async function makeConsulClient(): Promise<void> {
-    const client = consul({
-      promisify: true,
-    });
+test("should load secrets from the given vault", async function (t) {
+  t.plan(1);
 
-    await client.kv.set(
-      "database",
-      JSON.stringify({
-        host: "rds.foo.bar",
-      }),
-    );
-  }
-
-  it("should load secrets from the given vault", async function () {
-    await makeConsulClient();
-    const store = await makeStore({
-      keys: [
-        {
-          key: "database",
-          parser: new Konfig.JSONParser(),
-        },
-      ],
-    });
-
-    expect(store.toJSON()).to.eql({
-      database: {
-        host: "rds.foo.bar",
-      },
-    });
-  });
-
-  it("should apply a prefix if provided", async function () {
-    await makeConsulClient();
-    const store = await makeStore({
-      keys: [
-        {
-          key: "database",
-          prefix: "app_",
-          parser: new Konfig.JSONParser(),
-        },
-      ],
-    });
-
-    expect(store.toJSON()).to.eql({
-      app_database: {
-        host: "rds.foo.bar",
-      },
-    });
-  });
-
-  it("should apply a replacer if provided", async function () {
-    await makeConsulClient();
-    const store = await makeStore({
-      keys: [
-        {
-          key: "database",
-          parser: new Konfig.JSONParser(),
-          replacer(key: string) {
-            return key.toUpperCase();
-          },
-        },
-      ],
-    });
-
-    expect(store.toJSON()).to.eql({
-      DATABASE: {
-        host: "rds.foo.bar",
-      },
-    });
-  });
-
-  it("should apply a prefix and replacer (in the correct order)", async function () {
-    await makeConsulClient();
-    const store = await makeStore({
-      keys: [
-        {
-          key: "database",
-          parser: new Konfig.JSONParser(),
-          prefix: "app_",
-          replacer(key: string) {
-            return key.toUpperCase();
-          },
-        },
-      ],
-    });
-
-    expect(store.toJSON()).to.eql({
-      APP_DATABASE: {
-        host: "rds.foo.bar",
-      },
-    });
-  });
-
-  it("should merge secrets from the loader with secrets loaded from other locations", async function () {
-    await makeConsulClient();
-    const fileLoader = new FileLoader({
-      files: [
-        {
-          path: path.resolve(__dirname, "configs", "config.json"),
-          parser: new Konfig.JSONParser(),
-        },
-      ],
-    });
-
-    const store = await makeStore(
+  await makeConsulClient();
+  const store = await makeStore({
+    keys: [
       {
-        keys: [
-          {
-            key: "database",
-            parser: new Konfig.JSONParser(),
-          },
-        ],
+        key: "database",
+        parser: new Konfig.JSONParser(),
       },
-      [fileLoader],
-    );
-
-    expect(store.toJSON()).to.eql({
-      name: "foo",
-      database: {
-        host: "rds.foo.bar",
-      },
-    });
+    ],
   });
 
-  it("should respect the maxRetries option", async function () {
-    await makeConsulClient();
-    const store = new Konfig.Store();
-    const loader = new ConsulLoader({
-      maxRetries: 3,
-      retryDelay: 50,
-      keys: [
-        {
-          key: "non-existent/value",
-        },
-      ],
-    });
-    sinon.spy(loader, "process");
+  t.deepEqual(store.toJSON(), {
+    database: {
+      host: "rds.foo.bar",
+    },
+  });
+});
 
-    store.registerLoader(loader);
+test("should apply a prefix if provided", async function (t) {
+  t.plan(1);
 
-    await expect(store.init()).to.eventually.be.rejectedWith(
-      /non-existent\/value/,
-    );
-    // Initial call + the 3 retries
-    // eslint-disable-next-line @typescript-eslint/unbound-method
-    expect(loader.process).to.have.callCount(4);
+  await makeConsulClient();
+  const store = await makeStore({
+    keys: [
+      {
+        key: "database",
+        prefix: "app_",
+        parser: new Konfig.JSONParser(),
+      },
+    ],
   });
 
-  it("should respect the stopOnFailure option", async function () {
-    await makeConsulClient();
-    const store = await makeStore({
-      stopOnFailure: false,
-      keys: [
-        {
-          key: "non-existent/value",
+  t.deepEqual(store.toJSON(), {
+    app_database: {
+      host: "rds.foo.bar",
+    },
+  });
+});
+
+test("should apply a replacer if provided", async function (t) {
+  t.plan(1);
+
+  await makeConsulClient();
+  const store = await makeStore({
+    keys: [
+      {
+        key: "database",
+        parser: new Konfig.JSONParser(),
+        replacer(key: string) {
+          return key.toUpperCase();
         },
+      },
+    ],
+  });
+
+  t.deepEqual(store.toJSON(), {
+    DATABASE: {
+      host: "rds.foo.bar",
+    },
+  });
+});
+
+test("should apply a prefix and replacer (in the correct order)", async function (t) {
+  t.plan(1);
+
+  await makeConsulClient();
+  const store = await makeStore({
+    keys: [
+      {
+        key: "database",
+        parser: new Konfig.JSONParser(),
+        prefix: "app_",
+        replacer(key: string) {
+          return key.toUpperCase();
+        },
+      },
+    ],
+  });
+
+  t.deepEqual(store.toJSON(), {
+    APP_DATABASE: {
+      host: "rds.foo.bar",
+    },
+  });
+});
+
+test("should merge secrets from the loader with secrets loaded from other locations", async function (t) {
+  t.plan(1);
+
+  await makeConsulClient();
+  const fileLoader = new FileLoader({
+    files: [
+      {
+        path: path.resolve(__dirname, "configs", "config.json"),
+        parser: new Konfig.JSONParser(),
+      },
+    ],
+  });
+
+  const store = await makeStore(
+    {
+      keys: [
         {
           key: "database",
           parser: new Konfig.JSONParser(),
         },
       ],
-    });
+    },
+    [fileLoader],
+  );
 
-    expect(store.toJSON()).to.eql({
-      database: {
-        host: "rds.foo.bar",
+  t.deepEqual(store.toJSON(), {
+    name: "foo",
+    database: {
+      host: "rds.foo.bar",
+    },
+  });
+});
+
+test("should respect the maxRetries option", async function (t) {
+  t.plan(2);
+
+  await makeConsulClient();
+  const store = new Konfig.Store();
+  const loader = new ConsulLoader({
+    maxRetries: 3,
+    retryDelay: 50,
+    keys: [
+      {
+        key: "non-existent/value",
       },
-    });
+    ],
+  });
+  sinon.spy(loader, "process");
+
+  store.registerLoader(loader);
+
+  await t.throwsAsync(store.init(), {
+    message: "Key not found: non-existent/value",
+  });
+  // Initial call + the 3 retries
+  t.is((loader.process as sinon.SinonSpy).callCount, 4);
+});
+
+test("should respect the stopOnFailure option", async function (t) {
+  t.plan(1);
+
+  await makeConsulClient();
+  const store = await makeStore({
+    stopOnFailure: false,
+    keys: [
+      {
+        key: "non-existent/value",
+      },
+      {
+        key: "database",
+        parser: new Konfig.JSONParser(),
+      },
+    ],
+  });
+
+  t.deepEqual(store.toJSON(), {
+    database: {
+      host: "rds.foo.bar",
+    },
   });
 });
 
@@ -192,4 +190,17 @@ async function makeStore(
   await store.init();
 
   return store;
+}
+
+async function makeConsulClient(): Promise<void> {
+  const client = consul({
+    promisify: true,
+  });
+
+  await client.kv.set(
+    "database",
+    JSON.stringify({
+      host: "rds.foo.bar",
+    }),
+  );
 }

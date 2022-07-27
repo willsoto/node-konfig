@@ -1,0 +1,4 @@
+packages:
+  - "loaders/*"
+  - "packages/*"
+  - "parsers/*"

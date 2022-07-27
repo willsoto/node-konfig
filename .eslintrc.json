@@ -1,0 +1,29 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "ignorePatterns": ["**/dist/**", "node_modules", "**/coverage/**"],
+  "parserOptions": {
+    "project": "./tsconfig.lint.json",
+    "extraFileExtensions": [".cjs"]
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/member-ordering": "error"
+  },
+  "env": {
+    "node": true
+  },
+  "overrides": [
+    {
+      "files": ["*.spec.ts"],
+      "extends": ["plugin:ava/recommended"]
+    }
+  ]
+}

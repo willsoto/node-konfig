@@ -1,46 +1,48 @@
 import * as Konfig from "@willsoto/node-konfig-core";
-import { expect } from "chai";
+import test from "ava";
 import { FlagLoader, FlagLoaderOptions } from "../src";
 
-describe("FlagLoader", function () {
-  it("should assign the provided flags/options to the store", async function () {
-    const store = await makeStore({
-      cliOptions: {
-        argv: ["--environment", "production"],
-        flags: {
-          environment: {
-            alias: "env",
-            default: "development",
-          },
+test("should assign the provided flags/options to the store", async function (t) {
+  t.plan(1);
+
+  const store = await makeStore({
+    cliOptions: {
+      argv: ["--environment", "production"],
+      flags: {
+        environment: {
+          alias: "env",
+          default: "development",
         },
       },
-    });
-
-    expect(store.toJSON()).to.eql({
-      environment: "production",
-    });
+    },
   });
 
-  it("should convert flags to camelCase", async function () {
-    const store = await makeStore({
-      cliOptions: {
-        argv: ["--app-name", "my-app"],
-        flags: {
-          environment: {
-            alias: "env",
-            default: "development",
-          },
-          appName: {
-            default: "default",
-          },
+  t.deepEqual(store.toJSON(), {
+    environment: "production",
+  });
+});
+
+test("should convert flags to camelCase", async function (t) {
+  t.plan(1);
+
+  const store = await makeStore({
+    cliOptions: {
+      argv: ["--app-name", "my-app"],
+      flags: {
+        environment: {
+          alias: "env",
+          default: "development",
+        },
+        appName: {
+          default: "default",
         },
       },
-    });
+    },
+  });
 
-    expect(store.toJSON()).to.eql({
-      environment: "development",
-      appName: "my-app",
-    });
+  t.deepEqual(store.toJSON(), {
+    environment: "development",
+    appName: "my-app",
   });
 });
 
