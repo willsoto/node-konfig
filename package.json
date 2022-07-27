@@ -1,11 +1,52 @@
 {
+  "name": "node-konfig",
+  "description": "Node Konfig monorepo",
+  "scripts": {
+    "build": "turbo run build",
+    "checkstyle": "prettier . --check",
+    "docs:build": "vitepress build docs",
+    "docs:dev": "vitepress dev docs",
+    "docs:serve": "vitepress serve docs",
+    "format": "prettier . --write",
+    "lint": "eslint . --fix",
+    "test": "turbo run test --no-cache",
+    "test:coverage": "turbo run test:coverage --no-cache",
+    "turbo": "turbo"
+  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
     ]
   },
+  "devDependencies": {
+    "@swc/core": "1.2.220",
+    "@swc/helpers": "0.4.3",
+    "@typescript-eslint/eslint-plugin": "~5.5.0",
+    "@typescript-eslint/parser": "~5.5.0",
+    "eslint": "~8.3.0",
+    "eslint-config-prettier": "~8.3.0",
+    "eslint-plugin-ava": "13.2.0",
+    "prettier": "~2.5.0",
+    "prettier-plugin-organize-imports": "~2.3.4",
+    "prettier-plugin-packagejson": "~2.2.15",
+    "regenerator-runtime": "0.13.9",
+    "turbo": "1.3.4",
+    "typescript": "~4.5.2",
+    "vitepress": "1.0.0-alpha.4",
+    "vue": "3.2.37"
+  },
+  "packageManager": "pnpm@7.7.0",
   "volta": {
-    "node": "16.13.0",
-    "npm": "8.1.4"
+    "node": "18.7.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "@types/react",
+        "react",
+        "react-dom"
+      ]
+    }
   }
 }

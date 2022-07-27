@@ -1,113 +1,119 @@
 import * as Konfig from "@willsoto/node-konfig-core";
-import { expect } from "chai";
+import test from "ava";
 import { Etcd3 } from "etcd3";
 import * as sinon from "sinon";
 import { EtcdLoader, EtcdLoaderOptions } from "../src";
 
-describe("EtcdLoader", function () {
-  async function makeEtcd3Client(): Promise<void> {
-    const client = new Etcd3();
+test("should load secrets using the given accessor", async function (t) {
+  t.plan(1);
 
-    await client.put("database").value(
-      JSON.stringify({
-        host: "rds.foo.bar",
-      }),
-    );
-    await client.put("appName").value("my-app");
-  }
-
-  it("should load secrets using the given accessor", async function () {
-    await makeEtcd3Client();
-    const store = await makeStore({
-      keys: [
-        {
-          accessor: "database",
-          parser: new Konfig.JSONParser(),
-        },
-      ],
-    });
-
-    expect(store.toJSON()).to.eql({
-      database: {
-        host: "rds.foo.bar",
-      },
-    });
-  });
-
-  it("should merge secrets from vault with secret loaded from other locations", async function () {
-    await makeEtcd3Client();
-    const valueLoader = new Konfig.ValueLoader({
-      values: {
-        name: "foo",
-      },
-    });
-
-    const store = await makeStore(
+  await makeEtcd3Client();
+  const store = await makeStore({
+    keys: [
       {
-        keys: [
-          {
-            accessor: "database",
-            parser: new Konfig.JSONParser(),
-          },
-        ],
+        accessor: "database",
+        parser: new Konfig.JSONParser(),
       },
-      [valueLoader],
-    );
-
-    expect(store.toJSON()).to.eql({
-      name: "foo",
-      database: {
-        host: "rds.foo.bar",
-      },
-    });
+    ],
   });
 
-  it("should respect the maxRetries option", async function () {
-    await makeEtcd3Client();
-    const store = new Konfig.Store();
-    const loader = new EtcdLoader({
-      maxRetries: 3,
-      retryDelay: 50,
-      keys: [
-        {
-          accessor: "non-existent",
-          parser: new Konfig.JSONParser(),
-        },
-      ],
-    });
-    sinon.spy(loader, "execute");
-
-    store.registerLoader(loader);
-
-    await expect(store.init()).to.eventually.be.rejectedWith(/non-existent/);
-    // Initial call + the 3 retries
-    // eslint-disable-next-line @typescript-eslint/unbound-method
-    expect(loader.execute).to.have.callCount(4);
-  });
-
-  it("should respect the stopOnFailure option", async function () {
-    await makeEtcd3Client();
-    const store = await makeStore({
-      stopOnFailure: false,
-      keys: [
-        {
-          accessor: "non-existent",
-          parser: new Konfig.JSONParser(),
-        },
-        {
-          accessor: "database",
-          parser: new Konfig.JSONParser(),
-        },
-      ],
-    });
-
-    expect(store.toJSON()).to.eql({
-      database: {
-        host: "rds.foo.bar",
-      },
-    });
+  t.deepEqual(store.toJSON(), {
+    database: {
+      host: "rds.foo.bar",
+    },
   });
 });
+
+test("should merge secrets from vault with secret loaded from other locations", async function (t) {
+  t.plan(1);
+
+  await makeEtcd3Client();
+  const valueLoader = new Konfig.ValueLoader({
+    values: {
+      name: "foo",
+    },
+  });
+
+  const store = await makeStore(
+    {
+      keys: [
+        {
+          accessor: "database",
+          parser: new Konfig.JSONParser(),
+        },
+      ],
+    },
+    [valueLoader],
+  );
+
+  t.deepEqual(store.toJSON(), {
+    name: "foo",
+    database: {
+      host: "rds.foo.bar",
+    },
+  });
+});
+
+test("should respect the maxRetries option", async function (t) {
+  t.plan(3);
+
+  await makeEtcd3Client();
+  const store = new Konfig.Store();
+  const loader = new EtcdLoader({
+    maxRetries: 3,
+    retryDelay: 50,
+    keys: [
+      {
+        accessor: "non-existent",
+        parser: new Konfig.JSONParser(),
+      },
+    ],
+  });
+  sinon.spy(loader, "execute");
+
+  store.registerLoader(loader);
+
+  const error = await t.throwsAsync(store.init());
+  t.is(error?.message, "Key not found: non-existent");
+  // Initial call + the 3 retries
+  t.is((loader.execute as sinon.SinonSpy).callCount, 4);
+});
+
+test("should respect the stopOnFailure option", async function (t) {
+  t.plan(1);
+
+  await makeEtcd3Client();
+  const store = await makeStore({
+    stopOnFailure: false,
+    keys: [
+      {
+        accessor: "non-existent",
+        parser: new Konfig.JSONParser(),
+      },
+      {
+        accessor: "database",
+        parser: new Konfig.JSONParser(),
+      },
+    ],
+  });
+
+  t.deepEqual(store.toJSON(), {
+    database: {
+      host: "rds.foo.bar",
+    },
+  });
+});
+
+async function makeEtcd3Client(): Promise<void> {
+  const client = new Etcd3();
+
+  await client.put("database").value(
+    JSON.stringify({
+      host: "rds.foo.bar",
+    }),
+  );
+  await client.put("appName").value("my-app");
+}
 
 async function makeStore(
   options: EtcdLoaderOptions,

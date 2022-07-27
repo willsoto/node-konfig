@@ -1,11 +1,19 @@
-import { expect } from "chai";
+import test from "ava";
 import { JSONParser } from "../../src";
 
-describe("JSONParser", function () {
-  it("should parse the contents provided as JSON", function () {
-    const parser = new JSONParser();
-    expect(parser.parse(JSON.stringify({ foo: "bar" }))).to.eql({
+test("JSONParser should parse the contents provided as JSON", function (t) {
+  t.plan(1);
+
+  const parser = new JSONParser();
+
+  t.deepEqual(
+    parser.parse(
+      JSON.stringify({
+        foo: "bar",
+      }),
+    ),
+    {
       foo: "bar",
-    });
-  });
+    },
+  );
 });

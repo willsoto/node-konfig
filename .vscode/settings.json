@@ -2,25 +2,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "eslint.packageManager": "pnpm",
-  "files.exclude": {
-    "**/.DS_Store": true,
-    "**/.git": true,
-    "**/.hg": true,
-    "**/.rush": true,
-    "**/.svn": true,
-    "**/CVS": true
-  },
-  "prettier.prettierPath": "common/autoinstallers/rush-prettier/node_modules/prettier",
-  "search.exclude": {
-    "**/*.code-search": true,
-    "**/.rush": true,
-    "**/bower_components": true,
-    "**/node_modules": true
-  },
-  "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.preferences.importModuleSpecifier": "relative",
-  "typescript.preferences.quoteStyle": "double",
-  "typescript.tsdk": "common/temp/node_modules/typescript/lib"
+  "typescript.preferences.quoteStyle": "double"
 }

@@ -12,35 +12,47 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        # https://github.com/microsoft/rushstack/issues/2082#issuecomment-673697075
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v3
       - uses: volta-cli/action@v1
       - run: docker-compose up -d --build
-      - run: node common/scripts/install-run-rush.js install
-      # Ensure there is a changelog if required
-      - run: node common/scripts/install-run-rush.js change --verify
-      # Make sure to build all dependant packages so typings are in place
-      - run: node common/scripts/install-run-rush.js build --verbose
-      - run: node common/scripts/install-run-rush.js lint --verbose
-      - run: node common/scripts/install-run-rush.js test:cov --verbose
+      - uses: pnpm/action-setup@v2.2.2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - run: "pnpm install --frozen-lockfile"
+      - run: "pnpm run checkstyle"
+      - run: "pnpm run build"
+      - run: "pnpm run lint"
+      - run: "pnpm run test:coverage"
         env:
           # node-vault will read from this environment variable if set
           # https://github.com/kr1sp1n/node-vault/blob/0fa666afb9da14f25cf054e195c18b5a560fcaed/src/index.js#L68
           VAULT_ADDR: "http://localhost:8200"
 
-  publish:
-    if: github.ref == 'refs/heads/main'
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: volta-cli/action@v1
-      - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      - run: git config --local user.name "GitHub Actions"
-      - run: node common/scripts/install-run-rush.js install
-      - run: node common/scripts/install-run-rush.js build --verbose
-      - run: node common/scripts/install-run-rush.js publish --apply --target-branch main --publish --set-access-level public
-        env:
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+  # publish:
+  #   if: github.ref == 'refs/heads/main'
+  #   needs: test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: volta-cli/action@v1
+  #     - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+  #     - run: git config --local user.name "GitHub Actions"
+  #     - run: node common/scripts/install-run-rush.js install
+  #     - run: node common/scripts/install-run-rush.js build --verbose
+  #     - run: node common/scripts/install-run-rush.js publish --apply --target-branch main --publish --set-access-level public
+  #       env:
+  #         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

@@ -1,24 +1,58 @@
-import { expect } from "chai";
+import test from "ava";
 import * as Konfig from "../src";
 import { NoValueForKeyError } from "../src";
 
-describe("Store", function () {
-  it("should load multiple configs and merge their results", async function () {
-    const store = await makeStore();
+test("Store should load multiple configs and merge their results", async function (t) {
+  t.plan(1);
 
-    expect(store.toJSON()).to.eql({
-      // "bar" should win out here since it was loaded last
-      name: "bar",
-      database: {
-        host: "localhost",
-      },
-    });
+  const store = await makeStore();
+
+  t.deepEqual(store.toJSON(), {
+    // "bar" should win out here since it was loaded last
+    name: "bar",
+    database: {
+      host: "localhost",
+    },
   });
+});
 
-  it("should register several loaders at once", async function () {
-    const store = new Konfig.Store();
+test("Store should register several loaders at once", async function (t) {
+  t.plan(1);
 
-    store.registerLoaders(
+  const store = new Konfig.Store();
+
+  store.registerLoaders(
+    new Konfig.ValueLoader({
+      values: {
+        name: "app",
+      },
+    }),
+    new Konfig.ValueLoader({
+      values: {
+        database: {
+          host: "localhost",
+          port: 5432,
+        },
+      },
+    }),
+  );
+
+  await store.init();
+
+  t.deepEqual(store.toJSON(), {
+    name: "app",
+    database: {
+      host: "localhost",
+      port: 5432,
+    },
+  });
+});
+
+test("Store should allow loaders to be registered via the contrustor", async function (t) {
+  t.plan(1);
+
+  const store = new Konfig.Store({
+    loaders: [
       new Konfig.ValueLoader({
         values: {
           name: "app",
@@ -32,166 +66,150 @@ describe("Store", function () {
           },
         },
       }),
-    );
-
-    await store.init();
-
-    expect(store.toJSON()).to.eql({
-      name: "app",
-      database: {
-        host: "localhost",
-        port: 5432,
-      },
-    });
+    ],
   });
 
-  it("should allow loaders to be registered via the contrustor", async function () {
-    const store = new Konfig.Store({
-      loaders: [
-        new Konfig.ValueLoader({
-          values: {
-            name: "app",
-          },
-        }),
-        new Konfig.ValueLoader({
-          values: {
-            database: {
-              host: "localhost",
-              port: 5432,
-            },
-          },
-        }),
-      ],
-    });
+  await store.init();
 
-    await store.init();
-
-    expect(store.toJSON()).to.eql({
-      name: "app",
-      database: {
-        host: "localhost",
-        port: 5432,
-      },
-    });
-  });
-
-  it("should fetch individual values from the store", async function () {
-    const store = await makeStore();
-
-    expect(store.get("name")).to.eql("bar");
-    expect(store.get("database.host")).to.eql("localhost");
-  });
-
-  it("should set values to the store", async function () {
-    const store = await makeStore();
-
-    store.set("name", "baz");
-
-    expect(store.get("name")).to.eql("baz");
-  });
-
-  it("should assign values in bulk while retaining any existing groups", async function () {
-    const store = new Konfig.Store();
-
-    store.registerLoader(
-      new Konfig.ValueLoader({
-        values: {
-          name: "my-app",
-        },
-      }),
-    );
-
-    store.group("database").registerLoader(
-      new Konfig.ValueLoader({
-        values: {
-          host: "localhost",
-          port: 5432,
-        },
-      }),
-    );
-
-    store.group("redis").registerLoader(
-      new Konfig.ValueLoader({
-        values: {
-          host: "localhost",
-          port: 6379,
-        },
-      }),
-    );
-
-    await store.init();
-
-    store.assign({
-      database: {
-        host: "rds",
-        port: 5432,
-      },
-    });
-
-    expect(store["config"]["database"]).to.be.instanceOf(Konfig.Store);
-    expect(store["config"]["redis"]).to.be.instanceOf(Konfig.Store);
-
-    expect(store.get("database")).to.eql({
-      host: "rds",
+  t.deepEqual(store.toJSON(), {
+    name: "app",
+    database: {
+      host: "localhost",
       port: 5432,
-    });
-    expect(store.toJSON()).to.eql({
-      name: "my-app",
-      database: {
-        host: "rds",
+    },
+  });
+});
+
+test("Store should fetch individual values from the store", async function (t) {
+  t.plan(2);
+
+  const store = await makeStore();
+
+  t.is(store.get("name"), "bar");
+  t.is(store.get("database.host"), "localhost");
+});
+
+test("Store should set values to the store", async function (t) {
+  t.plan(1);
+
+  const store = await makeStore();
+
+  store.set("name", "baz");
+
+  t.is(store.get("name"), "baz");
+});
+
+test("Store should assign values in bulk while retaining any existing groups", async function (t) {
+  t.plan(4);
+
+  const store = new Konfig.Store();
+
+  store.registerLoader(
+    new Konfig.ValueLoader({
+      values: {
+        name: "my-app",
+      },
+    }),
+  );
+
+  store.group("database").registerLoader(
+    new Konfig.ValueLoader({
+      values: {
+        host: "localhost",
         port: 5432,
       },
-      redis: {
+    }),
+  );
+
+  store.group("redis").registerLoader(
+    new Konfig.ValueLoader({
+      values: {
         host: "localhost",
         port: 6379,
       },
-    });
+    }),
+  );
+
+  await store.init();
+
+  store.assign({
+    database: {
+      host: "rds",
+      port: 5432,
+    },
   });
 
-  describe("#getOrThrow", function () {
-    it("should raise an error if the retrieved value is null", async function () {
-      const store = new Konfig.Store();
+  t.true(store["config"]["database"] instanceof Konfig.Store);
+  t.true(store["config"]["redis"] instanceof Konfig.Store);
 
-      store.registerLoader(
-        new Konfig.ValueLoader({
-          values: {
-            foo: null,
-          },
-        }),
-      );
-      await store.init();
-
-      expect(() => store.getOrThrow("foo")).to.throw(NoValueForKeyError);
-    });
-
-    it("should raise an error if the retrieved value is undefined", async function () {
-      const store = new Konfig.Store();
-
-      store.registerLoader(
-        new Konfig.ValueLoader({
-          values: {},
-        }),
-      );
-      await store.init();
-
-      expect(() => store.getOrThrow("foo")).to.throw(NoValueForKeyError);
-    });
-
-    it("should return the value if it's not null or undefined", async function () {
-      const store = new Konfig.Store();
-
-      store.registerLoader(
-        new Konfig.ValueLoader({
-          values: {
-            name: "foo",
-          },
-        }),
-      );
-      await store.init();
-
-      expect(store.getOrThrow("name")).to.eql("foo");
-    });
+  t.deepEqual(store.get("database"), {
+    host: "rds",
+    port: 5432,
   });
+  t.deepEqual(store.toJSON(), {
+    name: "my-app",
+    database: {
+      host: "rds",
+      port: 5432,
+    },
+    redis: {
+      host: "localhost",
+      port: 6379,
+    },
+  });
+});
+
+test("getOrThrow should raise an error if the retrieved value is null", async function (t) {
+  t.plan(1);
+
+  const store = new Konfig.Store();
+
+  store.registerLoader(
+    new Konfig.ValueLoader({
+      values: {
+        foo: null,
+      },
+    }),
+  );
+  await store.init();
+
+  t.throws(() => store.getOrThrow("foo"), {
+    instanceOf: NoValueForKeyError,
+  });
+});
+
+test("getOrThrow should raise an error if the retrieved value is undefined", async function (t) {
+  t.plan(1);
+
+  const store = new Konfig.Store();
+
+  store.registerLoader(
+    new Konfig.ValueLoader({
+      values: {},
+    }),
+  );
+  await store.init();
+
+  t.throws(() => store.getOrThrow("foo"), {
+    instanceOf: NoValueForKeyError,
+  });
+});
+
+test("getOrThrow should return the value if it's not null or undefined", async function (t) {
+  t.plan(1);
+
+  const store = new Konfig.Store();
+
+  store.registerLoader(
+    new Konfig.ValueLoader({
+      values: {
+        name: "foo",
+      },
+    }),
+  );
+  await store.init();
+
+  t.is(store.getOrThrow("name"), "foo");
 });
 
 async function makeStore(): Promise<Konfig.Store> {
