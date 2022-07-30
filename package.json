@@ -3,6 +3,7 @@
   "description": "Node Konfig monorepo",
   "scripts": {
     "build": "turbo run build",
+    "changeset:status": "changeset status --since origin/main",
     "checkstyle": "prettier . --check",
     "docs:build": "vitepress build docs",
     "docs:dev": "vitepress dev docs",
@@ -29,6 +30,7 @@
     ]
   },
   "devDependencies": {
+    "@changesets/cli": "2.24.1",
     "@commitlint/cli": "17.0.3",
     "@commitlint/config-conventional": "17.0.3",
     "@swc/core": "1.2.220",
