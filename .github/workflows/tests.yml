@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{github.event.pull_request.head.sha}}
+          fetch-depth: 0
       - uses: volta-cli/action@v1
       - run: docker-compose up -d --build
       - uses: pnpm/action-setup@v2.2.2
@@ -41,18 +44,4 @@ jobs:
           # node-vault will read from this environment variable if set
           # https://github.com/kr1sp1n/node-vault/blob/0fa666afb9da14f25cf054e195c18b5a560fcaed/src/index.js#L68
           VAULT_ADDR: "http://localhost:8200"
-
-  # publish:
-  #   if: github.ref == 'refs/heads/main'
-  #   needs: test
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: volta-cli/action@v1
-  #     - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-  #     - run: git config --local user.name "GitHub Actions"
-  #     - run: node common/scripts/install-run-rush.js install
-  #     - run: node common/scripts/install-run-rush.js build --verbose
-  #     - run: node common/scripts/install-run-rush.js publish --apply --target-branch main --publish --set-access-level public
-  #       env:
-  #         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - run: "pnpm run changeset:status"
