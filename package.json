@@ -11,6 +11,7 @@
     "format": "prettier . --write",
     "lint": "eslint . --fix",
     "prepare": "husky install",
+    "publish": "changeset publish",
     "test": "turbo run test --no-cache",
     "test:coverage": "turbo run test:coverage --no-cache",
     "turbo": "turbo"
