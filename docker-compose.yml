@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   vault:
-    image: "vault:1.5.4"
+    image: "vault:1.11.1"
     cap_add:
       - IPC_LOCK
     ports:
