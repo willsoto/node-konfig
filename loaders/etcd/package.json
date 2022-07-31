@@ -1,6 +1,6 @@
 {
   "name": "@willsoto/node-konfig-etcd",
-  "version": "1.0.8",
+  "version": "2.0.0",
   "description": "Node Konfig integration for etcd",
   "keywords": [
     "config",
@@ -57,7 +57,7 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
-    "@willsoto/node-konfig-core": "^4.0.1"
+    "@willsoto/node-konfig-core": "^4.1.0"
   },
   "volta": {
     "extends": "../../package.json"
