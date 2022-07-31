@@ -45,15 +45,15 @@
     "statements": 90
   },
   "devDependencies": {
-    "@types/node": "~16.11.11",
-    "@types/sinon": "~10.0.6",
+    "@types/node": "16.11.47",
+    "@types/sinon": "10.0.13",
     "@willsoto/node-konfig-core": "workspace:*",
     "ava": "4.3.1",
-    "c8": "~7.10.0",
-    "nock": "~13.2.1",
-    "rimraf": "~3.0.2",
+    "c8": "7.10.0",
+    "nock": "13.2.9",
+    "rimraf": "3.0.2",
     "sinon": "14.0.0",
-    "typescript": "~4.5.2"
+    "typescript": "4.5.5"
   },
   "peerDependencies": {
     "@willsoto/node-konfig-core": "^4.0.1"
