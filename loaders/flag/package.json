@@ -53,7 +53,7 @@
     "@willsoto/node-konfig-core": "workspace:*",
     "ava": "4.3.1",
     "c8": "7.12.0",
-    "eslint": "8.3.0",
+    "eslint": "8.20.0",
     "rimraf": "3.0.2",
     "sinon": "14.0.0",
     "typescript": "4.5.5"
