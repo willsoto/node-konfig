@@ -17,7 +17,7 @@ importers:
       husky: 8.0.1
       lint-staged: 13.0.3
       prettier: 2.7.1
-      prettier-plugin-organize-imports: 2.3.4
+      prettier-plugin-organize-imports: 3.0.0
       prettier-plugin-packagejson: 2.2.18
       regenerator-runtime: 0.13.9
       turbo: 1.4.0
@@ -38,7 +38,7 @@ importers:
       husky: 8.0.1
       lint-staged: 13.0.3
       prettier: 2.7.1
-      prettier-plugin-organize-imports: 2.3.4_gd3y7r3s3evy6b2vthd7dmacga
+      prettier-plugin-organize-imports: 3.0.0_gd3y7r3s3evy6b2vthd7dmacga
       prettier-plugin-packagejson: 2.2.18_prettier@2.7.1
       regenerator-runtime: 0.13.9
       turbo: 1.4.0
@@ -4452,8 +4452,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-organize-imports/2.3.4_gd3y7r3s3evy6b2vthd7dmacga:
-    resolution: {integrity: sha512-R8o23sf5iVL/U71h9SFUdhdOEPsi3nm42FD/oDYIZ2PQa4TNWWuWecxln6jlIQzpZTDMUeO1NicJP6lLn2TtRw==}
+  /prettier-plugin-organize-imports/3.0.0_gd3y7r3s3evy6b2vthd7dmacga:
+    resolution: {integrity: sha512-juSCJs5TMOqGGPaN/A/1xzWFzRPH2LG1LPLCr64dzKaVnPafJdtgDNmDVlU+8A4LbQzVJg0DTvgA8swBuIUhlg==}
     peerDependencies:
       prettier: '>=2.0'
       typescript: '>=2.9'
