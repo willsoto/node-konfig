@@ -48,7 +48,7 @@ importers:
 
   loaders/consul:
     specifiers:
-      '@types/consul': 0.23.36
+      '@types/consul': 0.40.0
       '@types/node': 16.11.47
       '@types/sinon': 10.0.13
       '@willsoto/node-konfig-core': workspace:*
@@ -63,7 +63,7 @@ importers:
     dependencies:
       consul: 0.40.0
     devDependencies:
-      '@types/consul': 0.23.36
+      '@types/consul': 0.40.0
       '@types/node': 16.11.47
       '@types/sinon': 10.0.13
       '@willsoto/node-konfig-core': link:../../packages/core
@@ -1191,8 +1191,8 @@ packages:
     resolution: {integrity: sha512-6ckxMjBBD8URvjB6J3NcnuAn5Pkl7t3TizAg+xdlzzQGSPSmBcXf8KoIH0ua/i+tio+ZRUHEXp0HEmvaR4kt0w==}
     dev: false
 
-  /@types/consul/0.23.36:
-    resolution: {integrity: sha512-z+6PyRyfzBO9RXmHtc33Z96fisuSCIdY64c491ywobdvd0gbnRl7hc7Rscs9qrmL8hy8rvf+Xe0v4w7xrQYOIA==}
+  /@types/consul/0.40.0:
+    resolution: {integrity: sha512-0TPN4MxIKiuv9UcXWNgWQurNNG/J0af+A41eD4T5bFWSRoZJ8xaDocrX47CzGv5620uaPabFDjiAB/+VQu/0SQ==}
     dependencies:
       '@types/node': 18.6.2
     dev: true
