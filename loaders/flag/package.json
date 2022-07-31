@@ -1,6 +1,6 @@
 {
   "name": "@willsoto/node-konfig-flag",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Node Konfig integration for Flags (CLI)",
   "keywords": [
     "config",
@@ -59,7 +59,7 @@
     "typescript": "4.5.5"
   },
   "peerDependencies": {
-    "@willsoto/node-konfig-core": "^4.0.1"
+    "@willsoto/node-konfig-core": "^4.1.0"
   },
   "volta": {
     "extends": "../../package.json"
