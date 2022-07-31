@@ -45,4 +45,4 @@ jobs:
           # node-vault will read from this environment variable if set
           # https://github.com/kr1sp1n/node-vault/blob/0fa666afb9da14f25cf054e195c18b5a560fcaed/src/index.js#L68
           VAULT_ADDR: "http://localhost:8200"
-      - run: "pnpm run changeset:status"
+      # - run: "pnpm run changeset:status"
