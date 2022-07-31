@@ -1,24 +1,18 @@
-name: tests
+name: release
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  test:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          # https://github.com/changesets/changesets/issues/517#issuecomment-1182094769
-          ref: ${{github.event.pull_request.head.sha}}
-          fetch-depth: 0
       - uses: volta-cli/action@v1
-      - run: docker-compose up -d --build
       - uses: pnpm/action-setup@v2.2.2
         name: Install pnpm
         id: pnpm-install
@@ -29,6 +23,7 @@ jobs:
         id: pnpm-cache
         run: |
           echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+
       - uses: actions/cache@v3
         name: Setup pnpm cache
         with:
@@ -36,13 +31,18 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-      - run: "pnpm install --frozen-lockfile"
-      - run: "pnpm run checkstyle"
+
+      - run: "pnpm install --frozen-lockfile --ignore-scripts"
       - run: "pnpm run build"
-      - run: "pnpm run lint"
-      - run: "pnpm run test:coverage"
+
+      - name: Configure npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: "pnpm run publish"
         env:
-          # node-vault will read from this environment variable if set
-          # https://github.com/kr1sp1n/node-vault/blob/0fa666afb9da14f25cf054e195c18b5a560fcaed/src/index.js#L68
-          VAULT_ADDR: "http://localhost:8200"
-      - run: "pnpm run changeset:status"
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
