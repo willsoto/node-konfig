@@ -17,12 +17,6 @@ export default defineConfig({
     editLink: {
       pattern: "https://github.com/willsoto/node-konfig/edit/main/docs/:path",
     },
-    nav: [
-      {
-        text: "Other examples",
-        link: "https://github.com/willsoto/node-konfig/tree/main/examples",
-      },
-    ],
     sidebar: [
       {
         text: "Guide",
