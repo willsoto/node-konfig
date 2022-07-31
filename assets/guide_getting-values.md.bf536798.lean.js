@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a as o}from"./app.a15add32.js";const C=JSON.parse('{"title":"Getting values","description":"","frontmatter":{},"headers":[],"relativePath":"guide/getting-values.md"}'),l={name:"guide/getting-values.md"},e=o("",2),t=[e];function p(c,r,D,y,i,F){return n(),a("div",null,t)}var _=s(l,[["render",p]]);export{C as __pageData,_ as default};
