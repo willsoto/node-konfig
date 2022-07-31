@@ -54,7 +54,7 @@ importers:
       '@willsoto/node-konfig-core': workspace:*
       '@willsoto/node-konfig-file': workspace:*
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       consul: ~0.40.0
       rimraf: 3.0.2
       sinon: 14.0.0
@@ -69,7 +69,7 @@ importers:
       '@willsoto/node-konfig-core': link:../../packages/core
       '@willsoto/node-konfig-file': link:../file
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       rimraf: 3.0.2
       sinon: 14.0.0
       ts-node: 10.4.0_i6bdezmfw3svzvgn6ktdqrstrq
@@ -81,7 +81,7 @@ importers:
       '@types/sinon': 10.0.13
       '@willsoto/node-konfig-core': workspace:*
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       etcd3: ~1.1.0
       rimraf: 3.0.2
       sinon: 14.0.0
@@ -93,7 +93,7 @@ importers:
       '@types/sinon': 10.0.13
       '@willsoto/node-konfig-core': link:../../packages/core
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       rimraf: 3.0.2
       sinon: 14.0.0
       typescript: 4.5.5
@@ -104,7 +104,7 @@ importers:
       '@types/sinon': 10.0.13
       '@willsoto/node-konfig-core': workspace:*
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       nock: 13.2.9
       rimraf: 3.0.2
       sinon: 14.0.0
@@ -114,7 +114,7 @@ importers:
       '@types/sinon': 10.0.13
       '@willsoto/node-konfig-core': link:../../packages/core
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       nock: 13.2.9
       rimraf: 3.0.2
       sinon: 14.0.0
@@ -126,7 +126,7 @@ importers:
       '@types/sinon': 10.0.13
       '@willsoto/node-konfig-core': workspace:*
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       eslint: 8.3.0
       meow: ~9.0.0
       rimraf: 3.0.2
@@ -139,7 +139,7 @@ importers:
       '@types/sinon': 10.0.13
       '@willsoto/node-konfig-core': link:../../packages/core
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       eslint: 8.3.0
       rimraf: 3.0.2
       sinon: 14.0.0
@@ -152,7 +152,7 @@ importers:
       '@types/sinon': 10.0.13
       '@willsoto/node-konfig-core': workspace:*
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       nock: 13.2.9
       node-fetch: ~2.6.1
       rimraf: 3.0.2
@@ -166,7 +166,7 @@ importers:
       '@types/sinon': 10.0.13
       '@willsoto/node-konfig-core': link:../../packages/core
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       nock: 13.2.9
       rimraf: 3.0.2
       sinon: 14.0.0
@@ -180,7 +180,7 @@ importers:
       '@willsoto/node-konfig-core': workspace:*
       '@willsoto/node-konfig-file': workspace:*
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       node-vault: ~0.9.22
       rimraf: 3.0.2
       sinon: 14.0.0
@@ -194,7 +194,7 @@ importers:
       '@willsoto/node-konfig-core': link:../../packages/core
       '@willsoto/node-konfig-file': link:../file
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       rimraf: 3.0.2
       sinon: 14.0.0
       typescript: 4.5.5
@@ -205,7 +205,7 @@ importers:
       '@types/node': 16.11.47
       '@types/sinon': 10.0.13
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       cockatiel: ~2.0.2
       lodash: ~4.17.21
       rimraf: 3.0.2
@@ -219,7 +219,7 @@ importers:
       '@types/node': 16.11.47
       '@types/sinon': 10.0.13
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       rimraf: 3.0.2
       sinon: 14.0.0
       typescript: 4.5.5
@@ -231,7 +231,7 @@ importers:
       '@willsoto/node-konfig-core': workspace:*
       '@willsoto/node-konfig-file': workspace:*
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       rimraf: 3.0.2
       sinon: 14.0.0
       toml: ~3.0.0
@@ -244,7 +244,7 @@ importers:
       '@willsoto/node-konfig-core': link:../../packages/core
       '@willsoto/node-konfig-file': link:../../loaders/file
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       rimraf: 3.0.2
       sinon: 14.0.0
       typescript: 4.5.5
@@ -258,7 +258,7 @@ importers:
       '@willsoto/node-konfig-core': workspace:*
       '@willsoto/node-konfig-file': workspace:*
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       js-yaml: ~4.1.0
       rimraf: 3.0.2
       sinon: 14.0.0
@@ -273,7 +273,7 @@ importers:
       '@willsoto/node-konfig-core': link:../../packages/core
       '@willsoto/node-konfig-file': link:../../loaders/file
       ava: 4.3.1
-      c8: 7.10.0
+      c8: 7.12.0
       rimraf: 3.0.2
       sinon: 14.0.0
       typescript: 4.5.5
@@ -910,6 +910,13 @@ packages:
 
   /@jridgewell/sourcemap-codec/1.4.14:
     resolution: {integrity: sha512-XPSJHWmi394fuUuzDnGz1wiKqWfo1yXecHQMRf2l6hztTO+nPru658AyDngaBe7isIxEkRsPR3FZh+s7iVa4Uw==}
+    dev: true
+
+  /@jridgewell/trace-mapping/0.3.14:
+    resolution: {integrity: sha512-bJWEfQ9lPTvm3SneWwRFVLzrh6nhjwqw7TUFFBEMzwvg7t7PCDenf2lDwqo4NQXzdpgBXyFgDWnQA+2vkruksQ==}
+    dependencies:
+      '@jridgewell/resolve-uri': 3.1.0
+      '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
   /@jridgewell/trace-mapping/0.3.9:
@@ -1850,8 +1857,8 @@ packages:
       wcwidth: 1.0.1
     dev: true
 
-  /c8/7.10.0:
-    resolution: {integrity: sha512-OAwfC5+emvA6R7pkYFVBTOtI5ruf9DahffGmIqUc9l6wEh0h7iAFP6dt/V9Ioqlr2zW5avX9U9/w1I4alTRHkA==}
+  /c8/7.12.0:
+    resolution: {integrity: sha512-CtgQrHOkyxr5koX1wEUmN/5cfDa2ckbHRA4Gy5LAL0zaCFtVWJS5++n+w4/sr2GWGerBxgTjpKeDclk/Qk6W/A==}
     engines: {node: '>=10.12.0'}
     hasBin: true
     dependencies:
@@ -1864,7 +1871,7 @@ packages:
       istanbul-reports: 3.1.5
       rimraf: 3.0.2
       test-exclude: 6.0.0
-      v8-to-istanbul: 8.1.1
+      v8-to-istanbul: 9.0.1
       yargs: 16.2.0
       yargs-parser: 20.2.9
     dev: true
@@ -4941,11 +4948,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /source-map/0.7.4:
-    resolution: {integrity: sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==}
-    engines: {node: '>= 8'}
-    dev: true
-
   /sourcemap-codec/1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
     dev: true
@@ -5554,13 +5556,13 @@ packages:
     resolution: {integrity: sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==}
     dev: true
 
-  /v8-to-istanbul/8.1.1:
-    resolution: {integrity: sha512-FGtKtv3xIpR6BYhvgH8MI/y78oT7d8Au3ww4QIxymrCtZEh5b8gCw2siywE+puhEmuWKDtmfrvF5UlB298ut3w==}
+  /v8-to-istanbul/9.0.1:
+    resolution: {integrity: sha512-74Y4LqY74kLE6IFyIjPtkSTWzUZmj8tdHT9Ii/26dvQ6K9Dl2NbEfj0XgU2sHCtKgt5VupqhlO/5aWuqS+IY1w==}
     engines: {node: '>=10.12.0'}
     dependencies:
+      '@jridgewell/trace-mapping': 0.3.14
       '@types/istanbul-lib-coverage': 2.0.4
       convert-source-map: 1.8.0
-      source-map: 0.7.4
     dev: true
 
   /validate-npm-package-license/3.0.4:
