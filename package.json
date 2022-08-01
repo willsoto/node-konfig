@@ -38,7 +38,7 @@
     "@swc/helpers": "0.4.3",
     "@typescript-eslint/eslint-plugin": "5.31.0",
     "@typescript-eslint/parser": "5.31.0",
-    "eslint": "8.20.0",
+    "eslint": "8.21.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-ava": "13.2.0",
     "husky": "8.0.1",
