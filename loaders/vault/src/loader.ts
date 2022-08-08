@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Loader, LoaderOptions, Store } from "@willsoto/node-konfig-core";
-import * as vault from "node-vault";
+import vault from "node-vault";
 
 interface Secret {
   key: string;

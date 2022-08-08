@@ -1,8 +1,8 @@
 import * as Konfig from "@willsoto/node-konfig-core";
 import anyTest, { TestFn } from "ava";
-import * as nock from "nock";
-import * as sinon from "sinon";
-import { HttpLoader, HttpLoaderOptions } from "../src";
+import nock from "nock";
+import sinon from "sinon";
+import { HttpLoader, HttpLoaderOptions } from "../src/index.js";
 
 // These tests have to be run serially otherwise they consume each other's mocks.
 // If we want to make them concurrent, each test should have its own file that it's
@@ -98,7 +98,13 @@ test.serial(
 test.serial("should respect the maxRetries option", async function (t) {
   t.plan(2);
 
-  t.context.scope.get("/config.json").reply(403, "Forbidden").persist();
+  t.context.scope
+    .get("/config.json")
+    .replyWithError({
+      message: "Forbidden",
+      code: 403,
+    })
+    .persist();
 
   const store = new Konfig.Store();
   const loader = new HttpLoader({

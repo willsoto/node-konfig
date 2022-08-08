@@ -1,31 +1,3 @@
 {
-  "references": [
-    {
-      "path": "./loaders/consul/tsconfig.json"
-    },
-    {
-      "path": "./packages/core/tsconfig.json"
-    },
-    {
-      "path": "./loaders/etcd/tsconfig.json"
-    },
-    {
-      "path": "./loaders/http/tsconfig.json"
-    },
-    {
-      "path": "./loaders/vault/tsconfig.json"
-    },
-    {
-      "path": "./loaders/file/tsconfig.json"
-    },
-    {
-      "path": "./loaders/flag/tsconfig.json"
-    },
-    {
-      "path": "./parsers/toml/tsconfig.json"
-    },
-    {
-      "path": "./parsers/yaml/tsconfig.json"
-    }
-  ]
+  "extends": "./tsconfig.settings.json"
 }

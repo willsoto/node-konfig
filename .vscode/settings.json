@@ -3,5 +3,6 @@
     "source.fixAll": true
   },
   "typescript.preferences.importModuleSpecifier": "relative",
-  "typescript.preferences.quoteStyle": "double"
+  "typescript.preferences.quoteStyle": "double",
+  "typescript.preferences.importModuleSpecifierEnding": "js"
 }

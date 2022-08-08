@@ -1,10 +1,11 @@
+import { dirname } from "@node-konfig/internal";
 import * as Konfig from "@willsoto/node-konfig-core";
 import { FileLoader } from "@willsoto/node-konfig-file";
 import test from "ava";
-import * as vault from "node-vault";
-import * as path from "path";
-import * as sinon from "sinon";
-import { VaultLoader, VaultLoaderOptions } from "../src";
+import vault from "node-vault";
+import path from "node:path";
+import sinon from "sinon";
+import { VaultLoader, VaultLoaderOptions } from "../src/index.js";
 
 test("should load secrets from the given vault", async function (t) {
   t.plan(1);
@@ -97,7 +98,7 @@ test("should merge secrets from vault with secret loaded from other locations", 
   const fileLoader = new FileLoader({
     files: [
       {
-        path: path.resolve(__dirname, "configs", "config.json"),
+        path: path.resolve(dirname(import.meta), "configs", "config.json"),
         parser: new Konfig.JSONParser(),
       },
     ],

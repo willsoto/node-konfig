@@ -4,7 +4,7 @@ import {
   Parser,
   Store,
 } from "@willsoto/node-konfig-core";
-import * as fs from "fs";
+import fs from "node:fs";
 
 interface File {
   path: string;

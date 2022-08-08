@@ -19,11 +19,13 @@ pnpm add @willsoto/node-konfig-toml-parser
 ```typescript
 import * as Konfig from "@willsoto/node-konfig-core";
 import { TOMLParser } from "@willsoto/node-konfig-toml-parser";
+import process from "node:process";
+import path from "node:path";
 
 const loader = new Konfig.FileLoader({
   files: [
     {
-      path: path.join(__dirname, "config.toml"),
+      path: path.join(process.cwd(), "config.toml"),
       parser: new TOMLParser(),
     },
   ],

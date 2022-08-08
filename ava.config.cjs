@@ -1,7 +1,9 @@
 module.exports = {
-  extensions: ["ts"],
+  extensions: {
+    ts: "module",
+  },
   files: ["test/**/*.spec.ts"],
   verbose: true,
-  require: ["ts-node/register"],
+  nodeArguments: ["--loader=ts-node/esm", "--no-warnings"],
   timeout: "10s",
 };

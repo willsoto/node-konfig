@@ -23,17 +23,19 @@ pnpm add @willsoto/node-konfig-file
 ```typescript
 import * as Konfig from "@willsoto/node-konfig-core";
 import { FileLoader } from "@willsoto/node-konfig-file";
+import process from "node:process";
+import path from "node:path";
 
 const parser = new Konfig.JSONParser();
 
 const loader = new FileLoader({
   files: [
     {
-      path: path.join(__dirname, "config.json"),
+      path: path.join(process.cwd(), "config.json"),
       parser,
     },
     {
-      path: path.join(__dirname, `${process.env.NODE_ENV}.json`),
+      path: path.join(process.cwd(), `${process.env.NODE_ENV}.json`),
       parser,
     },
   ],

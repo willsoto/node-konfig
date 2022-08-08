@@ -37,17 +37,19 @@ export class HttpLoader extends Loader {
 
   async process(store: Store): Promise<void> {
     for (const source of this.options.sources) {
-      const response = await fetch(source.url, source.fetchOptions);
+      try {
+        const response = await fetch(source.url, source.fetchOptions);
 
-      if (response.ok) {
         const body = await response.text();
         const parsedBody = source.parser.parse(body);
 
         for (const key in parsedBody) {
           store.set(key, parsedBody[key]);
         }
-      } else if (this.stopOnFailure) {
-        throw new Error(response.statusText);
+      } catch (error: unknown) {
+        if (this.stopOnFailure) {
+          throw error;
+        }
       }
     }
   }
