@@ -1,5 +1,5 @@
 {
   "extends": "./tsconfig.settings.json",
-  "include": ["loaders", "packages", "parsers", "tools", "ava.config.cjs"],
+  "include": ["loaders", "core", "parsers", "internal", "ava.config.cjs"],
   "exclude": ["node_modules"]
 }

@@ -1,12 +1,12 @@
 import { Loader, LoaderOptions, Store } from "@willsoto/node-konfig-core";
-import * as meow from "meow";
+import meow, { AnyFlags, Options, Result } from "meow";
 
 export interface FlagLoaderOptions extends LoaderOptions {
-  cliOptions: meow.Options<meow.AnyFlags>;
+  cliOptions: Options<AnyFlags>;
 }
 
 export class FlagLoader extends Loader {
-  #cli: meow.Result<meow.AnyFlags>;
+  #cli: Result<AnyFlags>;
 
   readonly options: FlagLoaderOptions;
 
@@ -16,7 +16,10 @@ export class FlagLoader extends Loader {
     super(options);
 
     this.options = options;
-    this.#cli = meow(options.cliOptions);
+    this.#cli = meow({
+      ...options.cliOptions,
+      importMeta: import.meta,
+    });
   }
 
   load(store: Store): void | Promise<void> {

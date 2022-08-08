@@ -36,9 +36,10 @@ name: "my-app"
 ```typescript
 import * as Konfig from "@willsoto/node-konfig-core";
 import { VaultLoader } from "@willsoto/node-konfig-vault";
-import * as path from "path";
+import path from "node:path";
+import process from "node:process";
 
-const configDir = path.join(__dirname, "configs");
+const configDir = path.join(process.cwd(), "configs");
 
 // Create the store, this is the object you will use to access your config
 export const store = new Konfig.Store();

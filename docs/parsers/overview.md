@@ -14,11 +14,13 @@ For loaders that support it, an appropriate parser must be instantiated and pass
 
 ```typescript
 import * as Konfig from "@willsoto/node-konfig-core";
+import process from "node:process";
+import path from "node:path";
 
 const loader = new Konfig.FileLoader({
   files: [
     {
-      path: path.join(__dirname, "config.json"),
+      path: path.join(process.cwd(), "config.json"),
       parser: new Konfig.JSONParser(),
     },
   ],

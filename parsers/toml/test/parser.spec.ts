@@ -1,9 +1,10 @@
+import { dirname } from "@node-konfig/internal";
 import * as Konfig from "@willsoto/node-konfig-core";
 import { FileLoader, FileLoaderOptions } from "@willsoto/node-konfig-file";
 import test from "ava";
-import * as path from "path";
+import path from "node:path";
 import * as sinon from "sinon";
-import { TOMLParser } from "../src";
+import { TOMLParser } from "../src/index.js";
 
 test("should load multiple configs and merge their results", async function (t) {
   t.plan(1);
@@ -101,7 +102,7 @@ test("should respect the maxRetries option", async function (t) {
 });
 
 function getPathToFixture(fixture: string): string {
-  return path.resolve(__dirname, "configs", fixture);
+  return path.resolve(dirname(import.meta), "configs", fixture);
 }
 
 async function makeStore(

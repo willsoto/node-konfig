@@ -1,6 +1,6 @@
 import * as Konfig from "@willsoto/node-konfig-core";
 import test from "ava";
-import { FlagLoader, FlagLoaderOptions } from "../src";
+import { FlagLoader, FlagLoaderOptions } from "../src/index.js";
 
 test("should assign the provided flags/options to the store", async function (t) {
   t.plan(1);

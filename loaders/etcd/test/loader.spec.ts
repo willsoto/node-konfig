@@ -2,7 +2,7 @@ import * as Konfig from "@willsoto/node-konfig-core";
 import test from "ava";
 import { Etcd3 } from "etcd3";
 import * as sinon from "sinon";
-import { EtcdLoader, EtcdLoaderOptions } from "../src";
+import { EtcdLoader, EtcdLoaderOptions } from "../src/index.js";
 
 test("should load secrets using the given accessor", async function (t) {
   t.plan(1);

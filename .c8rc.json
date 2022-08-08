@@ -1,0 +1,10 @@
+{
+  "all": true,
+  "branches": 100,
+  "check-coverage": true,
+  "functions": 100,
+  "include": ["src"],
+  "lines": 100,
+  "reporter": ["text", "html"],
+  "statements": 100
+}
