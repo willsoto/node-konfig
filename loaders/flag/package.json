@@ -45,7 +45,7 @@
     "statements": 90
   },
   "dependencies": {
-    "meow": "~9.0.0"
+    "meow": "~10.1.0"
   },
   "devDependencies": {
     "@types/node": "16.11.47",
