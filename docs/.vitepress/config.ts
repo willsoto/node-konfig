@@ -52,7 +52,7 @@ export default defineConfig({
       {
         text: "Loaders",
         collapsible: true,
-        collapsed: true,
+        collapsed: false,
         items: [
           {
             text: "Overview",
@@ -94,7 +94,7 @@ export default defineConfig({
       },
       {
         text: "Parsers",
-        collapsed: true,
+        collapsed: false,
         collapsible: true,
         items: [
           {
@@ -113,7 +113,7 @@ export default defineConfig({
       },
       {
         text: "Integrations",
-        collapsed: true,
+        collapsed: false,
         collapsible: true,
         items: [
           {
