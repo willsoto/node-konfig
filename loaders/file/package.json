@@ -1,6 +1,6 @@
 {
   "name": "@willsoto/node-konfig-file",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Node Konfig integration for Files",
   "keywords": [
     "config",
@@ -34,7 +34,7 @@
     "@willsoto/node-konfig-core": "workspace:*"
   },
   "peerDependencies": {
-    "@willsoto/node-konfig-core": "^4.1.0"
+    "@willsoto/node-konfig-core": "^5.0.0"
   },
   "volta": {
     "extends": "../../package.json"
