@@ -1,6 +1,6 @@
 {
   "name": "@willsoto/node-konfig-consul",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Node Konfig integration for Consul",
   "keywords": [
     "config",
@@ -38,7 +38,7 @@
     "@willsoto/node-konfig-file": "workspace:*"
   },
   "peerDependencies": {
-    "@willsoto/node-konfig-core": "^4.1.0"
+    "@willsoto/node-konfig-core": "^5.0.0"
   },
   "volta": {
     "extends": "../../package.json"

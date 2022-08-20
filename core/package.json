@@ -1,6 +1,6 @@
 {
   "name": "@willsoto/node-konfig-core",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "description": "Core configuration pacakge supporting file, static and environment variables",
   "keywords": [
     "config",
