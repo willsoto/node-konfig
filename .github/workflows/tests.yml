@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
       - uses: volta-cli/action@v1
       - run: docker-compose up -d --build
-      - uses: pnpm/action-setup@v2.2.2
+      - uses: pnpm/action-setup@v2.2.4
         name: Install pnpm
         id: pnpm-install
         with:
