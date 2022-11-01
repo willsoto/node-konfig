@@ -56,14 +56,14 @@ importers:
 
   core:
     specifiers:
-      '@types/lodash': 4.14.186
+      '@types/lodash': 4.14.187
       cockatiel: ~2.0.2
       lodash: ~4.17.21
     dependencies:
       cockatiel: 2.0.2
       lodash: 4.17.21
     devDependencies:
-      '@types/lodash': 4.14.186
+      '@types/lodash': 4.14.187
 
   internal:
     specifiers: {}
@@ -983,8 +983,8 @@ packages:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: true
 
-  /@types/lodash/4.14.186:
-    resolution: {integrity: sha512-eHcVlLXP0c2FlMPm56ITode2AgLMSa6aJ05JTTbYbI+7EMkCEE5qk2E41d5g2lCVTqRe0GnnRFurmlCsDODrPw==}
+  /@types/lodash/4.14.187:
+    resolution: {integrity: sha512-MrO/xLXCaUgZy3y96C/iOsaIqZSeupyTImKClHunL5GrmaiII2VwvWmLBu2hwa0Kp0sV19CsyjtrTc/Fx8rg/A==}
     dev: true
 
   /@types/long/4.0.2:
