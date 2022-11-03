@@ -1,4 +1,4 @@
-import { Policy, RetryPolicy } from "cockatiel";
+import { ConstantBackoff, handleAll, retry, RetryPolicy } from "cockatiel";
 import { Store } from "../store.js";
 
 export interface LoaderOptions {
@@ -20,10 +20,10 @@ export abstract class Loader {
   }
 
   protected get retryPolicy(): RetryPolicy {
-    return Policy.handleAll()
-      .retry()
-      .attempts(this.maxRetries)
-      .delay(this.retryDelay);
+    return retry(handleAll, {
+      maxAttempts: this.maxRetries,
+      backoff: new ConstantBackoff(this.retryDelay),
+    });
   }
 
   abstract load(store: Store): void | Promise<void>;
