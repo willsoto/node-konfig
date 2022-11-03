@@ -17,7 +17,7 @@ jobs:
           # https://github.com/changesets/changesets/issues/517#issuecomment-1182094769
           ref: ${{github.event.pull_request.head.sha}}
           fetch-depth: 0
-      - uses: volta-cli/action@v1
+      - uses: volta-cli/action@v4
       - run: docker-compose up -d --build
       - uses: pnpm/action-setup@v2.2.4
         name: Install pnpm
