@@ -74,9 +74,9 @@ importers:
       '@types/consul': 0.40.0
       '@willsoto/node-konfig-core': workspace:*
       '@willsoto/node-konfig-file': workspace:*
-      consul: ~0.40.0
+      consul: ~1.1.0
     dependencies:
-      consul: 0.40.0
+      consul: 1.1.0
     devDependencies:
       '@node-konfig/internal': link:../../internal
       '@types/consul': 0.40.0
@@ -1887,10 +1887,10 @@ packages:
       well-known-symbols: 2.0.0
     dev: true
 
-  /consul/0.40.0:
-    resolution: {integrity: sha512-GJdxzLAXJZZDddGhgVBeac2KeBGPABWeAlxGVjct5fAwSa2P0Zqy/e2MDPa6O1OvR5h2ko10zCyRrMjctbfytg==}
+  /consul/1.1.0:
+    resolution: {integrity: sha512-EvA+gbWe9CWsNthjyOguJ61vfz6Wy1mzAKjMsForXVi/Rq5fTYlE3vtNgQLhgZDLorqea+OJN+LDka3h5S4+oA==}
     dependencies:
-      papi: 0.29.1
+      papi: 1.1.0
     dev: false
 
   /conventional-changelog-angular/5.0.13:
@@ -4154,8 +4154,9 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /papi/0.29.1:
-    resolution: {integrity: sha512-Y9ipSMfWuuVFO3zY9PlxOmEg+bQ7CeJ28sa9/a0veYNynLf9fwjR3+3fld5otEy7okUaEOUuCHVH62MyTmACXQ==}
+  /papi/1.1.0:
+    resolution: {integrity: sha512-w02EYhPtKYAGB8XJz+yi5WJPfSev1Zfo3vZrqqvHN6LvkIIJKfJ+VwAnL9EanBMcg6G8Bbwgxh7cqirfsJn2IQ==}
+    engines: {node: '>=10.0.0'}
     dev: false
 
   /parent-module/1.0.1:
