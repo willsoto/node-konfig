@@ -2,7 +2,7 @@ import { dirname } from "@node-konfig/internal";
 import * as Konfig from "@willsoto/node-konfig-core";
 import { FileLoader } from "@willsoto/node-konfig-file";
 import test from "ava";
-import consul from "consul";
+import Consul from "consul";
 import path from "node:path";
 import sinon from "sinon";
 import { ConsulLoader, ConsulLoaderOptions } from "../src/index.js";
@@ -194,7 +194,7 @@ async function makeStore(
 }
 
 async function makeConsulClient(): Promise<void> {
-  const client = consul({
+  const client = new Consul({
     promisify: true,
   });
 

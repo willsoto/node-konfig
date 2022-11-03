@@ -5,14 +5,14 @@ import {
   Parser,
   Store,
 } from "@willsoto/node-konfig-core";
-import consul from "consul";
+import Consul from "consul";
 
 interface Key {
   key: string;
   prefix?: string;
   replacer?: (key: string) => string;
   parser?: Parser;
-  getOptions?: consul.Kv.GetOptions;
+  getOptions?: Consul.Kv.GetOptions;
 }
 
 type GetResponse = {
@@ -26,12 +26,12 @@ type GetResponse = {
 
 export interface ConsulLoaderOptions extends LoaderOptions {
   keys: Key[];
-  consulOptions?: consul.ConsulOptions;
+  consulOptions?: Consul.ConsulOptions;
 }
 
 export class ConsulLoader extends Loader {
   readonly options: ConsulLoaderOptions;
-  readonly client: consul.Consul;
+  readonly client: Consul.Consul;
 
   name = "consul";
 
@@ -39,7 +39,7 @@ export class ConsulLoader extends Loader {
     super(options);
 
     this.options = options;
-    this.client = consul({
+    this.client = new Consul({
       ...options.consulOptions,
       // we always want a promise based client
       promisify: true,
