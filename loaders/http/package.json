@@ -30,7 +30,7 @@
     "test:watch": "ava --watch"
   },
   "dependencies": {
-    "node-fetch": "~3.2.10"
+    "node-fetch": "~3.3.0"
   },
   "devDependencies": {
     "@willsoto/node-konfig-core": "workspace:*",
