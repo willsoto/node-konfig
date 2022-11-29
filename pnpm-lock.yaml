@@ -22,7 +22,7 @@ importers:
       prettier-plugin-organize-imports: 3.2.1
       prettier-plugin-packagejson: 2.3.0
       rimraf: 3.0.2
-      sinon: 14.0.2
+      sinon: 15.0.0
       ts-node: 10.9.1
       turbo: 1.6.3
       typescript: 4.9.3
@@ -47,7 +47,7 @@ importers:
       prettier-plugin-organize-imports: 3.2.1_brpckf4sz23pco3jyty2eys3iq
       prettier-plugin-packagejson: 2.3.0_prettier@2.8.0
       rimraf: 3.0.2
-      sinon: 14.0.2
+      sinon: 15.0.0
       ts-node: 10.9.1_wup25etrarvlqkprac7h35hj7u
       turbo: 1.6.3
       typescript: 4.9.3
@@ -4816,8 +4816,8 @@ packages:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
     dev: true
 
-  /sinon/14.0.2:
-    resolution: {integrity: sha512-PDpV0ZI3ZCS3pEqx0vpNp6kzPhHrLx72wA0G+ZLaaJjLIYeE0n8INlgaohKuGy7hP0as5tbUd23QWu5U233t+w==}
+  /sinon/15.0.0:
+    resolution: {integrity: sha512-pV97G1GbslaSJoSdy2F2z8uh5F+uPGp3ddOzA4JsBOUBLEQRz2OAqlKGRFTSh2KiqUCmHkzyAeu7R4x1Hx0wwg==}
     dependencies:
       '@sinonjs/commons': 2.0.0
       '@sinonjs/fake-timers': 9.1.2
