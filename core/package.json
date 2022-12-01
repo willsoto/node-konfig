@@ -50,7 +50,7 @@
     "lodash": "~4.17.21"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.190"
+    "@types/lodash": "4.14.191"
   },
   "volta": {
     "extends": "../package.json"
