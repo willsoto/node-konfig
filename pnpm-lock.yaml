@@ -26,7 +26,7 @@ importers:
       ts-node: 10.9.1
       turbo: 1.6.3
       typescript: 4.9.4
-      vitepress: 1.0.0-alpha.31
+      vitepress: 1.0.0-alpha.32
       vue: 3.2.45
     devDependencies:
       '@changesets/cli': 2.25.2
@@ -51,7 +51,7 @@ importers:
       ts-node: 10.9.1_moeqx3xmzxqxagf2sz6mqkbb7m
       turbo: 1.6.3
       typescript: 4.9.4
-      vitepress: 1.0.0-alpha.31_@types+node@18.11.17
+      vitepress: 1.0.0-alpha.32_@types+node@18.11.17
       vue: 3.2.45
 
   core:
@@ -5519,8 +5519,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/1.0.0-alpha.31_@types+node@18.11.17:
-    resolution: {integrity: sha512-FWFXLs7WLbFbemxjBWo2S2+qUZCIoeLLyAKfVUpIu3LUB8oQ8cyIANRGO6f6zsM51u2bvJU9Sm+V6Z0WjOWS2Q==}
+  /vitepress/1.0.0-alpha.32_@types+node@18.11.17:
+    resolution: {integrity: sha512-Q45N1cLdRr8MAu/+wAKKow7CNQD4sNBlSNsW1UxYfkvSgwPN/dlEmpEkQl/uOpE3C1kv3jvvEJVY0RAIaJFWYQ==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.3.0
