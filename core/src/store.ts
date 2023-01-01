@@ -26,6 +26,16 @@ type Config = object;
  * @public
  */
 export class Store<TConfig extends Config = Record<string, unknown>> {
+  readonly options: Required<Pick<StoreOptions, "name">>;
+
+  // Without the type assertion, I get TS error 2322:
+  //// Type '{}' is not assignable to type 'TConfig'.
+  //// '{}' is assignable to the constraint of type 'TConfig',
+  //// but 'TConfig' could be instantiated with a different subtype
+  //// of constraint 'Record<string, unknown>'.
+  // I don't know how to fix it though...
+  private config: TConfig = {} as TConfig;
+
   /**
    * Keeps track of all the groups associated with this Store instance.
    *
@@ -38,16 +48,6 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
    * @internal
    */
   #loaders: Loader[] = [];
-
-  readonly options: Required<Pick<StoreOptions, "name">>;
-
-  // Without the type assertion, I get TS error 2322:
-  //// Type '{}' is not assignable to type 'TConfig'.
-  //// '{}' is assignable to the constraint of type 'TConfig',
-  //// but 'TConfig' could be instantiated with a different subtype
-  //// of constraint 'Record<string, unknown>'.
-  // I don't know how to fix it though...
-  private config: TConfig = {} as TConfig;
 
   constructor(options: StoreOptions = {}) {
     const { loaders = [], loadersByEnvironment = {}, ...rest } = options;
