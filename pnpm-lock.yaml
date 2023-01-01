@@ -74,9 +74,9 @@ importers:
       '@types/consul': 0.40.0
       '@willsoto/node-konfig-core': workspace:*
       '@willsoto/node-konfig-file': workspace:*
-      consul: ~1.1.0
+      consul: ~1.2.0
     dependencies:
-      consul: 1.1.0
+      consul: 1.2.0
     devDependencies:
       '@node-konfig/internal': link:../../internal
       '@types/consul': 0.40.0
@@ -2110,8 +2110,8 @@ packages:
       well-known-symbols: 2.0.0
     dev: true
 
-  /consul/1.1.0:
-    resolution: {integrity: sha512-EvA+gbWe9CWsNthjyOguJ61vfz6Wy1mzAKjMsForXVi/Rq5fTYlE3vtNgQLhgZDLorqea+OJN+LDka3h5S4+oA==}
+  /consul/1.2.0:
+    resolution: {integrity: sha512-xWMEDRszShfzKI7XQKq12gr3359VUHUFOrAC2ETNpNe8PFO6AUnY0sbscB7JW5WhUEfuveDcI5ScYqM//20bow==}
     dependencies:
       papi: 1.1.0
     dev: false
