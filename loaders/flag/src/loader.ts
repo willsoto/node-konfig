@@ -6,11 +6,11 @@ export interface FlagLoaderOptions extends LoaderOptions {
 }
 
 export class FlagLoader extends Loader {
-  #cli: Result<AnyFlags>;
-
   readonly options: FlagLoaderOptions;
 
   name = "flag";
+
+  #cli: Result<AnyFlags>;
 
   constructor(options: FlagLoaderOptions) {
     super(options);
