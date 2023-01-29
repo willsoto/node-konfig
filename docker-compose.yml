@@ -11,7 +11,7 @@ services:
       VAULT_DEV_ROOT_TOKEN_ID: "development"
 
   consul-agent-1: &consul-agent
-    image: consul:1.14.3
+    image: consul:1.14.4
     command: "agent -retry-join consul-server-bootstrap -client 0.0.0.0"
 
   consul-agent-2:
