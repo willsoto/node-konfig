@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,a as o}from"./app.a62594d9.js";const C=JSON.parse('{"title":"Getting values","description":"","frontmatter":{},"headers":[],"relativePath":"guide/getting-values.md"}'),t={name:"guide/getting-values.md"},l=o("",2),e=[l];function p(c,r,D,i,y,F){return n(),a("div",null,e)}const d=s(t,[["render",p]]);export{C as __pageData,d as default};
