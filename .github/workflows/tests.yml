@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+env:
+  VOLTA_FEATURE_PNPM: 1
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -19,11 +22,6 @@ jobs:
           fetch-depth: 0
       - uses: volta-cli/action@v4
       - run: docker-compose up -d --build
-      - uses: pnpm/action-setup@v2.2.4
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          run_install: false
 
       - name: Get pnpm store directory
         id: pnpm-cache

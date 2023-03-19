@@ -62,7 +62,8 @@
   },
   "packageManager": "pnpm@7.25.1",
   "volta": {
-    "node": "18.13.0"
+    "node": "18.13.0",
+    "pnpm": "7.29.3"
   },
   "pnpm": {
     "peerDependencyRules": {
