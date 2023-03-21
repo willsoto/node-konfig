@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,N as t}from"./chunks/framework.96eab4ee.js";const h=JSON.parse('{"title":"Vault","description":"","frontmatter":{},"headers":[],"relativePath":"loaders/vault.md"}'),o={name:"loaders/vault.md"},l=t("",12),e=[l];function p(r,c,i,d,y,D){return n(),a("div",null,e)}const F=s(o,[["render",p]]);export{h as __pageData,F as default};

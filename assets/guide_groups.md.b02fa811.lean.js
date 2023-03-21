@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,N as o}from"./chunks/framework.96eab4ee.js";const i=JSON.parse('{"title":"Groups","description":"","frontmatter":{},"headers":[],"relativePath":"guide/groups.md"}'),l={name:"guide/groups.md"},p=o("",7),e=[p];function t(c,r,D,y,F,A){return n(),a("div",null,e)}const u=s(l,[["render",t]]);export{i as __pageData,u as default};
