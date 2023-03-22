@@ -11,7 +11,7 @@ importers:
       '@types/sinon': 10.0.13
       '@typescript-eslint/eslint-plugin': 5.49.0
       '@typescript-eslint/parser': 5.49.0
-      ava: 5.1.1
+      ava: 5.2.0
       c8: 7.12.0
       eslint: 8.32.0
       eslint-config-prettier: 8.6.0
@@ -36,7 +36,7 @@ importers:
       '@types/sinon': 10.0.13
       '@typescript-eslint/eslint-plugin': 5.49.0_uuava45uwav2f2r3waokl3sbum
       '@typescript-eslint/parser': 5.49.0_et5x32uxl7z5ldub3ye5rhlyqm
-      ava: 5.1.1
+      ava: 5.2.0
       c8: 7.12.0
       eslint: 8.32.0
       eslint-config-prettier: 8.6.0_eslint@8.32.0
@@ -1695,8 +1695,8 @@ packages:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
     dev: false
 
-  /ava/5.1.1:
-    resolution: {integrity: sha512-od1CWgWVIKZSdEc1dhQWhbsd6KBs0EYjek7eqZNGPvy+NyC9Q1bXixcadlgOXwDG9aM0zLMQZwRXfe9gMb1LQQ==}
+  /ava/5.2.0:
+    resolution: {integrity: sha512-W8yxFXJr/P68JP55eMpQIa6AiXhCX3VeuajM8nolyWNExcMDD6rnIWKTjw0B/+GkFHBIaN6Jd0LtcMThcoqVfg==}
     engines: {node: '>=14.19 <15 || >=16.15 <17 || >=18'}
     hasBin: true
     peerDependencies:
