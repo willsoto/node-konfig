@@ -1,1 +1,0 @@
-import{_ as s,c as n,o as a,N as l}from"./chunks/framework.218d95a3.js";const i=JSON.parse('{"title":"Examples","description":"","frontmatter":{},"headers":[],"relativePath":"integrations.md"}'),p={name:"integrations.md"},o=l("",8),e=[o];function t(c,r,D,y,F,A){return a(),n("div",null,e)}const u=s(p,[["render",t]]);export{i as __pageData,u as default};
