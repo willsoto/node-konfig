@@ -36,8 +36,8 @@
   },
   "devDependencies": {
     "@changesets/cli": "2.26.1",
-    "@commitlint/cli": "17.5.1",
-    "@commitlint/config-conventional": "17.4.4",
+    "@commitlint/cli": "17.6.1",
+    "@commitlint/config-conventional": "17.6.1",
     "@types/node": "18.11.18",
     "@types/sinon": "10.0.13",
     "@typescript-eslint/eslint-plugin": "5.49.0",
