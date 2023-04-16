@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,N as o}from"./chunks/framework.447ff3cd.js";const F=JSON.parse('{"title":"Consul","description":"","frontmatter":{},"headers":[],"relativePath":"loaders/consul.md"}'),l={name:"loaders/consul.md"},t=o("",12),e=[t];function p(c,r,i,y,D,d){return n(),a("div",null,e)}const h=s(l,[["render",p]]);export{F as __pageData,h as default};
