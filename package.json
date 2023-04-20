@@ -39,7 +39,7 @@
     "@commitlint/cli": "17.6.1",
     "@commitlint/config-conventional": "17.6.1",
     "@types/node": "18.11.18",
-    "@types/sinon": "10.0.13",
+    "@types/sinon": "10.0.14",
     "@typescript-eslint/eslint-plugin": "5.49.0",
     "@typescript-eslint/parser": "5.49.0",
     "ava": "5.2.0",
