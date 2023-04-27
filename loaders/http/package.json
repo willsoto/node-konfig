@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@willsoto/node-konfig-core": "workspace:*",
-    "nock": "13.3.0"
+    "nock": "13.3.1"
   },
   "peerDependencies": {
     "@willsoto/node-konfig-core": "^5.0.0"
