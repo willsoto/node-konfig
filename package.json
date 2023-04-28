@@ -38,7 +38,7 @@
     "@changesets/cli": "2.26.1",
     "@commitlint/cli": "17.6.1",
     "@commitlint/config-conventional": "17.6.1",
-    "@types/node": "18.11.18",
+    "@types/node": "18.16.2",
     "@types/sinon": "10.0.14",
     "@typescript-eslint/eslint-plugin": "5.49.0",
     "@typescript-eslint/parser": "5.49.0",
@@ -62,7 +62,7 @@
   },
   "packageManager": "pnpm@7.25.1",
   "volta": {
-    "node": "18.13.0",
+    "node": "18.16.0",
     "pnpm": "7.29.3"
   },
   "pnpm": {
