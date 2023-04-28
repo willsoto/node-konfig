@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,O as o}from"./chunks/framework.8f72f462.js";const C=JSON.parse('{"title":"Getting values","description":"","frontmatter":{},"headers":[],"relativePath":"guide/getting-values.md"}'),t={name:"guide/getting-values.md"},l=o("",2),e=[l];function p(c,r,D,i,y,F){return n(),a("div",null,e)}const _=s(t,[["render",p]]);export{C as __pageData,_ as default};
