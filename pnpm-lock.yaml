@@ -57,10 +57,10 @@ importers:
   core:
     specifiers:
       '@types/lodash': 4.14.194
-      cockatiel: ~3.0.0
+      cockatiel: ~3.1.0
       lodash: ~4.17.21
     dependencies:
-      cockatiel: 3.0.0
+      cockatiel: 3.1.1
       lodash: 4.17.21
     devDependencies:
       '@types/lodash': 4.14.194
@@ -2043,8 +2043,8 @@ packages:
     engines: {node: '>=10 <11 || >=12'}
     dev: false
 
-  /cockatiel/3.0.0:
-    resolution: {integrity: sha512-1uDbVAqFAtDyfhQXz6fJKCG8kjk5q0o0R0Wz/jtxUEvXVuTpaCEfNnqcXim7C5BI6i43VFdnIIPZNzFpzO5C1Q==}
+  /cockatiel/3.1.1:
+    resolution: {integrity: sha512-zHMqBGvkZLfMKkBMD+0U8X1nW8zYwMtymgJ8CTknWOmTDpvjEwygtFN4QR9A1iFQDwCbg8g8+B/zVBoxvj1feQ==}
     engines: {node: '>=16'}
     dev: false
 
