@@ -60,7 +60,7 @@
     "vitepress": "1.0.0-alpha.75",
     "vue": "3.2.47"
   },
-  "packageManager": "pnpm@8.4.0",
+  "packageManager": "pnpm@8.5.0",
   "volta": {
     "node": "18.16.0",
     "pnpm": "7.29.3"
