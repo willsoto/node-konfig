@@ -1,1 +1,0 @@
-import{_ as s,c as a,o,O as n}from"./chunks/framework.c37ccd72.js";const h=JSON.parse('{"title":"Etcd","description":"","frontmatter":{},"headers":[],"relativePath":"loaders/etcd.md","filePath":"loaders/etcd.md"}'),t={name:"loaders/etcd.md"},e=n("",12),l=[e];function p(c,r,i,d,y,D){return o(),a("div",null,l)}const F=s(t,[["render",p]]);export{h as __pageData,F as default};
