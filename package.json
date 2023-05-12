@@ -55,7 +55,7 @@
     "rimraf": "5.0.0",
     "sinon": "15.0.4",
     "ts-node": "10.9.1",
-    "turbo": "1.9.3",
+    "turbo": "1.9.4",
     "typescript": "5.0.4",
     "vitepress": "1.0.0-alpha.75",
     "vue": "3.3.1"
