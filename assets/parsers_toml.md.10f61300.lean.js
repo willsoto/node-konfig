@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,O as l}from"./chunks/framework.35727a90.js";const A=JSON.parse('{"title":"TOML","description":"","frontmatter":{},"headers":[],"relativePath":"parsers/toml.md","filePath":"parsers/toml.md"}'),o={name:"parsers/toml.md"},p=l("",7),t=[p];function e(c,r,D,y,i,F){return a(),n("div",null,t)}const d=s(o,[["render",e]]);export{A as __pageData,d as default};
