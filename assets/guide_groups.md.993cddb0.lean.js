@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,O as o}from"./chunks/framework.ede64d11.js";const i=JSON.parse('{"title":"Groups","description":"","frontmatter":{},"headers":[],"relativePath":"guide/groups.md","filePath":"guide/groups.md"}'),l={name:"guide/groups.md"},p=o("",7),e=[p];function t(c,r,D,y,F,A){return a(),n("div",null,e)}const u=s(l,[["render",t]]);export{i as __pageData,u as default};
