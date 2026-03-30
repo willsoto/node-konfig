@@ -15,7 +15,7 @@ yarn add @willsoto/node-konfig-core
 ```
 
 ```bash
-pnpm add @willsoto/node-konfig-core
+bun add @willsoto/node-konfig-core
 ```
 
 ## Quick look
@@ -26,8 +26,8 @@ pnpm add @willsoto/node-konfig-core
   "name": "my-app",
   "database": {
     "host": "localhost",
-    "port": 5432
-  }
+    "port": 5432,
+  },
 }
 ```
 

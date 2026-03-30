@@ -58,10 +58,7 @@ export class EnvLoader extends Loader {
     });
   }
 
-  private processValue(
-    value: string,
-    arraySeparator?: string,
-  ): string | string[] {
+  private processValue(value: string, arraySeparator?: string): string | string[] {
     if (arraySeparator && value.includes(arraySeparator)) {
       return value.split(arraySeparator);
     }

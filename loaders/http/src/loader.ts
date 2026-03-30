@@ -1,9 +1,4 @@
-import {
-  Loader,
-  LoaderOptions,
-  Parser,
-  Store,
-} from "@willsoto/node-konfig-core";
+import { Loader, LoaderOptions, Parser, Store } from "@willsoto/node-konfig-core";
 import fetch, { RequestInit } from "node-fetch";
 
 interface Source {

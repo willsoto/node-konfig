@@ -194,9 +194,7 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
 
    * @public
    */
-  registerLoadersByEnvironment(
-    loadersByEnvironment: Record<string, Loader[]>,
-  ): this {
+  registerLoadersByEnvironment(loadersByEnvironment: Record<string, Loader[]>): this {
     const environmentLoaders = loadersByEnvironment[this.environment] ?? [];
 
     this.registerLoaders(...environmentLoaders);

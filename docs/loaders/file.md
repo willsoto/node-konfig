@@ -15,7 +15,7 @@ yarn add @willsoto/node-konfig-file
 ```
 
 ```bash
-pnpm add @willsoto/node-konfig-file
+bun add @willsoto/node-konfig-file
 ```
 
 ## Usage

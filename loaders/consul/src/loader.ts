@@ -1,10 +1,4 @@
-import {
-  KeyNotFoundError,
-  Loader,
-  LoaderOptions,
-  Parser,
-  Store,
-} from "@willsoto/node-konfig-core";
+import { KeyNotFoundError, Loader, LoaderOptions, Parser, Store } from "@willsoto/node-konfig-core";
 import Consul from "consul";
 
 interface Key {
@@ -63,11 +57,7 @@ export class ConsulLoader extends Loader {
           throw new KeyNotFoundError(key.key);
         }
 
-        const [accessor, value] = this.postLoad(
-          key,
-          response.Key,
-          response.Value,
-        );
+        const [accessor, value] = this.postLoad(key, response.Key, response.Value);
 
         store.set(accessor, value);
       } catch (error) {
@@ -78,11 +68,7 @@ export class ConsulLoader extends Loader {
     }
   }
 
-  private postLoad(
-    key: Key,
-    accessor: string,
-    value: unknown,
-  ): [accessor: string, value: unknown] {
+  private postLoad(key: Key, accessor: string, value: unknown): [accessor: string, value: unknown] {
     if (key.prefix) {
       accessor = `${key.prefix}${accessor}`;
     }

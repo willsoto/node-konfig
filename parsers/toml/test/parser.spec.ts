@@ -105,9 +105,7 @@ function getPathToFixture(fixture: string): string {
   return path.resolve(dirname(import.meta), "configs", fixture);
 }
 
-async function makeStore(
-  fileLoaderOptions: FileLoaderOptions,
-): Promise<Konfig.Store> {
+async function makeStore(fileLoaderOptions: FileLoaderOptions): Promise<Konfig.Store> {
   const store = new Konfig.Store();
 
   store.registerLoader(new FileLoader(fileLoaderOptions));

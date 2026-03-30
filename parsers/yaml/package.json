@@ -5,19 +5,19 @@
   "keywords": [
     "config",
     "configuration",
-    "yaml",
-    "configuration-management"
+    "configuration-management",
+    "yaml"
   ],
   "license": "Apache-2.0",
   "author": "Will Soto <willsoto@users.noreply.github.com> (https://github.com/willsoto)",
-  "type": "module",
-  "exports": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
   "files": [
     "README.md",
     "LICENSE",
     "dist"
   ],
+  "type": "module",
+  "typings": "./dist/index.d.ts",
+  "exports": "./dist/index.js",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
@@ -36,8 +36,5 @@
   },
   "peerDependencies": {
     "@willsoto/node-konfig-core": "^5.0.0"
-  },
-  "volta": {
-    "extends": "../../package.json"
   }
 }

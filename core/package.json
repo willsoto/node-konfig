@@ -5,27 +5,34 @@
   "keywords": [
     "config",
     "configuration",
-    "yaml",
-    "toml",
+    "configuration-management",
     "json",
-    "configuration-management"
+    "toml",
+    "yaml"
   ],
   "license": "Apache-2.0",
   "author": "Will Soto <willsoto@users.noreply.github.com> (https://github.com/willsoto)",
-  "type": "module",
-  "exports": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
   "files": [
     "README.md",
     "LICENSE",
     "dist"
   ],
+  "type": "module",
+  "typings": "./dist/index.d.ts",
+  "exports": "./dist/index.js",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
     "test": "ava",
     "test:coverage": "c8 ava",
     "test:watch": "ava --watch"
+  },
+  "dependencies": {
+    "cockatiel": "~3.1.0",
+    "lodash": "~4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash": "4.14.195"
   },
   "c8": {
     "all": true,
@@ -44,15 +51,5 @@
       "html"
     ],
     "statements": 90
-  },
-  "dependencies": {
-    "cockatiel": "~3.1.0",
-    "lodash": "~4.17.21"
-  },
-  "devDependencies": {
-    "@types/lodash": "4.14.195"
-  },
-  "volta": {
-    "extends": "../package.json"
   }
 }
