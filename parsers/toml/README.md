@@ -15,5 +15,5 @@ yarn add @willsoto/node-konfig-toml-parser
 ```
 
 ```bash
-pnpm add @willsoto/node-konfig-toml-parser
+bun add @willsoto/node-konfig-toml-parser
 ```

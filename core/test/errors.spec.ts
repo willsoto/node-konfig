@@ -1,9 +1,5 @@
 import test from "ava";
-import {
-  KeyNotFoundError,
-  NoValueForKeyError,
-  ValueNotFoundError,
-} from "../src/errors.js";
+import { KeyNotFoundError, NoValueForKeyError, ValueNotFoundError } from "../src/errors.js";
 
 test("KeyNotFoundError", function (t) {
   t.plan(1);

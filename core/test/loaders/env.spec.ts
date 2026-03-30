@@ -36,24 +36,21 @@ test.serial("EnvLoader should load the specified env vars", async function (t) {
   });
 });
 
-test.serial(
-  "EnvLoader should convert 'array-like' values into actual array",
-  async function (t) {
-    t.plan(1);
+test.serial("EnvLoader should convert 'array-like' values into actual array", async function (t) {
+  t.plan(1);
 
-    const store = await makeStore({
-      envVars: [
-        {
-          accessor: "hosts",
-          envVarName: "HOSTS",
-          arraySeparator: ",",
-        },
-      ],
-    });
+  const store = await makeStore({
+    envVars: [
+      {
+        accessor: "hosts",
+        envVarName: "HOSTS",
+        arraySeparator: ",",
+      },
+    ],
+  });
 
-    t.deepEqual(store.get("hosts"), ["localhost:1234", "localhost:5678"]);
-  },
-);
+  t.deepEqual(store.get("hosts"), ["localhost:1234", "localhost:5678"]);
+});
 
 test.serial(
   "EnvLoader should not error if the var is not present in the environment and stopOnFailure is disabled",
@@ -74,32 +71,27 @@ test.serial(
   },
 );
 
-test.serial(
-  "EnvLoader should respect the maxRetries setting",
-  async function (t) {
-    t.plan(1);
+test.serial("EnvLoader should respect the maxRetries setting", async function (t) {
+  t.plan(1);
 
-    await t.throwsAsync(
-      makeStore({
-        stopOnFailure: true,
-        maxRetries: 3,
-        envVars: [
-          {
-            accessor: "notAThing",
-            envVarName: "NOT_A_THING",
-          },
-        ],
-      }),
-      {
-        instanceOf: ValueNotFoundError,
-      },
-    );
-  },
-);
+  await t.throwsAsync(
+    makeStore({
+      stopOnFailure: true,
+      maxRetries: 3,
+      envVars: [
+        {
+          accessor: "notAThing",
+          envVarName: "NOT_A_THING",
+        },
+      ],
+    }),
+    {
+      instanceOf: ValueNotFoundError,
+    },
+  );
+});
 
-async function makeStore(
-  options: Konfig.EnvLoaderOptions,
-): Promise<Konfig.Store> {
+async function makeStore(options: Konfig.EnvLoaderOptions): Promise<Konfig.Store> {
   const store = new Konfig.Store();
 
   store.registerLoader(new Konfig.EnvLoader(options));

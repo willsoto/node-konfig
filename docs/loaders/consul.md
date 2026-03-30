@@ -11,7 +11,7 @@ yarn add @willsoto/node-konfig-consul
 ```
 
 ```bash
-pnpm add @willsoto/node-konfig-consul
+bun add @willsoto/node-konfig-consul
 ```
 
 ## Usage

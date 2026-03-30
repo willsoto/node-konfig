@@ -1,4 +1,4 @@
 # Don't allow people to merge changes to these generated files, because the result
-# may be invalid.  You need to run "pnpm install" again.
-pnpm-lock.yaml               merge=binary
+# may be invalid.  You need to run "bun install" again.
+bun.lock                     merge=binary
 *.json                       linguist-language=JSON-with-Comments

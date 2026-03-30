@@ -1,0 +1,15 @@
+pre-commit:
+  commands:
+    lint-ts:
+      glob: "*.ts"
+      run: bun run oxlint --fix {staged_files}
+      stage_fixed: true
+    format:
+      glob: "*.{ts,md,yaml,yml,json}"
+      run: bun run oxfmt --write {staged_files}
+      stage_fixed: true
+
+commit-msg:
+  commands:
+    commitlint:
+      run: bun run commitlint --edit {1}

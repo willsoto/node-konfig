@@ -1,5 +1,5 @@
 # Contributing
 
-## Selecting a Node version
+## Prerequisites
 
-This project uses [Volta](https://volta.sh/) so if you have it installed the correct Node version will be selected for you. If you don't use Volta, you should use Node LTS.
+This project uses [Bun](https://bun.sh/) as its package manager and runtime. Install it from https://bun.sh/ if you don't have it already.

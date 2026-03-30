@@ -1,17 +1,20 @@
-version: "3.8"
-
 services:
   vault:
-    image: "vault:1.13.2"
+    image: "hashicorp/vault:1.13.2"
     cap_add:
       - IPC_LOCK
     ports:
       - "8200:8200"
     environment:
       VAULT_DEV_ROOT_TOKEN_ID: "development"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "--quiet", "http://127.0.0.1:8200/v1/sys/health"]
+      interval: 2s
+      timeout: 5s
+      retries: 10
 
   consul-agent-1: &consul-agent
-    image: consul:1.15.2
+    image: hashicorp/consul:1.15.2
     command: "agent -retry-join consul-server-bootstrap -client 0.0.0.0"
 
   consul-agent-2:
@@ -35,17 +38,8 @@ services:
       - "8600:8600"
       - "8600:8600/udp"
     command: "agent -server -bootstrap-expect 3 -ui -client 0.0.0.0"
-
-  etcd:
-    image: docker.io/bitnami/etcd:3-debian-10
-    environment:
-      - ALLOW_NONE_AUTHENTICATION=yes
-    ports:
-      - "2379:2379"
-      - "2380:2380"
-    volumes:
-      - etcd_data:/bitnami/etcd
-
-volumes:
-  etcd_data:
-    driver: local
+    healthcheck:
+      test: ["CMD", "consul", "operator", "raft", "list-peers"]
+      interval: 2s
+      timeout: 5s
+      retries: 10

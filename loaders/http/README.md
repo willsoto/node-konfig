@@ -15,7 +15,7 @@ yarn add @willsoto/node-konfig-http
 ```
 
 ```bash
-pnpm add @willsoto/node-konfig-http
+bun add @willsoto/node-konfig-http
 ```
 
 ## Quick look

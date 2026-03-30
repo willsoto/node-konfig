@@ -10,20 +10,18 @@
 export type PathKeys<T> = object extends T
   ? string
   : T extends readonly any[]
-  ? Extract<keyof T, `${number}`> | SubKeys<T, Extract<keyof T, `${number}`>>
-  : T extends object
-  ? Extract<keyof T, string> | SubKeys<T, Extract<keyof T, string>>
-  : never;
+    ? Extract<keyof T, `${number}`> | SubKeys<T, Extract<keyof T, `${number}`>>
+    : T extends object
+      ? Extract<keyof T, string> | SubKeys<T, Extract<keyof T, string>>
+      : never;
 
-export type SubKeys<T, K extends string> = K extends keyof T
-  ? `${K}.${PathKeys<T[K]>}`
-  : never;
+export type SubKeys<T, K extends string> = K extends keyof T ? `${K}.${PathKeys<T[K]>}` : never;
 
 export type PropType<T, Path extends string> = Path extends keyof T
   ? T[Path]
   : Path extends `${infer K}.${infer R}`
-  ? K extends keyof T
-    ? PropType<T[K], R>
-    : unknown
-  : unknown;
+    ? K extends keyof T
+      ? PropType<T[K], R>
+      : unknown
+    : unknown;
 /* c8 ignore stop */

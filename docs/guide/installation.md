@@ -12,8 +12,8 @@ npm install @willsoto/node-konfig-core
 yarn add @willsoto/node-konfig-core
 ```
 
-### pnpm
+### bun
 
 ```bash
-pnpm add @willsoto/node-konfig-core
+bun add @willsoto/node-konfig-core
 ```

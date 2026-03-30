@@ -11,7 +11,7 @@ yarn add @willsoto/node-konfig-yaml-parser
 ```
 
 ```bash
-pnpm add @willsoto/node-konfig-yaml-parser
+bun add @willsoto/node-konfig-yaml-parser
 ```
 
 ## Usage

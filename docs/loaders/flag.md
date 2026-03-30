@@ -15,7 +15,7 @@ yarn add @willsoto/node-konfig-flag
 ```
 
 ```bash
-pnpm add @willsoto/node-konfig-flag
+bun add @willsoto/node-konfig-flag
 ```
 
 ## Usage

@@ -21,9 +21,7 @@ test("ValueLoader should assign the provides values onto the store", async funct
   });
 });
 
-async function makeStore(
-  options: Konfig.ValueLoaderOptions,
-): Promise<Konfig.Store> {
+async function makeStore(options: Konfig.ValueLoaderOptions): Promise<Konfig.Store> {
   const store = new Konfig.Store();
 
   store.registerLoader(new Konfig.ValueLoader(options));

@@ -2,37 +2,28 @@
   "name": "node-konfig",
   "private": true,
   "description": "Node Konfig monorepo",
+  "workspaces": [
+    "core",
+    "loaders/*",
+    "parsers/*",
+    "internal"
+  ],
   "type": "module",
   "scripts": {
-    "build": "turbo run build",
+    "build": "bun --filter '@willsoto/node-konfig-core' --filter '@node-konfig/internal' build && bun --filter '*' build",
     "changeset": "changeset",
     "changeset:status": "changeset status --since origin/main",
-    "checkstyle": "prettier . --check",
-    "clean": "turbo run clean",
+    "checkstyle": "oxfmt --check .",
+    "clean": "bun --filter '*' clean",
     "docs:build": "vitepress build docs",
     "docs:dev": "vitepress dev docs",
     "docs:serve": "vitepress serve docs",
-    "format": "prettier . --write",
-    "lint": "eslint . --fix",
-    "prepare": "husky install",
+    "format": "oxfmt --write .",
+    "lint": "oxlint --fix .",
+    "prepare": "lefthook install",
     "publish": "changeset publish",
-    "test": "turbo run test --no-cache",
-    "test:coverage": "turbo run test:coverage --no-cache",
-    "turbo": "turbo"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "lint-staged": {
-    "*.{md,yaml,yml,json}": [
-      "prettier --write"
-    ],
-    "*.ts": [
-      "eslint --fix",
-      "prettier --write"
-    ]
+    "test": "bun --filter '*' test",
+    "test:coverage": "bun --filter '*' test:coverage"
   },
   "devDependencies": {
     "@changesets/cli": "2.26.1",
@@ -40,39 +31,22 @@
     "@commitlint/config-conventional": "17.6.5",
     "@types/node": "18.16.16",
     "@types/sinon": "10.0.15",
-    "@typescript-eslint/eslint-plugin": "5.59.8",
-    "@typescript-eslint/parser": "5.59.8",
     "ava": "5.3.0",
     "c8": "7.14.0",
-    "eslint": "8.41.0",
-    "eslint-config-prettier": "8.8.0",
-    "eslint-plugin-ava": "14.0.0",
-    "husky": "8.0.3",
-    "lint-staged": "13.2.2",
-    "prettier": "2.8.8",
-    "prettier-plugin-organize-imports": "3.2.2",
-    "prettier-plugin-packagejson": "2.4.3",
+    "lefthook": "1.11.13",
+    "oxfmt": "0.42.0",
+    "oxlint": "1.57.0",
     "rimraf": "5.0.1",
     "sinon": "15.1.0",
     "ts-node": "10.9.1",
-    "turbo": "1.9.9",
     "typescript": "5.0.4",
     "vitepress": "1.0.0-beta.1",
     "vue": "3.3.4"
   },
-  "packageManager": "pnpm@8.5.1",
-  "volta": {
-    "node": "18.16.0",
-    "pnpm": "7.29.3"
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@algolia/client-search",
-        "@types/react",
-        "react",
-        "react-dom"
-      ]
-    }
-  }
+  "packageManager": "bun@1.3.8"
 }

@@ -15,7 +15,7 @@ yarn add @willsoto/node-konfig-vault
 ```
 
 ```bash
-pnpm add @willsoto/node-konfig-vault
+bun add @willsoto/node-konfig-vault
 ```
 
 ## Quick look

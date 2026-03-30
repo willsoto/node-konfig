@@ -1,9 +1,4 @@
-import {
-  Loader,
-  LoaderOptions,
-  Parser,
-  Store,
-} from "@willsoto/node-konfig-core";
+import { Loader, LoaderOptions, Parser, Store } from "@willsoto/node-konfig-core";
 import fs from "node:fs";
 
 interface File {
