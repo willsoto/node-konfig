@@ -1,6 +1,6 @@
 {
   "name": "@node-konfig/internal",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "typings": "./dist/index.d.ts",

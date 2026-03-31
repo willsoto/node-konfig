@@ -1,5 +1,11 @@
 # @willsoto/node-konfig-core
 
+## 6.0.0
+
+### Major Changes
+
+- 9c45717: Modernize toolchain
+
 ## 5.0.0
 
 ### Major Changes

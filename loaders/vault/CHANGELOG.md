@@ -1,5 +1,16 @@
 # @willsoto/node-konfig-vault
 
+## 6.0.0
+
+### Major Changes
+
+- 9c45717: Modernize toolchain
+
+### Patch Changes
+
+- Updated dependencies [9c45717]
+  - @willsoto/node-konfig-core@6.0.0
+
 ## 3.0.0
 
 ### Major Changes
