@@ -46,7 +46,7 @@
       },
       "devDependencies": {
         "@node-konfig/internal": "workspace:*",
-        "@types/consul": "0.40.0",
+        "@types/consul": "0.40.3",
         "@willsoto/node-konfig-core": "workspace:*",
         "@willsoto/node-konfig-file": "workspace:*",
       },
@@ -511,7 +511,7 @@
 
     "@types/caseless": ["@types/caseless@0.12.5", "", {}, "sha512-hWtVTC2q7hc7xZ/RLbxapMvDMgUnDvKvMOpKal4DrMyfGBUfB1oKaZlIRr6mJL+If3bAP6sV/QneGzF6tJjZDg=="],
 
-    "@types/consul": ["@types/consul@0.40.0", "", { "dependencies": { "@types/node": "*" } }, "sha512-0TPN4MxIKiuv9UcXWNgWQurNNG/J0af+A41eD4T5bFWSRoZJ8xaDocrX47CzGv5620uaPabFDjiAB/+VQu/0SQ=="],
+    "@types/consul": ["@types/consul@0.40.3", "", { "dependencies": { "@types/node": "*" } }, "sha512-SLGbeLxfKJFO/3qpJTK226v0vVQzofy4g68uADDUElTmMeBPMircp7gS5ob6Ix0QGzo1dnu5oXNt/BldR5OwDQ=="],
 
     "@types/estree": ["@types/estree@1.0.8", "", {}, "sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w=="],
 
@@ -1430,8 +1430,6 @@
     "@mapbox/node-pre-gyp/node-fetch": ["node-fetch@2.7.0", "", { "dependencies": { "whatwg-url": "^5.0.0" }, "peerDependencies": { "encoding": "^0.1.0" }, "optionalPeers": ["encoding"] }, "sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A=="],
 
     "@sinonjs/samsam/type-detect": ["type-detect@4.1.0", "", {}, "sha512-Acylog8/luQ8L7il+geoSxhEkazvkslg7PSNKOX59mbB9cOveP5aq9h74Y7YU8yDpJwetzQQrfIwtf4Wp4LKcw=="],
-
-    "@types/consul/@types/node": ["@types/node@18.16.16", "", {}, "sha512-NpaM49IGQQAUlBhHMF82QH80J08os4ZmyF9MkpCzWAGuOHqE4gTEbhzd7L3l5LmWuZ6E0OiC1FweQ4tsiW35+g=="],
 
     "@types/request/@types/node": ["@types/node@18.16.16", "", {}, "sha512-NpaM49IGQQAUlBhHMF82QH80J08os4ZmyF9MkpCzWAGuOHqE4gTEbhzd7L3l5LmWuZ6E0OiC1FweQ4tsiW35+g=="],
 
