@@ -64,3 +64,6 @@ temp
 
 # artifact from composite tsc builds
 *.tsbuildinfo
+
+.vscode/
+.idea/
