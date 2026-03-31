@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@node-konfig/internal": "workspace:*",
-    "@types/js-yaml": "4.0.5",
+    "@types/js-yaml": "4.0.9",
     "@willsoto/node-konfig-core": "workspace:*",
     "@willsoto/node-konfig-file": "workspace:*"
   },
