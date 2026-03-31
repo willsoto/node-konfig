@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,M as l}from"./chunks/framework.f0774fee.js";const d=JSON.parse('{"title":"YAML","description":"","frontmatter":{},"headers":[],"relativePath":"parsers/yaml.md","filePath":"parsers/yaml.md"}'),o={name:"parsers/yaml.md"},p=l("",7),e=[p];function t(c,r,y,D,i,F){return a(),n("div",null,e)}const A=s(o,[["render",t]]);export{d as __pageData,A as default};

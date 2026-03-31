@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,M as o}from"./chunks/framework.f0774fee.js";const B=JSON.parse('{"title":"Env","description":"","frontmatter":{},"headers":[],"relativePath":"loaders/env.md","filePath":"loaders/env.md"}'),l={name:"loaders/env.md"},t=o("",10),e=[t];function p(r,c,D,y,i,F){return a(),n("div",null,e)}const h=s(l,[["render",p]]);export{B as __pageData,h as default};

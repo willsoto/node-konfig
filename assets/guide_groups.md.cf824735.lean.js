@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,M as o}from"./chunks/framework.f0774fee.js";const A=JSON.parse('{"title":"Groups","description":"","frontmatter":{},"headers":[],"relativePath":"guide/groups.md","filePath":"guide/groups.md"}'),l={name:"guide/groups.md"},p=o("",7),e=[p];function t(c,r,D,y,F,i){return a(),n("div",null,e)}const u=s(l,[["render",t]]);export{A as __pageData,u as default};
