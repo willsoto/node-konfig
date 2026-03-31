@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,M as l}from"./chunks/framework.f0774fee.js";const d=JSON.parse('{"title":"Flag","description":"","frontmatter":{},"headers":[],"relativePath":"loaders/flag.md","filePath":"loaders/flag.md"}'),o={name:"loaders/flag.md"},p=l("",13),e=[p];function t(c,r,D,i,y,F){return a(),n("div",null,e)}const E=s(o,[["render",t]]);export{d as __pageData,E as default};

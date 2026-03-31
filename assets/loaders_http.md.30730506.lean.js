@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as o,M as n}from"./chunks/framework.f0774fee.js";const F=JSON.parse('{"title":"HTTP","description":"","frontmatter":{},"headers":[],"relativePath":"loaders/http.md","filePath":"loaders/http.md"}'),t={name:"loaders/http.md"},l=n("",11),e=[l];function p(r,c,i,d,y,D){return a(),o("div",null,e)}const B=s(t,[["render",p]]);export{F as __pageData,B as default};
