@@ -28,7 +28,7 @@
     "test:watch": "ava --watch"
   },
   "dependencies": {
-    "cockatiel": "~3.1.0",
+    "cockatiel": "~3.2.0",
     "lodash": "~4.17.21"
   },
   "devDependencies": {
