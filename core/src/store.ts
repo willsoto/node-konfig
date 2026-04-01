@@ -1,4 +1,3 @@
-import _ from "lodash";
 import { NoValueForKeyError } from "./errors.js";
 import { Loader } from "./loaders/index.js";
 import { PathKeys, PropType } from "./types.js";
@@ -146,11 +145,26 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
    * @public
    */
   set(accessor: string, value: unknown): TConfig {
-    return _.setWith(this.config, accessor, value, function (nsValue, key) {
-      if (nsValue instanceof Store) {
-        return nsValue.set(key, value) as TConfig;
+    const path = accessor.split(".");
+    let current: Record<string, unknown> = this.config as Record<string, unknown>;
+
+    for (let i = 0; i < path.length - 1; i++) {
+      const key = path[i];
+      const next = current[key];
+
+      if (next instanceof Store) {
+        return next.set(path.slice(i + 1).join("."), value) as TConfig;
       }
-    });
+
+      if (typeof next !== "object" || next === null) {
+        current[key] = {};
+      }
+
+      current = current[key] as Record<string, unknown>;
+    }
+
+    current[path[path.length - 1]] = value;
+    return this.config;
   }
 
   /**
