@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "cockatiel": "3.2.1",
-    "lodash": "4.17.21"
+    "lodash": "4.17.23"
   },
   "devDependencies": {
     "@types/lodash": "4.17.24"
