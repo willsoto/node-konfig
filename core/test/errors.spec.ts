@@ -1,26 +1,22 @@
-import test from "ava";
+import { describe, test, expect } from "bun:test";
 import { KeyNotFoundError, NoValueForKeyError, ValueNotFoundError } from "../src/errors.js";
 
-test("KeyNotFoundError", function (t) {
-  t.plan(1);
+describe("Errors", () => {
+  test("KeyNotFoundError", () => {
+    const error = new KeyNotFoundError("some-key");
 
-  const error = new KeyNotFoundError("some-key");
+    expect(error.message).toBe("Key not found: some-key");
+  });
 
-  t.is(error.message, "Key not found: some-key");
-});
+  test("NoValueForKeyError", () => {
+    const error = new NoValueForKeyError("some-key");
 
-test("NoValueForKeyError", function (t) {
-  t.plan(1);
+    expect(error.message).toBe("No value found for key: some-key");
+  });
 
-  const error = new NoValueForKeyError("some-key");
+  test("ValueNotFoundError", () => {
+    const error = new ValueNotFoundError();
 
-  t.is(error.message, "No value found for key: some-key");
-});
-
-test("ValueNotFoundError", function (t) {
-  t.plan(1);
-
-  const error = new ValueNotFoundError();
-
-  t.is(error.message, "Value not found");
+    expect(error.message).toBe("Value not found");
+  });
 });

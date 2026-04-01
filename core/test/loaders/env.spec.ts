@@ -1,62 +1,55 @@
-import test from "ava";
+import { describe, test, expect, beforeAll, afterAll } from "bun:test";
 import { ValueNotFoundError } from "../../src/errors.js";
 import * as Konfig from "../../src/index.js";
 
-test.before(function () {
-  process.env.PORT = "5000";
-  process.env.NAME = "my-app";
-  process.env.HOSTS = "localhost:1234,localhost:5678";
-});
-
-test.after(function () {
-  delete process.env.PORT;
-  delete process.env.NAME;
-  delete process.env.HOSTS;
-});
-
-test.serial("EnvLoader should load the specified env vars", async function (t) {
-  t.plan(1);
-
-  const store = await makeStore({
-    envVars: [
-      {
-        accessor: "port",
-        envVarName: "PORT",
-      },
-      {
-        accessor: "name",
-        envVarName: "NAME",
-      },
-    ],
+describe("EnvLoader", () => {
+  beforeAll(() => {
+    process.env.PORT = "5000";
+    process.env.NAME = "my-app";
+    process.env.HOSTS = "localhost:1234,localhost:5678";
   });
 
-  t.deepEqual(store.toJSON(), {
-    port: "5000",
-    name: "my-app",
-  });
-});
-
-test.serial("EnvLoader should convert 'array-like' values into actual array", async function (t) {
-  t.plan(1);
-
-  const store = await makeStore({
-    envVars: [
-      {
-        accessor: "hosts",
-        envVarName: "HOSTS",
-        arraySeparator: ",",
-      },
-    ],
+  afterAll(() => {
+    delete process.env.PORT;
+    delete process.env.NAME;
+    delete process.env.HOSTS;
   });
 
-  t.deepEqual(store.get("hosts"), ["localhost:1234", "localhost:5678"]);
-});
+  test("should load the specified env vars", async () => {
+    const store = await makeStore({
+      envVars: [
+        {
+          accessor: "port",
+          envVarName: "PORT",
+        },
+        {
+          accessor: "name",
+          envVarName: "NAME",
+        },
+      ],
+    });
 
-test.serial(
-  "EnvLoader should not error if the var is not present in the environment and stopOnFailure is disabled",
-  async function (t) {
-    t.plan(1);
+    expect(store.toJSON()).toEqual({
+      port: "5000",
+      name: "my-app",
+    });
+  });
 
+  test("should convert 'array-like' values into actual array", async () => {
+    const store = await makeStore({
+      envVars: [
+        {
+          accessor: "hosts",
+          envVarName: "HOSTS",
+          arraySeparator: ",",
+        },
+      ],
+    });
+
+    expect(store.get("hosts")).toEqual(["localhost:1234", "localhost:5678"]);
+  });
+
+  test("should not error if the var is not present in the environment and stopOnFailure is disabled", async () => {
     const store = await makeStore({
       stopOnFailure: false,
       envVars: [
@@ -67,28 +60,23 @@ test.serial(
       ],
     });
 
-    t.deepEqual(store.toJSON(), {});
-  },
-);
+    expect(store.toJSON()).toEqual({});
+  });
 
-test.serial("EnvLoader should respect the maxRetries setting", async function (t) {
-  t.plan(1);
-
-  await t.throwsAsync(
-    makeStore({
-      stopOnFailure: true,
-      maxRetries: 3,
-      envVars: [
-        {
-          accessor: "notAThing",
-          envVarName: "NOT_A_THING",
-        },
-      ],
-    }),
-    {
-      instanceOf: ValueNotFoundError,
-    },
-  );
+  test("should respect the maxRetries setting", async () => {
+    expect(
+      makeStore({
+        stopOnFailure: true,
+        maxRetries: 3,
+        envVars: [
+          {
+            accessor: "notAThing",
+            envVarName: "NOT_A_THING",
+          },
+        ],
+      }),
+    ).rejects.toThrow(ValueNotFoundError);
+  });
 });
 
 async function makeStore(options: Konfig.EnvLoaderOptions): Promise<Konfig.Store> {

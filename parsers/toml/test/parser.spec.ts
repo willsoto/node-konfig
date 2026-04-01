@@ -1,104 +1,104 @@
 import { dirname } from "@node-konfig/internal";
 import * as Konfig from "@willsoto/node-konfig-core";
 import { FileLoader, FileLoaderOptions } from "@willsoto/node-konfig-file";
-import test from "ava";
+import { describe, test, expect } from "bun:test";
 import path from "node:path";
 import * as sinon from "sinon";
 import { TOMLParser } from "../src/index.js";
 
-test("should load multiple configs and merge their results", async function (t) {
-  t.plan(1);
+describe("TOMLParser", () => {
+  test("should load multiple configs and merge their results", async function () {
+    const parser = new TOMLParser();
+    const store = await makeStore({
+      files: [
+        {
+          path: getPathToFixture("config.toml"),
+          parser,
+        },
+        {
+          path: getPathToFixture("config2.toml"),
+          parser,
+        },
+      ],
+    });
 
-  const parser = new TOMLParser();
-  const store = await makeStore({
-    files: [
-      {
-        path: getPathToFixture("config.toml"),
-        parser,
+    expect(store.toJSON()).toEqual({
+      // "bar" should win out here since it was loaded last
+      name: "bar",
+      database: {
+        host: "localhost",
       },
-      {
-        path: getPathToFixture("config2.toml"),
-        parser,
-      },
-    ],
+    });
   });
 
-  t.deepEqual(store.toJSON(), {
-    // "bar" should win out here since it was loaded last
-    name: "bar",
-    database: {
-      host: "localhost",
-    },
+  test("should respect the stopOnFailure option (true)", async function () {
+    const parser = new TOMLParser();
+    const options: FileLoaderOptions = {
+      files: [
+        {
+          path: getPathToFixture("non-existent.toml"),
+          parser,
+        },
+      ],
+    };
+
+    try {
+      await makeStore(options);
+    } catch (error) {
+      expect((error as Error).message).toMatch(/ENOENT/);
+    }
   });
-});
 
-test("should respect the stopOnFailure option (true)", async function (t) {
-  t.plan(1);
+  test("should respect the stopOnFailure option (false)", async function () {
+    const parser = new TOMLParser();
+    const options: FileLoaderOptions = {
+      stopOnFailure: false,
+      files: [
+        {
+          path: getPathToFixture("non-existent.toml"),
+          parser,
+        },
+        {
+          path: getPathToFixture("config2.toml"),
+          parser,
+        },
+      ],
+    };
+    const store = await makeStore(options);
 
-  const parser = new TOMLParser();
-  const options: FileLoaderOptions = {
-    files: [
-      {
-        path: getPathToFixture("non-existent.toml"),
-        parser,
-      },
-    ],
-  };
-
-  await t.throwsAsync(makeStore(options), {
-    message: /ENOENT/,
+    expect(store.toJSON()).toEqual({
+      // bar is the only value that was loaded successfully
+      name: "bar",
+    });
   });
-});
 
-test("should respect the stopOnFailure option (false)", async function (t) {
-  const parser = new TOMLParser();
-  const options: FileLoaderOptions = {
-    stopOnFailure: false,
-    files: [
-      {
-        path: getPathToFixture("non-existent.toml"),
-        parser,
-      },
-      {
-        path: getPathToFixture("config2.toml"),
-        parser,
-      },
-    ],
-  };
-  const store = await makeStore(options);
+  test("should respect the maxRetries option", async function () {
+    const parser = new TOMLParser();
+    const options: FileLoaderOptions = {
+      maxRetries: 3,
+      retryDelay: 100,
+      files: [
+        {
+          path: getPathToFixture("non-existent.toml"),
+          parser,
+        },
+      ],
+    };
+    const store = new Konfig.Store();
 
-  t.deepEqual(store.toJSON(), {
-    // bar is the only value that was loaded successfully
-    name: "bar",
+    const loader = new FileLoader(options);
+    sinon.spy(loader, "processFiles");
+
+    store.registerLoader(loader);
+
+    try {
+      await store.init();
+    } catch (error) {
+      expect((error as Error).message).toMatch(/ENOENT/);
+    }
+    // Initial call + the 3 retries
+    expect((loader.processFiles as sinon.SinonSpy).callCount).toBe(4);
   });
-});
-
-test("should respect the maxRetries option", async function (t) {
-  t.plan(2);
-
-  const parser = new TOMLParser();
-  const options: FileLoaderOptions = {
-    maxRetries: 3,
-    retryDelay: 100,
-    files: [
-      {
-        path: getPathToFixture("non-existent.toml"),
-        parser,
-      },
-    ],
-  };
-  const store = new Konfig.Store();
-
-  const loader = new FileLoader(options);
-  sinon.spy(loader, "processFiles");
-
-  store.registerLoader(loader);
-
-  await t.throwsAsync(store.init(), {
-    message: /ENOENT/,
-  });
-  // Initial call + the 3 retries
-  t.is((loader.processFiles as sinon.SinonSpy).callCount, 4);
 });
 
 function getPathToFixture(fixture: string): string {

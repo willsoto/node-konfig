@@ -23,9 +23,9 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
-    "test": "ava",
-    "test:coverage": "c8 ava",
-    "test:watch": "ava --watch"
+    "test": "bun test",
+    "test:coverage": "bun test --coverage",
+    "test:watch": "bun test --watch"
   },
   "dependencies": {
     "cockatiel": "~3.2.0",
@@ -33,23 +33,5 @@
   },
   "devDependencies": {
     "@types/lodash": "4.17.24"
-  },
-  "c8": {
-    "all": true,
-    "branches": 90,
-    "check-coverage": true,
-    "exclude": [
-      "src/types.ts"
-    ],
-    "functions": 90,
-    "include": [
-      "src"
-    ],
-    "lines": 90,
-    "reporter": [
-      "text",
-      "html"
-    ],
-    "statements": 90
   }
 }

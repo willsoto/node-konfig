@@ -25,9 +25,9 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
-    "test": "ava",
-    "test:coverage": "c8 ava",
-    "test:watch": "ava --watch"
+    "test": "bun test",
+    "test:coverage": "bun test --coverage",
+    "test:watch": "bun test --watch"
   },
   "dependencies": {
     "meow": "~11.0.0"
