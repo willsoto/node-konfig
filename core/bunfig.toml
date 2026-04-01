@@ -1,0 +1,7 @@
+[test]
+coverage = true
+
+[test.coverageThreshold]
+line = 90
+function = 90
+statement = 90

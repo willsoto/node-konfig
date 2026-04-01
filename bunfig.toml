@@ -1,3 +1,11 @@
 [install]
 peer = true
 exact = true
+
+[test]
+coverageSkipTestFiles = true
+
+[test.coverageThreshold]
+line = 100
+function = 100
+statement = 100

@@ -1,226 +1,214 @@
-import test from "ava";
+import { describe, test, expect } from "bun:test";
 import * as Konfig from "../src/index.js";
 
-test("Store groups should define new groups and access their values", async function (t) {
-  t.plan(1);
+describe("Store groups", () => {
+  test("should define new groups and access their values", async () => {
+    const store = new Konfig.Store();
 
-  const store = new Konfig.Store();
-
-  store.group("redis").registerLoader(
-    new Konfig.ValueLoader({
-      values: {
-        host: "localhost",
-        port: 6379,
-      },
-    }),
-  );
-
-  await store.init();
-
-  t.is(store.group("redis").get("host"), "localhost");
-});
-
-test("Store groups should define new groups with their own loaders", async function (t) {
-  t.plan(1);
-
-  const store = await makeStore();
-  const group = store.group("redis");
-
-  group.registerLoader(
-    new Konfig.ValueLoader({
-      values: {
-        host: "localhost",
-        port: 6379,
-      },
-    }),
-  );
-
-  await group.init();
-
-  t.deepEqual(store.group("redis").toJSON(), {
-    host: "localhost",
-    port: 6379,
-  });
-});
-
-test("Store groups should accept store options when creating groups", async function (t) {
-  t.plan(1);
-
-  const store = await makeStore();
-  const group = store.group("redis", {
-    loaders: [
+    store.group("redis").registerLoader(
       new Konfig.ValueLoader({
         values: {
           host: "localhost",
           port: 6379,
         },
       }),
-    ],
+    );
+
+    await store.init();
+
+    expect(store.group("redis").get("host")).toBe("localhost");
   });
 
-  await group.init();
+  test("should define new groups with their own loaders", async () => {
+    const store = await makeStore();
+    const group = store.group("redis");
 
-  t.deepEqual(store.group("redis").toJSON(), {
-    host: "localhost",
-    port: 6379,
-  });
-});
-
-test("Store groups should correctly serialize groups within a store", async function (t) {
-  t.plan(1);
-
-  const store = await makeStore();
-
-  store.registerLoader(
-    new Konfig.ValueLoader({
-      values: {
-        name: "foo",
-        database: {
+    group.registerLoader(
+      new Konfig.ValueLoader({
+        values: {
           host: "localhost",
+          port: 6379,
         },
-      },
-    }),
-  );
+      }),
+    );
 
-  await store.init();
+    await group.init();
 
-  const group = store.group("redis");
-
-  group.registerLoader(
-    new Konfig.ValueLoader({
-      values: {
-        host: "localhost",
-        port: 6379,
-      },
-    }),
-  );
-
-  await group.init();
-
-  t.deepEqual(store.toJSON(), {
-    name: "foo",
-    database: {
-      host: "localhost",
-    },
-    redis: {
+    expect(store.group("redis").toJSON()).toEqual({
       host: "localhost",
       port: 6379,
-    },
+    });
   });
-});
 
-test("Store groups should access values via #get even through groups", async function (t) {
-  t.plan(2);
+  test("should accept store options when creating groups", async () => {
+    const store = await makeStore();
+    const group = store.group("redis", {
+      loaders: [
+        new Konfig.ValueLoader({
+          values: {
+            host: "localhost",
+            port: 6379,
+          },
+        }),
+      ],
+    });
 
-  const store = await makeStore();
+    await group.init();
 
-  store.registerLoader(
-    new Konfig.ValueLoader({
-      values: {
-        name: "foo",
-        database: {
-          host: "localhost",
+    expect(store.group("redis").toJSON()).toEqual({
+      host: "localhost",
+      port: 6379,
+    });
+  });
+
+  test("should correctly serialize groups within a store", async () => {
+    const store = await makeStore();
+
+    store.registerLoader(
+      new Konfig.ValueLoader({
+        values: {
+          name: "foo",
+          database: {
+            host: "localhost",
+          },
         },
-      },
-    }),
-  );
+      }),
+    );
 
-  store.group("redis").registerLoader(
-    new Konfig.ValueLoader({
-      values: {
+    await store.init();
+
+    const group = store.group("redis");
+
+    group.registerLoader(
+      new Konfig.ValueLoader({
+        values: {
+          host: "localhost",
+          port: 6379,
+        },
+      }),
+    );
+
+    await group.init();
+
+    expect(store.toJSON()).toEqual({
+      name: "foo",
+      database: {
+        host: "localhost",
+      },
+      redis: {
         host: "localhost",
         port: 6379,
       },
-    }),
-  );
+    });
+  });
 
-  await store.init();
+  test("should access values via #get even through groups", async () => {
+    const store = await makeStore();
 
-  t.is(store.get("redis.host"), "localhost");
-  t.is(store.get("redis.port"), 6379);
-});
+    store.registerLoader(
+      new Konfig.ValueLoader({
+        values: {
+          name: "foo",
+          database: {
+            host: "localhost",
+          },
+        },
+      }),
+    );
 
-test("Store groups should #set values through groups", async function (t) {
-  t.plan(2);
+    store.group("redis").registerLoader(
+      new Konfig.ValueLoader({
+        values: {
+          host: "localhost",
+          port: 6379,
+        },
+      }),
+    );
 
-  const store = new Konfig.Store();
+    await store.init();
 
-  store.registerLoader(
-    new Konfig.ValueLoader({
-      values: {
-        name: "foo",
-      },
-    }),
-  );
+    expect(store.get("redis.host")).toBe("localhost");
+    expect(store.get("redis.port")).toBe(6379);
+  });
 
-  store.group("database").registerLoader(
-    new Konfig.ValueLoader({
-      values: {
-        host: "localhost",
-        port: 5432,
-        user: "development",
-        password: "development",
-        queryParams: {
+  test("should #set values through groups", async () => {
+    const store = new Konfig.Store();
+
+    store.registerLoader(
+      new Konfig.ValueLoader({
+        values: {
+          name: "foo",
+        },
+      }),
+    );
+
+    store.group("database").registerLoader(
+      new Konfig.ValueLoader({
+        values: {
+          host: "localhost",
+          port: 5432,
+          user: "development",
+          password: "development",
+          queryParams: {
+            ssl: false,
+          },
+        },
+      }),
+    );
+
+    await store.init();
+
+    store.set("database.user", "postgres");
+    store.set("database.queryParams.ssl", true);
+
+    expect(store.get("database.user")).toBe("postgres");
+    expect(store.get("database.queryParams.ssl")).toBe(true);
+  });
+
+  test("should initialize all groups within a store at any depth", async () => {
+    const store = new Konfig.Store();
+
+    store.registerLoader(
+      new Konfig.ValueLoader({
+        values: {
+          name: "foo",
+        },
+      }),
+    );
+
+    const databaseGroup = store.group("database").registerLoader(
+      new Konfig.ValueLoader({
+        values: {
+          host: "localhost",
+          port: 5432,
+          user: "development",
+          password: "development",
+        },
+      }),
+    );
+
+    databaseGroup.group("queryParams").registerLoader(
+      new Konfig.ValueLoader({
+        values: {
           ssl: false,
         },
-      },
-    }),
-  );
+      }),
+    );
 
-  await store.init();
+    await store.init();
 
-  store.set("database.user", "postgres");
-  store.set("database.queryParams.ssl", true);
-
-  t.is(store.get("database.user"), "postgres");
-  t.is(store.get("database.queryParams.ssl"), true);
-});
-
-test("Store groups should initialize all groups within a store at any depth", async function (t) {
-  t.plan(2);
-
-  const store = new Konfig.Store();
-
-  store.registerLoader(
-    new Konfig.ValueLoader({
-      values: {
-        name: "foo",
-      },
-    }),
-  );
-
-  const databaseGroup = store.group("database").registerLoader(
-    new Konfig.ValueLoader({
-      values: {
-        host: "localhost",
-        port: 5432,
-        user: "development",
-        password: "development",
-      },
-    }),
-  );
-
-  databaseGroup.group("queryParams").registerLoader(
-    new Konfig.ValueLoader({
-      values: {
+    expect(store.get("database")).toEqual({
+      host: "localhost",
+      port: 5432,
+      user: "development",
+      password: "development",
+      queryParams: {
         ssl: false,
       },
-    }),
-  );
-
-  await store.init();
-
-  t.deepEqual(store.get("database"), {
-    host: "localhost",
-    port: 5432,
-    user: "development",
-    password: "development",
-    queryParams: {
+    });
+    expect(store.get("database.queryParams")).toEqual({
       ssl: false,
-    },
-  });
-  t.deepEqual(store.get("database.queryParams"), {
-    ssl: false,
+    });
   });
 });
 

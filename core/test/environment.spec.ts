@@ -1,11 +1,12 @@
-import test from "ava";
+import { describe, test, expect, afterEach } from "bun:test";
 import * as Konfig from "../src/index.js";
 
-test.serial(
-  "Loaders by environment should allow environment loaders to be registered via constructor",
-  async function (t) {
-    t.plan(1);
+describe("Loaders by environment", () => {
+  afterEach(() => {
+    delete process.env.NODE_KONFIG_ENV;
+  });
 
+  test("should allow environment loaders to be registered via constructor", async () => {
     const store = new Konfig.Store({
       loadersByEnvironment: {
         test: [
@@ -19,15 +20,10 @@ test.serial(
     });
     await store.init();
 
-    t.is(store.get("name"), "app");
-  },
-);
+    expect(store.get("name")).toBe("app");
+  });
 
-test.serial(
-  "Loaders by environment should allow environment loaders to be registered after construction",
-  async function (t) {
-    t.plan(1);
-
+  test("should allow environment loaders to be registered after construction", async () => {
     const store = new Konfig.Store();
 
     store.registerLoadersByEnvironment({
@@ -41,15 +37,10 @@ test.serial(
     });
     await store.init();
 
-    t.is(store.get("name"), "app");
-  },
-);
+    expect(store.get("name")).toBe("app");
+  });
 
-test.serial(
-  "Loaders by environment should merge default loaders with environment loaders with environment loaders being last",
-  async function (t) {
-    t.plan(1);
-
+  test("should merge default loaders with environment loaders with environment loaders being last", async () => {
     const store = new Konfig.Store({
       loaders: [
         new Konfig.ValueLoader({
@@ -70,15 +61,10 @@ test.serial(
     });
     await store.init();
 
-    t.is(store.get("name"), "app-development");
-  },
-);
+    expect(store.get("name")).toBe("app-development");
+  });
 
-test.serial(
-  "Loaders by environment should respect the NODE_KONFIG_ENV environment variable first, if set",
-  async function (t) {
-    t.plan(1);
-
+  test("should respect the NODE_KONFIG_ENV environment variable first, if set", async () => {
     process.env.NODE_KONFIG_ENV = "staging";
 
     const store = new Konfig.Store({
@@ -101,17 +87,10 @@ test.serial(
     });
     await store.init();
 
-    t.is(store.get("name"), "app-staging");
+    expect(store.get("name")).toBe("app-staging");
+  });
 
-    delete process.env.NODE_KONFIG_ENV;
-  },
-);
-
-test.serial(
-  "Loaders by environment should use NODE_ENV if NODE_KONFIG_ENV is not set",
-  async function (t) {
-    t.plan(1);
-
+  test("should use NODE_ENV if NODE_KONFIG_ENV is not set", async () => {
     const initial = process.env.NODE_ENV;
     process.env.NODE_ENV = "production";
 
@@ -142,17 +121,12 @@ test.serial(
     });
     await store.init();
 
-    t.is(store.get("name"), "app-production");
+    expect(store.get("name")).toBe("app-production");
 
     process.env.NODE_ENV = initial;
-  },
-);
+  });
 
-test.serial(
-  "Loaders by environment should default to development if NODE_ENV and NODE_KONFIG_ENV are not set",
-  async function (t) {
-    t.plan(1);
-
+  test("should default to development if NODE_ENV and NODE_KONFIG_ENV are not set", async () => {
     const initial = process.env.NODE_ENV;
     delete process.env.NODE_ENV;
 
@@ -183,8 +157,8 @@ test.serial(
     });
     await store.init();
 
-    t.is(store.get("name"), "app-development");
+    expect(store.get("name")).toBe("app-development");
 
     process.env.NODE_ENV = initial;
-  },
-);
+  });
+});

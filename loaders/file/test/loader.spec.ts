@@ -1,107 +1,99 @@
 import { dirname } from "@node-konfig/internal";
 import * as Konfig from "@willsoto/node-konfig-core";
-import test from "ava";
+import { describe, expect, test } from "bun:test";
 import path from "node:path";
 import * as sinon from "sinon";
 import { FileLoader, FileLoaderOptions } from "../src/index.js";
 
-test("should load multiple configs and merge their results", async function (t) {
-  t.plan(1);
+describe("FileLoader", () => {
+  test("should load multiple configs and merge their results", async function () {
+    const parser = new Konfig.JSONParser();
+    const store = await makeStore({
+      files: [
+        {
+          path: getPathToFixture("config.json"),
+          parser,
+        },
+        {
+          path: getPathToFixture("config2.json"),
+          parser,
+        },
+      ],
+    });
 
-  const parser = new Konfig.JSONParser();
-  const store = await makeStore({
-    files: [
-      {
-        path: getPathToFixture("config.json"),
-        parser,
+    expect(store.toJSON()).toEqual({
+      // "bar" should win out here since it was loaded last
+      name: "bar",
+      database: {
+        host: "localhost",
       },
-      {
-        path: getPathToFixture("config2.json"),
-        parser,
-      },
-    ],
+    });
   });
 
-  t.deepEqual(store.toJSON(), {
-    // "bar" should win out here since it was loaded last
-    name: "bar",
-    database: {
-      host: "localhost",
-    },
+  test("should respect the stopOnFailure option (true)", async function () {
+    const parser = new Konfig.JSONParser();
+    const options: FileLoaderOptions = {
+      files: [
+        {
+          path: getPathToFixture("non-existent.json"),
+          parser,
+        },
+      ],
+    };
+
+    expect(makeStore(options)).rejects.toThrow(/ENOENT/);
   });
-});
 
-test("should respect the stopOnFailure option (true)", async function (t) {
-  t.plan(1);
+  test("should respect the stopOnFailure option (false)", async function () {
+    const parser = new Konfig.JSONParser();
+    const options: FileLoaderOptions = {
+      stopOnFailure: false,
+      files: [
+        {
+          path: getPathToFixture("non-existent.json"),
+          parser,
+        },
+        {
+          path: getPathToFixture("config2.json"),
+          parser,
+        },
+      ],
+    };
+    const store = await makeStore(options);
 
-  const parser = new Konfig.JSONParser();
-  const options: FileLoaderOptions = {
-    files: [
-      {
-        path: getPathToFixture("non-existent.json"),
-        parser,
-      },
-    ],
-  };
-
-  await t.throwsAsync(makeStore(options), {
-    message: /ENOENT/,
-    instanceOf: Error,
+    expect(store.toJSON()).toEqual({
+      // bar is the only value that was loaded successfully
+      name: "bar",
+    });
   });
-});
 
-test("should respect the stopOnFailure option (false)", async function (t) {
-  t.plan(1);
+  test("should respect the maxRetries option", async function () {
+    const parser = new Konfig.JSONParser();
+    const options: FileLoaderOptions = {
+      maxRetries: 3,
+      retryDelay: 100,
+      files: [
+        {
+          path: getPathToFixture("non-existent.json"),
+          parser,
+        },
+      ],
+    };
+    const store = new Konfig.Store();
 
-  const parser = new Konfig.JSONParser();
-  const options: FileLoaderOptions = {
-    stopOnFailure: false,
-    files: [
-      {
-        path: getPathToFixture("non-existent.json"),
-        parser,
-      },
-      {
-        path: getPathToFixture("config2.json"),
-        parser,
-      },
-    ],
-  };
-  const store = await makeStore(options);
+    const loader = new FileLoader(options);
+    sinon.spy(loader, "processFiles");
 
-  t.deepEqual(store.toJSON(), {
-    // bar is the only value that was loaded successfully
-    name: "bar",
+    store.registerLoader(loader);
+
+    try {
+      await store.init();
+    } catch (error) {
+      expect((error as Error).message).toMatch(/ENOENT/);
+    }
+    // Initial call + the 3 retries
+    expect((loader.processFiles as sinon.SinonSpy).callCount).toBe(4);
   });
-});
-
-test("should respect the maxRetries option", async function (t) {
-  t.plan(2);
-
-  const parser = new Konfig.JSONParser();
-  const options: FileLoaderOptions = {
-    maxRetries: 3,
-    retryDelay: 100,
-    files: [
-      {
-        path: getPathToFixture("non-existent.json"),
-        parser,
-      },
-    ],
-  };
-  const store = new Konfig.Store();
-
-  const loader = new FileLoader(options);
-  sinon.spy(loader, "processFiles");
-
-  store.registerLoader(loader);
-
-  await t.throwsAsync(store.init(), {
-    message: /ENOENT/,
-    instanceOf: Error,
-  });
-  // Initial call + the 3 retries
-  t.is((loader.processFiles as sinon.SinonSpy).callCount, 4);
 });
 
 function getPathToFixture(fixture: string): string {

@@ -1,69 +1,77 @@
-import * as Konfig from "@willsoto/node-konfig-core";
-import anyTest, { TestFn } from "ava";
-import nock from "nock";
+import { afterEach, describe, expect, mock, test } from "bun:test";
 import sinon from "sinon";
-import { HttpLoader, HttpLoaderOptions } from "../src/index.js";
 
-// These tests have to be run serially otherwise they consume each other's mocks.
-// If we want to make them concurrent, each test should have its own file that it's
-// fetching for config.
+// Mock node-fetch before importing the loader
+let mockFetchFn: ReturnType<typeof mock>;
 
-const test = anyTest as TestFn<{
-  scope: nock.Scope;
-}>;
+mock.module("node-fetch", () => {
+  mockFetchFn = mock(async () => {
+    throw new Error("unmocked fetch call");
+  });
+
+  // node-fetch exports both default and named exports
+  return {
+    default: (...args: unknown[]) => mockFetchFn(...args),
+    __esModule: true,
+  };
+});
+
+// Must import after mock.module
+const Konfig = await import("@willsoto/node-konfig-core");
+const { HttpLoader } = await import("../src/index.js");
+type HttpLoaderOptions = import("../src/index.js").HttpLoaderOptions;
 
 const prefixUrl = "https://internal.config.com";
 
-test.before((t) => {
-  t.context.scope = nock(prefixUrl);
-});
+function makeResponse(status: number, body: string) {
+  return {
+    ok: status >= 200 && status < 300,
+    status,
+    text: async () => body,
+  };
+}
 
-test.afterEach.always((t) => {
-  t.true(nock.isDone());
-  nock.cleanAll();
-});
+describe("HttpLoader", () => {
+  afterEach(() => {
+    mockFetchFn.mockReset();
+  });
 
-test.serial("should load secrets from the given vault", async function (t) {
-  t.plan(1);
-
-  t.context.scope.get("/config.json").reply(
-    200,
-    JSON.stringify({
+  test("should load secrets from the given vault", async () => {
+    const responseBody = JSON.stringify({
       database: {
         host: "rds.foo.bar",
       },
-    }),
-  );
+    });
 
-  const store = await makeStore({
-    sources: [
-      {
-        url: `${prefixUrl}/config.json`,
-        parser: new Konfig.JSONParser(),
-      },
-    ],
-  });
+    mockFetchFn.mockResolvedValueOnce(makeResponse(200, responseBody));
 
-  t.deepEqual(store.toJSON(), {
-    database: {
-      host: "rds.foo.bar",
-    },
-  });
-});
-
-test.serial(
-  "should merge secrets from the loader with secrets loaded from other locations",
-  async function (t) {
-    t.plan(1);
-
-    t.context.scope.post("/config.json").reply(
-      200,
-      JSON.stringify({
-        database: {
-          host: "rds.foo.bar",
+    const store = await makeStore({
+      sources: [
+        {
+          url: `${prefixUrl}/config.json`,
+          parser: new Konfig.JSONParser(),
         },
-      }),
-    );
+      ],
+    });
+
+    expect(store.toJSON()).toEqual({
+      database: {
+        host: "rds.foo.bar",
+      },
+    });
+
+    expect(mockFetchFn).toHaveBeenCalledTimes(1);
+    expect(mockFetchFn.mock.calls[0][0]).toBe(`${prefixUrl}/config.json`);
+  });
+
+  test("should merge secrets from the loader with secrets loaded from other locations", async () => {
+    const responseBody = JSON.stringify({
+      database: {
+        host: "rds.foo.bar",
+      },
+    });
+
+    mockFetchFn.mockResolvedValueOnce(makeResponse(200, responseBody));
 
     const fileLoader = new Konfig.ValueLoader({
       values: {
@@ -86,83 +94,79 @@ test.serial(
       [fileLoader],
     );
 
-    t.deepEqual(store.toJSON(), {
+    expect(store.toJSON()).toEqual({
       name: "foo",
       database: {
         host: "rds.foo.bar",
       },
     });
-  },
-);
 
-test.serial("should respect the maxRetries option", async function (t) {
-  t.plan(2);
-
-  t.context.scope
-    .get("/config.json")
-    .replyWithError({
-      message: "Forbidden",
-      code: 403,
-    })
-    .persist();
-
-  const store = new Konfig.Store();
-  const loader = new HttpLoader({
-    maxRetries: 3,
-    sources: [
-      {
-        url: `${prefixUrl}/config.json`,
-        parser: new Konfig.JSONParser(),
-      },
-    ],
+    expect(mockFetchFn).toHaveBeenCalledTimes(1);
+    expect(mockFetchFn.mock.calls[0][1]).toEqual({ method: "POST" });
   });
-  sinon.spy(loader, "process");
 
-  store.registerLoader(loader);
+  test("should respect the maxRetries option", async () => {
+    mockFetchFn.mockRejectedValue(new Error("Forbidden"));
 
-  await t.throwsAsync(store.init(), {
-    message: /Forbidden/,
-  });
-  // Initial call + the 3 retries
-  t.is((loader.process as sinon.SinonSpy).callCount, 4);
-});
-
-test.serial("should respect the stopOnFailure option", async function (t) {
-  t.plan(1);
-
-  t.context.scope
-    .get("/config.json")
-    .reply(
-      200,
-      JSON.stringify({
-        database: {
-          host: "rds.foo.bar",
+    const store = new Konfig.Store();
+    const loader = new HttpLoader({
+      maxRetries: 3,
+      sources: [
+        {
+          url: `${prefixUrl}/config.json`,
+          parser: new Konfig.JSONParser(),
         },
-      }),
-    )
-    .get("/config-not-found.json")
-    .reply(404, "Not found");
+      ],
+    });
+    sinon.spy(loader, "process");
 
-  const parser = new Konfig.JSONParser();
-  const store = await makeStore({
-    stopOnFailure: false,
-    maxRetries: 0,
-    sources: [
-      {
-        url: `${prefixUrl}/config-not-found.json`,
-        parser,
-      },
-      {
-        url: `${prefixUrl}/config.json`,
-        parser,
-      },
-    ],
+    store.registerLoader(loader);
+
+    try {
+      await store.init();
+      // Should not reach here
+      expect(true).toBe(false);
+    } catch (error: unknown) {
+      expect((error as Error).message).toMatch(/Forbidden/);
+    }
+
+    // Initial call + the 3 retries
+    expect((loader.process as sinon.SinonSpy).callCount).toBe(4);
   });
 
-  t.deepEqual(store.toJSON(), {
-    database: {
-      host: "rds.foo.bar",
-    },
+  test("should respect the stopOnFailure option", async () => {
+    const responseBody = JSON.stringify({
+      database: {
+        host: "rds.foo.bar",
+      },
+    });
+
+    // First call: config-not-found.json -> 404 (text() throws since body isn't valid JSON, but stopOnFailure=false catches it)
+    mockFetchFn.mockResolvedValueOnce(makeResponse(404, "Not found"));
+    // Second call: config.json -> 200
+    mockFetchFn.mockResolvedValueOnce(makeResponse(200, responseBody));
+
+    const parser = new Konfig.JSONParser();
+    const store = await makeStore({
+      stopOnFailure: false,
+      maxRetries: 0,
+      sources: [
+        {
+          url: `${prefixUrl}/config-not-found.json`,
+          parser,
+        },
+        {
+          url: `${prefixUrl}/config.json`,
+          parser,
+        },
+      ],
+    });
+
+    expect(store.toJSON()).toEqual({
+      database: {
+        host: "rds.foo.bar",
+      },
+    });
   });
 });
 

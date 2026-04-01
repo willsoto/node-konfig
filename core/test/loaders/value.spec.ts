@@ -1,23 +1,23 @@
-import test from "ava";
+import { describe, test, expect } from "bun:test";
 import * as Konfig from "../../src/index.js";
 
-test("ValueLoader should assign the provides values onto the store", async function (t) {
-  t.plan(1);
+describe("ValueLoader", () => {
+  test("should assign the provides values onto the store", async () => {
+    const store = await makeStore({
+      values: {
+        name: "bar",
+        database: {
+          host: "localhost",
+        },
+      },
+    });
 
-  const store = await makeStore({
-    values: {
+    expect(store.toJSON()).toEqual({
       name: "bar",
       database: {
         host: "localhost",
       },
-    },
-  });
-
-  t.deepEqual(store.toJSON(), {
-    name: "bar",
-    database: {
-      host: "localhost",
-    },
+    });
   });
 });
 

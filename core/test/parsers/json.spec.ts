@@ -1,19 +1,18 @@
-import test from "ava";
+import { describe, test, expect } from "bun:test";
 import { JSONParser } from "../../src/index.js";
 
-test("JSONParser should parse the contents provided as JSON", function (t) {
-  t.plan(1);
+describe("JSONParser", () => {
+  test("should parse the contents provided as JSON", () => {
+    const parser = new JSONParser();
 
-  const parser = new JSONParser();
-
-  t.deepEqual(
-    parser.parse(
-      JSON.stringify({
-        foo: "bar",
-      }),
-    ),
-    {
+    expect(
+      parser.parse(
+        JSON.stringify({
+          foo: "bar",
+        }),
+      ),
+    ).toEqual({
       foo: "bar",
-    },
-  );
+    });
+  });
 });
