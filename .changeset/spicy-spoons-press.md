@@ -10,4 +10,11 @@
 "@node-konfig/internal": patch
 ---
 
-Modernize toolchain
+Upgrade dependencies with breaking changes
+
+### Breaking Changes
+
+- **Consul loader**: Upgraded `consul` dependency to v2. Removed `getOptions` from the `Key` interface (v2 drops `Consul.Kv.GetOptions`). Removed the `promisify` option (v2 is promise-based by default). Type references changed from `Consul.ConsulOptions` to `ConstructorParameters<typeof Consul>[0]` and `Consul.Consul` to `InstanceType<typeof Consul>`
+- **Flag loader**: Upgraded `meow` to v14. The `alias` option on flags has been renamed to `shortFlag`
+- **Etcd loader**: Removed the deprecated `@willsoto/node-konfig-etcd` package
+- **Lockstep versioning**: All publishable packages are now in a fixed version group and will be released together
