@@ -29,7 +29,7 @@
     "test:watch": "bun test --watch"
   },
   "dependencies": {
-    "consul": "~2.0.0"
+    "consul": "2.0.1"
   },
   "devDependencies": {
     "@node-konfig/internal": "workspace:*",

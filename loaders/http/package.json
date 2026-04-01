@@ -30,7 +30,7 @@
     "test:watch": "bun test --watch"
   },
   "dependencies": {
-    "node-fetch": "~3.3.0"
+    "node-fetch": "3.3.2"
   },
   "devDependencies": {
     "@willsoto/node-konfig-core": "workspace:*",
