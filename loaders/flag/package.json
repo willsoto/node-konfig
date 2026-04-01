@@ -30,7 +30,7 @@
     "test:watch": "bun test --watch"
   },
   "dependencies": {
-    "meow": "~11.0.0"
+    "meow": "~14.1.0"
   },
   "devDependencies": {
     "@willsoto/node-konfig-core": "workspace:*"
