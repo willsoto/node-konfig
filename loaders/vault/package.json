@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@types/request": "~2.48.7",
-    "node-vault": "~0.9.22"
+    "node-vault": "~0.12.0"
   },
   "devDependencies": {
     "@node-konfig/internal": "workspace:*",
