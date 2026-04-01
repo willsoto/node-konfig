@@ -33,7 +33,6 @@
   },
   "devDependencies": {
     "@node-konfig/internal": "workspace:*",
-    "@types/consul": "2.0.0",
     "@willsoto/node-konfig-core": "workspace:*",
     "@willsoto/node-konfig-file": "workspace:*"
   },

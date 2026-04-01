@@ -184,9 +184,7 @@ async function makeStore(
 }
 
 async function makeConsulClient(): Promise<void> {
-  const client = new Consul({
-    promisify: true,
-  });
+  const client = new Consul();
 
   await client.kv.set(
     "database",

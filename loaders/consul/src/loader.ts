@@ -6,7 +6,6 @@ interface Key {
   prefix?: string;
   replacer?: (key: string) => string;
   parser?: Parser;
-  getOptions?: Consul.Kv.GetOptions;
 }
 
 type GetResponse = {
@@ -20,12 +19,12 @@ type GetResponse = {
 
 export interface ConsulLoaderOptions extends LoaderOptions {
   keys: Key[];
-  consulOptions?: Consul.ConsulOptions;
+  consulOptions?: ConstructorParameters<typeof Consul>[0];
 }
 
 export class ConsulLoader extends Loader {
   readonly options: ConsulLoaderOptions;
-  readonly client: Consul.Consul;
+  readonly client: InstanceType<typeof Consul>;
 
   name = "consul";
 
@@ -33,11 +32,7 @@ export class ConsulLoader extends Loader {
     super(options);
 
     this.options = options;
-    this.client = new Consul({
-      ...options.consulOptions,
-      // we always want a promise based client
-      promisify: true,
-    });
+    this.client = new Consul(options.consulOptions);
   }
 
   async load(store: Store): Promise<void> {
@@ -51,7 +46,7 @@ export class ConsulLoader extends Loader {
   async process(store: Store): Promise<void> {
     for (const key of this.options.keys) {
       try {
-        const response = await this.client.kv.get<GetResponse>(key.key);
+        const response = (await this.client.kv.get(key.key)) as GetResponse | null;
 
         if (!response) {
           throw new KeyNotFoundError(key.key);
