@@ -28,7 +28,7 @@ const loader = new FlagLoader({
   cliOptions: {
     flags: {
       environment: {
-        alias: "env",
+        shortFlag: "env",
         default: "development",
       },
       appName: {
