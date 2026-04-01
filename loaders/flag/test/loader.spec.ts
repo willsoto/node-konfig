@@ -9,7 +9,7 @@ describe("FlagLoader", () => {
         argv: ["--environment", "production"],
         flags: {
           environment: {
-            alias: "env",
+            shortFlag: "env",
             default: "development",
           },
         },
@@ -27,7 +27,7 @@ describe("FlagLoader", () => {
         argv: ["--app-name", "my-app"],
         flags: {
           environment: {
-            alias: "env",
+            shortFlag: "env",
             default: "development",
           },
           appName: {
