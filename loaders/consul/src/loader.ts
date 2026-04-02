@@ -1,5 +1,4 @@
 import { KeyNotFoundError, Loader, LoaderOptions, Parser, Store } from "@willsoto/node-konfig-core";
-import Consul from "consul";
 
 interface Key {
   key: string;
@@ -17,14 +16,20 @@ type GetResponse = {
   ModifyIndex: number;
 };
 
+export interface ConsulOptions {
+  host?: string;
+  port?: number;
+  secure?: boolean;
+}
+
 export interface ConsulLoaderOptions extends LoaderOptions {
   keys: Key[];
-  consulOptions?: ConstructorParameters<typeof Consul>[0];
+  consulOptions?: ConsulOptions;
 }
 
 export class ConsulLoader extends Loader {
   readonly options: ConsulLoaderOptions;
-  readonly client: InstanceType<typeof Consul>;
+  readonly baseUrl: string;
 
   name = "consul";
 
@@ -32,7 +37,9 @@ export class ConsulLoader extends Loader {
     super(options);
 
     this.options = options;
-    this.client = new Consul(options.consulOptions);
+
+    const { host = "127.0.0.1", port = 8500, secure = false } = options.consulOptions ?? {};
+    this.baseUrl = `${secure ? "https" : "http"}://${host}:${port}`;
   }
 
   async load(store: Store): Promise<void> {
@@ -46,13 +53,28 @@ export class ConsulLoader extends Loader {
   async process(store: Store): Promise<void> {
     for (const key of this.options.keys) {
       try {
-        const response = (await this.client.kv.get(key.key)) as GetResponse | null;
+        const response = await fetch(`${this.baseUrl}/v1/kv/${key.key}`);
 
-        if (!response) {
+        if (response.status === 404) {
           throw new KeyNotFoundError(key.key);
         }
 
-        const [accessor, value] = this.postLoad(key, response.Key, response.Value);
+        if (!response.ok) {
+          throw new Error(`Consul request failed: ${response.status} ${response.statusText}`);
+        }
+
+        const body = (await response.json()) as GetResponse[];
+        const entry = body[0];
+
+        if (!entry) {
+          throw new KeyNotFoundError(key.key);
+        }
+
+        const decodedValue = entry.Value
+          ? Buffer.from(entry.Value, "base64").toString("utf-8")
+          : "";
+
+        const [accessor, value] = this.postLoad(key, entry.Key, decodedValue);
 
         store.set(accessor, value);
       } catch (error) {

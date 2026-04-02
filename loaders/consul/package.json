@@ -28,9 +28,6 @@
     "test:coverage": "bun test --coverage",
     "test:watch": "bun test --watch"
   },
-  "dependencies": {
-    "consul": "2.0.1"
-  },
   "devDependencies": {
     "@node-konfig/internal": "workspace:*",
     "@willsoto/node-konfig-core": "workspace:*",

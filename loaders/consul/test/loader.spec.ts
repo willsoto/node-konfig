@@ -2,14 +2,13 @@ import { dirname } from "@node-konfig/internal";
 import * as Konfig from "@willsoto/node-konfig-core";
 import { FileLoader } from "@willsoto/node-konfig-file";
 import { describe, expect, test } from "bun:test";
-import Consul from "consul";
 import path from "node:path";
 import sinon from "sinon";
 import { ConsulLoader, ConsulLoaderOptions } from "../src/index.js";
 
 describe("ConsulLoader", () => {
   test("should load secrets from the given vault", async () => {
-    await makeConsulClient();
+    await seedConsulData();
     const store = await makeStore({
       keys: [
         {
@@ -27,7 +26,7 @@ describe("ConsulLoader", () => {
   });
 
   test("should apply a prefix if provided", async () => {
-    await makeConsulClient();
+    await seedConsulData();
     const store = await makeStore({
       keys: [
         {
@@ -46,7 +45,7 @@ describe("ConsulLoader", () => {
   });
 
   test("should apply a replacer if provided", async () => {
-    await makeConsulClient();
+    await seedConsulData();
     const store = await makeStore({
       keys: [
         {
@@ -67,7 +66,7 @@ describe("ConsulLoader", () => {
   });
 
   test("should apply a prefix and replacer (in the correct order)", async () => {
-    await makeConsulClient();
+    await seedConsulData();
     const store = await makeStore({
       keys: [
         {
@@ -89,7 +88,7 @@ describe("ConsulLoader", () => {
   });
 
   test("should merge secrets from the loader with secrets loaded from other locations", async () => {
-    await makeConsulClient();
+    await seedConsulData();
     const fileLoader = new FileLoader({
       files: [
         {
@@ -120,7 +119,7 @@ describe("ConsulLoader", () => {
   });
 
   test("should respect the maxRetries option", async () => {
-    await makeConsulClient();
+    await seedConsulData();
     const store = new Konfig.Store();
     const loader = new ConsulLoader({
       maxRetries: 3,
@@ -145,7 +144,7 @@ describe("ConsulLoader", () => {
   });
 
   test("should respect the stopOnFailure option", async () => {
-    await makeConsulClient();
+    await seedConsulData();
     const store = await makeStore({
       stopOnFailure: false,
       keys: [
@@ -183,13 +182,9 @@ async function makeStore(
   return store;
 }
 
-async function makeConsulClient(): Promise<void> {
-  const client = new Consul();
-
-  await client.kv.set(
-    "database",
-    JSON.stringify({
-      host: "rds.foo.bar",
-    }),
-  );
+async function seedConsulData(): Promise<void> {
+  await fetch("http://127.0.0.1:8500/v1/kv/database", {
+    method: "PUT",
+    body: JSON.stringify({ host: "rds.foo.bar" }),
+  });
 }
