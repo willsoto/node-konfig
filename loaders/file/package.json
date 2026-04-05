@@ -1,6 +1,6 @@
 {
   "name": "@willsoto/node-konfig-file",
-  "version": "3.0.0",
+  "version": "6.0.0",
   "description": "Node Konfig integration for Files",
   "keywords": [
     "config",
@@ -34,6 +34,6 @@
     "@willsoto/node-konfig-core": "workspace:*"
   },
   "peerDependencies": {
-    "@willsoto/node-konfig-core": "^5.0.0"
+    "@willsoto/node-konfig-core": "^6.0.0"
   }
 }

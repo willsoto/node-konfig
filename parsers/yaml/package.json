@@ -1,6 +1,6 @@
 {
   "name": "@willsoto/node-konfig-yaml-parser",
-  "version": "3.0.0",
+  "version": "6.0.0",
   "description": "Yaml parser support for Node Konfig",
   "keywords": [
     "config",
@@ -35,6 +35,6 @@
     "@willsoto/node-konfig-file": "workspace:*"
   },
   "peerDependencies": {
-    "@willsoto/node-konfig-core": "^5.0.0"
+    "@willsoto/node-konfig-core": "^6.0.0"
   }
 }

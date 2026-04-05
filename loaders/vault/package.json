@@ -1,6 +1,6 @@
 {
   "name": "@willsoto/node-konfig-vault",
-  "version": "3.0.0",
+  "version": "6.0.0",
   "description": "Node Konfig integration for Vault",
   "keywords": [
     "config",
@@ -38,6 +38,6 @@
     "@willsoto/node-konfig-file": "workspace:*"
   },
   "peerDependencies": {
-    "@willsoto/node-konfig-core": "^5.0.0"
+    "@willsoto/node-konfig-core": "^6.0.0"
   }
 }
