@@ -30,7 +30,7 @@
     "@commitlint/cli": "20.5.0",
     "@commitlint/config-conventional": "20.5.0",
     "@types/node": "25.5.0",
-    "@types/sinon": "21.0.0",
+    "@types/sinon": "21.0.1",
     "lefthook": "2.1.4",
     "oxfmt": "0.43.0",
     "oxlint": "1.58.0",

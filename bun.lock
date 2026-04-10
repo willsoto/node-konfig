@@ -9,7 +9,7 @@
         "@commitlint/cli": "20.5.0",
         "@commitlint/config-conventional": "20.5.0",
         "@types/node": "25.5.0",
-        "@types/sinon": "21.0.0",
+        "@types/sinon": "21.0.1",
         "lefthook": "2.1.4",
         "oxfmt": "0.43.0",
         "oxlint": "1.58.0",
@@ -22,41 +22,41 @@
     },
     "core": {
       "name": "@willsoto/node-konfig-core",
-      "version": "5.0.0",
+      "version": "6.0.0",
       "dependencies": {
         "cockatiel": "3.2.1",
       },
     },
     "internal": {
       "name": "@node-konfig/internal",
-      "version": "0.1.0",
+      "version": "0.1.1",
     },
     "loaders/consul": {
       "name": "@willsoto/node-konfig-consul",
-      "version": "4.0.0",
+      "version": "6.0.0",
       "devDependencies": {
         "@node-konfig/internal": "workspace:*",
         "@willsoto/node-konfig-core": "workspace:*",
         "@willsoto/node-konfig-file": "workspace:*",
       },
       "peerDependencies": {
-        "@willsoto/node-konfig-core": "^5.0.0",
+        "@willsoto/node-konfig-core": "^6.0.0",
       },
     },
     "loaders/file": {
       "name": "@willsoto/node-konfig-file",
-      "version": "3.0.0",
+      "version": "6.0.0",
       "devDependencies": {
         "@node-konfig/internal": "workspace:*",
         "@willsoto/node-konfig-core": "workspace:*",
       },
       "peerDependencies": {
-        "@willsoto/node-konfig-core": "^5.0.0",
+        "@willsoto/node-konfig-core": "^6.0.0",
       },
     },
     "loaders/flag": {
       "name": "@willsoto/node-konfig-flag",
-      "version": "3.0.0",
+      "version": "6.0.0",
       "dependencies": {
         "meow": "14.1.0",
       },
@@ -64,12 +64,12 @@
         "@willsoto/node-konfig-core": "workspace:*",
       },
       "peerDependencies": {
-        "@willsoto/node-konfig-core": "^5.0.0",
+        "@willsoto/node-konfig-core": "^6.0.0",
       },
     },
     "loaders/http": {
       "name": "@willsoto/node-konfig-http",
-      "version": "3.0.0",
+      "version": "6.0.0",
       "dependencies": {
         "node-fetch": "3.3.2",
       },
@@ -78,12 +78,12 @@
         "nock": "14.0.11",
       },
       "peerDependencies": {
-        "@willsoto/node-konfig-core": "^5.0.0",
+        "@willsoto/node-konfig-core": "^6.0.0",
       },
     },
     "loaders/vault": {
       "name": "@willsoto/node-konfig-vault",
-      "version": "3.0.0",
+      "version": "6.0.0",
       "dependencies": {
         "@types/request": "2.48.13",
         "node-vault": "0.12.0",
@@ -94,12 +94,12 @@
         "@willsoto/node-konfig-file": "workspace:*",
       },
       "peerDependencies": {
-        "@willsoto/node-konfig-core": "^5.0.0",
+        "@willsoto/node-konfig-core": "^6.0.0",
       },
     },
     "parsers/toml": {
       "name": "@willsoto/node-konfig-toml-parser",
-      "version": "3.0.0",
+      "version": "6.0.0",
       "dependencies": {
         "toml": "3.0.0",
       },
@@ -109,12 +109,12 @@
         "@willsoto/node-konfig-file": "workspace:*",
       },
       "peerDependencies": {
-        "@willsoto/node-konfig-core": "^5.0.0",
+        "@willsoto/node-konfig-core": "^6.0.0",
       },
     },
     "parsers/yaml": {
       "name": "@willsoto/node-konfig-yaml-parser",
-      "version": "3.0.0",
+      "version": "6.0.0",
       "dependencies": {
         "js-yaml": "4.1.1",
       },
@@ -125,7 +125,7 @@
         "@willsoto/node-konfig-file": "workspace:*",
       },
       "peerDependencies": {
-        "@willsoto/node-konfig-core": "^5.0.0",
+        "@willsoto/node-konfig-core": "^6.0.0",
       },
     },
   },
@@ -500,7 +500,7 @@
 
     "@types/request": ["@types/request@2.48.13", "", { "dependencies": { "@types/caseless": "*", "@types/node": "*", "@types/tough-cookie": "*", "form-data": "^2.5.5" } }, "sha512-FGJ6udDNUCjd19pp0Q3iTiDkwhYup7J8hpMW9c4k53NrccQFFWKRho6hvtPPEhnXWKvukfwAlB6DbDz4yhH5Gg=="],
 
-    "@types/sinon": ["@types/sinon@21.0.0", "", { "dependencies": { "@types/sinonjs__fake-timers": "*" } }, "sha512-+oHKZ0lTI+WVLxx1IbJDNmReQaIsQJjN2e7UUrJHEeByG7bFeKJYsv1E75JxTQ9QKJDp21bAa/0W2Xo4srsDnw=="],
+    "@types/sinon": ["@types/sinon@21.0.1", "", { "dependencies": { "@types/sinonjs__fake-timers": "*" } }, "sha512-5yoJSqLbjH8T9V2bksgRayuhpZy+723/z6wBOR+Soe4ZlXC0eW8Na71TeaZPUWDQvM7LYKa9UGFc6LRqxiR5fQ=="],
 
     "@types/sinonjs__fake-timers": ["@types/sinonjs__fake-timers@15.0.1", "", {}, "sha512-Ko2tjWJq8oozHzHV+reuvS5KYIRAokHnGbDwGh/J64LntgpbuylF74ipEL24HCyRjf9FOlBiBHWBR1RlVKsI1w=="],
 
