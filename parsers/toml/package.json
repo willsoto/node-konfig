@@ -26,7 +26,7 @@
     "test:watch": "bun test --watch"
   },
   "dependencies": {
-    "toml": "3.0.0"
+    "toml": "4.1.1"
   },
   "devDependencies": {
     "@node-konfig/internal": "workspace:*",
