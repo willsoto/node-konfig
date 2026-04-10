@@ -38,7 +38,7 @@
     "sinon": "21.0.3",
     "typescript": "6.0.2",
     "vitepress": "1.6.4",
-    "vue": "3.5.31"
+    "vue": "3.5.32"
   },
   "commitlint": {
     "extends": [
