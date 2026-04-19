@@ -24,7 +24,6 @@
   "exports": "./dist/index.js",
   "scripts": {
     "build": "tsc",
-    "clean": "rimraf dist",
     "test": "bun test",
     "test:coverage": "bun test --coverage",
     "test:watch": "bun test --watch"
