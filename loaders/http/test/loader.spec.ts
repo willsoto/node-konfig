@@ -1,39 +1,23 @@
 import { afterEach, describe, expect, mock, test } from "bun:test";
 import sinon from "sinon";
-
-// Mock node-fetch before importing the loader
-let mockFetchFn: ReturnType<typeof mock>;
-
-mock.module("node-fetch", () => {
-  mockFetchFn = mock(async () => {
-    throw new Error("unmocked fetch call");
-  });
-
-  // node-fetch exports both default and named exports
-  return {
-    default: (...args: unknown[]) => mockFetchFn(...args),
-    __esModule: true,
-  };
-});
-
-// Must import after mock.module
-const Konfig = await import("@willsoto/node-konfig-core");
-const { HttpLoader } = await import("../src/index.js");
-type HttpLoaderOptions = import("../src/index.js").HttpLoaderOptions;
+import * as Konfig from "@willsoto/node-konfig-core";
+import { HttpLoader, type HttpLoaderOptions } from "../src/index.js";
 
 const prefixUrl = "https://internal.config.com";
 
+const mockFetch = mock(async () => {
+  throw new Error("unmocked fetch call");
+}) as typeof globalThis.fetch;
+
+globalThis.fetch = mockFetch;
+
 function makeResponse(status: number, body: string) {
-  return {
-    ok: status >= 200 && status < 300,
-    status,
-    text: async () => body,
-  };
+  return new Response(body, { status });
 }
 
 describe("HttpLoader", () => {
   afterEach(() => {
-    mockFetchFn.mockReset();
+    mockFetch.mockReset();
   });
 
   test("should load secrets from the given vault", async () => {
@@ -43,7 +27,7 @@ describe("HttpLoader", () => {
       },
     });
 
-    mockFetchFn.mockResolvedValueOnce(makeResponse(200, responseBody));
+    mockFetch.mockResolvedValueOnce(makeResponse(200, responseBody));
 
     const store = await makeStore({
       sources: [
@@ -60,8 +44,8 @@ describe("HttpLoader", () => {
       },
     });
 
-    expect(mockFetchFn).toHaveBeenCalledTimes(1);
-    expect(mockFetchFn.mock.calls[0][0]).toBe(`${prefixUrl}/config.json`);
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][0]).toBe(`${prefixUrl}/config.json`);
   });
 
   test("should merge secrets from the loader with secrets loaded from other locations", async () => {
@@ -71,7 +55,7 @@ describe("HttpLoader", () => {
       },
     });
 
-    mockFetchFn.mockResolvedValueOnce(makeResponse(200, responseBody));
+    mockFetch.mockResolvedValueOnce(makeResponse(200, responseBody));
 
     const fileLoader = new Konfig.ValueLoader({
       values: {
@@ -101,12 +85,12 @@ describe("HttpLoader", () => {
       },
     });
 
-    expect(mockFetchFn).toHaveBeenCalledTimes(1);
-    expect(mockFetchFn.mock.calls[0][1]).toEqual({ method: "POST" });
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+    expect(mockFetch.mock.calls[0][1]).toEqual({ method: "POST" });
   });
 
   test("should respect the maxRetries option", async () => {
-    mockFetchFn.mockRejectedValue(new Error("Forbidden"));
+    mockFetch.mockRejectedValue(new Error("Forbidden"));
 
     const store = new Konfig.Store();
     const loader = new HttpLoader({
@@ -142,9 +126,9 @@ describe("HttpLoader", () => {
     });
 
     // First call: config-not-found.json -> 404 (text() throws since body isn't valid JSON, but stopOnFailure=false catches it)
-    mockFetchFn.mockResolvedValueOnce(makeResponse(404, "Not found"));
+    mockFetch.mockResolvedValueOnce(makeResponse(404, "Not found"));
     // Second call: config.json -> 200
-    mockFetchFn.mockResolvedValueOnce(makeResponse(200, responseBody));
+    mockFetch.mockResolvedValueOnce(makeResponse(200, responseBody));
 
     const parser = new Konfig.JSONParser();
     const store = await makeStore({

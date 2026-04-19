@@ -1,9 +1,8 @@
 import { Loader, LoaderOptions, Parser, Store } from "@willsoto/node-konfig-core";
-import fetch, { RequestInit } from "node-fetch";
 
 interface Source {
   url: string;
-  fetchOptions?: RequestInit;
+  fetchOptions?: globalThis.RequestInit;
   parser: Parser;
 }
 

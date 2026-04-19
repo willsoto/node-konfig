@@ -29,7 +29,6 @@
     "test:watch": "bun test --watch"
   },
   "dependencies": {
-    "@types/request": "2.48.13",
     "node-vault": "0.12.0"
   },
   "devDependencies": {

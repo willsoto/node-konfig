@@ -29,12 +29,8 @@
     "test:coverage": "bun test --coverage",
     "test:watch": "bun test --watch"
   },
-  "dependencies": {
-    "node-fetch": "3.3.2"
-  },
   "devDependencies": {
-    "@willsoto/node-konfig-core": "workspace:*",
-    "nock": "14.0.12"
+    "@willsoto/node-konfig-core": "workspace:*"
   },
   "peerDependencies": {
     "@willsoto/node-konfig-core": "^6.0.0"
