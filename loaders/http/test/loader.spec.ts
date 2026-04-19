@@ -1,5 +1,4 @@
-import { afterEach, describe, expect, mock, test } from "bun:test";
-import sinon from "sinon";
+import { afterEach, describe, expect, mock, spyOn, test } from "bun:test";
 import * as Konfig from "@willsoto/node-konfig-core";
 import { HttpLoader, type HttpLoaderOptions } from "../src/index.js";
 
@@ -102,7 +101,7 @@ describe("HttpLoader", () => {
         },
       ],
     });
-    sinon.spy(loader, "process");
+    const spy = spyOn(loader, "process");
 
     store.registerLoader(loader);
 
@@ -115,7 +114,7 @@ describe("HttpLoader", () => {
     }
 
     // Initial call + the 3 retries
-    expect((loader.process as sinon.SinonSpy).callCount).toBe(4);
+    expect(spy).toHaveBeenCalledTimes(4);
   });
 
   test("should respect the stopOnFailure option", async () => {

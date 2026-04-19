@@ -1,10 +1,9 @@
 import { dirname } from "@node-konfig/internal";
 import * as Konfig from "@willsoto/node-konfig-core";
 import { FileLoader } from "@willsoto/node-konfig-file";
-import { describe, expect, test } from "bun:test";
+import { describe, expect, spyOn, test } from "bun:test";
 import vault from "node-vault";
 import path from "node:path";
-import sinon from "sinon";
 import { VaultLoader, VaultLoaderOptions } from "../src/index.js";
 
 describe("VaultLoader", () => {
@@ -129,7 +128,7 @@ describe("VaultLoader", () => {
         token: "development",
       },
     });
-    sinon.spy(loader, "processSecrets");
+    const spy = spyOn(loader, "processSecrets");
 
     store.registerLoader(loader);
 
@@ -139,7 +138,7 @@ describe("VaultLoader", () => {
       expect((error as Error).message).toMatch(/Status 404/);
     }
     // Initial call + the 3 retries
-    expect((loader.processSecrets as sinon.SinonSpy).callCount).toBe(4);
+    expect(spy).toHaveBeenCalledTimes(4);
   });
 
   test("should respect the stopOnFailure option", async function () {

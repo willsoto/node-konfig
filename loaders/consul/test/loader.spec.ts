@@ -1,9 +1,8 @@
 import { dirname } from "@node-konfig/internal";
 import * as Konfig from "@willsoto/node-konfig-core";
 import { FileLoader } from "@willsoto/node-konfig-file";
-import { describe, expect, test } from "bun:test";
+import { describe, expect, spyOn, test } from "bun:test";
 import path from "node:path";
-import sinon from "sinon";
 import { ConsulLoader, ConsulLoaderOptions } from "../src/index.js";
 
 describe("ConsulLoader", () => {
@@ -130,7 +129,7 @@ describe("ConsulLoader", () => {
         },
       ],
     });
-    sinon.spy(loader, "process");
+    const spy = spyOn(loader, "process");
 
     store.registerLoader(loader);
 
@@ -140,7 +139,7 @@ describe("ConsulLoader", () => {
       expect((error as Error).message).toBe("Key not found: non-existent/value");
     }
     // Initial call + the 3 retries
-    expect((loader.process as sinon.SinonSpy).callCount).toBe(4);
+    expect(spy).toHaveBeenCalledTimes(4);
   });
 
   test("should respect the stopOnFailure option", async () => {

@@ -1,9 +1,8 @@
 import { dirname } from "@node-konfig/internal";
 import * as Konfig from "@willsoto/node-konfig-core";
 import { FileLoader, FileLoaderOptions } from "@willsoto/node-konfig-file";
-import { describe, test, expect } from "bun:test";
+import { describe, test, expect, spyOn } from "bun:test";
 import path from "node:path";
-import * as sinon from "sinon";
 import { YAMLParser } from "../src/index.js";
 
 describe("YAMLParser", () => {
@@ -87,7 +86,7 @@ describe("YAMLParser", () => {
     const store = new Konfig.Store();
 
     const loader = new FileLoader(options);
-    sinon.spy(loader, "processFiles");
+    const spy = spyOn(loader, "processFiles");
 
     store.registerLoader(loader);
 
@@ -97,7 +96,7 @@ describe("YAMLParser", () => {
       expect((error as Error).message).toMatch(/ENOENT/);
     }
     // Initial call + the 3 retries
-    expect((loader.processFiles as sinon.SinonSpy).callCount).toBe(4);
+    expect(spy).toHaveBeenCalledTimes(4);
   });
 });
 
