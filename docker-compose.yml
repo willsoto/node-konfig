@@ -15,7 +15,7 @@ services:
       retries: 10
 
   consul-agent-1: &consul-agent
-    image: hashicorp/consul:1.22.6
+    image: hashicorp/consul:1.22.7
     command: "agent -retry-join consul-server-bootstrap -client 0.0.0.0"
 
   consul-agent-2:
