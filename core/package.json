@@ -27,6 +27,6 @@
     "test:watch": "bun test --watch"
   },
   "dependencies": {
-    "cockatiel": "3.2.1"
+    "cockatiel": "4.0.0"
   }
 }
