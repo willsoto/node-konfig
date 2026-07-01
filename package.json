@@ -28,7 +28,7 @@
     "@changesets/cli": "2.31.0",
     "@commitlint/cli": "21.1.0",
     "@commitlint/config-conventional": "21.1.0",
-    "@types/node": "26.0.0",
+    "@types/node": "26.0.1",
     "lefthook": "2.1.9",
     "oxfmt": "0.56.0",
     "oxlint": "1.71.0",
