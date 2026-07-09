@@ -25,7 +25,7 @@
     "test:watch": "bun test --watch"
   },
   "dependencies": {
-    "js-yaml": "5.2.0"
+    "js-yaml": "5.2.1"
   },
   "devDependencies": {
     "@node-konfig/internal": "workspace:*",
