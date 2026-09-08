@@ -1,6 +1,6 @@
 services:
   vault:
-    image: "hashicorp/vault:2.0.4"
+    image: "hashicorp/vault:2.1.0"
     cap_add:
       - IPC_LOCK
     ports:
