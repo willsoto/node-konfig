@@ -29,7 +29,7 @@
     "@commitlint/cli": "21.2.3",
     "@commitlint/config-conventional": "21.2.3",
     "@types/node": "26.6.3",
-    "lefthook": "2.1.15",
+    "lefthook": "2.1.16",
     "oxfmt": "0.57.0",
     "oxlint": "1.86.0",
     "typescript": "7.0.2",
