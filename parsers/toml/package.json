@@ -36,5 +36,8 @@
   },
   "peerDependencies": {
     "@willsoto/node-konfig-core": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=24"
   }
 }
