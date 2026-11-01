@@ -1,9 +1,11 @@
 import { dirname } from "@node-konfig/internal";
 import * as Konfig from "@willsoto/node-konfig-core";
 import { FileLoader } from "@willsoto/node-konfig-file";
-import { describe, expect, test, vi } from "vitest";
+import { afterAll, beforeAll, describe, expect, test, vi } from "vitest";
+import { createServer, type Server } from "node:http";
+import type { AddressInfo } from "node:net";
 import path from "node:path";
-import { ConsulLoader, ConsulLoaderOptions } from "../src/index.js";
+import { ConsulLoader, ConsulLoaderOptions, ConsulOptions } from "../src/index.js";
 
 describe("ConsulLoader", () => {
   test("should load secrets from the given vault", async () => {
@@ -161,6 +163,41 @@ describe("ConsulLoader", () => {
       database: {
         host: "rds.foo.bar",
       },
+    });
+  });
+
+  describe("with unexpected responses from Consul", () => {
+    let server: Server;
+    let consulOptions: ConsulOptions;
+
+    beforeAll(async () => {
+      server = createServer((req, res) => {
+        if (req.url === "/v1/kv/broken") {
+          res.writeHead(500).end();
+        } else if (req.url === "/v1/kv/empty") {
+          res.writeHead(200, { "Content-Type": "application/json" }).end("[]");
+        } else {
+          res.writeHead(404).end();
+        }
+      });
+      await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+      consulOptions = { port: (server.address() as AddressInfo).port };
+    });
+
+    afterAll(async () => {
+      await new Promise((resolve) => server.close(resolve));
+    });
+
+    test("should throw when Consul responds with a non-404 error", async () => {
+      await expect(makeStore({ consulOptions, keys: [{ key: "broken" }] })).rejects.toThrow(
+        "Consul request failed: 500 Internal Server Error",
+      );
+    });
+
+    test("should throw a KeyNotFoundError when Consul returns no entries", async () => {
+      await expect(makeStore({ consulOptions, keys: [{ key: "empty" }] })).rejects.toThrow(
+        Konfig.KeyNotFoundError,
+      );
     });
   });
 });
