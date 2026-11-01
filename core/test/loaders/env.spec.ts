@@ -35,6 +35,29 @@ describe("EnvLoader", () => {
     });
   });
 
+  test("should create nested objects for dotted accessors", async () => {
+    const store = await makeStore({
+      envVars: [
+        {
+          accessor: "server.http.port",
+          envVarName: "PORT",
+        },
+        {
+          accessor: "server.name",
+          envVarName: "NAME",
+        },
+      ],
+    });
+
+    expect(store.toJSON()).toEqual({
+      server: {
+        http: { port: "5000" },
+        name: "my-app",
+      },
+    });
+    expect(store.get("server.http.port")).toBe("5000");
+  });
+
   test("should convert 'array-like' values into actual array", async () => {
     const store = await makeStore({
       envVars: [
