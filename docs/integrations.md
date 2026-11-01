@@ -10,9 +10,7 @@ import { Module } from "@nestjs/common";
 
 class MyStore extends Konfig.Store {
   constructor() {
-    super({
-      /* configuration options*/
-    });
+    super({/* configuration options*/});
   }
 }
 
