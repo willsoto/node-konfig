@@ -1,5 +1,12 @@
 # @willsoto/node-konfig-yaml-parser
 
+## 7.0.0
+
+### Patch Changes
+
+- Updated dependencies [efea247]
+  - @willsoto/node-konfig-core@7.0.0
+
 ## 6.0.0
 
 ### Major Changes
