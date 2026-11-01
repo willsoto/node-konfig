@@ -27,9 +27,9 @@ jobs:
         id: changesets
         uses: changesets/action@v2.1.2
         with:
-          publish: "pnpm run publish"
-          commit: "chore: update versions"
-          title: "Release"
+          publish-script: "pnpm run publish"
+          commit-message: "chore: update versions"
+          pr-title: "Release"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
