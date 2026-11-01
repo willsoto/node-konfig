@@ -12,9 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: oven-sh/setup-bun@v2
-      - run: "bun install --frozen-lockfile"
-      - run: "bun run build"
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .tool-versions
+          cache: pnpm
+      - run: "pnpm install --frozen-lockfile"
+      - run: "pnpm run build"
 
       - name: Configure npmrc
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
@@ -23,7 +27,7 @@ jobs:
         id: changesets
         uses: changesets/action@v2.1.2
         with:
-          publish: "bun run publish"
+          publish: "pnpm run publish"
           commit: "chore: update versions"
           title: "Release"
         env:

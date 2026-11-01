@@ -1,4 +1,4 @@
-import { describe, test, expect } from "bun:test";
+import { describe, test, expect } from "vitest";
 import { NoValueForKeyError } from "../src/errors.js";
 import * as Konfig from "../src/index.js";
 

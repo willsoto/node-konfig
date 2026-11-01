@@ -1,7 +1,7 @@
 import { dirname } from "@node-konfig/internal";
 import * as Konfig from "@willsoto/node-konfig-core";
 import { FileLoader } from "@willsoto/node-konfig-file";
-import { describe, expect, spyOn, test } from "bun:test";
+import { describe, expect, test, vi } from "vitest";
 import vault from "node-vault";
 import path from "node:path";
 import { VaultLoader, VaultLoaderOptions } from "../src/index.js";
@@ -128,7 +128,7 @@ describe("VaultLoader", () => {
         token: "development",
       },
     });
-    const spy = spyOn(loader, "processSecrets");
+    const spy = vi.spyOn(loader, "processSecrets");
 
     store.registerLoader(loader);
 

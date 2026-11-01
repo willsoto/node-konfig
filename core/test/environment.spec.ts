@@ -1,4 +1,4 @@
-import { describe, test, expect, afterEach } from "bun:test";
+import { describe, test, expect, afterEach } from "vitest";
 import * as Konfig from "../src/index.js";
 
 describe("Loaders by environment", () => {

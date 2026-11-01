@@ -1,12 +1,12 @@
-import { afterEach, describe, expect, mock, spyOn, test } from "bun:test";
+import { afterEach, describe, expect, test, vi } from "vitest";
 import * as Konfig from "@willsoto/node-konfig-core";
 import { HttpLoader, type HttpLoaderOptions } from "../src/index.js";
 
 const prefixUrl = "https://internal.config.com";
 
-const mockFetch = mock(async () => {
+const mockFetch = vi.fn<typeof globalThis.fetch>(async () => {
   throw new Error("unmocked fetch call");
-}) as typeof globalThis.fetch;
+});
 
 globalThis.fetch = mockFetch;
 
@@ -101,7 +101,7 @@ describe("HttpLoader", () => {
         },
       ],
     });
-    const spy = spyOn(loader, "process");
+    const spy = vi.spyOn(loader, "process");
 
     store.registerLoader(loader);
 

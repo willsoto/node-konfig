@@ -1,7 +1,7 @@
 import { dirname } from "@node-konfig/internal";
 import * as Konfig from "@willsoto/node-konfig-core";
 import { FileLoader } from "@willsoto/node-konfig-file";
-import { describe, expect, spyOn, test } from "bun:test";
+import { describe, expect, test, vi } from "vitest";
 import path from "node:path";
 import { ConsulLoader, ConsulLoaderOptions } from "../src/index.js";
 
@@ -129,7 +129,7 @@ describe("ConsulLoader", () => {
         },
       ],
     });
-    const spy = spyOn(loader, "process");
+    const spy = vi.spyOn(loader, "process");
 
     store.registerLoader(loader);
 

@@ -1,4 +1,4 @@
-import { describe, test, expect, beforeAll, afterAll } from "bun:test";
+import { describe, test, expect, beforeAll, afterAll } from "vitest";
 import { ValueNotFoundError } from "../../src/errors.js";
 import * as Konfig from "../../src/index.js";
 
@@ -64,7 +64,7 @@ describe("EnvLoader", () => {
   });
 
   test("should respect the maxRetries setting", async () => {
-    expect(
+    await expect(
       makeStore({
         stopOnFailure: true,
         maxRetries: 3,
