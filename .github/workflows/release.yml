@@ -30,6 +30,6 @@ jobs:
           publish-script: "pnpm run publish"
           commit-message: "chore: update versions"
           pr-title: "Release"
+          github-token: ${{ secrets.GH_TOKEN }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
