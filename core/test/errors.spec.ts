@@ -1,4 +1,4 @@
-import { describe, test, expect } from "bun:test";
+import { describe, test, expect } from "vitest";
 import { KeyNotFoundError, NoValueForKeyError, ValueNotFoundError } from "../src/errors.js";
 
 describe("Errors", () => {

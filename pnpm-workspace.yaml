@@ -1,0 +1,14 @@
+packages:
+  - core
+  - loaders/*
+  - parsers/*
+  - internal
+
+saveExact: true
+# 7 days, in minutes
+minimumReleaseAge: 10080
+
+allowBuilds:
+  esbuild: true
+  # hooks are installed by the root `prepare` script
+  lefthook: false

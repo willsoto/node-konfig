@@ -1,6 +1,6 @@
 import { dirname } from "@node-konfig/internal";
 import * as Konfig from "@willsoto/node-konfig-core";
-import { describe, expect, spyOn, test } from "bun:test";
+import { describe, expect, test, vi } from "vitest";
 import path from "node:path";
 import { FileLoader, FileLoaderOptions } from "../src/index.js";
 
@@ -40,7 +40,7 @@ describe("FileLoader", () => {
       ],
     };
 
-    expect(makeStore(options)).rejects.toThrow(/ENOENT/);
+    await expect(makeStore(options)).rejects.toThrow(/ENOENT/);
   });
 
   test("should respect the stopOnFailure option (false)", async function () {
@@ -81,7 +81,7 @@ describe("FileLoader", () => {
     const store = new Konfig.Store();
 
     const loader = new FileLoader(options);
-    const spy = spyOn(loader, "processFiles");
+    const spy = vi.spyOn(loader, "processFiles");
 
     store.registerLoader(loader);
 

@@ -23,10 +23,7 @@
   "typings": "./dist/index.d.ts",
   "exports": "./dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "test": "bun test",
-    "test:coverage": "bun test --coverage",
-    "test:watch": "bun test --watch"
+    "build": "tsc"
   },
   "devDependencies": {
     "@willsoto/node-konfig-core": "workspace:*"

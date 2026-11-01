@@ -2,20 +2,21 @@
 
 ## Prerequisites
 
-- [Bun](https://bun.sh/) (see `.tool-versions` for the pinned version)
+- [Node.js](https://nodejs.org/) (see `.tool-versions` for the pinned version)
+- [pnpm](https://pnpm.io/) (see `packageManager` in `package.json`; `corepack enable` will pick it up)
 - [Docker](https://www.docker.com/) (for running integration tests locally)
 
 ## Getting Started
 
 ```sh
 # Install dependencies
-bun install
+pnpm install
 
 # Build all packages
-bun run build
+pnpm run build
 
 # Run tests (consul, vault tests require Docker services)
-bun run test
+pnpm run test
 ```
 
 ## Docker Services
@@ -30,16 +31,16 @@ This starts Vault and a Consul cluster with health checks, so the command blocks
 
 ## Available Scripts
 
-| Script                  | Description                      |
-| ----------------------- | -------------------------------- |
-| `bun run build`         | Build all packages               |
-| `bun run clean`         | Remove build artifacts           |
-| `bun run test`          | Run tests across all packages    |
-| `bun run test:coverage` | Run tests with coverage          |
-| `bun run lint`          | Lint with oxlint                 |
-| `bun run format`        | Format with oxfmt                |
-| `bun run checkstyle`    | Check formatting without writing |
-| `bun run docs:dev`      | Start docs dev server            |
+| Script                   | Description                      |
+| ------------------------ | -------------------------------- |
+| `pnpm run build`         | Build all packages               |
+| `pnpm run clean`         | Remove build artifacts           |
+| `pnpm run test`          | Run tests across all packages    |
+| `pnpm run test:coverage` | Run tests with coverage          |
+| `pnpm run lint`          | Lint with oxlint                 |
+| `pnpm run format`        | Format with oxfmt                |
+| `pnpm run checkstyle`    | Check formatting without writing |
+| `pnpm run docs:dev`      | Start docs dev server            |
 
 ## Code Quality
 
@@ -55,5 +56,5 @@ This project uses [Changesets](https://github.com/changesets/changesets) for ver
 To add a changeset for your PR:
 
 ```sh
-bun run changeset
+pnpm run changeset
 ```

@@ -1,5 +1,5 @@
 import * as Konfig from "@willsoto/node-konfig-core";
-import { describe, test, expect } from "bun:test";
+import { describe, test, expect } from "vitest";
 import { FlagLoader, FlagLoaderOptions } from "../src/index.js";
 
 describe("FlagLoader", () => {

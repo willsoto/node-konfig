@@ -1,7 +1,7 @@
 import { dirname } from "@node-konfig/internal";
 import * as Konfig from "@willsoto/node-konfig-core";
 import { FileLoader, FileLoaderOptions } from "@willsoto/node-konfig-file";
-import { describe, test, expect, spyOn } from "bun:test";
+import { describe, test, expect, vi } from "vitest";
 import path from "node:path";
 import { YAMLParser } from "../src/index.js";
 
@@ -86,7 +86,7 @@ describe("YAMLParser", () => {
     const store = new Konfig.Store();
 
     const loader = new FileLoader(options);
-    const spy = spyOn(loader, "processFiles");
+    const spy = vi.spyOn(loader, "processFiles");
 
     store.registerLoader(loader);
 
