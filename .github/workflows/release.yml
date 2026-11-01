@@ -10,6 +10,10 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
     steps:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
@@ -20,9 +24,6 @@ jobs:
       - run: "pnpm install --frozen-lockfile"
       - run: "pnpm run build"
 
-      - name: Configure npmrc
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v2.1.2
@@ -31,5 +32,3 @@ jobs:
           commit-message: "chore: update versions"
           pr-title: "Release"
           github-token: ${{ secrets.GH_TOKEN }}
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

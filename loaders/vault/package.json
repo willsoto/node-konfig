@@ -13,6 +13,11 @@
   ],
   "license": "Apache-2.0",
   "author": "Will Soto <willsoto@users.noreply.github.com> (https://github.com/willsoto)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willsoto/node-konfig.git",
+    "directory": "loaders/vault"
+  },
   "files": [
     "README.md",
     "LICENSE",
