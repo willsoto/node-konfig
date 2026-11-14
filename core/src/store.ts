@@ -110,6 +110,9 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
         current = current.get(key);
       } else if (typeof current === "object" && current !== null) {
         current = (current as Record<string, unknown>)[key];
+      } else {
+        // The path continues past a scalar (or null), so there is nothing to find.
+        current = undefined;
       }
     }
 
@@ -218,22 +221,27 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
 
   /**
    * Given a config, will recursively merge all of its properties onto this instance's config.
-   * If a Group (ie `Store`) is encountered, it will correctly merge those properties onto that Group.
+   * Plain objects are merged key by key; anything else (scalars, arrays, class instances) replaces
+   * the existing value. If a Group (ie `Store`) is encountered, the properties are merged onto that Group.
    *
    * @param config - The config to merge with this instance's config
    *
    * @public
    */
   assign(config: TConfig): this {
-    Object.keys(config).forEach((key) => {
-      const existingValue = (this.config as Record<string, unknown>)[key];
+    const current = this.config as Record<string, unknown>;
 
-      if (existingValue instanceof Store) {
-        existingValue.assign((config as Record<string, unknown>)[key]);
+    for (const [key, value] of Object.entries(config)) {
+      const existing = current[key];
+
+      if (existing instanceof Store) {
+        existing.assign(value as Record<string, unknown>);
+      } else if (isPlainObject(existing) && isPlainObject(value)) {
+        current[key] = merge(existing, value);
       } else {
-        this.set(key, (config as Record<string, unknown>)[key]);
+        this.set(key, value);
       }
-    });
+    }
 
     return this;
   }
@@ -326,4 +334,38 @@ export class Store<TConfig extends Config = Record<string, unknown>> {
 
     return group;
   }
+}
+
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+  if (typeof value !== "object" || value === null) {
+    return false;
+  }
+  const prototype: unknown = Object.getPrototypeOf(value);
+
+  return prototype === Object.prototype || prototype === null;
+}
+
+/**
+ * Returns a new object rather than mutating `target`, since values in the store may be
+ * references to objects owned by the caller (eg the `values` given to a `ValueLoader`).
+ */
+function merge(
+  target: Record<string, unknown>,
+  source: Record<string, unknown>,
+): Record<string, unknown> {
+  const result = { ...target };
+
+  for (const [key, value] of Object.entries(source)) {
+    const existing = result[key];
+
+    if (existing instanceof Store) {
+      existing.assign(value as Record<string, unknown>);
+    } else if (isPlainObject(existing) && isPlainObject(value)) {
+      result[key] = merge(existing, value);
+    } else {
+      result[key] = value;
+    }
+  }
+
+  return result;
 }

@@ -42,6 +42,7 @@ export const store = new Konfig.Store();
 // so the loader knows how to interpret the file.
 // Files are loaded in order, so any conflicts will be resolved through a "last one wins" approach.
 // In this case, `local.json` will override properties that exist in both configurations.
+// Nested objects are merged recursively, so `local.json` only needs to contain the properties it changes.
 const loader = new Konfig.FileLoader({
   files: [
     {

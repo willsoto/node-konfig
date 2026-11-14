@@ -90,6 +90,18 @@ describe("Store", () => {
     expect(store.get("name")).toBe("baz");
   });
 
+  test("should return undefined when the path continues past a non-object value", () => {
+    const store = new Konfig.Store();
+
+    store.assign({ name: "my-app", port: 5432, nothing: null });
+
+    expect(store.get("name.length")).toBeUndefined();
+    expect(store.get("name.x.y")).toBeUndefined();
+    expect(store.get("port.host")).toBeUndefined();
+    expect(store.get("nothing.host")).toBeUndefined();
+    expect(() => store.getOrThrow("port.host")).toThrow(NoValueForKeyError);
+  });
+
   test("should assign values in bulk while retaining any existing groups", async () => {
     const store = new Konfig.Store();
 
@@ -146,6 +158,51 @@ describe("Store", () => {
         port: 6379,
       },
     });
+  });
+
+  test("should recursively merge plain objects when assigning", () => {
+    const store = new Konfig.Store();
+    const first = {
+      name: "my-app",
+      database: { host: "localhost", port: 5432, replicas: ["a", "b"] },
+    };
+
+    store.assign(first);
+    store.assign({ database: { host: "db.internal", replicas: ["c"], pool: { max: 10 } } });
+    store.assign({ database: { pool: { min: 1 } } });
+
+    expect(store.toJSON()).toEqual({
+      name: "my-app",
+      database: {
+        host: "db.internal",
+        port: 5432,
+        replicas: ["c"],
+        pool: { max: 10, min: 1 },
+      },
+    });
+    // Callers keep ownership of what they pass in.
+    expect(first.database).toEqual({ host: "localhost", port: 5432, replicas: ["a", "b"] });
+  });
+
+  test("should retain groups nested under a plain object when assigning", () => {
+    const store = new Konfig.Store();
+    const group = store.group("services.database");
+
+    group.assign({ host: "localhost", port: 5432 });
+    store.assign({ services: { database: { host: "rds" }, cache: { host: "redis" } } });
+
+    expect(store.group("services.database")).toBe(group);
+    expect(store.get("services.database")).toEqual({ host: "rds", port: 5432 });
+    expect(store.get("services.cache.host")).toBe("redis");
+  });
+
+  test("should replace rather than merge when either side is not a plain object", () => {
+    const store = new Konfig.Store();
+
+    store.assign({ database: { host: "localhost" }, cache: "redis://localhost" });
+    store.assign({ database: null, cache: { host: "localhost" } });
+
+    expect(store.toJSON()).toEqual({ database: null, cache: { host: "localhost" } });
   });
 
   describe("getOrThrow", () => {
