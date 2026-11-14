@@ -1,5 +1,12 @@
 # @willsoto/node-konfig-file
 
+## 8.0.0
+
+### Patch Changes
+
+- Updated dependencies [8323303]
+  - @willsoto/node-konfig-core@8.0.0
+
 ## 7.0.0
 
 ### Patch Changes
