@@ -1,6 +1,6 @@
 {
   "name": "@willsoto/node-konfig-file",
-  "version": "7.0.0",
+  "version": "8.0.0",
   "description": "Node Konfig integration for Files",
   "keywords": [
     "config",
@@ -35,7 +35,7 @@
     "@willsoto/node-konfig-core": "workspace:*"
   },
   "peerDependencies": {
-    "@willsoto/node-konfig-core": "^7.0.0"
+    "@willsoto/node-konfig-core": "^8.0.0"
   },
   "engines": {
     "node": ">=24"

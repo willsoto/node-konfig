@@ -1,6 +1,6 @@
 {
   "name": "@willsoto/node-konfig-toml-parser",
-  "version": "7.0.0",
+  "version": "8.0.0",
   "description": "TOML parser support for Node Konfig",
   "keywords": [
     "config",
@@ -35,7 +35,7 @@
     "@willsoto/node-konfig-file": "workspace:*"
   },
   "peerDependencies": {
-    "@willsoto/node-konfig-core": "^7.0.0"
+    "@willsoto/node-konfig-core": "^8.0.0"
   },
   "engines": {
     "node": ">=24"
